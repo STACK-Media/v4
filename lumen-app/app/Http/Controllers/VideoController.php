@@ -7,4 +7,4 @@ class VideoController extends Controller
     {
     	return view('theme::partials.testing');
     }
-} 
+}
