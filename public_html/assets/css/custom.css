@@ -1,0 +1,175 @@
+body {
+	background-color: 	black;
+}
+
+hr { 
+	border-bottom: 		1px dashed #148bcc;
+}
+
+.right {
+	text-align: 		right;
+}
+
+/* Navbar */
+.navbar-inverse {
+	background-image: 	linear-gradient(to bottom,#000 0,#000 100%);
+}
+.navbar {
+	border-bottom: 		1px solid #bf2f37;
+}
+
+/* Content */
+.condom {
+
+}
+.main {
+	max-width: 			1024px;
+}
+.content {
+	background: 		#FFFFFF;
+	box-shadow: 		0 0 6px #404040;
+}
+
+.player {
+	min-height:			400px;
+	background-color: 	gray;
+}
+.promo {
+	min-height:  		380px;
+	background-color: 	gray;
+}
+.hero {
+	min-height:  		380px;
+	background-color: 	gray;
+}
+
+/* Sidebar */
+.sidebar .widget {
+	padding-bottom: 	0px;
+}
+.adunit {
+	min-height: 		250px;
+	background-color: 	gray;
+}
+.bottomleft {
+	max-width: 			160px;
+	min-height: 		600px;
+	background-color: 	gray;
+}
+.social {
+	min-height: 		100px;
+	background-color: 	gray;
+}
+.vsp {
+	min-height: 		200px;
+	background-color: 	gray;	
+}
+.outbrain-sidebar {
+	min-height: 		300px;
+	background-color: 	gray;		
+}
+
+/* Helpers */
+.headroom {
+	padding-top: 		20px;
+}
+.legroom {
+	padding-bottom: 	20px;
+}
+.spacer {
+	min-height: 		20px;
+}
+.thumbnail {
+	min-height: 		86px;
+	background-color: 	gray;
+}
+.vbotton {
+	vertical-align:  	bottom;
+}
+.small {
+	font-size: 			small;
+}
+.views {
+	font-size: 			75%;
+	color: 				gray;
+}
+.clear {
+    clear: 				both;
+}
+.video-widgets {
+	min-height: 		230px;
+	background-color: 	gray;
+}
+
+
+.must-reads {
+	min-height: 		400px;
+	background-color: 	gray;
+}
+.sport-workouts {
+	min-height: 		275px;
+	background-color: 	gray;
+}
+.sport-conditioning {
+	min-height: 		240px;
+	background-color: 	gray;
+}
+.sport-experts {
+	min-height: 		450px;
+	background-color: 	gray;	
+}
+
+.pinterest {
+	background-color: 	gray;
+	min-height: 		800px;
+}
+
+/* Footer */
+.footer-title {
+	font-weight: 		bold;
+	color: 				#bf2f37;
+	font-size: 			100%;
+	padding-top: 		10px;
+}
+.footer-links {
+	list-style-type: 	none;
+	padding: 			0px;
+	margin: 			0px;
+	color: 				#FFF;
+	font-size: 			110%;
+}
+
+/* Remove */
+.img-block {
+	background-color: 	gray;
+	min-height: 		170px;
+}
+.img-magazine {
+	background-color: 	gray;
+	min-height: 		400px;
+}
+.img-expert {
+	background-color: 	gray;
+	min-height: 		120px;	
+}
+.img-trending {
+	background-color: 	gray;
+	min-height: 		168px;	
+}
+.img-author {
+	background-color: 	gray;
+	min-height: 		100px;	
+}
+.img-zergnet {
+	background-color: 	gray;
+	min-height: 		150px;
+}
+.article {
+	background-color: 	gray;
+	min-height: 		1500px;
+}
+
+
+
+
+
