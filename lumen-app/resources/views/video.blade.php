@@ -30,7 +30,7 @@
 </head>
 <body>
 
-	<div class="row condom">
+	<div class="row">
 
 		<div class="col-lg-2"></div>
 

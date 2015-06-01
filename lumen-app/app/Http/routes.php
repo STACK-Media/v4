@@ -19,10 +19,15 @@ $app->get('foo/bar', function() {
     return view('helloworld', ['name' => 'FooBar']);
 });
 
+$app->get('video/{video_id}/{video_slug}', [
+	'as' => 'video', 'uses' => 'App\Http\Controllers\VideoController@index'
+]);
 
+/*
 $app->get('video/{video_id}/{video_slug}', function($video_id, $video_slug) {
     return view('video', array('video_id' => $video_id, 'video_slug' => $video_slug));
 });
+*/
 
 /*
 // ****************************
