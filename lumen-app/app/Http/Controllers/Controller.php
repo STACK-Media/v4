@@ -4,14 +4,14 @@ use Laravel\Lumen\Routing\Controller as BaseController;
 
 class Controller extends BaseController
 {
+	protected 
+		$_theme    = 'v4', 
+		$_subtheme = '4w';
+
+
     public function __construct()
 	{
-
-		$theme    = 'v4';
-		$subtheme = '4w';
-
-		$this->_set_view_folders($theme, $subtheme);			
-
+		$this->_set_view_folders($this->_theme, $this->_subtheme);			
 	}
 
 	function _set_view_folders($theme, $subtheme = FALSE)
