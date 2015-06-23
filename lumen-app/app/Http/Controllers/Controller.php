@@ -14,7 +14,7 @@ class Controller extends BaseController
 		$this->_set_view_folders($this->_theme, $this->_subtheme);			
 	}
 
-	function _set_view_folders($theme, $subtheme = FALSE)
+	private function _set_view_folders($theme, $subtheme = FALSE)
 	{
 
 		if ( ! $theme):

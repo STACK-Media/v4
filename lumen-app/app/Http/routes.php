@@ -19,9 +19,19 @@ $app->get('foo/bar', function() {
     return view('helloworld', ['name' => 'FooBar']);
 });
 
-$app->get('video/{video_id}/{video_slug}', [
+$app->get('video/{id}/{slug}', [
 	'as' => 'video', 'uses' => 'App\Http\Controllers\VideoController@index'
 ]);
+
+$app->get('article/{id}/{slug}', [
+	'as' => 'article', 'uses' => 'App\Http\Controllers\ArticleController@index'
+]);
+
+$app->get('category/{id}/{slug}', [
+	'as' => 'category', 'uses' => 'App\Http\Controllers\CategoryController@index'
+]);
+
+
 
 /*
 $app->get('video/{video_id}/{video_slug}', function($video_id, $video_slug) {
