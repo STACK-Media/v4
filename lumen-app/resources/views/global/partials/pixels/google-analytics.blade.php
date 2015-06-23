@@ -1,1 +1,3 @@
-google-analytics.blade.php
+<?php
+
+echo 'google-analytics pixel<br>';

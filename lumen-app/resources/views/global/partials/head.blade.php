@@ -13,3 +13,11 @@
 
 <!-- Global CSS -->
 <link rel="stylesheet" href="/assets/css/global.css">
+
+<?php
+// include global pixels
+echo view('theme::partials.pixels.global');
+
+// include custom pixels
+echo view('theme::partials.pixels.custom');
+?>
