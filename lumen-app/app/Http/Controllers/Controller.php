@@ -5,13 +5,20 @@ use Laravel\Lumen\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
 	protected 
-		$_theme    = 'v4', 
+		$_theme    = 'stack', 
 		$_subtheme = '4w';
 
 
     public function __construct()
 	{
+		// set view folder heirarchy
 		$this->_set_view_folders($this->_theme, $this->_subtheme);			
+	
+		// define layout to use 
+		
+		// define global variable(s)
+
+		// grab widgets
 	}
 
 	private function _set_view_folders($theme, $subtheme = FALSE)
