@@ -27,7 +27,7 @@ $app->get('article/{id}/{slug}', [
 	'as' => 'article', 'uses' => 'App\Http\Controllers\ArticleController@index'
 ]);
 
-$app->get('category/{id}/{slug}', [
+$app->get('category/{slug}', [
 	'as' => 'category', 'uses' => 'App\Http\Controllers\CategoryController@index'
 ]);
 
