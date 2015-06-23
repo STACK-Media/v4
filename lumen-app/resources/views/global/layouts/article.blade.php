@@ -21,7 +21,7 @@ echo view('theme::partials.header');
 
 			</div>
 
-			<div class="row legroom event" data-name="adunit-Top" data-template="<?php echo $template; ?>">
+			<div class="row legroom event" data-name="adunit-Top" data-template="<?php echo @$template; ?>">
 
 				<div class="col-lg-12">
 
@@ -41,7 +41,7 @@ echo view('theme::partials.header');
 					foreach ($content AS $widget):
 					?>
 
-						<div class="row event" data-name="content-<?php echo $widget; ?>" data-template="<?php echo $template; ?>">
+						<div class="row event" data-name="content-<?php echo $widget; ?>" data-template="<?php echo @$template; ?>">
 
 							<div class="col-lg-12">
 								
@@ -68,11 +68,11 @@ echo view('theme::partials.header');
 					foreach ($sidebar AS $widget):
 					?>
 
-						<div class="row event" data-name="sidebar-<?php echo $widget; ?>" data-template="<?php echo $template; ?>">
+						<div class="row event" data-name="sidebar-<?php echo $widget; ?>" data-template="<?php echo @$template; ?>">
 
 							<div class="col-lg-12">
 
-								<?php include('widget/sidebar/'.$widget.'.php'); ?>
+								<?php //include('widget/sidebar/'.$widget.'.php'); ?>
 
 								<hr />
 
@@ -95,11 +95,11 @@ echo view('theme::partials.header');
 					foreach ($post_content AS $widget):
 					?>
 
-						<div class="row event" data-name="postcontent-<?php echo $widget; ?>" data-template="<?php echo $template; ?>">
+						<div class="row event" data-name="postcontent-<?php echo $widget; ?>" data-template="<?php echo @$template; ?>">
 
 							<div class="col-lg-12">
 
-								<?php include('widget/'.$widget.'.php'); ?>
+								<?php //include('widget/'.$widget.'.php'); ?>
 
 							</div>
 
