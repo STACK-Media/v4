@@ -1,1 +1,3 @@
-comscore.blade.php
+<?php
+
+echo 'comscore pixel<br>';
