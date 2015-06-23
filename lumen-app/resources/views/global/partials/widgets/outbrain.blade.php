@@ -2,7 +2,7 @@
 
 	<div class="col-xs-12">
 		
-		<h1>From Around The Web (Zergnet)</h1>
+		<h1>You Might Also Like (Outbrain)</h1>
 	
 	</div>
 

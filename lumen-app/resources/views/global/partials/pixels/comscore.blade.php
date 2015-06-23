@@ -1,3 +1,3 @@
 <?php
 
-echo 'conscore pixel<br>';
+echo 'comscore pixel<br>';

@@ -1,0 +1,1 @@
+<div class="social">newsletter optin</div>

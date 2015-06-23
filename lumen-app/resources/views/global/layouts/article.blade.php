@@ -1,4 +1,29 @@
 <?php
+
+// set dummy widgets
+$content 	= array(
+	'player',
+	'article',
+	'author',
+	'must-see',
+	'zergnet',
+	'outbrain'
+);
+
+$sidebar 	= array(
+	'featured-videos',
+	'newsletter',
+	'popular-videos',
+	'trending-block',
+	'outbrain-sidebar'
+);
+
+$post_content 	= array(
+	'pinterest',
+	'recommended'
+);
+
+
 echo view('theme::partials.header');
 ?>
 
@@ -36,7 +61,6 @@ echo view('theme::partials.header');
 			<div class="col-xs-12 col-sm-8 col-lg-8">
 
 				<?php
-				$content 	= array();
 				// iterate content widgets
 				foreach ($content AS $widget):
 				?>
@@ -45,7 +69,9 @@ echo view('theme::partials.header');
 
 						<div class="col-lg-12">
 							
-							<?php include('widget/content/'.$widget.'.php'); ?>						
+							<?php 
+							echo view('theme::partials.widgets.'.$widget);
+							?>						
 
 						</div>
 
@@ -63,7 +89,6 @@ echo view('theme::partials.header');
 			<div class="col-xs-12 col-sm-4 col-lg-4 sidebar">
 
 				<?php
-				$sidebar 	= array();
 				// iterate sidebar widgets
 				foreach ($sidebar AS $widget):
 				?>
@@ -72,7 +97,9 @@ echo view('theme::partials.header');
 
 						<div class="col-lg-12">
 
-							<?php //include('widget/sidebar/'.$widget.'.php'); ?>
+							<?php 
+							echo view('theme::partials.widgets.'.$widget);
+							?>		
 
 							<hr />
 
@@ -91,7 +118,6 @@ echo view('theme::partials.header');
 				
 				<?php
 				// iterate post content widgets
-				$post_content 	= array();
 				foreach ($post_content AS $widget):
 				?>
 
@@ -99,7 +125,9 @@ echo view('theme::partials.header');
 
 						<div class="col-lg-12">
 
-							<?php //include('widget/'.$widget.'.php'); ?>
+							<?php 
+							echo view('theme::partials.widgets.'.$widget);
+							?>		
 
 						</div>
 

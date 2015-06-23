@@ -1,1 +1,1 @@
-player.blade.php
+<div class="player">video player</div>
