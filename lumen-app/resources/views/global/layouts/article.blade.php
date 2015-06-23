@@ -25,7 +25,7 @@ echo view('theme::partials.header');
 
 				<div class="col-lg-12">
 
-					<?php include('widget/Top.php'); ?>
+					<?php //include('widget/Top.php'); ?>
 
 				</div>
 
