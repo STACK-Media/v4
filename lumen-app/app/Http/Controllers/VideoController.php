@@ -4,6 +4,6 @@ class VideoController extends Controller
 {
     function index($id, $slug = NULL)
     {
-    	return view('theme::layouts.video'); 
+    	return view('theme::layouts.video');
     }
 } 

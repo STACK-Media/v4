@@ -5,6 +5,6 @@ class ArticleController extends Controller
 
     function index($id, $slug = NULL)
     {
-    	return view('theme::partials.testing'); 
+    	return view('theme::layouts.article');
     }
 } 
