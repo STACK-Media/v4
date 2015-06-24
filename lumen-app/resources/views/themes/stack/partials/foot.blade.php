@@ -2,9 +2,7 @@
 
 	<div class="col-xs-12 col-sm-12">
 
-		<?php 
-		echo view('theme::partials.widgets.footer-links');
-		?>
+		@include('theme::partials.widgets.footer-links')
 
 	</div>
 

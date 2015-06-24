@@ -16,8 +16,8 @@
 
 <?php
 // include global pixels
-echo view('theme::partials.pixels.global');
-
-// include custom pixels
-echo view('theme::partials.pixels.custom');
+// include custom pixels@include('theme::partials.pixels.custom')
 ?>
+
+@include('theme::partials.pixels.global')
+

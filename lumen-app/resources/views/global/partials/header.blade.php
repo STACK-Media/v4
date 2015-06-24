@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" class="no-js"> <!--<![endif]-->
 <head>
 
-	<?php echo view('theme::partials.head'); ?>
+	@include('theme::partials.head')
 
 </head>
 <body>

@@ -1,5 +1,3 @@
-<?php
-
-echo view('theme::partials.pixels.comscore');
-echo view('theme::partials.pixels.google-analytics');
-echo view('theme::partials.pixels.yahoo');
+@include('theme::partials.pixels.comscore')
+@include('theme::partials.pixels.google-analytics')
+@include('theme::partials.pixels.yahoo')

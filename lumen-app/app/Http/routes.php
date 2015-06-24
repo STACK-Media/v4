@@ -50,6 +50,12 @@ $route_pages     = array(
 	)
 );
 
+
+$app->get('/', [
+	'as' => '/', 'uses' => 'App\Http\Controllers\HomeController@index'
+]);
+
+
 foreach ($route_pages as $route_key => $route_arr)
 {
 	$route_params = '';
@@ -71,19 +77,12 @@ foreach ($route_pages as $route_key => $route_arr)
 			$args = func_get_args();
 
 			// so far this only allows $slug
-			return App::make('App\Http\Controllers\\'.$route_arr['controller'])->subtheme($route_vertical,$route_arr['function'], $args);
+			return App::make('App\Http\Controllers\\'.$route_arr['controller'])->subtheme($route_vertical, $route_arr['function'], $args);
 
 		}));
 
 	endforeach;
 }
-
-
-$app->get('/', [
-	'as' => '/', 'uses' => 'App\Http\Controllers\HomeController@index'
-]);
-
-
 
 
 /*
