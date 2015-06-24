@@ -63,6 +63,17 @@ foreach ($route_pages as $route_key => $route_arr)
 	$app->get($route_key.'/'.$route_params, [
 		'as' => $route_key, 'uses' => 'App\Http\Controllers\\'.$route_arr['controller'].'@'.$route_arr['function']
 	]);
+
+	foreach ($route_verticals as $route_vertical):
+
+		$app->get($route_vertical.'/'.$route_key.'/'.$route_params, array('as' => $route_vertical.$route_key, function($slug) use ($route_vertical, $route_arr) {
+
+			// so far this only allows $slug
+			return App::make('App\Http\Controllers\\'.$route_arr['controller'])->subtheme($route_vertical,$route_arr['function'], $slug);
+
+		}));
+
+	endforeach;
 }
 
 /*
@@ -85,6 +96,11 @@ $app->get('tag/{slug}', [
 $app->get('sport/{slug}', [
 	'as' => 'sport', 'uses' => 'App\Http\Controllers\SportController@index'
 ]);
+
+$app->get('4w/category/{slug}', array('as' => '4wcategory', function($slug){
+	return App::make('App\Http\Controllers\TaxonomyController')->subtheme('4w','category', $slug);
+}));
+
 */
 
 $app->get('/', [
@@ -92,17 +108,8 @@ $app->get('/', [
 ]);
 
 
-$app->get('4w/category/{slug}', array('as' => '4wcategory', function($slug){
-	return App::make('App\Http\Controllers\TaxonomyController')->subtheme('4w','category', $slug);
-}));
 
 
-
-/*
-$app->get('video/{video_id}/{video_slug}', function($video_id, $video_slug) {
-    return view('video', array('video_id' => $video_id, 'video_slug' => $video_slug));
-});
-*/
 
 /*
 // ****************************
