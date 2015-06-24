@@ -76,37 +76,10 @@ foreach ($route_pages as $route_key => $route_arr)
 	endforeach;
 }
 
-/*
-$app->get('video/{id}/{slug}', [
-	'as' => 'video', 'uses' => 'App\Http\Controllers\VideoController@index'
-]);
-
-$app->get('article/{id}/{slug}', [
-	'as' => 'article', 'uses' => 'App\Http\Controllers\ArticleController@index'
-]);
-
-$app->get('category/{slug}', [
-	'as' => 'category', 'uses' => 'App\Http\Controllers\TaxonomyController@category'
-]);
-
-$app->get('tag/{slug}', [
-	'as' => 'category', 'uses' => 'App\Http\Controllers\TaxonomyController@tag'
-]);
-
-$app->get('sport/{slug}', [
-	'as' => 'sport', 'uses' => 'App\Http\Controllers\SportController@index'
-]);
-
-$app->get('4w/category/{slug}', array('as' => '4wcategory', function($slug){
-	return App::make('App\Http\Controllers\TaxonomyController')->subtheme('4w','category', $slug);
-}));
-
-*/
 
 $app->get('/', [
 	'as' => '/', 'uses' => 'App\Http\Controllers\HomeController@index'
 ]);
-
 
 
 
