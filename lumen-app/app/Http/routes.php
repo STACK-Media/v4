@@ -36,6 +36,11 @@ $app->get('/', [
 ]);
 
 
+
+
+
+
+
 /*
 $app->get('video/{video_id}/{video_slug}', function($video_id, $video_slug) {
     return view('video', array('video_id' => $video_id, 'video_slug' => $video_slug));
