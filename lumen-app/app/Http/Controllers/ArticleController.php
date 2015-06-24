@@ -30,6 +30,6 @@ class ArticleController extends PageController
 		);
 
 
-    	return $this->_load_layout('article', $page_data);
+    	return $this->_load_page_view('article', $page_data);
     }
 } 

@@ -5,27 +5,10 @@ use Laravel\Lumen\Routing\Controller as BaseController;
 class PageController extends BaseController
 {
 	protected 
-		$_theme       = 'stack', 
+		$_theme       = 'v4', 
 		$_subtheme    = '',
 		$_page_object = NULL,
 		$_view_folder = NULL;
-
-
-	/**
-	 * Loads a given layout with given page data.
-	 * Adds the current page object to the page data.
-	 * Called within child controllers.
-	 * @param  string : name of layout view file to load
-	 * @param  array : all page data to pass to view
-	 * @return string : html output
-	 */
-	protected function _load_layout($layout, $page_data = array())
-	{
-
-		$page_data['page'] = $this->_page_object;
-
-		return view('theme::layouts.'.$layout, $page_data);
-	}
 
     public function __construct()
 	{
@@ -76,5 +59,22 @@ class PageController extends BaseController
 		// create theme namespace
 		view()->addNameSpace('theme', $namespace);
 
+	}
+
+
+	/**
+	 * Loads a given layout with given page data.
+	 * Adds the current page object to the page data.
+	 * Called within child controllers.
+	 * @param  string : name of layout view file to load
+	 * @param  array : all page data to pass to view
+	 * @return string : html output
+	 */
+	protected function _load_page_view($page_view, $page_data = array())
+	{
+
+		$page_data['page'] = $this->_page_object;
+
+		return view('theme::'.$page_view, $page_data);
 	}
 }

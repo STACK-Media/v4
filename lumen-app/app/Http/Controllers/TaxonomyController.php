@@ -10,7 +10,7 @@ class TaxonomyController extends PageController
 
     	$this->_page_object = new Taxonomy($type, $slug, 'slug');
 
-    	return $this->_load_layout('category', array());
+    	return $this->_load_page_view('category', array());
     }
 
     function category($slug = NULL)
