@@ -28,7 +28,11 @@ $app->get('article/{id}/{slug}', [
 ]);
 
 $app->get('category/{slug}', [
-	'as' => 'category', 'uses' => 'App\Http\Controllers\CategoryController@index'
+	'as' => 'category', 'uses' => 'App\Http\Controllers\TaxonomyController@category'
+]);
+
+$app->get('tag/{slug}', [
+	'as' => 'category', 'uses' => 'App\Http\Controllers\TaxonomyController@tag'
 ]);
 
 
