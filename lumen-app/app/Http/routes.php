@@ -11,10 +11,6 @@
 |
 */
 
-$app->get('/', function() use ($app) {
-    return $app->welcome();
-});
-
 $app->get('foo/bar', function() {
     return view('helloworld', ['name' => 'FooBar']);
 });
@@ -35,6 +31,13 @@ $app->get('tag/{slug}', [
 	'as' => 'category', 'uses' => 'App\Http\Controllers\TaxonomyController@tag'
 ]);
 
+$app->get('sport/{slug}', [
+	'as' => 'sport', 'uses' => 'App\Http\Controllers\SportController@index'
+]);
+
+$app->get('/', [
+	'as' => '/', 'uses' => 'App\Http\Controllers\HomeController@index'
+]);
 
 
 /*
