@@ -2,17 +2,15 @@
 
 use App\Models\Taxonomy;
 
-class TaxonomyController extends Controller
+class TaxonomyController extends PageController
 {
 
     function index($type = 'category', $slug = NULL)
     {
 
-    	$tax_model = new Taxonomy($type, $slug, 'slug');
+    	$this->_page_object = new Taxonomy($type, $slug, 'slug');
 
-    	var_dump($tax_model->id);exit();
-
-    	return view('theme::layouts.category');
+    	return $this->_load_layout('category', array());
     }
 
     function category($slug = NULL)

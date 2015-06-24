@@ -1,6 +1,6 @@
 <?php namespace App\Http\Controllers;
 
-class SportController extends Controller
+class SportController extends PageController
 {
 
     function index($slug = NULL)

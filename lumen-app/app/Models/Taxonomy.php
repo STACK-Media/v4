@@ -5,7 +5,7 @@ use DB;
 class Taxonomy extends Model
 {
 
-	public $_object;
+	private $_object;
 
 	function __construct($type, $identifier, $identifier_type = 'slug')
 	{
@@ -19,7 +19,7 @@ class Taxonomy extends Model
 			// move this sanitation into a service?
 			$column = 'term_id';
 			$regex  = "/[^0-9]/";
-			
+
 		endif;
 
 		$value = preg_replace($regex, '', $identifier);
@@ -31,7 +31,7 @@ class Taxonomy extends Model
 	public function __get($attrib_name)
 	{
 
-		if ($this->_object->$attrib_name) {
+		if (is_object($this->_object) && $this->_object->$attrib_name) {
 			return $this->_object->$attrib_name;
 		}
 

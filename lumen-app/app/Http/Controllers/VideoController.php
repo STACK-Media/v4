@@ -1,6 +1,6 @@
 <?php namespace App\Http\Controllers;
 
-class VideoController extends Controller
+class VideoController extends PageController
 {
     function index($id, $slug = NULL)
     {
