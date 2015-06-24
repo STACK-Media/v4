@@ -12,19 +12,17 @@ class Taxonomy extends Model
 
 		$column = $identifier_type;
 		$value  = $identifier;
+		$regex  = "/[^a-z0-9-_]/";
 
-		if ($identifier_type == 'slug'):
-
-			// move this sanitation into a service?
-			$value  = preg_replace("/[^a-z0-9-_]/", '', strtolower($identifier));
-
-		else:
+		if ($identifier_type == 'id'):
 
 			// move this sanitation into a service?
 			$column = 'term_id';
-			$value  = preg_replace("/[^0-9]/", '', $identifier);
-
+			$regex  = "/[^0-9]/";
+			
 		endif;
+
+		$value = preg_replace($regex, '', $identifier);
 
 		$this->_object = $this->_get_by_column($type, $column, $value);
 
