@@ -6,7 +6,7 @@ class PageController extends BaseController
 {
 	protected 
 		$_theme       = 'stack', 
-		$_subtheme    = '4w',
+		$_subtheme    = '',
 		$_page_object = NULL;
 
 
@@ -38,9 +38,12 @@ class PageController extends BaseController
 		// grab widgets
 	}
 
-	public function vertical($subtheme, $function, $arg)
+	public function subtheme($subtheme, $function, $arg)
 	{
 		$this->_subtheme = $subtheme;
+		
+		$this->_set_view_folders($this->_theme, $this->_subtheme);
+
 		return $this->$function($arg);
 	}
 
