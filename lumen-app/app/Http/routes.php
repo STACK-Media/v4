@@ -11,10 +11,61 @@
 |
 */
 
-$app->get('foo/bar', function() {
-    return view('helloworld', ['name' => 'FooBar']);
-});
+$route_verticals = array('4w');
+$route_pages     = array(
+	'video' => array(
+		'controller' => 'VideoController',
+		'function'   => 'index',
+		'params'     => array(
+			'id', 'slug'
+		)
+	),
+	'article' => array(
+		'controller' => 'ArticleController',
+		'function'   => 'index',
+		'params'     => array(
+			'id', 'slug'
+		)
+	),
+	'category' => array(
+		'controller' => 'TaxonomyController',
+		'function'   => 'category',
+		'params'     => array(
+			'slug'
+		)
+	),
+	'tag' => array(
+		'controller' => 'TaxonomyController',
+		'function'   => 'tag',
+		'params'     => array(
+			'slug'
+		)
+	),
+	'sport' => array(
+		'controller' => 'SportController',
+		'function'   => 'index',
+		'params'     => array(
+			'slug'
+		)
+	)
+);
 
+foreach ($route_pages as $route_key => $route_arr)
+{
+	$route_params = '';
+	
+	if ($route_arr['params']):
+		
+		$route_params = '{'.implode('}/{',$route_arr['params']).'}';
+
+	endif;
+
+	$app->get($route_key.'/'.$route_params, [
+		'as' => $route_key, 'uses' => 'App\Http\Controllers\\'.$route_arr['controller'].'@'.$route_arr['function']
+	]);
+}
+
+/*
 $app->get('video/{id}/{slug}', [
 	'as' => 'video', 'uses' => 'App\Http\Controllers\VideoController@index'
 ]);
@@ -34,6 +85,7 @@ $app->get('tag/{slug}', [
 $app->get('sport/{slug}', [
 	'as' => 'sport', 'uses' => 'App\Http\Controllers\SportController@index'
 ]);
+*/
 
 $app->get('/', [
 	'as' => '/', 'uses' => 'App\Http\Controllers\HomeController@index'
