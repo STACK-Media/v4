@@ -38,6 +38,12 @@ class PageController extends BaseController
 		// grab widgets
 	}
 
+	public function vertical($subtheme, $function, $arg)
+	{
+		$this->_subtheme = $subtheme;
+		return $this->$function($arg);
+	}
+
 	private function _set_view_folders($theme, $subtheme = FALSE)
 	{
 

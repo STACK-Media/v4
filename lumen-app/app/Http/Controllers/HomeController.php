@@ -1,10 +1,10 @@
 <?php namespace App\Http\Controllers;
 
-class HomeController extends Controller
+class HomeController extends PageController
 {
 
     function index()
     {
-    	return view('theme::layouts.home');
+    	return $this->_load_layout('home', array());
     }
 } 

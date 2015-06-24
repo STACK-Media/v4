@@ -5,6 +5,7 @@ class SportController extends PageController
 
     function index($slug = NULL)
     {
-    	return view('theme::layouts.sport');
+
+    	return $this->_load_layout('sport', array());
     }
 } 

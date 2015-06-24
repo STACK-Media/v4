@@ -40,8 +40,9 @@ $app->get('/', [
 ]);
 
 
-
-
+$app->get('4w/category/{slug}', array('as' => '4wcategory', function($slug){
+	return App::make('App\Http\Controllers\TaxonomyController')->vertical('4w','category', $slug);
+}));
 
 
 

@@ -4,6 +4,6 @@ class VideoController extends PageController
 {
     function index($id, $slug = NULL)
     {
-    	return view('theme::layouts.video');
+    	return $this->_load_layout('video', array());
     }
 } 

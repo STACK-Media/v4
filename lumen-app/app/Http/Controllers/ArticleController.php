@@ -5,6 +5,6 @@ class ArticleController extends PageController
 
     function index($id, $slug = NULL)
     {
-    	return view('theme::layouts.article');
+    	return $this->_load_layout('article', array());
     }
 } 
