@@ -7,7 +7,8 @@ class PageController extends BaseController
 	protected 
 		$_theme       = 'stack', 
 		$_subtheme    = '',
-		$_page_object = NULL;
+		$_page_object = NULL,
+		$_view_folder = NULL;
 
 
 	/**
@@ -28,14 +29,12 @@ class PageController extends BaseController
 
     public function __construct()
 	{
+
+		$this->_view_folder = base_path().'/resources/views';
+
 		// set view folder heirarchy
 		$this->_set_view_folders($this->_theme, $this->_subtheme);			
 	
-		// define layout to use 
-		
-		// define global variable(s)
-
-		// grab widgets
 	}
 
 	public function subtheme($subtheme, $function, $args)
@@ -43,8 +42,8 @@ class PageController extends BaseController
 
 		$this->_subtheme = $subtheme;
 		
-		$this->_set_view_folders($this->_theme, $this->_subtheme);
-
+		view()->prependNameSpace('theme', array($this->_view_folder . '/themes/' . $this->_theme . '/subthemes/' . $subtheme));
+		
 		return call_user_func_array(array($this, $function), $args);
 
 	}
@@ -59,20 +58,18 @@ class PageController extends BaseController
 
 		endif;
 
-		$view_folder = base_path().'/resources/views';
-
 		// top-level theme paths
 		// cascade back to global folder
 		$namespace   = array(
-			$view_folder . '/themes/'.$theme,
-			$view_folder . '/global'
+			$this->_view_folder . '/themes/'.$theme,
+			$this->_view_folder . '/global'
 		);
 
 		if ($subtheme):
 
 			// add subtheme folder to theme namespace if provided
 			// will cascade back to theme, then global
-			array_unshift($namespace, $view_folder . '/themes/'.$theme.'/subthemes/'.$subtheme);
+			array_unshift($namespace, $this->_view_folder . '/themes/' . $theme . '/subthemes/' . $subtheme);
 
 		endif;
 

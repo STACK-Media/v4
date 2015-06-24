@@ -1,34 +1,7 @@
-<?php
-
-// set dummy widgets
-$content 	= array(
-	'player',
-	'article',
-	'author',
-	'must-see',
-	'zergnet',
-	'outbrain'
-);
-
-$sidebar 	= array(
-	'featured-videos',
-	'newsletter',
-	'popular-videos',
-	'trending-block',
-	'outbrain-sidebar'
-);
-
-$post_content 	= array(
-	'pinterest',
-	'recommended'
-);
-
-?>
 
 @include('theme::partials.header')
 
-
-<div class="row condom">
+<div class="row">
 
 	<div class="col-lg-2"></div>
 
