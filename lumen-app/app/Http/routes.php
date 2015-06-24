@@ -66,10 +66,12 @@ foreach ($route_pages as $route_key => $route_arr)
 
 	foreach ($route_verticals as $route_vertical):
 
-		$app->get($route_vertical.'/'.$route_key.'/'.$route_params, array('as' => $route_vertical.$route_key, function($slug) use ($route_vertical, $route_arr) {
+		$app->get($route_vertical.'/'.$route_key.'/'.$route_params, array('as' => $route_vertical.$route_key, function() use ($route_vertical, $route_arr) {
+
+			$args = func_get_args();
 
 			// so far this only allows $slug
-			return App::make('App\Http\Controllers\\'.$route_arr['controller'])->subtheme($route_vertical,$route_arr['function'], $slug);
+			return App::make('App\Http\Controllers\\'.$route_arr['controller'])->subtheme($route_vertical,$route_arr['function'], $args);
 
 		}));
 
