@@ -3,5 +3,7 @@
 <script src="/assets/js/viewport.js"></script>
 <script src="/assets/js/events.js"></script>
 
+@yield('widget-scripts')
+
 </body>
 </html>

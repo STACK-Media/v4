@@ -1,3 +1,15 @@
+@section('widget-styles')
+
+	<link href="http://www.recommended-widget-style.com/style.css" />
+
+@append
+
+@section('widget-scripts')
+
+	<script type="text/javascript" src="http://www.recommended-widget-style.com/javascript.js"></script>
+
+@append
+
 <div class="row">
 
 	<div class="col-xs-12">

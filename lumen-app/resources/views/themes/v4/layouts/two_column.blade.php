@@ -63,3 +63,6 @@
 	</div>		
 
 </div>
+
+
+@include('theme::partials.footer')

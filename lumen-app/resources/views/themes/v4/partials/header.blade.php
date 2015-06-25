@@ -8,5 +8,7 @@
 
 	@include('theme::partials.head')
 
+	@yield('widget-styles')
+
 </head>
 <body>
