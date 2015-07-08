@@ -4,9 +4,9 @@
 
 @append
 
-@section('widget-scripts')
+@section('widget-queued-scripts')
 
-	<script type="text/javascript" src="http://www.outbrain-sidebar-widget-style.com/javascript.js"></script>
+	{{!! Assets::queue('javascript', 'outbrain-sidebar-widget-style', 'http://www.outbrain-sidebar-widget-style-widget-style.com/javascript.js?append-test') }}
 
 @append
 

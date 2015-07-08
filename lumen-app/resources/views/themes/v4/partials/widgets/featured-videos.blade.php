@@ -4,9 +4,9 @@
 
 @append
 
-@section('widget-scripts')
+@section('widget-queued-scripts')
 
-	<script type="text/javascript" src="http://www.featured-videos-widget-style.com/javascript.js"></script>
+	{{!! Assets::queue('javascript', 'featured-videos-widget-style', 'http://www.featured-videos-widget-style-widget-style.com/javascript.js?append-test') }}
 
 @append
 

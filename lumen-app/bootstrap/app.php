@@ -79,6 +79,7 @@ $app->singleton(
 */
 
 // $app->register('App\Providers\AppServiceProvider');
+$app->register('App\Providers\AssetsProvider');
 
 /*
 |--------------------------------------------------------------------------
@@ -90,6 +91,8 @@ $app->singleton(
 | can respond to, as well as the controllers that may handle them.
 |
 */
+
+class_alias('App\Facades\Assets', 'Assets');
 
 require __DIR__.'/../app/Http/routes.php';
 

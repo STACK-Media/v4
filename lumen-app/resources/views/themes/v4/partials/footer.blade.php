@@ -3,39 +3,23 @@
 <script src="/assets/js/viewport.js"></script>
 <script src="/assets/js/events.js"></script>
 
-@yield('widget-scripts')
 
+@section('widget-queued-scripts')
 
-@section('widget-array-js')
+	@if(is_array(Assets::get('javascript')))
 
-	<?php if (isset($widget_scripts)): ?>
+		@foreach(Assets::get('javascript') as $key => $script)
 
-		{{count($widget_scripts)}}
-
-		@foreach($widget_scripts as $key => $val)
-
-			{{$val}}
+			<script type="text/javascript">{{$script}}</script>
 
 		@endforeach
 
-	<?php endif; ?>
-
-	parent?
-
-	<?php echo 'testing '. json_encode(\App\Models\TestHTML::get('javascript')) ?>
+	@endif
 
 @append
 
-@yield('widget-array-js')
+@yield('widget-queued-scripts')
 
-
-
-
-<?php /*
-@foreach($widget_scripts as $key => $val)
-	<script type="text/javascript" src="{{$val}}"></script>
-@endforeach
-*/ ?>
 
 </body>
 </html>

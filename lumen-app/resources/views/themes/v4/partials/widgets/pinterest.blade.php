@@ -4,9 +4,9 @@
 
 @append
 
-@section('widget-scripts')
+@section('widget-queued-scripts')
 
-	<script type="text/javascript" src="http://www.pinterest-widget-style.com/javascript.js"></script>
+	{{!! Assets::queue('javascript', 'pinterest-widget-style', 'http://www.pinterest-widget-style-widget-style.com/javascript.js?append-test') }}
 
 @append
 

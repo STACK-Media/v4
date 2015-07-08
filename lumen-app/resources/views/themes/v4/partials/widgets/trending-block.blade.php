@@ -4,9 +4,9 @@
 
 @append
 
-@section('widget-scripts')
+@section('widget-queued-scripts')
 
-	<script type="text/javascript" src="http://www.trending-block-widget-style.com/javascript.js"></script>
+	{{!! Assets::queue('javascript', 'trending-block-widget-style', 'http://www.trending-block-widget-style-widget-style.com/javascript.js?append-test') }}
 
 @append
 

@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use Assets;
+
 class ArticleController extends PageController
 {
 
@@ -28,7 +30,6 @@ class ArticleController extends PageController
 			'pinterest',
 			'recommended'
 		);
-
 
     	return $this->_load_page_view('article', $page_data);
     }

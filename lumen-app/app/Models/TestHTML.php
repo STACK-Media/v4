@@ -1,7 +1,5 @@
 <?php namespace App\Models;
 
-use DB;
-
 class TestHTML extends Model
 {
 

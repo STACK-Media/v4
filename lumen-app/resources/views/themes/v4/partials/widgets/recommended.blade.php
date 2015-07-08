@@ -1,31 +1,10 @@
-<?php /*
-@section('widget-styles')
 
-	<link href="http://www.recommended-widget-style.com/style.css" />
+@section('widget-queued-scripts')
 
-@append
-*/ ?>
-
-
-@section('widget-array-js')
-
-	<?php 
-
-	\App\Models\TestHTML::queue('javascript', 'recommended', 'http://www.recommended-widget-style.com/javascript.js?array-test');
-
-	$widget_scripts['key'] = 'http://www.recommended-widget-style.com/javascript.js?array-test'; ?>
-	
-	overwrite? {{ count($widget_scripts) }}
+	{{!! Assets::queue('javascript', 'recommended', 'http://www.recommended-widget-style.com/javascript.js?append-test') }}
 
 @append
 
-<?php /*
-@section('widget-scripts')
-
-	<script type="text/javascript" src="http://www.recommended-widget-style.com/javascript.js"></script>
-
-@append
-*/ ?>
 
 <div class="row">
 
