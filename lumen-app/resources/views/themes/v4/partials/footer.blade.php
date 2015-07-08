@@ -5,5 +5,35 @@
 
 @yield('widget-scripts')
 
+
+@section('widget-array-js')
+
+	<?php if (isset($widget_scripts)): ?>
+
+		{{count($widget_scripts)}}
+
+		@foreach($widget_scripts as $key => $val)
+
+			{{$val}}
+
+		@endforeach
+
+	<?php endif; ?>
+
+	parent?
+
+@append
+
+@yield('widget-array-js')
+
+
+
+
+<?php /*
+@foreach($widget_scripts as $key => $val)
+	<script type="text/javascript" src="{{$val}}"></script>
+@endforeach
+*/ ?>
+
 </body>
 </html>

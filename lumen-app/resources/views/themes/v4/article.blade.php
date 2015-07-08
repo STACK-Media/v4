@@ -1,6 +1,7 @@
 
 @extends('theme::layouts.two_column')
 
+
 @section('content-widgets')
 	
 	<?php // iterate content widgets ?>
@@ -17,8 +18,7 @@
 		</div>		
 
 	@endforeach	
-
-
+	
 @stop
 
 

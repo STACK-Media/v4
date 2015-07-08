@@ -1,14 +1,27 @@
+<?php /*
 @section('widget-styles')
 
 	<link href="http://www.recommended-widget-style.com/style.css" />
 
 @append
+*/ ?>
 
+
+@section('widget-array-js')
+
+	<?php $widget_scripts['key'] = 'http://www.recommended-widget-style.com/javascript.js?array-test'; ?>
+	
+	overwrite? {{count($widget_scripts)}}
+
+@append
+
+<?php /*
 @section('widget-scripts')
 
 	<script type="text/javascript" src="http://www.recommended-widget-style.com/javascript.js"></script>
 
 @append
+*/ ?>
 
 <div class="row">
 
