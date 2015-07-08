@@ -1,14 +1,6 @@
-@section('widget-styles')
+{{!! Assets::queue('stylesheet', 'trending-block', 'http://www.trending-block-widget-style.com/style.css') }}
 
-	<link href="http://www.trending-block-widget-style.com/style.css" />
-
-@append
-
-@section('widget-queued-scripts')
-
-	{{!! Assets::queue('javascript', 'trending-block-widget-style', 'http://www.trending-block-widget-style-widget-style.com/javascript.js?append-test') }}
-
-@append
+{{!! Assets::queue('javascript', 'trending-block', 'http://www.trending-block-widget-style-widget-style.com/javascript.js?append-test') }}
 
 <div class="row">
 

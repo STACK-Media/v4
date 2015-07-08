@@ -1,14 +1,6 @@
-@section('widget-styles')
+{{!! Assets::queue('stylesheet', 'pinterest', 'http://www.pinterest-widget-style.com/style.css') }}
 
-	<link href="http://www.pinterest-widget-style.com/style.css" />
-
-@append
-
-@section('widget-queued-scripts')
-
-	{{!! Assets::queue('javascript', 'pinterest-widget-style', 'http://www.pinterest-widget-style-widget-style.com/javascript.js?append-test') }}
-
-@append
+{{!! Assets::queue('javascript', 'pinterest', 'http://www.pinterest-widget-style-widget-style.com/javascript.js?append-test') }}
 
 <div class="row">
 

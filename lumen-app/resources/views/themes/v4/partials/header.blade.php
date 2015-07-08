@@ -8,7 +8,15 @@
 
 	@include('theme::partials.head')
 
-	@yield('widget-styles')
+	@if(is_array(Assets::get('stylesheet')))
+
+		@foreach(Assets::get('stylesheet') as $key => $sheet)
+
+			<link rel="stylesheet" href="{{$sheet}}">
+
+		@endforeach
+
+	@endif
 
 </head>
 <body>

@@ -1,14 +1,6 @@
-@section('widget-styles')
+{{!! Assets::queue('stylesheet', 'popular-videos', 'http://www.popular-videos-widget-style.com/style.css') }}
 
-	<link href="http://www.popular-videos-widget-style.com/style.css" />
-
-@append
-
-@section('widget-queued-scripts')
-
-	{{!! Assets::queue('javascript', 'popular-videos-widget-style', 'http://www.popular-videos-widget-style-widget-style.com/javascript.js?append-test') }}
-
-@append
+{{!! Assets::queue('javascript', 'popular-videos', 'http://www.popular-videos-widget-style-widget-style.com/javascript.js?append-test') }}
 
 <div class="row">
 

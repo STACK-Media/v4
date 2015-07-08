@@ -1,10 +1,5 @@
 
-@section('widget-queued-scripts')
-
-	{{!! Assets::queue('javascript', 'recommended', 'http://www.recommended-widget-style.com/javascript.js?append-test') }}
-
-@append
-
+{{!! Assets::queue('javascript', 'recommended', 'http://www.recommended-widget-style.com/javascript.js?append-test') }}
 
 <div class="row">
 

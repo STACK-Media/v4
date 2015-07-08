@@ -4,21 +4,15 @@
 <script src="/assets/js/events.js"></script>
 
 
-@section('widget-queued-scripts')
+@if(is_array(Assets::get('javascript')))
 
-	@if(is_array(Assets::get('javascript')))
+	@foreach(Assets::get('javascript') as $key => $script)
 
-		@foreach(Assets::get('javascript') as $key => $script)
+		<script type="text/javascript" src="{{$script}}"></script>
 
-			<script type="text/javascript">{{$script}}</script>
+	@endforeach
 
-		@endforeach
-
-	@endif
-
-@append
-
-@yield('widget-queued-scripts')
+@endif
 
 
 </body>

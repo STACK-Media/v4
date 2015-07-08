@@ -1,14 +1,6 @@
-@section('widget-styles')
+{{!! Assets::queue('stylesheet', 'zergnet', 'http://www.zergnet-widget-style.com/style.css') }}
 
-	<link href="http://www.zergnet-widget-style.com/style.css" />
-
-@append
-
-@section('widget-queued-scripts')
-
-	{{!! Assets::queue('javascript', 'zergnet-widget-style', 'http://www.zergnet-widget-style-widget-style.com/javascript.js?append-test') }}
-
-@append
+{{!! Assets::queue('javascript', 'zergnet', 'http://www.zergnet-widget-style-widget-style.com/javascript.js?append-test') }}
 
 <div class="row">
 

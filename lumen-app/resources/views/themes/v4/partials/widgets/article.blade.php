@@ -1,14 +1,6 @@
-@section('widget-styles')
+{{!! Assets::queue('stylesheet', 'article', 'http://www.article-widget-style.com/style.css') }}
 
-	<link href="http://www.article-widget-style.com/style.css" />
-
-@append
-
-@section('widget-queued-scripts')
-
-	{{!! Assets::queue('javascript', 'article-widget-style', 'http://www.article-widget-style-widget-style.com/javascript.js?append-test') }}
-
-@append
+{{!! Assets::queue('javascript', 'article', 'http://www.article-widget-style-widget-style.com/javascript.js?append-test') }}
 
 <div class="spacer"></div>
 <div class="article">article content</div>

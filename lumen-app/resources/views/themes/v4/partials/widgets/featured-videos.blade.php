@@ -1,14 +1,6 @@
-@section('widget-styles')
+{{!! Assets::queue('stylesheet', 'featured-videos', 'http://www.featured-videos-widget-style.com/style.css') }}
 
-	<link href="http://www.featured-videos-widget-style.com/style.css" />
-
-@append
-
-@section('widget-queued-scripts')
-
-	{{!! Assets::queue('javascript', 'featured-videos-widget-style', 'http://www.featured-videos-widget-style-widget-style.com/javascript.js?append-test') }}
-
-@append
+{{!! Assets::queue('javascript', 'featured-videos', 'http://www.featured-videos-widget-style-widget-style.com/javascript.js?append-test') }}
 
 <div class="row">
 
