@@ -22,6 +22,8 @@
 
 	parent?
 
+	<?php echo 'testing '. json_encode(\App\Models\TestHTML::get('javascript')) ?>
+
 @append
 
 @yield('widget-array-js')

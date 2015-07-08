@@ -9,9 +9,13 @@
 
 @section('widget-array-js')
 
-	<?php $widget_scripts['key'] = 'http://www.recommended-widget-style.com/javascript.js?array-test'; ?>
+	<?php 
+
+	\App\Models\TestHTML::queue('javascript', 'recommended', 'http://www.recommended-widget-style.com/javascript.js?array-test');
+
+	$widget_scripts['key'] = 'http://www.recommended-widget-style.com/javascript.js?array-test'; ?>
 	
-	overwrite? {{count($widget_scripts)}}
+	overwrite? {{ count($widget_scripts) }}
 
 @append
 
