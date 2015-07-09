@@ -1,6 +1,7 @@
-{{!! Assets::queue('stylesheet', 'popular-videos', 'http://www.popular-videos-widget-style.com/style.css') }}
+{{!! Assets::queue('stylesheet', 'popular-videos', '/assets/widgets/css/popular-videos.css') }}
 
-{{!! Assets::queue('javascript', 'popular-videos', 'http://www.popular-videos-widget-style-widget-style.com/javascript.js?append-test') }}
+{{!! Assets::queue('javascript', 'popular-videos', '/assets/widgets/js/popular-videos.js') }}
+
 
 <div class="row">
 
@@ -20,12 +21,8 @@
 
 	</div>
 
-	<div class="col-xs-6">
-
-		<a href="#">Path to the Pros: Comeback Kids</a>
-		<p>Views: 1,903,546</p>
-
-	</div>
+	<a href="#">Path to the Pros: Comeback Kids</a>
+	<p>Views: 1,903,546</p>
 
 </div>
 
@@ -37,12 +34,8 @@
 
 	</div>
 
-	<div class="col-xs-6">
-
-		<a href="#">Path to the Pros: Comeback Kids</a>
-		<p>Views: 1,903,546</p>
-
-	</div>
+	<a href="#">Path to the Pros: Comeback Kids</a>
+	<p>Views: 1,903,546</p>
 
 </div>
 
@@ -54,12 +47,8 @@
 
 	</div>
 
-	<div class="col-xs-6">
-
-		<a href="#">Path to the Pros: Comeback Kids</a>
-		<p>Views: 1,903,546</p>
-
-	</div>
+	<a href="#">Path to the Pros: Comeback Kids</a>
+	<p>Views: 1,903,546</p>
 
 </div>
 
@@ -71,12 +60,8 @@
 
 	</div>
 
-	<div class="col-xs-6">
-
-		<a href="#">Path to the Pros: Comeback Kids</a>
-		<p>Views: 1,903,546</p>
-
-	</div>
+	<a href="#">Path to the Pros: Comeback Kids</a>
+	<p>Views: 1,903,546</p>
 
 </div>
 
@@ -88,12 +73,8 @@
 
 	</div>
 
-	<div class="col-xs-6">
-
-		<a href="#">Path to the Pros: Comeback Kids</a>
-		<p>Views: 1,903,546</p>
-
-	</div>
+	<a href="#">Path to the Pros: Comeback Kids</a>
+	<p>Views: 1,903,546</p>
 
 </div>
 

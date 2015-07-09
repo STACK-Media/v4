@@ -1,3 +1,1 @@
-<?php
-
-echo 'adknowledge pixel<br>';
+<!-- adknowledge pixel -->

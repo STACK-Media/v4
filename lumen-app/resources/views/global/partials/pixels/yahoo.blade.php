@@ -1,3 +1,1 @@
-<?php
-
-echo 'yahoo pixel<br>';
+<!-- yahoo pixel -->

@@ -1,3 +1,1 @@
-<?php
-
-echo 'google-analytics pixel<br>';
+<!-- google-analytics pixel -->

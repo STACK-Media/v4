@@ -1,66 +1,61 @@
 
 @include('theme::partials.header')
 
-<div class="row">
+<div class="container">
 
-	<div class="col-lg-offset-2 col-lg-8 main">
+	<div class="row legroom">
 
-		<div class="row">
+		<div class="col-lg-12">
 
-			<div class="col-lg-12">
-
-				@include('theme::partials.navbar')
-
-			</div>
+			@include('theme::partials.navbar')
 
 		</div>
 
-		<div class="row legroom event" data-name="adunit-Top" data-template="{{$template or "default"}}">
+	</div>
 
-			<div class="col-lg-12">
+	<?php /*
+	<div class="row event" data-name="adunit-Top" data-template="{{$template or "default"}}">
 
-				<?php //include('widget/Top.php'); ?>
+		<div class="col-lg-12">
 
-			</div>
+			//include('widget/Top.php');
+
+		</div>
+
+	</div>
+
+	*/ ?>
+
+	<div class="row panel headroom">
+
+		<div class="col-xs-12 col-md-8 col-lg-8">
+
+			@yield('content-widgets')
 
 		</div>
 
-		<div class="row panel headroom">
+		<!-- Sidebar -->
+		<div class="col-xs-12 col-md-4 col-lg-4 sidebar">
 
-			<div class="col-xs-12 col-sm-8 col-lg-8">
-
-				@yield('content-widgets')
-
-
-				<?php // wtf is this matt ?>
-				<div class="spacer"></div>		
-
-			</div>
-
-			<!-- Sidebar -->
-			<div class="col-xs-12 col-sm-4 col-lg-4 sidebar">
-
-				@yield('sidebar-widgets')
-
-			</div>
-
-
-			<div class="col-xs-12">
-
-				@yield('post-content-widgets')
-	
-			</div>				
-
-
-		</div>		
-
-		<div class="footer headroom legroom">
-
-			@include('theme::partials.foot')
+			@yield('sidebar-widgets')
 
 		</div>
+
+
+		<div class="col-xs-12">
+
+			@yield('post-content-widgets')
+
+		</div>				
+
 
 	</div>		
+
+	<div class="footer headroom legroom">
+
+		@include('theme::partials.foot')
+
+	</div>	
 
 </div>
 

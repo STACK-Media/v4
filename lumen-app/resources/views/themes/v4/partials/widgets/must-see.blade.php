@@ -1,18 +1,14 @@
-{{!! Assets::queue('stylesheet', 'must-see', 'http://www.must-see-widget-style.com/style.css') }}
+{{!! Assets::queue('stylesheet', 'must-see', '/assets/widgets/css/must-see.css') }}
 
-{{!! Assets::queue('javascript', 'must-see', 'http://www.must-see-widget-style-widget-style.com/javascript.js?append-test') }}
+{{!! Assets::queue('javascript', 'must-see', '/assets/widgets/js/must-see.js') }}
 
-<div class="row">
+<div class="row legroom">
 
 	<div class="col-xs-12">
 		
 		<h1>Must See</h1>
 	
 	</div>
-
-</div>
-
-<div class="row">
 
 	<div class="col-sm-4">
 
@@ -42,5 +38,3 @@
 	</div>	
 
 </div>
-
-<div class="spacer"></div>

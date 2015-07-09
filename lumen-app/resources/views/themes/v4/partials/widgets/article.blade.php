@@ -1,8 +1,7 @@
-{{!! Assets::queue('stylesheet', 'article', 'http://www.article-widget-style.com/style.css') }}
+{{!! Assets::queue('stylesheet', 'article', '/assets/widgets/css/article.css') }}
 
-{{!! Assets::queue('javascript', 'article', 'http://www.article-widget-style-widget-style.com/javascript.js?append-test') }}
+{{!! Assets::queue('javascript', 'article', '/assets/widgets/js/article.js') }}
 
-<div class="spacer"></div>
-<div class="article">article content</div>
-<hr />
-<div class="spacer"></div>
+<div class="headroom">
+	<div class="article">article content</div>
+</div>

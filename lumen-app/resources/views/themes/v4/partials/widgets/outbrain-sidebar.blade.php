@@ -1,6 +1,6 @@
-{{!! Assets::queue('stylesheet', 'outbrain-sidebar', 'http://www.outbrain-sidebar-widget-style.com/style.css') }}
+{{!! Assets::queue('stylesheet', 'outbrain-sidebar', '/assets/widgets/css/outbrain-sidebar.css') }}
 
-{{!! Assets::queue('javascript', 'outbrain', 'http://www.outbrain-sidebar-widget-style-widget-style.com/javascript.js?append-test') }}
+{{!! Assets::queue('javascript', 'outbrain', '/assets/widgets/js/outbrain-sidebar.js') }}
 
 <div class="row">
 

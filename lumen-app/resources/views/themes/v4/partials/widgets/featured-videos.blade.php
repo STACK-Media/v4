@@ -1,6 +1,6 @@
-{{!! Assets::queue('stylesheet', 'featured-videos', 'http://www.featured-videos-widget-style.com/style.css') }}
+{{!! Assets::queue('stylesheet', 'featured-videos', '/assets/widgets/css/featured-videos.css') }}
 
-{{!! Assets::queue('javascript', 'featured-videos', 'http://www.featured-videos-widget-style-widget-style.com/javascript.js?append-test') }}
+{{!! Assets::queue('javascript', 'featured-videos', '/assets/widgets/js/featured-videos.js') }}
 
 <div class="row">
 
@@ -10,11 +10,7 @@
 	
 	</div>
 
-</div>
-
-<div class="row">
-
-	<div class="col-lg-12 event" data-name="1001" data-template="sidebar-featured">
+	<div class="col-xs-12 event" data-name="1001" data-template="sidebar-featured">
 
 		<div class="img-block"></div>
 		<a href="#">Path to the Pros: Comeback Kids</a>
@@ -22,7 +18,7 @@
 
 	</div>
 
-	<div class="col-lg-12 event" data-name="1002" data-template="sidebar-featured">
+	<div class="col-xs-12 event" data-name="1002" data-template="sidebar-featured">
 
 		<div class="img-block"></div>
 		<a href="#">Path to the Pros: Comeback Kids</a>
@@ -30,7 +26,7 @@
 
 	</div>
 
-	<div class="col-lg-12 event" data-name="1003" data-template="sidebar-featured">
+	<div class="col-xs-12 event" data-name="1003" data-template="sidebar-featured">
 
 		<div class="img-block"></div>
 		<a href="#">Path to the Pros: Comeback Kids</a>

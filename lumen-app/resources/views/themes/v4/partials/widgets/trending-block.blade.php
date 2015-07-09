@@ -1,6 +1,6 @@
-{{!! Assets::queue('stylesheet', 'trending-block', 'http://www.trending-block-widget-style.com/style.css') }}
+{{!! Assets::queue('stylesheet', 'trending-block', '/assets/widgets/css/trending-block.css') }}
 
-{{!! Assets::queue('javascript', 'trending-block', 'http://www.trending-block-widget-style-widget-style.com/javascript.js?append-test') }}
+{{!! Assets::queue('javascript', 'trending-block', '/assets/widgets/js/trending-block.js') }}
 
 <div class="row">
 
@@ -12,7 +12,7 @@
 
 </div>
 
-<div class="row">
+<div class="row legroom">
 
 	<div class="col-xs-12">
 
@@ -22,9 +22,7 @@
 
 </div>
 
-<div class="spacer"></div>
-
-<div class="row">
+<div class="row legroom">
 
 	<div class="col-xs-12">
 
@@ -34,9 +32,7 @@
 
 </div>
 
-<div class="spacer"></div>
-
-<div class="row">
+<div class="row legroom">
 
 	<div class="col-xs-12">
 
@@ -46,9 +42,7 @@
 
 </div>
 
-<div class="spacer"></div>
-
-<div class="row">
+<div class="row legroom">
 
 	<div class="col-xs-12">
 
@@ -58,9 +52,7 @@
 
 </div>
 
-<div class="spacer"></div>
-
-<div class="row">
+<div class="row legroom">
 
 	<div class="col-xs-12">
 
@@ -69,5 +61,3 @@
 	</div>
 
 </div>
-
-<div class="spacer"></div>

@@ -19,9 +19,6 @@ hr {
 }
 
 /* Content */
-.condom {
-
-}
 .main {
 	max-width: 			1024px;
 }
@@ -100,7 +97,16 @@ hr {
 	min-height: 		230px;
 	background-color: 	gray;
 }
+.center-txt {
+	text-align:center;
+}
 
+.center-margins {
+	margin-left:auto;margin-right:auto;
+}
+.xs-no-gutters {
+	padding-left:0;padding-right:0;
+}
 
 .must-reads {
 	min-height: 		400px;
@@ -123,6 +129,10 @@ hr {
 	background-color: 	gray;
 	min-height: 		800px;
 }
+.dashed-bottom {
+	border-bottom:1px dashed #000;
+}
+
 
 /* Footer */
 .footer-title {
@@ -171,5 +181,6 @@ hr {
 
 
 
-
-
+@media (min-width:768px){
+	.sm-right-gutter {padding-right:15px;}
+}

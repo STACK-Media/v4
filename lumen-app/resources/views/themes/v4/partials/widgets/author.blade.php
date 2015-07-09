@@ -1,24 +1,27 @@
-{{!! Assets::queue('stylesheet', 'author', 'http://www.author-widget-style.com/style.css') }}
+{{!! Assets::queue('stylesheet', 'author', '/assets/widgets/css/author.css') }}
 
-{{!! Assets::queue('javascript', 'author', 'http://www.author-widget-style-widget-style.com/javascript.js?append-test') }}
+{{!! Assets::queue('javascript', 'author', '/assets/widgets/js/author.js') }}
 
 
-<div class="row">
+<div class="row headroom">
 
-	<div class="col-sm-3">
+	<div class="col-xs-12">
 
-		<div class="img-author"></div>
+		<div class="dashed-bottom">
 
-	</div>
+			<div class="col-sm-3 xs-no-gutters sm-right-gutter legroom">
 
-	<div class="col-sm-9">
+				<div class="img-author"></div>
 
-		<p class="small"><a href="">Jordan Zirm</a> Jordan Zirm is an Associate Content Director for STACK. After earning his BS in Journalism from the University of Missouri, he spent time writing for...</p>
-		<p><a href="#">Read more about Jordan</a></p>
+			</div>
+
+			<p class="small"><a href="">Jordan Zirm</a> Jordan Zirm is an Associate Content Director for STACK. After earning his BS in Journalism from the University of Missouri, he spent time writing for...</p>
+			<p><a href="#">Read more about Jordan</a></p>
+
+			<div class="clearfix"></div>
+
+		</div>
 
 	</div>
 
 </div>
-
-<hr />
-<div class="spacer"></div>

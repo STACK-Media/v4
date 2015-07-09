@@ -1,17 +1,13 @@
 
-{{!! Assets::queue('javascript', 'recommended', 'http://www.recommended-widget-style.com/javascript.js?append-test') }}
+{{!! Assets::queue('javascript', 'recommended', '/assets/js/widgets/recommended.js') }}
 
-<div class="row">
+<div class="row legroom">
 
 	<div class="col-xs-12">
 		
 		<h1>Latest Articles by Sara Haas</h1>
 	
 	</div>
-
-</div>
-
-<div class="row">
 
 	<div class="col-sm-4">
 
@@ -56,5 +52,3 @@
 	</div>
 
 </div>
-
-<div class="spacer"></div>

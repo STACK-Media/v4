@@ -24,16 +24,33 @@
 
 @section('sidebar-widgets')
 
-	<?php // iterate sidebar widgets ?>
+	<?php
+	$num_widgets = 0;
+	 // iterate sidebar widgets ?>
 	@foreach ($sidebar AS $widget)
+
+		<?php 
+		$num_widgets++; 
+
+		$headroom_class = 'headroom';
+
+		if ($num_widgets === 1):
+
+			$headroom_class = '';
+
+		endif;
+
+		?>
 
 		<div class="row event" data-name="sidebar-{{$widget}}" data-template="{{$template or "default"}}">
 
-			<div class="col-lg-12">
+			<div class="col-xs-12">
 
-				@include('theme::partials.widgets.'.$widget)		
+				<div class="dashed-bottom legroom {{$headroom_class}}">
 
-				<hr />
+					@include('theme::partials.widgets.'.$widget)		
+
+				</div>
 
 			</div>
 

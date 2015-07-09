@@ -1,3 +1,1 @@
-<?php
-
-echo 'OAS include<br>';
+<!-- OAS include -->

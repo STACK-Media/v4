@@ -1,6 +1,10 @@
-{{!! Assets::queue('stylesheet', 'player', 'http://www.player-widget-style.com/style.css') }}
+{{!! Assets::queue('stylesheet', 'player', '/assets/widgets/css/player.css') }}
 
-{{!! Assets::queue('javascript', 'player', 'http://www.player-widget-style-widget-style.com/javascript.js?append-test') }}
+{{!! Assets::queue('javascript', 'player', '/assets/widgets/js/player.js') }}
 
 
-<div class="player">video player</div>
+<div class="legroom dashed-bottom">
+
+	<div class="player">video player</div>
+
+</div>

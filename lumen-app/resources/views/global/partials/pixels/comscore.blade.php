@@ -1,3 +1,1 @@
-<?php
-
-echo 'comscore pixel<br>';
+<!-- comscore pixel -->
