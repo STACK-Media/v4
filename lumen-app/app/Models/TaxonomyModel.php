@@ -2,43 +2,10 @@
 
 use DB;
 
-class Taxonomy extends Model
+class TaxonomyModel extends Model
 {
 
-	private $_object;
-
-	function __construct($type, $identifier, $identifier_type = 'slug')
-	{
-
-		$column = $identifier_type;
-		$value  = $identifier;
-		$regex  = "/[^a-z0-9-_]/";
-
-		if ($identifier_type == 'id'):
-
-			// move this sanitation into a service?
-			$column = 'term_id';
-			$regex  = "/[^0-9]/";
-
-		endif;
-
-		$value = preg_replace($regex, '', $identifier);
-
-		$this->_object = $this->_get_by_column($type, $column, $value);
-
-	}
-
-	public function __get($attrib_name)
-	{
-
-		if (is_object($this->_object) && $this->_object->$attrib_name) {
-			return $this->_object->$attrib_name;
-		}
-
-		return NULL;
-	}
-
-	private function _get_by_column($type, $column, $value)
+	static function get_by_column($type, $column, $value)
 	{
 		return DB::table('wp_terms')
     		->select(

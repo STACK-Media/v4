@@ -3,5 +3,10 @@
 class Service
 {
 
+	function __construct()
+	{
+		
+	}
+
 	
 } 

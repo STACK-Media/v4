@@ -1,6 +1,8 @@
-<?php namespace App\Http\Controllers;
+<?php 
 
-use Assets;
+namespace App\Http\Controllers;
+
+use App\Services\Cacheturbator as Cache;
 
 class ArticleController extends PageController
 {
