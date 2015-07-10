@@ -2,6 +2,8 @@
 
 use Laravel\Lumen\Routing\Controller as BaseController;
 use App\Services\Cacheturbator as Cacher;
+use App\Services\Widgets;
+use Request;
 
 class PageController extends BaseController
 {
@@ -21,12 +23,19 @@ class PageController extends BaseController
 	
 	}
 
-	protected function _set_page_data($class, $args)
+	protected function _set_page_object($class, $args)
 	{
 
 		$this->_page_object = new Cacher($class);
     	$this->_page_object->initiate($args);
 
+	}
+
+	protected function _get_widgets($page_type)
+	{
+		$widget_service       = new Cacher(new Widgets());
+
+        return $widget_service->get_list($page_type, $this->_page_object, Request::all());
 	}
 
 	public function subtheme($subtheme, $function, $args)
