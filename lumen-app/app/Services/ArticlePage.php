@@ -2,11 +2,20 @@
 
 use App\Models\ArticleModel;
 
-class Article extends Page
+class ArticlePage extends Page
 {
 
-	function initiate($id, $type = 'publish')
+	function initiate($args = array())
 	{
+
+		$paramlist = array(
+			'id'   => NULL, 
+			'type' => 'publish'
+		);
+		
+		$args      = array_merge($paramlist, $args);
+		extract($args);
+
 
 		$id = preg_replace("/[^0-9]/", '', $id);
 

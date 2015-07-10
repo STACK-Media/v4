@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\Article;
+use App\Services\ArticlePage;
 use App\Services\Cacheturbator as Cacher;
 
 class ArticleController extends PageController
@@ -13,8 +13,10 @@ class ArticleController extends PageController
 
     	$status = 'publish';
 
-    	$this->_page_object = new Cacher(new Article());
-    	$this->_page_object->initiate($id, 'publish');
+    	$this->_set_page_data(new ArticlePage(), array(
+			'id'   => $id, 
+			'type' => 'publish'
+		));
 
     	echo $this->_page_object->name;
 
@@ -40,6 +42,8 @@ class ArticleController extends PageController
     		)
     	);
 
-    	return $this->_load_page_view('article', $widgets);
+    	$page_data['widgets'] = $widgets;
+
+    	return $this->_load_page_view('article', $page_data);
     }
 } 

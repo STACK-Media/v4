@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use Laravel\Lumen\Routing\Controller as BaseController;
+use App\Services\Cacheturbator as Cacher;
 
 class PageController extends BaseController
 {
@@ -18,6 +19,14 @@ class PageController extends BaseController
 		// set view folder heirarchy
 		$this->_set_view_folders($this->_theme, $this->_subtheme);			
 	
+	}
+
+	protected function _set_page_data($class, $args)
+	{
+
+		$this->_page_object = new Cacher($class);
+    	$this->_page_object->initiate($args);
+
 	}
 
 	public function subtheme($subtheme, $function, $args)

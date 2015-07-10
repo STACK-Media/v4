@@ -1,6 +1,6 @@
 <?php namespace App\Http\Controllers;
 
-use App\Services\Taxonomy;
+use App\Services\TaxonomyPage;
 use App\Services\Cacheturbator as Cacher;
 
 class TaxonomyController extends PageController
@@ -9,8 +9,11 @@ class TaxonomyController extends PageController
     function index($type = 'category', $slug = NULL)
     {
 
-        $this->_page_object = new Cacher(new Taxonomy());
-    	$this->_page_object->initiate($type, $slug, 'slug');
+        $this->_set_page_data(new TaxonomyPage(), array(
+            'type'            => $type,
+            'identifier'      => $slug,
+            'identifier_type' => 'slug'
+        ));
 
     	return $this->_load_page_view('category', array());
     }

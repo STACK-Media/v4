@@ -2,11 +2,21 @@
 
 use App\Models\TaxonomyModel;
 
-class Taxonomy extends Page
+class TaxonomyPage extends Page
 {
 
-	function initiate($type, $identifier, $identifier_type = 'slug')
+	function initiate($args = array())
 	{
+
+		$paramlist = array(
+			'type'            => NULL, 
+			'identifier'      => NULL, 
+			'identifier_type' => 'slug'
+		);
+		
+		$args      = array_merge($paramlist, $args);
+		extract($args);
+
 
 		$column = $identifier_type;
 		$value  = $identifier;

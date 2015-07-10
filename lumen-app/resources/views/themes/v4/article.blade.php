@@ -5,7 +5,7 @@
 @section('content-widgets')
 	
 	<?php // iterate content widgets ?>
-	@foreach ($content AS $widget)
+	@foreach ($widgets['content'] AS $widget)
 
 		<div class="row event" data-name="content-<?php echo $widget; ?>" data-template="{{$template or "default"}}">
 
@@ -27,7 +27,7 @@
 	<?php
 	$num_widgets = 0;
 	 // iterate sidebar widgets ?>
-	@foreach ($sidebar AS $widget)
+	@foreach ($widgets['sidebar'] AS $widget)
 
 		<?php 
 		$num_widgets++; 
@@ -64,7 +64,7 @@
 @section('post-content-widgets')
 
 	<?php // iterate post content widgets ?>
-	@foreach ($post_content AS $widget)
+	@foreach ($widgets['post_content'] AS $widget)
 
 		<div class="row event" data-name="postcontent-{{$widget}}" data-template="{{$template or "default"}}">
 
