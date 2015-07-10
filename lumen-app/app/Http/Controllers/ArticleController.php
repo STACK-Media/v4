@@ -2,13 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\Cacheturbator as Cache;
+use App\Services\Article;
+use App\Services\Cacheturbator as Cacher;
 
 class ArticleController extends PageController
 {
 
     function index($id, $slug = NULL)
     {
+
+    	$status = 'publish';
+
+    	$this->_page_object = new Cacher(new Article());
+    	$this->_page_object->initiate($id, 'publish');
+
+    	echo $id .' -- ';
+    	echo $this->_page_object->id;
+
 
     	// set dummy widgets
 		$page_data['content'] = array(
