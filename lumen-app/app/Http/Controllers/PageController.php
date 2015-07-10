@@ -23,21 +23,6 @@ class PageController extends BaseController
 	
 	}
 
-	protected function _set_page_object($class, $args)
-	{
-
-		$this->_page_object = new Cacher($class);
-    	$this->_page_object->initiate($args);
-
-	}
-
-	protected function _get_widgets($page_type)
-	{
-		$widget_service       = new Cacher(new Widgets());
-
-        return $widget_service->get_list($page_type, $this->_page_object, Request::all());
-	}
-
 	public function subtheme($subtheme, $function, $args)
 	{
 
@@ -94,5 +79,21 @@ class PageController extends BaseController
 		$page_data['page'] = $this->_page_object;
 
 		return view('theme::'.$page_view, $page_data);
+	}
+
+
+	protected function _set_page_object($class, $args)
+	{
+
+		$this->_page_object = new Cacher($class);
+    	$this->_page_object->initiate($args);
+
+	}
+
+	protected function _get_widgets($page_type)
+	{
+		$widget_service       = new Cacher(new Widgets());
+
+        return $widget_service->get_list($page_type, $this->_page_object, Request::all());
 	}
 }
