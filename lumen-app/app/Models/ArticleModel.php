@@ -8,15 +8,16 @@ class ArticleModel extends Model
 	{
 		return DB::table('wp_posts')
     		->select(
-    			'wp_posts.id', 
-    			'wp_posts.post_status', 
+    			DB::raw('"article" AS page_type'),
+                'wp_posts.id', 
+                'wp_posts.post_title AS name',
+                'wp_posts.post_name AS slug',
+                'wp_posts.post_status', 
     			'wp_posts.post_date', 
     			'wp_posts.post_content', 
-    			'wp_posts.post_title',
-    			'wp_posts.post_name',
-    			'wp_users.user_nicename',
-    			'wp_users.display_name',
-    			'wp_users.ID as userid'
+    			'wp_users.user_nicename AS author_user',
+    			'wp_users.display_name AS author_name',
+    			'wp_users.ID AS author_id'
     		)
     		->where(function($query) use ($id, $statuses) {
     			$query->where(function($query) use ($id, $statuses){

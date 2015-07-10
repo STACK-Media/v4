@@ -21,12 +21,17 @@ class Cacheturbator extends Service
 			$this->cache_on = TRUE;
 
 		endif;
-		
+
 	}
 
 	function __get($attrib_name)
 	{
 		return $this->service->$attrib_name;
+	}
+
+	function __set($attrib_name, $value)
+	{
+		return $this->service->$attrib_name = $value;
 	}
 
 	function __call($method_name, $args = NULL)

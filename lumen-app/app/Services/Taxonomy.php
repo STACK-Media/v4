@@ -2,20 +2,8 @@
 
 use App\Models\TaxonomyModel;
 
-class Taxonomy extends Service
+class Taxonomy extends Page
 {
-
-	private $_object;
-
-	public function __get($attrib_name)
-	{
-
-		if (is_object($this->_object) && $this->_object->$attrib_name) {
-			return $this->_object->$attrib_name;
-		}
-
-		return NULL;
-	}
 
 	function initiate($type, $identifier, $identifier_type = 'slug')
 	{

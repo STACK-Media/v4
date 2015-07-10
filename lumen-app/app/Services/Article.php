@@ -2,20 +2,8 @@
 
 use App\Models\ArticleModel;
 
-class Article extends Service
+class Article extends Page
 {
-
-	private $_object;
-
-	public function __get($attrib_name)
-	{
-
-		if (is_object($this->_object) && $this->_object->$attrib_name) {
-			return $this->_object->$attrib_name;
-		}
-
-		return NULL;
-	}
 
 	function initiate($id, $type = 'publish')
 	{
