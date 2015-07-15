@@ -3,9 +3,9 @@
 {!! Assets::queue('javascript', 'player', '/assets/widgets/js/player.js') !!}
 
 
-@if(view()->exists('theme::partials.players.'.$player_name))
+@if(view()->exists('theme::partials.videoplayers.'.$player_name))
 
-	@include('theme::partials.players.'.$player_name, $video_data)
+	@include('theme::partials.videoplayers.'.$player_name, $video_data)
 
 @endif
 
