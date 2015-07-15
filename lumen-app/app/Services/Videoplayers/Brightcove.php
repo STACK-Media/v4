@@ -1,11 +1,11 @@
 <?php 
 
-namespace App\Services;
+namespace App\Services\Videoplayers;
 
 class Brightcove extends Player
 {
 
-	function get($page_object)
+	function get()
 	{
 		return array(
 			'player_name' => 'brightcove',

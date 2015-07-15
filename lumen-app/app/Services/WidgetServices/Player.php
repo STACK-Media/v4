@@ -12,7 +12,7 @@ class Player extends Service
 	{
 		$player = new Videoplayer();
 
-		return $player->get($page_object);
+		return $player->get(); // need to add some arguments
 	}
 
 }

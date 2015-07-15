@@ -40,29 +40,20 @@ class Widgets extends Service
 	function get_widget($widget, $page_object = NULL)
 	{
 
-		$func = '_get_widget_'.$widget;
+		// capitalize class name and remove hyphens, underscores, etc
+		$class = ucwords(preg_replace('/[^a-zA-Z0-9]/', '', $widget));
 
-		if (method_exists($this, $func)):
+		$class = 'App\\Services\\WidgetServices\\'.$class;
+		
+		if (class_exists($class)):
 
-			return $this->$func($page_object);
+			$class = new $class();
+
+			return $class->get($page_object);
 
 		endif;
 
 		throw new \Exception('Widget does not exist.');		
-	}
-
-	function _get_widget_player($page_object)
-	{
-		// call Video service here which will call brightcove service
-		return array(
-			'player_name' => 'brightcove',
-			'video_data'  => array(
-				'player_id'   => '3813396932001',
-				'player_key'  => 'AQ~~,AAAAAEBVkPU~,71bz9Fa_E4NJd1TE6TnJJvxnbF0gLLRt',
-				'video_id'    => '3815310684001'
-			)
-		);
-
 	}
 
 	

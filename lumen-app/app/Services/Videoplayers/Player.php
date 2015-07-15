@@ -1,8 +1,12 @@
-<?php namespace App\Services\Videoplayers;
+<?php 
+
+namespace App\Services\Videoplayers;
+
+use App\Services\Service;
 
 abstract class Player extends Service
 {
 
-	abstract public function get($page_object);
+	abstract public function get();
 
 } 

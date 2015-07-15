@@ -13,7 +13,7 @@ class Videoplayer extends Service
 	{
 		parent::__construct();
 
-		$class = 'Videoplayers\\'.$this->_class;
+		$class = 'App\\Services\\Videoplayers\\'.$this->_class;
 
 		$this->_player = new $class();
 	}
@@ -32,5 +32,12 @@ class Videoplayer extends Service
 	{
 		return $this->_player->$attrib_name = $value;
 	}
+
+	function __call($method_name, $args = NULL)
+	{
+
+		return call_user_func_array(array($this->_player, $method_name), $args);
+    
+    }
 
 }
