@@ -1,6 +1,6 @@
-{{!! Assets::queue('stylesheet', 'trending-block', '/assets/widgets/css/trending-block.css') }}
+{!! Assets::queue('stylesheet', 'trending-block', '/assets/widgets/css/trending-block.css') !!}
 
-{{!! Assets::queue('javascript', 'trending-block', '/assets/widgets/js/trending-block.js') }}
+{!! Assets::queue('javascript', 'trending-block', '/assets/widgets/js/trending-block.js') !!}
 
 <div class="row">
 

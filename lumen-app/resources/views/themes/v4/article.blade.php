@@ -5,19 +5,23 @@
 @section('content-widgets')
 	
 	<?php // iterate content widgets ?>
-	@foreach ($widgets['content'] AS $widget)
+	@if(isset($widgets['content']))
 
-		<div class="row event" data-name="content-<?php echo $widget; ?>" data-template="{{$template or "default"}}">
+		@foreach ($widgets['content'] AS $widget => $wdata)
 
-			<div class="col-lg-12">
-				
-				@include('theme::partials.widgets.'.$widget)						
+			<div class="row event" data-name="content-<?php echo $widget; ?>" data-template="{{$template or "default"}}">
 
-			</div>
+				<div class="col-lg-12">
+					
+					@include('theme::partials.widgets.'.$widget, $wdata)						
 
-		</div>		
+				</div>
 
-	@endforeach	
+			</div>		
+
+		@endforeach	
+		
+	@endif
 	
 @stop
 
@@ -27,36 +31,40 @@
 	<?php
 	$num_widgets = 0;
 	 // iterate sidebar widgets ?>
-	@foreach ($widgets['sidebar'] AS $widget)
+	@if(isset($widgets['sidebar']))
 
-		<?php 
-		$num_widgets++; 
+		@foreach ($widgets['sidebar'] AS $widget => $wdata)
 
-		$headroom_class = 'headroom';
+			<?php 
+			$num_widgets++; 
 
-		if ($num_widgets === 1):
+			$headroom_class = 'headroom';
 
-			$headroom_class = '';
+			if ($num_widgets === 1):
 
-		endif;
+				$headroom_class = '';
 
-		?>
+			endif;
 
-		<div class="row event" data-name="sidebar-{{$widget}}" data-template="{{$template or "default"}}">
+			?>
 
-			<div class="col-xs-12">
+			<div class="row event" data-name="sidebar-{{$widget}}" data-template="{{$template or "default"}}">
 
-				<div class="dashed-bottom legroom {{$headroom_class}}">
+				<div class="col-xs-12">
 
-					@include('theme::partials.widgets.'.$widget)		
+					<div class="dashed-bottom legroom {{$headroom_class}}">
+
+						@include('theme::partials.widgets.'.$widget, $wdata)		
+
+					</div>
 
 				</div>
 
 			</div>
 
-		</div>
+		@endforeach
 
-	@endforeach
+	@endif
 
 @stop
 
@@ -64,18 +72,22 @@
 @section('post-content-widgets')
 
 	<?php // iterate post content widgets ?>
-	@foreach ($widgets['post_content'] AS $widget)
+	@if(isset($widgets['post_content']))
 
-		<div class="row event" data-name="postcontent-{{$widget}}" data-template="{{$template or "default"}}">
+		@foreach ($widgets['post_content'] AS $widget => $wdata)
 
-			<div class="col-lg-12">
+			<div class="row event" data-name="postcontent-{{$widget}}" data-template="{{$template or "default"}}">
 
-				@include('theme::partials.widgets.'.$widget)		
+				<div class="col-lg-12">
+
+					@include('theme::partials.widgets.'.$widget, $wdata)		
+
+				</div>
 
 			</div>
 
-		</div>
+		@endforeach
 
-	@endforeach
+	@endif
 
 @stop

@@ -1,6 +1,6 @@
-{{!! Assets::queue('stylesheet', 'must-see', '/assets/widgets/css/must-see.css') }}
+{!! Assets::queue('stylesheet', 'must-see', '/assets/widgets/css/must-see.css') !!}
 
-{{!! Assets::queue('javascript', 'must-see', '/assets/widgets/js/must-see.js') }}
+{!! Assets::queue('javascript', 'must-see', '/assets/widgets/js/must-see.js') !!}
 
 <div class="row legroom">
 

@@ -1,6 +1,6 @@
-{{!! Assets::queue('stylesheet', 'popular-videos', '/assets/widgets/css/popular-videos.css') }}
+{!! Assets::queue('stylesheet', 'popular-videos', '/assets/widgets/css/popular-videos.css') !!}
 
-{{!! Assets::queue('javascript', 'popular-videos', '/assets/widgets/js/popular-videos.js') }}
+{!! Assets::queue('javascript', 'popular-videos', '/assets/widgets/js/popular-videos.js') !!}
 
 
 <div class="row">

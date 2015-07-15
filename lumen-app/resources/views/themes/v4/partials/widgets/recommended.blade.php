@@ -1,5 +1,5 @@
 
-{{!! Assets::queue('javascript', 'recommended', '/assets/js/widgets/recommended.js') }}
+{!! Assets::queue('javascript', 'recommended', '/assets/js/widgets/recommended.js') !!}
 
 <div class="row legroom">
 

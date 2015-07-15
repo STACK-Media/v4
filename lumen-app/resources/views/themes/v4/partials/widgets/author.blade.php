@@ -1,6 +1,6 @@
-{{!! Assets::queue('stylesheet', 'author', '/assets/widgets/css/author.css') }}
+{!! Assets::queue('stylesheet', 'author', '/assets/widgets/css/author.css') !!}
 
-{{!! Assets::queue('javascript', 'author', '/assets/widgets/js/author.js') }}
+{!! Assets::queue('javascript', 'author', '/assets/widgets/js/author.js') !!}
 
 
 <div class="row headroom">

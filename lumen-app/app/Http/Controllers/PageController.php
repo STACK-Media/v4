@@ -8,15 +8,18 @@ use Request;
 class PageController extends BaseController
 {
 	protected 
-		$_theme       = 'v4', 
-		$_subtheme    = '',
-		$_page_object = NULL,
-		$_view_folder = NULL;
+		$_theme        = 'v4', 
+		$_subtheme     = '',
+		$_page_object  = NULL,
+		$_view_folder  = NULL,
+		$_request_vars = NULL;
 
     public function __construct()
 	{
 
-		$this->_view_folder = base_path().'/resources/views';
+		$this->_request_vars = Request::all();
+
+		$this->_view_folder  = base_path().'/resources/views';
 
 		// set view folder heirarchy
 		$this->_set_view_folders($this->_theme, $this->_subtheme);			
@@ -76,7 +79,7 @@ class PageController extends BaseController
 	protected function _load_page_view($page_view, $page_data = array())
 	{
 
-		$page_data['page'] = $this->_page_object;
+		$page_data['page']         = $this->_page_object;
 
 		return view('theme::'.$page_view, $page_data);
 	}
@@ -88,12 +91,30 @@ class PageController extends BaseController
 		$this->_page_object = new Cacher($class);
     	$this->_page_object->initiate($args);
 
+    	$this->_page_object->theme        = $this->_theme;
+    	$this->_page_object->subtheme     = $this->_subtheme;
+    	$this->_page_object->request_vars = $this->_request_vars;
+
 	}
 
 	protected function _get_widgets($page_type)
 	{
-		$widget_service       = new Cacher(new Widgets());
+		$widget_service = new Cacher(new Widgets());
 
-        return $widget_service->get_list($page_type, $this->_page_object, Request::all());
+		$widget_config  = $widget_service->get_list($page_type, $this->_page_object);
+
+		$widget_array   = array();
+
+		foreach ($widget_config AS $position => $widgets):
+
+			foreach ($widgets AS $key => $widget):
+
+				$widget_array[$position][$widget] = $widget_service->get_widget($widget, $this->_page_object);
+
+			endforeach;
+
+		endforeach;
+
+        return $widget_array;
 	}
 }

@@ -1,6 +1,6 @@
-{{!! Assets::queue('stylesheet', 'pinterest', '/assets/widgets/css/pinterest.css') }}
+{!! Assets::queue('stylesheet', 'pinterest', '/assets/widgets/css/pinterest.css') !!}
 
-{{!! Assets::queue('javascript', 'pinterest', '/assets/widgets/js/pinterest.js') }}
+{!! Assets::queue('javascript', 'pinterest', '/assets/widgets/js/pinterest.js') !!}
 
 
 <div class="row">

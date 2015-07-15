@@ -1,10 +1,12 @@
-{{!! Assets::queue('stylesheet', 'player', '/assets/widgets/css/player.css') }}
+{!! Assets::queue('stylesheet', 'player', '/assets/widgets/css/player.css') !!}
 
-{{!! Assets::queue('javascript', 'player', '/assets/widgets/js/player.js') }}
+{!! Assets::queue('javascript', 'player', '/assets/widgets/js/player.js') !!}
 
 
-<div class="legroom dashed-bottom">
+@if(view()->exists('theme::partials.players.'.$player_name))
 
-	<div class="player">video player</div>
+	@include('theme::partials.players.'.$player_name, $video_data)
 
-</div>
+@endif
+
+{!! Assets::queue('javascript', 'player', '/assets/widgets/js/player.js') !!}

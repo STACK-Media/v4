@@ -1,6 +1,6 @@
-{{!! Assets::queue('stylesheet', 'zergnet', '/assets/widgets/css/zergnet.css') }}
+{!! Assets::queue('stylesheet', 'zergnet', '/assets/widgets/css/zergnet.css') !!}
 
-{{!! Assets::queue('javascript', 'zergnet', '/assets/widgets/js/zergnet.js') }}
+{!! Assets::queue('javascript', 'zergnet', '/assets/widgets/js/zergnet.js') !!}
 
 <div class="row">
 
