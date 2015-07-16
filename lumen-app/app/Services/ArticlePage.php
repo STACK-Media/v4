@@ -1,7 +1,5 @@
 <?php namespace App\Services;
 
-use App\Models\ArticleModel;
-
 class ArticlePage extends Page
 {
 
@@ -16,18 +14,9 @@ class ArticlePage extends Page
 		$args      = array_merge($paramlist, $args);
 		extract($args);
 
+		$cms = new Contentmanager('article');
 
-		$id = preg_replace("/[^0-9]/", '', $id);
-
-		$statuses = array('publish');
-
-		if ($type != 'publish'):
-
-			$statuses = array('publish','future','draft');
-
-		endif;
-
-		$this->_object = ArticleModel::get_by_id($id, $statuses);
+		$this->_object = $cms->get_by_id($id, $type);
 
 	}
 

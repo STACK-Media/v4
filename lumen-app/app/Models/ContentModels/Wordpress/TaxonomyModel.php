@@ -1,11 +1,15 @@
-<?php namespace App\Models;
+<?php 
+
+namespace App\Models\ContentModels\Wordpress;
 
 use DB;
 
-class TaxonomyModel extends Model
+use App\Models\ContentModels\AbstractTaxonomy;
+
+class TaxonomyModel extends AbstractTaxonomy
 {
 
-	static function get_by_column($type, $column, $value)
+	public function get_by_column($type, $column, $value)
 	{
 		return DB::table('wp_terms')
     		->select(

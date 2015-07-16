@@ -79,7 +79,7 @@ class PageController extends BaseController
 	protected function _load_page_view($page_view, $page_data = array())
 	{
 
-		$page_data['page']         = $this->_page_object;
+		$page_data['page'] = $this->_page_object;
 
 		return view('theme::'.$page_view, $page_data);
 	}

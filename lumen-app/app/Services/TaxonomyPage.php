@@ -1,7 +1,5 @@
 <?php namespace App\Services;
 
-use App\Models\TaxonomyModel;
-
 class TaxonomyPage extends Page
 {
 
@@ -17,21 +15,9 @@ class TaxonomyPage extends Page
 		$args      = array_merge($paramlist, $args);
 		extract($args);
 
+		$cms = new Contentmanager('taxonomy');
 
-		$column = $identifier_type;
-		$value  = $identifier;
-		$regex  = "/[^a-z0-9-_]/";
-
-		if ($identifier_type == 'id'):
-
-			$column = 'term_id';
-			$regex  = "/[^0-9]/";
-
-		endif;
-
-		$value = preg_replace($regex, '', $identifier);
-
-		$this->_object = TaxonomyModel::get_by_column($type, $column, $value);
+		$this->_object = $cms->get_by_column($type, $identifier_type, $identifier);
 
 	}
 

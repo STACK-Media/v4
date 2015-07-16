@@ -41,7 +41,7 @@ class Widgets extends Service
 	{
 
 		// capitalize class name and remove hyphens, underscores, etc
-		$class = ucwords(preg_replace('/[^a-zA-Z0-9]/', '', $widget));
+		$class = ucwords(preg_replace('/[^a-z0-9]/', '', strtolower($widget)));
 
 		$class = 'App\\Services\\WidgetServices\\'.$class;
 		

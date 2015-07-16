@@ -20,7 +20,5 @@ abstract class Page extends Service
 		return $this->_object->$attrib_name = $value;
 	}
 
-	abstract public function initiate($args);
-
-	
+	abstract public function initiate($args);	
 } 

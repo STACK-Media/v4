@@ -1,10 +1,14 @@
-<?php namespace App\Models;
+<?php 
+
+namespace App\Models\ContentModels\Wordpress;
 
 use DB;
 
-class ArticleModel extends Model
+use App\Models\ContentModels\AbstractArticle;
+
+class ArticleModel extends AbstractArticle
 {
-	static function get_by_id($id, $statuses = array('publish'))
+	public function get_by_id($id, $statuses = array('publish'))
 	{
 		return DB::table('wp_posts')
     		->select(
