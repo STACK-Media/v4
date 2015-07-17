@@ -8,6 +8,13 @@ class Assets extends Service {
 
 	static function queue($type, $key, $src, $custom = '')
 	{
+		if ( ! file_exists(rtrim(app()->basePath('../public_html/'.ltrim($src,'/')), '/'))):
+
+			return FALSE;
+
+		endif;
+
+
 		self::$_scripts[$type][$key] = array(
 			'src'		=> $src,
 			'custom'	=> $custom

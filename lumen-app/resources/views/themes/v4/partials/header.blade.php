@@ -9,11 +9,16 @@
 
 	@if(is_array(Assets::get('stylesheet')))
 
+
+		{!! Minify::stylesheet(Assets::get('stylesheet'), array('foo' => 'bar')) !!}
+
+		<?php /*
 		@foreach(Assets::get('stylesheet') as $key => $sheet)
 
 			<link rel="stylesheet" href="{{$sheet['src']}}">
 
 		@endforeach
+		*/ ?>
 
 	@endif
 

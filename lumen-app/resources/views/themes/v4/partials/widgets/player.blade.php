@@ -2,9 +2,8 @@
 
 {!! Assets::queue('javascript', 'player', '/assets/js/widgets/player.js') !!}
 
-<?php /*
+
 {!! Assets::queue('stylesheet', 'testing', Assets::themed('css/testing_themepath.css')) !!}
-*/ ?>
 
 @if(view()->exists('theme::partials.videoplayers.'.$player_name))
 

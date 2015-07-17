@@ -80,6 +80,7 @@ $app->singleton(
 
 // $app->register('App\Providers\AppServiceProvider');
 $app->register('App\Providers\AssetsProvider');
+$app->register('Devfactory\Minify\MinifyServiceProvider');
 //$app->register('App\Providers\CacheProvider');
 
 /*
@@ -94,8 +95,10 @@ $app->register('App\Providers\AssetsProvider');
 */
 
 class_alias('App\Facades\Assets', 'Assets');
+class_alias('Devfactory\Minify\Facades\MinifyFacade', 'Minify');
 
 $app->configure('theming');
+$app->configure('minify.config');
 
 require __DIR__.'/../app/Http/routes.php';
 
