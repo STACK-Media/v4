@@ -66,11 +66,6 @@ class Assets extends Service {
 
 		endforeach;
 
-		var_dump($return);
-
-		if ($type == 'javascript'):
-			exit();
-		endif;
 
 		return $return;
 
@@ -158,7 +153,7 @@ class Assets extends Service {
 
 		$location = 'remote';
 
-		if (strpos($src, '//') === FALSE):
+		if (TRUE || strpos($src, '//') === FALSE):
 
 			$location = 'local';
 
