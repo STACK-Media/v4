@@ -16,8 +16,8 @@ class Widgets extends Service
 
 		return array(
     		'content' => array(
+    			/*
     			'player',
-				/*
 				'author',
 				'must-see',
 				*/
