@@ -2,9 +2,7 @@
 
 namespace App\Services\WidgetServices;
 
-use App\Services\Service;
-
-class OutbrainSidebar extends Service
+class Outbrain extends WidgetService
 {
 	public function get($page)
 	{
