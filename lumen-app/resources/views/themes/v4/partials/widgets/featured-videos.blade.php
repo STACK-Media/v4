@@ -14,7 +14,7 @@
 
 		<div class="col-xs-12 event featured-videos {{$class}}" data-name="{{$key}}" data-template="featured-videos">
 
-			<a href="/video2/4114135025001/{{$playlist['id']}}/{{$value['id']}}">
+			<a href="/video/{{$value['id']}}/video-title">
 				<div class="img-block">
 					<img class="img-responsive" src="{{$value['videoStillURL']}}" alt="{{$value['name']}}" />
 				</div>

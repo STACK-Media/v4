@@ -16,8 +16,8 @@ class Widgets extends Service
 
 		return array(
     		'content' => array(
+    			/*
     			'player',
-				/*
 				'author',
 				'must-see',
 				*/
@@ -28,7 +28,9 @@ class Widgets extends Service
     			'featured-videos',
 				/*
 				'newsletter',
+				*/
 				'popular-videos',
+				/*
 				'trending-block',
 				'outbrain-sidebar'
 				*/
