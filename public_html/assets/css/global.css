@@ -179,7 +179,24 @@ hr {
 	min-height: 		1500px;
 }
 
-
+.loadmore {
+	text-decoration: none;
+	cursor: pointer;
+	text-align: center;
+	background-color: #000;
+	color: #FFF;
+	padding: 1%;
+	width: 60%;
+	float: left;
+	text-transform: uppercase;
+	font-family: "Oswald", Arial, sans-serif;
+	outline: none !important;
+	margin-left: 20%;
+}
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
 
 @media (min-width:768px){
 	.sm-right-gutter {padding-right:15px;}

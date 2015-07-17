@@ -2,16 +2,18 @@
 
 namespace App\Services\WidgetServices;
 
-use App\Services\Videoplayer;
+use App\Services\Videomanager;
 
 class Featuredvideos extends WidgetService
 {
-
 	function get($page_object)
 	{
-		$player = new Videoplayer();
+		$playlist 	= new Videomanager('playlist');
 
-		return $player->get(); // need to add some arguments
+		// for now, we hard code the playlist
+		$id 		= '4131748612001';
+
+		return $playlist->get($id); // need to add some arguments
 	}
 
 }

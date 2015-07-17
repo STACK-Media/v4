@@ -1,6 +1,4 @@
-{!! Assets::queue('stylesheet', 'featured-videos', '/assets/widgets/css/featured-videos.css') !!}
-
-{!! Assets::queue('javascript', 'featured-videos', '/assets/widgets/js/featured-videos.js') !!}
+{!! Assets::queue('javascript', 'featured-videos', '/assets/js/widgets/featured-videos.js') !!}
 
 <div class="row">
 
@@ -10,28 +8,24 @@
 	
 	</div>
 
-	<div class="col-xs-12 event" data-name="1001" data-template="sidebar-featured">
+	@foreach($playlist['videos'] as $key => $value)
 
-		<div class="img-block"></div>
-		<a href="#">Path to the Pros: Comeback Kids</a>
-		<p>Views: 1,903,546</p>
+		<?php $class 	= ($key < 3)? '': 'hidden'; ?>
 
-	</div>
+		<div class="col-xs-12 event featured-videos {{$class}}" data-name="{{$key}}" data-template="featured-videos">
 
-	<div class="col-xs-12 event" data-name="1002" data-template="sidebar-featured">
+			<a href="/video2/4114135025001/{{$playlist['id']}}/{{$value['id']}}">
+				<div class="img-block">
+					<img class="img-responsive" src="{{$value['videoStillURL']}}" alt="{{$value['name']}}" />
+				</div>
+				{{$value['name']}}
+			</a>
+			<p>Views: {{$value['playsTotal']}}</p>
 
-		<div class="img-block"></div>
-		<a href="#">Path to the Pros: Comeback Kids</a>
-		<p>Views: 1,903,546</p>
+		</div>
 
-	</div>
+	@endforeach
 
-	<div class="col-xs-12 event" data-name="1003" data-template="sidebar-featured">
-
-		<div class="img-block"></div>
-		<a href="#">Path to the Pros: Comeback Kids</a>
-		<p>Views: 1,903,546</p>
-
-	</div>	
+	<p><a class="loadmore featured-videos">Load More</a></p>
 
 </div>
