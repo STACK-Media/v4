@@ -8,7 +8,7 @@ use Request;
 class PageController extends BaseController
 {
 	protected 
-		$_theme        = 'v4', 
+		$_theme        = '', 
 		$_subtheme     = '',
 		$_page_object  = NULL,
 		$_view_folder  = NULL,
@@ -16,6 +16,9 @@ class PageController extends BaseController
 
     public function __construct()
 	{
+		
+		$this->_theme    = config('theming.theme');
+		$this->_subtheme = config('theming.subtheme');
 
 		$this->_request_vars = Request::all();
 
@@ -28,6 +31,8 @@ class PageController extends BaseController
 
 	public function subtheme($subtheme, $function, $args)
 	{
+
+		config(array('theming.subtheme' => $subtheme));
 
 		$this->_subtheme = $subtheme;
 		

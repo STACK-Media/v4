@@ -95,6 +95,8 @@ $app->register('App\Providers\AssetsProvider');
 
 class_alias('App\Facades\Assets', 'Assets');
 
+$app->configure('theming');
+
 require __DIR__.'/../app/Http/routes.php';
 
 return $app;
