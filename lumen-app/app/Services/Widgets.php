@@ -25,7 +25,8 @@ class Widgets extends Service
 				'outbrain'
     		),
     		'sidebar' => array(
-    			/*'featured-videos',
+    			'featured-videos',
+				/*
 				'newsletter',
 				'popular-videos',
 				'trending-block',
@@ -55,7 +56,7 @@ class Widgets extends Service
 
 		endif;
 
-		throw new \Exception('Widget does not exist.');		
+		throw new \Exception('Widget '.$class.' does not exist.');		
 	}
 
 	

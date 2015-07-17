@@ -8,5 +8,6 @@ abstract class Player extends Service
 {
 
 	abstract public function get();
+	abstract public function playlist();
 
 } 
