@@ -13,6 +13,10 @@
 
 $route_verticals = array('4w');
 $route_pages     = array(
+	'' => array(
+		'controller' => 'HomeController',
+		'function'   => 'index',
+	),
 	'video' => array(
 		'controller' => 'VideoController',
 		'function'   => 'index',
@@ -60,7 +64,7 @@ foreach ($route_pages as $route_key => $route_arr)
 {
 	$route_params = '';
 	
-	if ($route_arr['params']):
+	if (isset($route_arr['params'])):
 		
 		$route_params = '{'.implode('}/{',$route_arr['params']).'}';
 

@@ -1,10 +1,19 @@
-<?php namespace App\Http\Controllers;
+<?php 
+namespace App\Http\Controllers;
+
+use App\Services\HomePage;
 
 class HomeController extends PageController
 {
 
     function index()
     {
-    	return $this->_load_page_view('home', array());
+		$this->_set_page_object(new HomePage(),array(
+			'id'	=> '123'
+		));
+
+    	$page_data['widgets'] = $this->_get_widgets('homepage');
+
+    	return $this->_load_page_view('article', $page_data);
     }
 } 

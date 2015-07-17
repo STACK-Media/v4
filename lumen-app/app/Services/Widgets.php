@@ -8,12 +8,6 @@ class Widgets extends Service
 	function get_list($page_type = 'article', $page_object = NULL)
 	{
 
-		if ($page_type != 'article'):
-
-			return array();
-
-		endif;
-
 		return array(
     		'content' => array(
     			/*
