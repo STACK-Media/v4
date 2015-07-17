@@ -66,7 +66,11 @@ class Assets extends Service {
 
 		endforeach;
 
-		var_dump($return);exit();
+		var_dump($return);
+
+		if ($type == 'javascript'):
+		exit();
+	endif;
 
 		return $return;
 
