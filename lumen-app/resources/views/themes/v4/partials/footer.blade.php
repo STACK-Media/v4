@@ -5,7 +5,7 @@
 {!! Assets::queue('javascript', 'global', 'viewport', '/assets/js/viewport.js') !!}
 {!! Assets::queue('javascript', 'global', 'events', '/assets/js/events.js') !!}
 
-{!! Assets::get_queued('javascript') !!}
+{!! //Assets::get_queued('javascript') !!}
 
 </body>
 </html>

@@ -69,8 +69,8 @@ class Assets extends Service {
 		var_dump($return);
 
 		if ($type == 'javascript'):
-		exit();
-	endif;
+			exit();
+		endif;
 
 		return $return;
 
