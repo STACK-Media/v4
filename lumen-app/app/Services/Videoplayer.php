@@ -5,7 +5,7 @@ namespace App\Services;
 class Videoplayer extends Service
 {
 
-	private $_class = 'Brightcove';
+	private $_class = 'Eatdickmatt';
 
 	protected $_player;
 
