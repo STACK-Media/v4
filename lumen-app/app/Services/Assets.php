@@ -56,9 +56,13 @@ class Assets extends Service {
 
 		endforeach;
 
+
+
 		$return = '';
 
 		foreach ($groups as $group => $arr):
+
+			echo "Minify::$type($arr['scripts'], $arr['attribs'])"; exit();
 
 			$return .= Minify::$type($arr['scripts'], $arr['attribs']);
 
