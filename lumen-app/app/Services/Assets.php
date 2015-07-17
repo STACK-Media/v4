@@ -8,6 +8,13 @@ class Assets extends Service {
 
 	static function queue($type, $key, $src, $custom = '')
 	{
+		// add minify groups or flag to don't minify
+		// groups: global, layout, widgets
+
+		// don't check if file exists if remote file
+
+		// test javascript
+
 		if ( ! file_exists(rtrim(app()->basePath('../public_html/'.ltrim($src,'/')), '/'))):
 
 			return FALSE;
