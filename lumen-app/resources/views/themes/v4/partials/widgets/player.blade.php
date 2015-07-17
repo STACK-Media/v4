@@ -1,6 +1,6 @@
-{!! Assets::queue('stylesheet', 'player', '/assets/widgets/css/player.css') !!}
+{!! Assets::queue('stylesheet', 'player', '/assets/css/widgets/player.css') !!}
 
-{!! Assets::queue('javascript', 'player', '/assets/widgets/js/player.js') !!}
+{!! Assets::queue('javascript', 'player', '/assets/js/widgets/player.js') !!}
 
 
 @if(view()->exists('theme::partials.videoplayers.'.$player_name))
@@ -9,4 +9,4 @@
 
 @endif
 
-{!! Assets::queue('javascript', 'player', '/assets/widgets/js/player.js') !!}
+{!! Assets::queue('javascript', 'player', '/assets/js/widgets/player.js') !!}

@@ -17,18 +17,20 @@ class Widgets extends Service
 		return array(
     		'content' => array(
     			'player',
-			/*	'article',
+				/*
 				'author',
 				'must-see',
+				*/
 				'zergnet',
-				'outbrain' */
+				'outbrain'
     		),
     		'sidebar' => array(
     			/*'featured-videos',
 				'newsletter',
 				'popular-videos',
 				'trending-block',
-				'outbrain-sidebar'*/
+				'outbrain-sidebar'
+				*/
     		),
     		'post_content' => array(
     			/*'pinterest',
