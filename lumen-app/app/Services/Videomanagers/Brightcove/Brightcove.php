@@ -16,7 +16,7 @@ class Brightcove extends Manager
 		$this->_url 	= 'http://api.brightcove.com/services/library';
 	}
 
-	public function api($data=array())
+	public function API($data=array())
 	{
 		// initialize variables
 		$url 			= $this->_url;
@@ -27,7 +27,7 @@ class Brightcove extends Manager
 		// generate query string from post_data
 		$query_string 	= http_build_query($data);
 		
-		// always exclude MySTack, donotshow, MarketingPromo
+		// always exclude MySTack, donotshow & MarketingPromo
 		$query_string 	.= "&none=tag:donotshow&none=tag:MyStack&none=tag:MarketingPromo";
 
 		// initialize curl
@@ -46,6 +46,6 @@ class Brightcove extends Manager
 
 		curl_close($ch);
 
-		return $response;
+		return json_decode($response,TRUE);
 	}
 }

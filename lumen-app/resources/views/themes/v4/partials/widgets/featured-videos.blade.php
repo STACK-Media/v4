@@ -1,6 +1,4 @@
-{!! Assets::queue('stylesheet', 'featured-videos', '/assets/widgets/css/featured-videos.css') !!}
-
-{!! Assets::queue('javascript', 'featured-videos', '/assets/widgets/js/featured-videos.js') !!}
+{!! Assets::queue('javascript', 'featured-videos', '/assets/js/widgets/featured-videos.js') !!}
 
 <div class="row">
 
@@ -12,14 +10,22 @@
 
 	@foreach($playlist['videos'] as $key => $value)
 
-		<div class="col-xs-12 event" data-name="1001" data-template="sidebar-featured">
+		<?php $class 	= ($key < 3)? '': 'hidden'; ?>
 
-			<div class="img-block"></div>
-			<a href="/video2/4114135025001/{{$playlist['id']}}/{{$value['id']}}">Path to the Pros: Comeback Kids</a>
-			<p>Views: 1,903,546</p>
+		<div class="col-xs-12 event featured-videos {{$class}}" data-name="{{$key}}" data-template="featured-videos">
+
+			<a href="/video2/4114135025001/{{$playlist['id']}}/{{$value['id']}}">
+				<div class="img-block">
+					<img class="img-responsive" src="{{$value['videoStillURL']}}" alt="{{$value['name']}}" />
+				</div>
+				{{$value['name']}}
+			</a>
+			<p>Views: {{$value['playsTotal']}}</p>
 
 		</div>
 
 	@endforeach
+
+	<p><a class="loadmore featured-videos">Load More</a></p>
 
 </div>

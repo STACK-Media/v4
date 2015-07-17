@@ -9,9 +9,9 @@ class Player extends WidgetService
 
 	function get($page_object)
 	{
-		$manager = new Videomanager('player');
+		$player = new Videomanager('player');
 
-		return $manager->get(); // need to add some arguments
+		return $player->get(); // need to add some arguments
 	}
 
 }
