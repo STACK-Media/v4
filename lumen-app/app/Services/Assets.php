@@ -2,9 +2,11 @@
 
 class Assets extends Service {
 
-	static $_scripts;
+	static 
+		$_scripts,
+		$_pub_dir = '../public_html';
 
-	static function queue($type, $key, $src, $custom='')
+	static function queue($type, $key, $src, $custom = '')
 	{
 		self::$_scripts[$type][$key] = array(
 			'src'		=> $src,
@@ -25,12 +27,41 @@ class Assets extends Service {
 
 	}
 
-	static function themed($filepath)
+	static function _get_public()
+	{
+		return realpath(rtrim(app()->basePath(self::$_pub_dir), '/'));
+	}
+
+	static function _qualify_path($fullpath, $dir = TRUE)
 	{
 
-		$pub_dir  = '../public_html';
+		if ($fullpath):
 
-		$public   = realpath(rtrim(app()->basePath($pub_dir), '/'));
+			$themepath = realpath($fullpath);
+
+			if (file_exists($themepath) && (($dir && is_dir($themepath)) || ( ! $dir && ! is_dir($themepath)))):
+
+				return $themepath;
+
+			endif;
+
+		endif;
+
+		return FALSE;
+	}
+
+	static function _web_path($path)
+	{
+
+		$pub = str_replace('../','',self::$_pub_dir);
+
+		return str_replace('\\', '/', substr(strstr($path, $pub), strlen($pub), strlen($path)));
+	}
+
+	static function themed($filepath)
+	{
+		$public   = self::_get_public();
+		
 		$theme    = config('theming.theme');
 		$subtheme = config('theming.subtheme');
 
@@ -38,27 +69,11 @@ class Assets extends Service {
 			'global' => $public . '/assets'
 		);
 
-		if ($theme):
+		$paths['theme'] = self::_qualify_path($public .'/assets/themes/'.$theme);
 
-			$themepath = realpath($public .'/assets/themes/'.$theme);
+		if ($subtheme && $paths['theme']):
 
-			if (file_exists($themepath) && is_dir($themepath)):
-
-				$paths['theme'] = $themepath;
-
-			endif;
-
-		endif;
-
-		if ($subtheme && isset($paths['theme'])):
-
-			$subpath = realpath($paths['theme'] . '/subthemes/'.$subtheme);
-
-			if (file_exists($subpath) && is_dir($subpath)):
-
-				$paths['subtheme'] = $subpath;
-
-			endif;
+			$paths['subtheme'] = self::_qualify_path($paths['theme'] . '/subthemes/'.$subtheme);
 
 		endif;
 
@@ -67,13 +82,11 @@ class Assets extends Service {
 
 		foreach ($paths AS $key => $location):
 
-			$path = realpath($location . '/' . $filepath);
+			$path = self::_qualify_path($location . '/' . $filepath, FALSE);
 
-			if (file_exists($path) && ! is_dir($path)):
+			if ($path):
 
-				$pubpath = str_replace('\\', '/', substr(strstr($path, $pub_dir), strlen($pub_dir), strlen($path)));
-
-				return $pubpath;
+				return self::_web_path($path);
 
 			endif;
 
