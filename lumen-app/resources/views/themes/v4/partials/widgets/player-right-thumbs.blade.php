@@ -1,1 +1,0 @@
-player-right-thumbs.blade.php

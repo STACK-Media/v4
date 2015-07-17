@@ -34,8 +34,7 @@ class Widgets extends Service
 				*/
     		),
     		'post_content' => array(
-    			/*'pinterest',
-				'recommended'*/
+
     		)
     	);
 	}
