@@ -2,9 +2,7 @@
 
 namespace App\Services\WidgetServices;
 
-use App\Services\Service;
-
-class Content extends Service
+class Content extends WidgetService
 {
 	public function get($page)
 	{

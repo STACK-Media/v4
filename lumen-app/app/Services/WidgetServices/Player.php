@@ -2,10 +2,9 @@
 
 namespace App\Services\WidgetServices;
 
-use App\Services\Service;
 use App\Services\Videoplayer;
 
-class Player extends Service
+class Player extends WidgetService
 {
 
 	function get($page_object)

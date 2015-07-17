@@ -2,9 +2,7 @@
 
 namespace App\Services\WidgetServices;
 
-use App\Services\Service;
-
-class Zergnet extends Service
+class Zergnet extends WidgetService
 {
 	public function get()
 	{
