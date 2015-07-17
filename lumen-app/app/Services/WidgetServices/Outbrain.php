@@ -8,6 +8,10 @@ class Outbrain extends Service
 {
 	public function get($page)
 	{
+print "<pre>";
+print_r($page);
+exit;
+
 		// determine which outbrain URL to use
 		$outbrain_url	= 'www.stack.com';
 
