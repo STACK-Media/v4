@@ -28,9 +28,9 @@ class Assets extends Service {
 	static function themed($filepath)
 	{
 
-		$pub_dir  = 'public_html';
+		$pub_dir  = '../public_html';
 
-		$public   = realpath(rtrim(app()->basePath('../'.$pub_dir), '/'));
+		$public   = realpath(rtrim(app()->basePath($pub_dir), '/'));
 		$theme    = config('theming.theme');
 		$subtheme = config('theming.subtheme');
 
