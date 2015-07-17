@@ -72,7 +72,6 @@
 
 	<div class="col-xs-12">
 
-		<div class="spacer"></div>
 
 	</div>
 
