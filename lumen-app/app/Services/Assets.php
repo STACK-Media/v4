@@ -66,6 +66,8 @@ class Assets extends Service {
 
 		endforeach;
 
+		var_dump($return);exit();
+
 		return $return;
 
 	}
