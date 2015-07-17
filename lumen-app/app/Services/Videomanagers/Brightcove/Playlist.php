@@ -1,22 +1,11 @@
 <?php 
 
-namespace App\Services\Videoplayers;
+namespace App\Services\Videomanagers\Brightcove;
 
-class JWPlayer extends Player
+class Playlist extends Brightcove
 {
 
-	function get()
-	{
-		return array(
-			'player_name' => 'jwplayer',
-			'video_data'  => array(
-				'player_id'   => 'QTUP9F36',
-				'video_id'    => '4dETXPx2'
-			)
-		);
-	}
-
-	public function playlist()
+	function get($id)
 	{
 		return array(
 			'playlist'	=> array(
@@ -35,5 +24,4 @@ class JWPlayer extends Player
 			)
 		);
 	}
-
 }
