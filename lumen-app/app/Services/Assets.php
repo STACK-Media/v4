@@ -62,7 +62,7 @@ class Assets extends Service {
 
 		foreach ($groups as $group => $arr):
 
-			echo "Minify::$type($arr['scripts'], $arr['attribs'])"; exit();
+			echo $type .' '.var_export($arr['scripts'], TRUE).' '.var_export($arr['attribs'], TRUE); exit();
 
 			$return .= Minify::$type($arr['scripts'], $arr['attribs']);
 
