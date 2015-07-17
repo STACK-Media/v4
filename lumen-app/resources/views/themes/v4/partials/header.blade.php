@@ -11,7 +11,7 @@
 
 		@foreach(Assets::get('stylesheet') as $key => $sheet)
 
-			<link rel="stylesheet" href="{{$sheet}}">
+			<link rel="stylesheet" href="{{$sheet['src']}}">
 
 		@endforeach
 

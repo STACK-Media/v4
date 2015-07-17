@@ -11,7 +11,7 @@
 
 	@foreach(Assets::get('javascript') as $key => $script)
 
-		<script type="text/javascript" src="{{$script}}"></script>
+		<script type="text/javascript" src="{{$script['src']}}" {!! $script['custom'] !!}></script>
 
 	@endforeach
 

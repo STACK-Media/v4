@@ -4,10 +4,13 @@ class Assets extends Service {
 
 	static $_scripts;
 
-	static function queue($type, $key, $src)
+	static function queue($type, $key, $src, $custom='')
 	{
 
-		self::$_scripts[$type][$key] = $src;
+		self::$_scripts[$type][$key] = array(
+			'src'		=> $src,
+			'custom'	=> $custom
+		);
 
 	}
 
