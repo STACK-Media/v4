@@ -28,7 +28,9 @@ class Widgets extends Service
     			'featured-videos',
 				/*
 				'newsletter',
+				*/
 				'popular-videos',
+				/*
 				'trending-block',
 				'outbrain-sidebar'
 				*/
