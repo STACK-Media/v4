@@ -1,43 +1,77 @@
 <?php namespace App\Services;
 
+use Minify;
+
 class Assets extends Service {
 
 	static 
 		$_scripts,
 		$_pub_dir = '../public_html';
 
-	static function queue($type, $key, $src, $custom = '')
+	static function queue($type, $group, $key, $src, $custom = '')
 	{
 		// add minify groups or flag to don't minify
 		// groups: global, layout, widgets
 
-		// don't check if file exists if remote file
-
 		// test javascript
 
-		if ( ! file_exists(rtrim(app()->basePath('../public_html/'.ltrim($src,'/')), '/'))):
-
-			return FALSE;
-
-		endif;
-
-
-		self::$_scripts[$type][$key] = array(
-			'src'		=> $src,
-			'custom'	=> $custom
-		);
+		return self::_queue('minify', $type, $group, $key, $src, $custom);
+		
 	}
 
-	static function get($type)
+	static function queue_raw($type, $group, $key, $src, $custom = '')
+	{
+		return self::_queue('raw', $type, $group, $key, $src, $custom);
+	}
+
+	static function get_queued($type)
 	{
 
-		if ( ! isset(self::$_scripts[$type])):
+		$funcs = array(
+			'stylesheet',
+			'javascript'
+		);
 
-			return FALSE;
+		if ( ! in_array($type, $funcs)):
+
+			return self::get_queued_raw($type);
 
 		endif;
 
-		return self::$_scripts[$type];
+		$queued  = self::_get_queued('minify', $type);
+
+		$groups  = array();
+
+		foreach ($queued as $key => $array):
+
+			$groups[$array['group']]['scripts'][] = $array['src'];
+
+			$groups[$array['group']]['attribs']   = (isset($groups[$array['group']]['attribs']) ? $groups[$array['group']]['attribs'] : array());
+
+			if (isset($array['custom']) && is_array($array['custom'])):
+
+				$groups[$array['group']]['attribs'] = array_merge($groups[$array['group']]['attribs'], $array['custom']);
+
+			endif;		
+
+		endforeach;
+
+		$return = '';
+
+		foreach ($groups as $group => $arr):
+
+			$return .= Minify::$type($arr['scripts'], $arr['attribs']);
+
+		endforeach;
+
+		return $return;
+
+	}
+
+	static function get_queued_raw($type)
+	{
+
+		return self::_get_queued('raw', $type);
 
 	}
 
@@ -108,6 +142,49 @@ class Assets extends Service {
 		$pub = str_replace('../','',self::$_pub_dir);
 
 		return str_replace('\\', '/', substr(strstr($path, $pub), strlen($pub), strlen($path)));
+	}
+
+
+	static function _queue($minify, $type, $group, $key, $src, $custom = '')
+	{
+
+		$location = 'remote';
+
+		if (strpos($src, '//') === FALSE):
+
+			$location = 'local';
+
+			if ( ! file_exists(rtrim(app()->basePath('../public_html/'.ltrim($src,'/')), '/'))):
+
+				return FALSE;
+
+			endif;
+
+		endif;
+
+		$minify_key = ($minify) ? 'minify' : 'raw';
+
+		self::$_scripts[$minify_key][$type][$key] = array(
+			'group'  => $group,
+			'src'    => $src,
+			'custom' => $custom
+		);
+
+	}
+
+	static function _get_queued($minify, $type)
+	{
+
+		$minify_key = ($minify) ? 'minify' : 'raw';
+
+		if ( ! isset(self::$_scripts[$minify_key][$type])):
+
+			return FALSE;
+
+		endif;
+
+		return self::$_scripts[$minify_key][$type];
+
 	}
 
 } 

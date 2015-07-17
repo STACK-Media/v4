@@ -6,16 +6,14 @@
 
 <title>STACK Home | STACK</title>
 
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="/assets/third-party/initializr/css/bootstrap.min.css"/>
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="/assets/third-party/initializr/css/bootstrap-theme.min.css">
-
 <script src="/assets/third-party/initializr/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 
-<!-- Global CSS -->
-<link rel="stylesheet" href="/assets/css/global.css">
+{!! Assets::queue('stylesheet', 'global', 'bootstrap', '/assets/third-party/initializr/css/bootstrap.min.css') !!}
+
+{!! Assets::queue('stylesheet', 'global', 'bootstraptheme', '/assets/third-party/initializr/css/bootstrap-theme.min.css') !!}
+
+{!! Assets::queue('stylesheet', 'global', 'global', '/assets/css/global.css') !!}
+
 
 <?php
 // include global pixels

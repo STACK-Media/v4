@@ -1,4 +1,4 @@
-{!! Assets::queue('javascript', 'popular-videos', '/assets/js/widgets/popular-videos.js') !!}
+{!! Assets::queue('javascript', 'widgets', 'popular-videos', '/assets/js/widgets/popular-videos.js') !!}
 
 <div class="row">
 

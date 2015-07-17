@@ -1,6 +1,6 @@
-{!! Assets::queue('stylesheet', 'player', '/assets/css/widgets/player.css') !!}
+{!! Assets::queue('stylesheet', 'widgets', 'player', '/assets/css/widgets/player.css') !!}
 
-{!! Assets::queue('javascript', 'player', '/assets/js/widgets/player.js') !!}
+{!! Assets::queue('javascript', 'widgets', 'player', '/assets/js/widgets/player.js') !!}
 
 
 {!! Assets::queue('stylesheet', 'testing', Assets::themed('css/testing_themepath.css')) !!}

@@ -1,4 +1,4 @@
-{!! Assets::queue('stylesheet', 'article', '/assets/css/widgets/article.css') !!}
+{!! Assets::queue('stylesheet', 'widgets', 'article', '/assets/css/widgets/article.css') !!}
 
 <div class="row headroom">
 	<div class="col-xs-12 article_content">

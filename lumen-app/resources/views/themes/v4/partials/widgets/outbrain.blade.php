@@ -1,5 +1,5 @@
-{!! Assets::queue('stylesheet', 'outbrain', '/assets/css/widgets/outbrain.css') !!}
-{!! Assets::queue('javascript', 'outbrain', '//widgets.outbrain.com/outbrain.js', 'async=async') !!}
+{!! Assets::queue('stylesheet', 'widgets', 'outbrain', '/assets/css/widgets/outbrain.css') !!}
+{!! Assets::queue('javascript', 'asyncwidgets', 'outbrain', '//widgets.outbrain.com/outbrain.js', array('async' => 'async')) !!}
 
 <div class="row">
 
