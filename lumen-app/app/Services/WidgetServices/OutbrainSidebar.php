@@ -2,16 +2,10 @@
 
 namespace App\Services\WidgetServices;
 
-use App\Services\Service;
-
-class OutbrainSidebar extends Service
+class Outbrain extends WidgetService
 {
 	public function get($page)
 	{
-print "<pre>";
-print_r($page);
-exit;
-
 		// determine which outbrain URL to use
 		$outbrain_url	= 'www.stack.com';
 
