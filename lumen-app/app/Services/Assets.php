@@ -28,11 +28,12 @@ class Assets extends Service {
 	{
 
 		$funcs = array(
-			'stylesheet',
-			'javascript'
+			'stylesheet' => 'stylesheet',
+			'javascript' => 'javascript',
+			'headscript' => 'javascript'
 		);
 
-		if ( ! in_array($type, $funcs)):
+		if ( ! array_key_exists($type, $funcs)):
 
 			return self::get_queued_raw($type);
 
@@ -68,7 +69,9 @@ class Assets extends Service {
 
 		foreach ($groups as $group => $arr):
 
-			$return .= Minify::$type($arr['scripts'], $arr['attribs']);
+			$function = $funcs[$type];
+
+			$return .= Minify::$function($arr['scripts'], $arr['attribs']);
 
 		endforeach;
 
@@ -155,6 +158,12 @@ class Assets extends Service {
 
 	static function _queue($minify, $type, $group, $key, $src, $custom = array())
 	{
+
+		if ( ! is_array($custom)):
+
+			$custom = array();
+
+		endif;
 
 		$location = 'remote';
 

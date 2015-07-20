@@ -7,6 +7,42 @@
 
 	@include('theme::partials.head')
 
+	<!-- header javascript files -->
+
+	{!! Assets::get_queued('headscript') !!} 
+
+	@if(is_array(Assets::get_queued_raw('headscript')))
+
+		@foreach (Assets::get_queued_raw('headscript') as $key => $arr)
+
+			<?php
+
+			// yes.. mixing PHP and blade, but
+			// wanted to reduce whitespace in attributes
+			// between blade control tags
+
+			$attribs = array();
+
+			if (isset($arr['custom']) && is_array($arr['custom'])):
+
+				foreach ($arr['custom'] as $key => $val):
+
+					$attribs[] = $key . '="' . $val . '"';
+
+				endforeach;
+
+			endif;
+
+			?>
+
+			<script src="{!! $arr['src'] !!}" {!! implode(' ', $attribs) !!}></script>
+
+		@endforeach
+
+	@endif
+
+	<!-- stylesheets -->
+
 	{!! Assets::get_queued('stylesheet') !!} 
 
 	@if(is_array(Assets::get_queued_raw('stylesheet')))

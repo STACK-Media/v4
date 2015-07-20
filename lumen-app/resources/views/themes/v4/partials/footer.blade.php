@@ -7,6 +7,9 @@
 {!! Assets::queue('javascript', 'global', 'viewport', '/assets/js/viewport.js') !!}
 {!! Assets::queue('javascript', 'global', 'events', '/assets/js/events.js') !!}
 
+
+<!-- footer javascript files -->
+
 {!! Assets::get_queued('javascript') !!}
 
 @if(is_array(Assets::get_queued_raw('javascript')))

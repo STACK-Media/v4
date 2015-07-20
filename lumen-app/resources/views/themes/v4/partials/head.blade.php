@@ -6,7 +6,7 @@
 
 <title>STACK Home | STACK</title>
 
-<script src="/assets/third-party/initializr/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+{!! Assets::queue('headscript', 'global', 'modernizr', '/assets/third-party/initializr/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js') !!}
 
 {!! Assets::queue('stylesheet', 'global', 'bootstrap', '/assets/third-party/initializr/css/bootstrap.min.css') !!}
 
