@@ -12,16 +12,15 @@ class Assets extends Service {
 *******************************************
 	// need to add position (header javascripts)
 	// can't minify remote files
-	// also outputting in the wrong order (body styles, scripts going last)
 ******************************************
 ******************************************
 *****************************************/
-	static function queue($type, $group, $key, $src, $custom = '')
+	static function queue($type, $group, $key, $src, $custom = array())
 	{
 		return self::_queue('minify', $type, $group, $key, $src, $custom);	
 	}
 
-	static function queue_raw($type, $group, $key, $src, $custom = '')
+	static function queue_raw($type, $group, $key, $src, $custom = array())
 	{
 		return self::_queue('raw', $type, $group, $key, $src, $custom);
 	}
@@ -59,6 +58,12 @@ class Assets extends Service {
 		endforeach;
 
 
+		if (array_key_exists('global', $groups)):
+
+			// want global stuff first
+			$groups = array('global' => $groups['global']) + $groups;
+
+		endif;
 
 		$return = '';
 
@@ -67,7 +72,6 @@ class Assets extends Service {
 			$return .= Minify::$type($arr['scripts'], $arr['attribs']);
 
 		endforeach;
-
 
 		return $return;
 
@@ -150,12 +154,12 @@ class Assets extends Service {
 	}
 
 
-	static function _queue($minify, $type, $group, $key, $src, $custom = '')
+	static function _queue($minify, $type, $group, $key, $src, $custom = array())
 	{
 
 		$location = 'remote';
 
-		if (TRUE || strpos($src, '//') === FALSE):
+		if (strpos($src, '//') === FALSE):
 
 			$location = 'local';
 
@@ -167,7 +171,7 @@ class Assets extends Service {
 
 		endif;
 
-		$minify_key = ($minify) ? 'minify' : 'raw';
+		$minify_key = ($minify == 'minify' && $location !== 'remote') ? 'minify' : 'raw';
 
 		self::$_scripts[$minify_key][$type][$key] = array(
 			'group'  => $group,
@@ -180,7 +184,7 @@ class Assets extends Service {
 	static function _get_queued($minify, $type)
 	{
 
-		$minify_key = ($minify) ? 'minify' : 'raw';
+		$minify_key = ($minify == 'minify') ? 'minify' : 'raw';
 
 		if ( ! isset(self::$_scripts[$minify_key][$type])):
 

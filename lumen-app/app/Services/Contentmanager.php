@@ -13,6 +13,8 @@ class Contentmanager extends Service
 	{
 		parent::__construct();
 
+		$this->_namespace = config('contentmanager.manager');
+
 		$content_type = ucwords(preg_replace('/[^a-z0-9]/', '', strtolower($content_type)));
 
 		$class = 'App\\Services\\Contentmanagers\\'.$this->_namespace.'\\'.$content_type;
