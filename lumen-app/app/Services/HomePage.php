@@ -12,6 +12,8 @@ class HomePage extends Page
 		$id 		= '618442261001';
 
 		$this->_object = $playlist->get($id);
+	
+		return parent::initiate();
 	}
 
 	

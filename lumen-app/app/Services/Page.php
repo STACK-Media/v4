@@ -20,5 +20,16 @@ abstract class Page extends Service
 		return $this->_object->$attrib_name = $value;
 	}
 
-	abstract public function initiate($args);	
+	public function initiate()
+	{
+		if ( ! $this->_object || ! property_exists($this->_object, 'id')):
+
+			return FALSE;
+
+		endif;
+
+		return TRUE;
+	}
+
+	//abstract public function initiate($args);	
 } 

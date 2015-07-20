@@ -34,5 +34,10 @@ class TaxonomyModel extends AbstractTaxonomy
     		)
     		->take(1)->first();
 	}
+
+    public function get_post_categories($post_id)
+    {
+        
+    }
    
 } 

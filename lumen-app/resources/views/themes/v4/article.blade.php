@@ -2,92 +2,87 @@
 @extends('theme::layouts.two_column')
 
 
-@section('content-widgets')
-	
-	<?php // iterate content widgets ?>
-	@if(isset($widgets['content']))
+@section('content')
 
-		@foreach ($widgets['content'] AS $widget => $wdata)
 
-			<div class="row event" data-name="content-<?php echo $widget; ?>" data-template="{{$template or "default"}}">
+<article>
+	<div class="breadcrumb">
+		<a href="http://www.stack.com/fitness/">
+			Home
+		</a>
+		// 
+		<a href="/fitness/category/fitness-2/" class="topic">
+			Fitness
+		</a>
+		// 
+		<a href="/fitness/yoga/" class="topic">
+			Yoga
+		</a>						
+	</div>
+	<h1>
+		{!! $page->name !!}
+	</h1>
+	<p class="date">
+		{!! date('F d, Y',strtotime($page->post_date)) !!}
+	</p>
 
-				<div class="col-lg-12">
-					
-					@include('theme::partials.widgets.'.$widget, $wdata)						
-
-				</div>
-
-			</div>		
-
-		@endforeach	
+	<div id="trigger_slidebox">
+	</div>
+	<div class="article_content">
 		
-	@endif
-	
-@stop
+		<?php /*
+		<div class="video playlist">
+			<div id="BCLbodyContent">
+				<div id="BCLcontainingBlock">
+					<div class="BCLvideoWrapper">
+						<div>
 
-
-@section('sidebar-widgets')
-
-	<?php
-	$num_widgets = 0;
-	 // iterate sidebar widgets ?>
-	@if(isset($widgets['sidebar']))
-
-		@foreach ($widgets['sidebar'] AS $widget => $wdata)
-
-			<?php 
-			$num_widgets++; 
-
-			$headroom_class = 'headroom';
-
-			if ($num_widgets === 1):
-
-				$headroom_class = '';
-
-			endif;
-
-			?>
-
-			<div class="row event" data-name="sidebar-{{$widget}}" data-template="{{$template or "default"}}">
-
-				<div class="col-xs-12">
-
-					<div class="dashed-bottom legroom {{$headroom_class}}">
-
-						@include('theme::partials.widgets.'.$widget, $wdata)		
-
+						</div> 
+					</div>
+				</div>
+			</div>
+			<div class="playlist_container">
+				<a class="previous_video" href="">
+				</a>
+				<fieldset>
+					<p id="mediaLegend">
+						Now Playing
+					</p>
+					<div id="mediaInfo">
+						<a href="#">
+							Yoga Fails, Fixed: Low Lunge
+						</a>
+					</div>
+					<div id="mediaDescription">
+						Get expert advice about the Low Lunge Pose and how to fix common mistakes while performing it.
+					</div>
+					<div>
+						<div id="videoViews">
+						</div>
 					</div>
 
-				</div>
-
+				</fieldset>
+				<a id="NextVideo" href="">
+					Next Video: Yoga Fails, Fixed:  Warrior II
+				</a>
+				<a class="next_video" href="">
+				</a>
 			</div>
+		</div>
+		*/ ?>
 
-		@endforeach
+		{!! $page->post_content !!}
 
-	@endif
+		
+		<div class="topics">
+			Topics: 
+			<a href="/fitness/yoga/" class="topic">
+				YOGA
+			</a>
+		</div>		
 
-@stop
-
-
-@section('post-content-widgets')
-
-	<?php // iterate post content widgets ?>
-	@if(isset($widgets['post_content']))
-
-		@foreach ($widgets['post_content'] AS $widget => $wdata)
-
-			<div class="row event" data-name="postcontent-{{$widget}}" data-template="{{$template or "default"}}">
-
-				<div class="col-lg-12">
-
-					@include('theme::partials.widgets.'.$widget, $wdata)		
-
-				</div>
-
-			</div>
-
-		@endforeach
-
-	@endif
+	</div>
+	
+</article>
 
 @stop

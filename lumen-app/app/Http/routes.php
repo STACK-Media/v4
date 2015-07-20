@@ -28,7 +28,8 @@ $route_pages     = array(
 		'controller' => 'ArticleController',
 		'function'   => 'index',
 		'params'     => array(
-			'id', 'slug'
+			'slug'
+			//'id', 'slug'
 		)
 	),
 	'category' => array(

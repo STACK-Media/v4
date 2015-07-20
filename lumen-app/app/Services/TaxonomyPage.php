@@ -19,6 +19,8 @@ class TaxonomyPage extends Page
 
 		$this->_object = $cms->get_by_column($type, $identifier_type, $identifier);
 
+		return parent::initiate();
+
 	}
 
 	

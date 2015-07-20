@@ -94,7 +94,13 @@ class PageController extends BaseController
 	{
 
 		$this->_page_object = new Cacher($class);
-    	$this->_page_object->initiate($args);
+    	$initialized = $this->_page_object->initiate($args);
+
+    	if ( ! $initialized):
+
+    		abort('404');
+
+    	endif;
 
     	$this->_page_object->theme        = $this->_theme;
     	$this->_page_object->subtheme     = $this->_subtheme;

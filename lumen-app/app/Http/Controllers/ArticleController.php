@@ -7,6 +7,22 @@ use App\Services\ArticlePage;
 class ArticleController extends PageController
 {
 
+    function index($slug)
+    {
+
+        $status = 'publish';
+
+        $this->_set_page_object(new ArticlePage(), array(
+            'slug' => $slug, 
+            'type' => 'publish'
+        ));
+
+        $page_data['widgets'] = $this->_get_widgets('article');
+
+        return $this->_load_page_view('article', $page_data);
+    }
+
+    /*
     function index($id, $slug = NULL)
     {
 
@@ -21,4 +37,5 @@ class ArticleController extends PageController
 
     	return $this->_load_page_view('article', $page_data);
     }
+    */
 } 
