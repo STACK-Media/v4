@@ -7,16 +7,18 @@ class Assets extends Service {
 	static 
 		$_scripts,
 		$_pub_dir = '../public_html';
-
+/*****************************************
+******************************************
+*******************************************
+	// need to add position (header javascripts)
+	// can't minify remote files
+	// also outputting in the wrong order (body styles, scripts going last)
+******************************************
+******************************************
+*****************************************/
 	static function queue($type, $group, $key, $src, $custom = '')
 	{
-		// add minify groups or flag to don't minify
-		// groups: global, layout, widgets
-
-		// test javascript
-
-		return self::_queue('minify', $type, $group, $key, $src, $custom);
-		
+		return self::_queue('minify', $type, $group, $key, $src, $custom);	
 	}
 
 	static function queue_raw($type, $group, $key, $src, $custom = '')
