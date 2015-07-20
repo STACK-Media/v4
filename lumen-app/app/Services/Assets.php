@@ -7,13 +7,7 @@ class Assets extends Service {
 	static 
 		$_scripts,
 		$_pub_dir = '../public_html';
-/*****************************************
-******************************************
-*******************************************
-	// need to add position (header javascripts)
-******************************************
-******************************************
-*****************************************/
+
 	static function queue($type, $group, $key, $src, $custom = array())
 	{
 		return self::_queue('minify', $type, $group, $key, $src, $custom);	
