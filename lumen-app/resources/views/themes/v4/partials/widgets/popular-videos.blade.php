@@ -1,4 +1,4 @@
-{!! Assets::queue('javascript', 'widgets', 'popular-videos', '/assets/js/widgets/popular-videos.js') !!}
+{!! Assets::queue('javascript',  'widgets', 'loadmore', '/assets/js/loadmore.js') !!}
 
 <div class="row">
 
@@ -40,7 +40,7 @@
 	<div class="clearfix"></div>
 
 	<div class="col-sm-6 col-sm-offset-3">
-		<p><a class="loadmore popular-videos">Load More</a></p>
+		<p><a class="loadmore" data-loadmore="popular-videos">Load More</a></p>
 	</div>
 
 </div>
