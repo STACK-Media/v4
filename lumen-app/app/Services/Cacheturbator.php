@@ -26,12 +26,54 @@ class Cacheturbator extends Service
 
 	function __get($attrib_name)
 	{
-		return $this->service->$attrib_name;
+
+		if ($this->cache_on):
+
+			$cache_key = 's.'.get_class($this->service).'.a.'.$attrib_name;
+
+			if (Cache::has($cache_key)):
+
+				return Cache::get($cache_key);
+
+			endif;
+
+		endif;
+
+		$result = $this->service->$attrib_name;
+
+		if ($this->cache_on):
+
+			Cache::put($cache_key, $result, 30);
+
+		endif;
+
+		return $result;
 	}
 
 	function __set($attrib_name, $value)
 	{
-		return $this->service->$attrib_name = $value;
+
+		if ($this->cache_on):
+
+			$cache_key = 's.'.get_class($this->service).'.a.'.$attrib_name.'.v.'.json_encode($value);
+
+			if (Cache::has($cache_key)):
+
+				return Cache::get($cache_key);
+
+			endif;
+
+		endif;
+
+		$result = $this->service->$attrib_name = $value;
+
+		if ($this->cache_on):
+
+			Cache::put($cache_key, $result, 30);
+
+		endif;
+
+		return $result;
 	}
 
 	function __call($method_name, $args = NULL)
