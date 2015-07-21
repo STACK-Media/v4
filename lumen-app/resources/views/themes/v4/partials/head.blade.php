@@ -14,7 +14,7 @@
 
 {!! Assets::queue('stylesheet', 'global', 'global', '/assets/css/global.css') !!}
 
-{!! Assets::queue('stylesheet', 'global', 'googlefonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Oswald:400,700') !!}
+{!! Assets::queue('stylesheet', 'global', 'googlefonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Oswald:400|Roboto+Slab:700') !!}
 
 <?php
 // include global pixels

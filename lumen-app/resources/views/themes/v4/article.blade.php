@@ -6,6 +6,8 @@
 
 
 <article>
+
+	<?php /*
 	<div class="breadcrumb">
 		<a href="http://www.stack.com/fitness/">
 			Home
@@ -19,16 +21,20 @@
 			Yoga
 		</a>						
 	</div>
+	*/ ?>
+
 	<h1>
 		{!! $page->name !!}
 	</h1>
-	<p class="date">
-		{!! date('F d, Y',strtotime($page->post_date)) !!}
-	</p>
-
+	
+	<time datetime="{!! date('Y-m-d H:i',strtotime($page->post_date)) !!}">{!! date('F d, Y',strtotime($page->post_date)) !!}</time>
+	
+	<?php /*
 	<div id="trigger_slidebox">
 	</div>
-	<div class="article_content">
+	*/ ?>
+
+	<div id="article_content">
 		
 		<?php /*
 		<div class="video playlist">
@@ -73,13 +79,14 @@
 
 		{!! $page->post_content !!}
 
-		
+		<?php /*
 		<div class="topics">
 			Topics: 
 			<a href="/fitness/yoga/" class="topic">
 				YOGA
 			</a>
-		</div>		
+		</div>
+		*/ ?>
 
 	</div>
 	

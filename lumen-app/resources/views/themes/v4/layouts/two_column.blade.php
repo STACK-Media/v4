@@ -112,7 +112,7 @@
 
 			</div>
 
-			<div>
+			<div id="after-content" class="content-widgets">
 
 				@yield('content-widgets')
 
@@ -128,7 +128,7 @@
 		</div>
 
 
-		<div class="col-xs-12">
+		<div class="col-xs-12 content-widgets" id="post-content">
 
 			@yield('post-content-widgets')
 
