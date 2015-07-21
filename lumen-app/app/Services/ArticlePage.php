@@ -6,16 +6,16 @@ class ArticlePage extends Page
 	function initiate($args = array())
 	{
 		$paramlist = array(
-			'slug'   => NULL, 
+			'slug' => NULL, 
 			'type' => 'publish'
 		);
 		
 		$args      = array_merge($paramlist, $args);
 		extract($args);
 
-		$cms = new Contentmanager('article');
+		$articlecms = new Contentmanager('article');
 
-		$this->_object = $cms->get_by_slug($slug, $type);
+		$this->_object = $articlecms->get_by_slug($slug, $type);
 
 		return parent::initiate();
 	}

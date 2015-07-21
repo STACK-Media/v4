@@ -22,7 +22,7 @@ abstract class Page extends Service
 
 	public function initiate()
 	{
-		if ( ! $this->_object || ! property_exists($this->_object, 'id')):
+		if ( ! $this->_object || ! is_object($this->_object) || ! property_exists($this->_object, 'id')):
 
 			return FALSE;
 

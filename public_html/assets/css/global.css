@@ -18,6 +18,8 @@ hr {
 	border-bottom: 		1px solid #bf2f37;
 }
 
+a {cursor:pointer;}
+
 /* Content */
 .main {
 	max-width: 			1024px;
@@ -41,7 +43,7 @@ hr {
 }
 
 /* Sidebar */
-.sidebar .widget {
+#sidebar .widget {
 	padding-bottom: 	0px;
 }
 .adunit {
@@ -149,50 +151,7 @@ hr {
 	font-size: 			110%;
 }
 
-/* Remove */
-.img-block {
-	background-color: 	gray;
-	min-height: 		170px;
-}
-.img-magazine {
-	background-color: 	gray;
-	min-height: 		400px;
-}
-.img-expert {
-	background-color: 	gray;
-	min-height: 		120px;	
-}
-.img-trending {
-	background-color: 	gray;
-	min-height: 		168px;	
-}
-.img-author {
-	background-color: 	gray;
-	min-height: 		100px;	
-}
-.img-zergnet {
-	background-color: 	gray;
-	min-height: 		150px;
-}
-.article {
-	background-color: 	gray;
-	min-height: 		1500px;
-}
 
-.loadmore {
-	text-decoration: none;
-	cursor: pointer;
-	text-align: center;
-	background-color: #000;
-	color: #FFF;
-	padding: 1%;
-	width: 60%;
-	float: left;
-	text-transform: uppercase;
-	font-family: "Oswald", Arial, sans-serif;
-	outline: none !important;
-	margin-left: 20%;
-}
 .hidden {
   display: none !important;
   visibility: hidden;
@@ -201,3 +160,42 @@ hr {
 @media (min-width:768px){
 	.sm-right-gutter {padding-right:15px;}
 }
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1054px;
+  }
+}
+
+.panel {border-radius:0px;}
+
+#sidebar h3 {background:#A1A1A1;color:#fff;text-transform:uppercase;font-family:Oswald,Impact,Arial,Helvetica,sans-serif;font-size:20px;font-weight:400;padding:8px 10px;display:block;}
+
+#sidebar .widget a {color: #20576e;display: block;
+    font-family: Source Sans Pro;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21px;
+    text-decoration: underline;
+    text-transform: capitalize;
+}
+
+#sidebar .widget a.loadmore {
+	background-color: #000;
+	display:block;
+    color: #fff;
+    font-family: "Oswald",Impact,Arial,sans-serif;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding:5px 0;
+}
+
+#sidebar .widget a.loadmore:hover {
+	background:#148bcc;
+}
+
+#sidebar .thumbnail {padding:0;box-shadow:0 0 0 #fff;background:none;min-height:auto;}
+#sidebar .thumbnail img {border:1px solid #000;}
+
+.pad-right {padding-right:15px;}

@@ -5,7 +5,7 @@
 
 		@foreach ($widgets['content'] AS $widget => $wdata)
 
-			<div class="row event" data-name="content-<?php echo $widget; ?>" data-template="{{$template or "default"}}">
+			<div class="row event widget" data-name="content-<?php echo $widget; ?>" data-template="{{$template or "default"}}">
 
 				<div class="col-lg-12">
 					
@@ -29,36 +29,34 @@
 	 // iterate sidebar widgets ?>
 	@if(isset($widgets['sidebar']))
 
-		@foreach ($widgets['sidebar'] AS $widget => $wdata)
+		<div class="row">
 
-			<?php 
-			$num_widgets++; 
+			@foreach ($widgets['sidebar'] AS $widget => $wdata)
 
-			$headroom_class = 'headroom';
-
-			if ($num_widgets === 1):
+				<?php 
+				$num_widgets++; 
 
 				$headroom_class = '';
 
-			endif;
+				?>
 
-			?>
+				<div class="event widget" data-name="sidebar-{{$widget}}" data-template="{{$template or "default"}}">
 
-			<div class="row event" data-name="sidebar-{{$widget}}" data-template="{{$template or "default"}}">
+					<div class="col-xs-12 col-sm-6 col-md-12">
 
-				<div class="col-xs-12">
+						<div class="dashed-bottom legroom {{$headroom_class}}">
 
-					<div class="dashed-bottom legroom {{$headroom_class}}">
+							@include('theme::partials.widgets.'.$widget, $wdata)		
 
-						@include('theme::partials.widgets.'.$widget, $wdata)		
+						</div>
 
 					</div>
 
 				</div>
 
-			</div>
+			@endforeach
 
-		@endforeach
+		</div>
 
 	@endif
 
@@ -72,7 +70,7 @@
 
 		@foreach ($widgets['post_content'] AS $widget => $wdata)
 
-			<div class="row event" data-name="postcontent-{{$widget}}" data-template="{{$template or "default"}}">
+			<div class="row event widget" data-name="postcontent-{{$widget}}" data-template="{{$template or "default"}}">
 
 				<div class="col-lg-12">
 
@@ -106,7 +104,7 @@
 
 	<div class="panel headroom">
 		
-		<div class="col-xs-12 col-md-8 col-lg-8">
+		<div class="col-xs-12 col-md-8 col-lg-8" id="content">
 
 			<div>
 
@@ -123,7 +121,7 @@
 		</div>
 
 		<!-- Sidebar -->
-		<div class="col-xs-12 col-md-4 col-lg-4 sidebar">
+		<div class="col-xs-12 col-md-4 col-lg-4" id="sidebar">
 
 			@yield('sidebar-widgets')
 
