@@ -20,15 +20,14 @@ class Widgets extends Service
 				//'hero'
     		),
     		'sidebar' => array(
+    			//'newsletter-optin',
+    			//'magazine',
     			'featured-videos',
-				/*
-				'newsletter',
-				*/
 				'popular-videos',
 				//'social-connect',
 				/*
 				'trending-block',
-				'outbrain-sidebar'
+				'outbrain'
 				*/
     		),
     		'post_content' => array(
