@@ -8,12 +8,12 @@ class Featuredvideos extends WidgetService
 {
 	function get($page_object)
 	{
-		$playlist 	= new Videomanager('playlist');
+		$playlist = new Videomanager('playlist');
 
 		// for now, we hard code the playlist
-		$id 		= '4131748612001';
+		$id 	  = '4131748612001';
 
-		return $playlist->get($id); // need to add some arguments
+		return $playlist->get($id, 8); // need to add some arguments
 	}
 
 }
