@@ -1,8 +1,3 @@
-AuthUserFile /var/www/.htpasswd
-AuthType Basic
-AuthName "Node1"
-Require valid-user
-
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews
@@ -17,8 +12,4 @@ Require valid-user
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
-
-
-    RedirectMatch 301 /([0-9]+)/([0-9]+)/([0-9]+)/(.*)$ /article/$4
-
 </IfModule>
