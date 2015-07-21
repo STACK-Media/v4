@@ -16,7 +16,8 @@ class Widgets extends Service
 				'must-see',
 				*/
 				'zergnet',
-				'outbrain'
+				'outbrain',
+				'hero'
     		),
     		'sidebar' => array(
     			'featured-videos',

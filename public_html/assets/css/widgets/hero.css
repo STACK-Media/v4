@@ -1,0 +1,24 @@
+.hero {
+	position: relative;
+	width: 100%;
+	min-height: 200px;
+}
+.hero a img {
+	width: 100%;
+}
+.hero a:hover h2 {
+	background-color: rgba(20, 139, 204, 0.8);
+}
+.hero h2 {
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	font-family: "Oswald", Arial, sans-serif;
+	color: #FFF;
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.8);
+	padding: 12px;
+	bottom: 12px;
+	width: 100%;
+	font-size: 3em;
+	margin: 0;
+}
