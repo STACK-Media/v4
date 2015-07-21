@@ -10,7 +10,7 @@
 
 			<?php $class = ($key < 3)? '': 'hidden'; ?>
 
-			<div class="event popular-videos {{$class}} event" data-name="{{$key}}" data-template="featured-videos">
+			<div class="event featured-videos {{$class}} event" data-name="{{$key}}" data-template="featured-videos">
 
 				<a href="/video/{{$value['id']}}/video-title">
 					<div class="img-block">
