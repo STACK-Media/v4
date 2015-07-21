@@ -25,6 +25,7 @@ class Article extends Wordpress
 		$article->post_content = $this->do_shortcode($article->post_content);
 		$article->post_content = $this->remove_hidden_image($article->post_content);
 		$article->post_content = $this->wpc_add_image_responsive_class($article->post_content);
+		$article->post_content = $this->wp_fix_article_links($article->post_content);
 
 		return $article;
 	}

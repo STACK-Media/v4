@@ -662,6 +662,18 @@ class Wordpress extends Content
 	}
 
 
+	/**
+	 * Remove date-formatted article links
+	 * Replace with slug-based ones
+	 * @param  string $html 
+	 * @return string       
+	 */
+	function wp_fix_article_links($html)
+	{
+		return preg_replace('/http:\/\/www.stack.com\/([0-9]{4,4})\/([0-9]{2,2})\/([0-9]{2,2})\/(.*?)"/', '/article/$4"', $html);
+	}
+
+
 	/** 
 	* Snippet Name: Add ‘img-responsive’ class to images 
 	* Snippet URL: http://www.wpcustoms.net/snippets/add-img-responsive-class-images/ 
