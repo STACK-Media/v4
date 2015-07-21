@@ -11,7 +11,7 @@ class Wordpress extends Content
 
 	function __construct()
 	{
-		$this->add_shortcode('caption',array($this,'img_caption_shortcode'));
+		
 	}
 
 
@@ -660,6 +660,27 @@ class Wordpress extends Content
 		// Replace characters according to translation table
 		return strtr( $string, $translation );
 	}
+
+
+	/** 
+	* Snippet Name: Add ‘img-responsive’ class to images 
+	* Snippet URL: http://www.wpcustoms.net/snippets/add-img-responsive-class-images/ 
+	*/  
+	function wpc_add_image_responsive_class($html)
+	{  
+		$classes = 'img-responsive'; // separated by spaces, e.g. 'img image-link'  
+
+		// add img-responsive class
+		$html = preg_replace('/(<img.*?)(\/\>)/', '$1 class="' . $classes . '" $2', $html); 
+		
+		// combine any image classes
+		$html = preg_replace('/<img(.*?)class="(.*?)"(.*?)class="(.*?)"/', '<img$1class="$2 $4"$3', $html);
+
+		// remove dimensions from images,, does not need it!  
+		$html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );  
+
+		return $html;  
+	}  
 
 	function img_caption_shortcode($attr, $content = null) {
 		

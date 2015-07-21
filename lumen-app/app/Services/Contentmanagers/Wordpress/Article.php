@@ -13,6 +13,8 @@ class Article extends Wordpress
 	{
 		parent::__construct();
 
+		$this->add_shortcode('caption',array($this,'img_caption_shortcode'));
+
 		$this->_model = new ArticleModel;
 	}
 
@@ -22,6 +24,7 @@ class Article extends Wordpress
 		$article->post_content = $this->wpautop($article->post_content);
 		$article->post_content = $this->do_shortcode($article->post_content);
 		$article->post_content = $this->remove_hidden_image($article->post_content);
+		$article->post_content = $this->wpc_add_image_responsive_class($article->post_content);
 
 		return $article;
 	}
