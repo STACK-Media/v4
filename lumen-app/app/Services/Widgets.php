@@ -15,9 +15,9 @@ class Widgets extends Service
 				'author',
 				'must-see',
 				*/
-				'zergnet',
-				'outbrain',
-				'hero'
+				//'zergnet',
+				//'outbrain',
+				//'hero'
     		),
     		'sidebar' => array(
     			'featured-videos',
@@ -25,7 +25,7 @@ class Widgets extends Service
 				'newsletter',
 				*/
 				'popular-videos',
-				'social-connect',
+				//'social-connect',
 				/*
 				'trending-block',
 				'outbrain-sidebar'
