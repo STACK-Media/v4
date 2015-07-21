@@ -1,0 +1,24 @@
+.icon {
+	width: 	44px;
+	height: 44px;
+	margin: 0 6px 6px 0;
+	float: left;
+}
+.facebook {
+	background: 	url(/assets/img/partners/facebook-icon.png) no-repeat 0 0;
+}
+.twitter {
+	background: 	url(/assets/img/partners/twitter-icon.png) no-repeat 0 0;
+}
+.youtube {
+	background: 	url(/assets/img/partners/youtube-icon.png) no-repeat 0 0;
+}
+.instagram {
+	background: 	url(/assets/img/partners/instagram-icon.png) no-repeat 0 0;
+}
+.google {
+	background: 	url(/assets/img/partners/google-plus-icon.png) no-repeat 0 0;
+}
+.rss {
+	background: 	url(/assets/img/partners/rss-icon.png) no-repeat 0 0;
+}

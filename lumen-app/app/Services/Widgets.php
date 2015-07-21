@@ -24,6 +24,7 @@ class Widgets extends Service
 				'newsletter',
 				*/
 				'popular-videos',
+				'social-connect',
 				/*
 				'trending-block',
 				'outbrain-sidebar'
