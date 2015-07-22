@@ -21,8 +21,8 @@ class Widgets extends Service
 				//'hero'
     		),
     		'sidebar' => array(
-    			//'newsletter-optin',
-    			//'magazine',
+    			'newsletter-optin',
+    			'magazine',
     			'featured-videos',
 				'popular-videos',
 				//'social-connect',

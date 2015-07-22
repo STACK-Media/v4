@@ -11,15 +11,15 @@ class Magazine extends WidgetService
 			array(
 				'title'		=> '2015 Summer Training Guide - Maya Moore',
 				'img'		=> '/assets/img/magazine/cover/Maya-Moore.jpg',
-				'url'		=> 'http://www.stack.com/magazine',
+				'url'		=> '/magazine',
 				'articles'	=> array(
 					array(
 						'title'	=> 'Learn How Maya Moore Outworked Her Opponents to Become a WNBA Champion and MVP',
-						'url'	=> 'http://www.stack.com/2015/07/16/maya-moore-feature'
+						'url'	=> '/article/maya-moore-feature'
 					),
 					array(
 						'title'	=> 'The Shooting Drills and Strength Workout That Propelled Maya Moore to WNBA MVP',
-						'url'	=> 'http://www.stack.com/2015/07/16/maya-moore-workout'
+						'url'	=> '/article/maya-moore-workout'
 					)
 				)
 			),
@@ -30,15 +30,15 @@ class Magazine extends WidgetService
 				'articles'	=> array(
 					array(
 						'title'	=> 'How Marcus Mariota\'s Work Ethic Powered his Evolution From High-School Back-Up to NFL Star',
-						'url'	=> 'http://www.stack.com/2015/07/15/marcus-mariota-feature/'
+						'url'	=> '/article/marcus-mariota-feature/'
 					),
 					array(
 						'title'	=> 'Steal Chiefs TE Travis Kelce\'s Swagger &mdash; and Workout &mdash; to Step Up Your Game',
-						'url'	=> 'http://www.stack.com/2015/07/14/travis-kelce-homecoming'
+						'url'	=> '/article/travis-kelce-homecoming'
 					),
 					array(
 						'title'	=> 'From Good to Great: How Hard Work and Good Nutrition Landed Two High School Ballers at their Dream Schools',
-						'url'	=> 'http://www.stack.com/2015/07/10/stack-velocity-matt-ryan-and-ty-jeromfrom-good-to-great-how-hard-work-and-good-nutrition-landed-two-high-school-ballers-at-their-dream-schools'
+						'url'	=> '/article/stack-velocity-matt-ryan-and-ty-jeromfrom-good-to-great-how-hard-work-and-good-nutrition-landed-two-high-school-ballers-at-their-dream-schools'
 					),
 				)
 			)
