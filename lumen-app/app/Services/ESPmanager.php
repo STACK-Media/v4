@@ -2,10 +2,10 @@
 
 namespace App\Services;
 
-class VideoManager extends Service
+class ESPManager extends Service
 {
 
-	private $_namespace = 'Brightcove';
+	private $_namespace = 'SailThru';
 
 	protected $_class;
 
@@ -13,11 +13,11 @@ class VideoManager extends Service
 	{
 		parent::__construct();
 
-		$this->_namespace = config('videomanager.manager');
+		//$this->_namespace = config('esp.manager');
 
 		$content_type = ucwords(preg_replace('/[^a-z0-9]/', '', strtolower($content_type)));
 
-		$class = 'App\\Services\\VideoManagers\\'.$this->_namespace.'\\'.$content_type;
+		$class = 'App\\Services\\ESPManagers\\'.$this->_namespace.'\\'.$content_type;
 
 		$this->_class = new $class();
 	}
