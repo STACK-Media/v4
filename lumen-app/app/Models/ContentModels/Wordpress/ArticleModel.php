@@ -68,5 +68,20 @@ class ArticleModel extends AbstractArticle
             ->orderBy('post_modified', 'desc')
             ->take(1)->first();
     }
+
+    public function get_meta($article_id)
+    {
+
+        return DB::table('wp_postmeta')
+            ->select(
+                'wp_postmeta.meta_key', 
+                'wp_postmeta.meta_value'
+            )
+            ->where('wp_postmeta.post_id', $article_id)
+            ->whereRaw('wp_postmeta.meta_key NOT LIKE "\_%"')
+            ->orderBy('wp_postmeta.meta_key', 'desc')
+            ->get();
+
+    }
    
 } 

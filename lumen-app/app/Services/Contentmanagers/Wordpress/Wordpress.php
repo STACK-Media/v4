@@ -183,12 +183,6 @@ class Wordpress extends Content
 	}
 
 
-	// need do_shortcode
-	// 
-	// parse brightcove
-	// 
-	// remove 0 height or 0 width images
-
 
 	/**
 	 * Search content for shortcodes and filter shortcodes through their hooks.
@@ -715,9 +709,9 @@ class Wordpress extends Content
 			return $output; */
 
 		extract($this->shortcode_atts(array(
-			'id'	=> '',
-			'align'	=> 'alignnone',
-			'width'	=> '',
+			'id'      => '',
+			'align'   => 'alignnone',
+			'width'   => '',
 			'caption' => ''
 		), $attr));
 
