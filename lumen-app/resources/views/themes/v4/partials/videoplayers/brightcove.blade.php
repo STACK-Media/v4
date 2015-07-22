@@ -3,8 +3,9 @@
 
 {!! Assets::queue('javascript', 'global', 'brightcove', '/assets/widgets/js/brightcove.js') !!}
 
-<!-- Start of Brightcove Player -->
-<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+{!! Assets::queue('headscript', 'global', 'bcexperiences', '//admin.brightcove.com/js/BrightcoveExperiences.js') !!}
+
+
 <object id="myExperienceMediaPlayer" class="BrightcoveExperience">
 	<param name="bgcolor" value="#FFFFFF" />
 	<param name="width" value="692" />
