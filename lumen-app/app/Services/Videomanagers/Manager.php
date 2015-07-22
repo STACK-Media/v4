@@ -1,6 +1,6 @@
 <?php 
 
-namespace App\Services\Videomanagers;
+namespace App\Services\VideoManagers;
 
 use App\Services\Service;
 

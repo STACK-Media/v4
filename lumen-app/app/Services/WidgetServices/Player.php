@@ -2,7 +2,7 @@
 
 namespace App\Services\WidgetServices;
 
-use App\Services\Videomanager;
+use App\Services\VideoManager;
 
 class Player extends WidgetService
 {

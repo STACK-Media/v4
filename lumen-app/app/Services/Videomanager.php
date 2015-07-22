@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-class Videomanager extends Service
+class VideoManager extends Service
 {
 
 	private $_namespace = 'Brightcove';
@@ -17,7 +17,7 @@ class Videomanager extends Service
 
 		$content_type = ucwords(preg_replace('/[^a-z0-9]/', '', strtolower($content_type)));
 
-		$class = 'App\\Services\\Videomanagers\\'.$this->_namespace.'\\'.$content_type;
+		$class = 'App\\Services\\VideoManagers\\'.$this->_namespace.'\\'.$content_type;
 
 		$this->_class = new $class();
 	}

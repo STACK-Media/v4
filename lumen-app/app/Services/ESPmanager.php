@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-class Videomanager extends Service
+class ESPManager extends Service
 {
 
 	private $_namespace = 'SailThru';
@@ -13,7 +13,7 @@ class Videomanager extends Service
 	{
 		parent::__construct();
 
-		$this->_namespace = config('esp.manager');
+		//$this->_namespace = config('esp.manager');
 
 		$content_type = ucwords(preg_replace('/[^a-z0-9]/', '', strtolower($content_type)));
 

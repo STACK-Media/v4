@@ -1,6 +1,6 @@
 <?php 
 
-namespace App\Services\Videomanagers\JWPlayer;
+namespace App\Services\VideoManagers\JWPlayer;
 
 class Player extends JWPlayer
 {

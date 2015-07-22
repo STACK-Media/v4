@@ -57,40 +57,6 @@ class SailThru extends Manager
 		return json_decode($response,TRUE);
 	}
 
-	public function Get($method,$data=array())
-	{
-		// initialize variables
-		$post 				= array();
-		$url 				= $this->_url.$method;
-	
-		// append api_key and api_secret
-		$post['api_key']	= $this->_key;
-		$post['format']		= 'json';
-		$post['json']		= json_encode($data);
-
-		// get api signature
-		$post['sig']		= $this->Signature($post);
-
-		// generate query string from post_data
-		$query_string 		= http_build_query($post, '', '&');
-		
-		// initialize curl
-		$ch = curl_init();
-		
-		// set parameters
-		curl_setopt($ch, CURLOPT_URL, $url.'?'.$query_string);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT ,0); 
-		curl_setopt($ch, CURLOPT_TIMEOUT, 1000); //timeout in seconds		
-
-		// run cUrl
-		$response	= curl_exec ($ch);
-
-		curl_close($ch);
-
-		return json_decode($response,TRUE);
-	}	
-
 	private function Signature($params)
 	{
 		// Extract parameter values

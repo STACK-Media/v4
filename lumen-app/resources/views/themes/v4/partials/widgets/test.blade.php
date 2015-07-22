@@ -1,5 +1,5 @@
 <?php
 
 print "<pre>";
-print_r($sailthru);
+print_r($test);
 exit;
