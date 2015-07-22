@@ -18,7 +18,7 @@ class Widgets extends Service
 				*/
 				//'zergnet',
 				//'outbrain',
-				'hero'
+				//'hero'
     		),
     		'sidebar' => array(
     			'newsletter-optin',
