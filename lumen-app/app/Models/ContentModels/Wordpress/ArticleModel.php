@@ -21,6 +21,8 @@ class ArticleModel extends AbstractArticle
     			'wp_posts.post_content', 
     			'wp_users.user_nicename AS author_user',
     			'wp_users.display_name AS author_name',
+                'wp_users.user_url AS author_url',
+                'wp_users.user_email AS author_email',
     			'wp_users.ID AS author_id'
     		)
     		->where(function($query) use ($id, $statuses) {
@@ -56,6 +58,8 @@ class ArticleModel extends AbstractArticle
                 'wp_posts.post_content', 
                 'wp_users.user_nicename AS author_user',
                 'wp_users.display_name AS author_name',
+                'wp_users.user_url AS author_url',
+                'wp_users.user_email AS author_email',
                 'wp_users.ID AS author_id'
             )
             ->where('wp_posts.post_name', $slug)

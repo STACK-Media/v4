@@ -7,21 +7,23 @@
 
 <article>
 
-	<?php /*
-	<div class="breadcrumb">
-		<a href="http://www.stack.com/fitness/">
+	<?php // need to add vertical stuff to breadcrumb links ?>
+
+	<div id="breadcrumb">
+
+		<a href="/">
 			Home
 		</a>
-		// 
-		<a href="/fitness/category/fitness-2/" class="topic">
-			Fitness
+		
+		@foreach($page->taxonomy['category'] as $category)
+		//
+		<a href="/category/{!! $category->slug !!}">
+			{!! $category->name !!}
 		</a>
-		// 
-		<a href="/fitness/yoga/" class="topic">
-			Yoga
-		</a>						
+
+		@endforeach
+
 	</div>
-	*/ ?>
 
 	<h1>
 		{!! $page->name !!}
@@ -35,6 +37,12 @@
 	*/ ?>
 
 	<div id="article_content">
+
+		@if($page->video)
+	
+			@include('theme::partials.videoplayers.'.$page->video['player_name'], $page->video['video_data']);
+
+		@endif
 		
 		<?php /*
 		<div class="video playlist">

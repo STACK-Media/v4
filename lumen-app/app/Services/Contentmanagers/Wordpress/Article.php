@@ -3,6 +3,7 @@
 namespace App\Services\Contentmanagers\Wordpress;
 
 use App\Models\ContentModels\Wordpress\ArticleModel;
+use App\Services\Contentmanagers\Wordpress\Taxonomy;
 
 class Article extends Wordpress
 {
@@ -38,6 +39,24 @@ class Article extends Wordpress
 		return $content;
 	}
 
+	function _reformat_author_fields($article)
+	{
+		$article->author['username'] = $article->author_user;
+		$article->author['name']     = $article->author_name;
+		$article->author['url']      = $article->author_url;
+		$article->author['email']    = $article->author_email;
+		$article->author['id']       = $article->author_id;
+
+		unset($article->author_user);
+		unset($article->author_name);
+		unset($article->author_url);
+		unset($article->author_email);
+		unset($article->author_id);
+
+		return $article;
+	
+	}
+
 	function _add_metacontent($article)
 	{
 
@@ -47,9 +66,15 @@ class Article extends Wordpress
 
 		endif;
 
-		$article->meta         = $this->get_meta_by_id($article->id);
+		$taxservice = new Taxonomy;
+
+		$article->taxonomy = $taxservice->get_by_article_id($article->id);
+
+		$article->meta = $this->get_meta_by_id($article->id);
 
 		$article->post_content = $this->_format_content($article);
+
+		$article = $this->_reformat_author_fields($article);
 
 		return $article;
 
