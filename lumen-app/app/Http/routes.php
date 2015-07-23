@@ -17,6 +17,13 @@ $route_pages     = array(
 		'controller' => 'HomeController',
 		'function'   => 'index',
 	),
+	'api'		=> array(
+		'controller'	=> 'APIController',
+		'function'		=> 'index',
+		'params'		=> array(
+			'service','class','method'
+		)
+	),
 	'video' => array(
 		'controller' => 'VideoController',
 		'function'   => 'index',

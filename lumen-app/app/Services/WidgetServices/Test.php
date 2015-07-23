@@ -11,7 +11,7 @@ class Test extends WidgetService
 		$SailThru = new ESPManager('subscription');
 
 		// generate array of social networks w/data
-		$sailthru 	= $SailThru->Get('matt.thompson@stack.com');
+		$sailthru 	= $SailThru::Get('matt.thompson@stack.com');
 
 		return array(
 			'test'	=> $sailthru
