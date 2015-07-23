@@ -17,6 +17,12 @@ abstract class Page extends Service
 
 	public function __set($attrib_name, $value)
 	{
+		if ( ! is_object($this->_object)):
+
+			return FALSE;
+
+		endif;
+
 		return $this->_object->$attrib_name = $value;
 	}
 
