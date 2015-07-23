@@ -24,7 +24,7 @@ class Cacheturbator extends Service
 
 		endif;
 
-		if (Request::input('flush')):
+		if (Request::input('flushcache')):
 
 			$this->flush = TRUE;
 
