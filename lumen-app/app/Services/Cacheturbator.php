@@ -3,13 +3,15 @@
 namespace App\Services;
 
 use Cache;
+use Request;
 
 class Cacheturbator extends Service
 {
 
 	protected 
 		$service,
-		$cache_on = FALSE;
+		$cache_on = FALSE,
+		$flush    = FALSE;
 
 	function __construct($service) 
 	{
@@ -22,6 +24,12 @@ class Cacheturbator extends Service
 
 		endif;
 
+		if (Request::input('flush')):
+
+			$this->flush = TRUE;
+
+		endif;
+
 	}
 
 	function __get($attrib_name)
@@ -31,7 +39,7 @@ class Cacheturbator extends Service
 
 			$cache_key = 's.'.get_class($this->service).'.a.'.$attrib_name;
 
-			if (Cache::has($cache_key)):
+			if ( ! $this->flush && Cache::has($cache_key)):
 
 				return Cache::get($cache_key);
 
@@ -57,7 +65,7 @@ class Cacheturbator extends Service
 
 			$cache_key = 's.'.get_class($this->service).'.a.'.$attrib_name.'.v.'.json_encode($value);
 
-			if (Cache::has($cache_key)):
+			if ( ! $this->flush && Cache::has($cache_key)):
 
 				return Cache::get($cache_key);
 
@@ -83,7 +91,7 @@ class Cacheturbator extends Service
 
 			$cache_key = 's.'.get_class($this->service).'.m.'.$method_name.'.a.'.json_encode($args);
 
-			if (Cache::has($cache_key)):
+			if ( ! $this->flush && Cache::has($cache_key)):
 
 				return Cache::get($cache_key);
 
