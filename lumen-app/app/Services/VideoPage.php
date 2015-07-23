@@ -18,9 +18,9 @@ class VideoPage extends Page
 
 		$video = $player->get_article_video($id);
 
-		if ($video):
+		$this->_object = new \stdClass();
 
-			$this->_object        = new \stdClass();
+		if ($video):
 
 			$this->_object->id    = $id;
 			$this->_object->video = $video;
