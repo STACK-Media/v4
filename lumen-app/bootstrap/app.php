@@ -98,11 +98,7 @@ class_alias('App\Facades\Assets', 'Assets');
 class_alias('Devfactory\Minify\Facades\MinifyFacade', 'Minify');
 
 $app->configure('theming');
-$app->configure('minify.config'); // should we move these config registers into the services?
-$app->configure('videomanager');
-$app->configure('contentmanager');
-$app->configure('widgets');
-$app->configure('espmanager');
+$app->configure('minify.config');
 
 require __DIR__.'/../app/Http/routes.php';
 

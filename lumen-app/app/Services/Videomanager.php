@@ -13,6 +13,8 @@ class VideoManager extends Service
 	{
 		parent::__construct();
 
+		app()->configure('videomanager');
+
 		$this->_namespace = config('videomanager.manager');
 
 		$content_type = ucwords(preg_replace('/[^a-z0-9]/', '', strtolower($content_type)));

@@ -5,6 +5,13 @@ namespace App\Services;
 class Widgets extends Service
 {
 
+	function __construct()
+	{
+		parent::__construct();
+
+		app()->configure('widgets');
+	}
+
 	function get_list($page_type = 'article', $page_object = NULL)
 	{
 		$return = array(

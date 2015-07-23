@@ -13,6 +13,8 @@ class ESPManager extends Service
 	{
 		parent::__construct();
 
+		app()->configure('espmanager');
+
 		//$this->_namespace = config('esp.manager');
 
 		$content_type = ucwords(preg_replace('/[^a-z0-9]/', '', strtolower($content_type)));
