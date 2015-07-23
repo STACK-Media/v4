@@ -1,6 +1,6 @@
 <?php 
 
-namespace App\Services\VideoManagers\Brightcove;
+namespace App\Services\Videomanagers\Brightcove;
 
 class Playlist extends Brightcove
 {
