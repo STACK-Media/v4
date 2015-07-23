@@ -1,5 +1,5 @@
 <?php
 
 return array(
-	'manager'          => 'SailThru',
+	'manager' => 'SailThru',
 );

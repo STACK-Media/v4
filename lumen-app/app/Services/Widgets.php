@@ -20,7 +20,7 @@ class Widgets extends Service
 			'post_content' => array()
 		);
 
-		$cfg = config('widgets.'.$page_type);
+		$cfg = config('widgets.page_configs.'.$page_type);
 
 		if (is_array($cfg)):
 

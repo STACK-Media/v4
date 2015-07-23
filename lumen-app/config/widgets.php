@@ -1,18 +1,20 @@
 <?php
 
 return array(
-	'article' => array(
-		'content' => array(
-			'hero'
-		),
-		'sidebar' => array(
-			'newsletter-optin',
-			'magazine',
-			'featured-videos',
-			'popular-videos',
-		),
-		'post_content' => array(
+	'page_configs' => array(
+		'article' => array(
+			'content' => array(
+				'hero'
+			),
+			'sidebar' => array(
+				'newsletter-optin',
+				'magazine',
+				'featured-videos',
+				'popular-videos',
+			),
+			'post_content' => array(
 
+			)
 		)
 	)
 );
