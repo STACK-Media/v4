@@ -28,8 +28,6 @@ class Widgets extends Service
 
 		endif;
 
-		var_dump($return);
-
 		return $return;
 	}
 
