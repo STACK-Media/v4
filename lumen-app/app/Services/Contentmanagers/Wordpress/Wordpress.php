@@ -664,7 +664,7 @@ class Wordpress extends Content
 	 */
 	function wp_fix_article_links($html)
 	{
-		return preg_replace('/http:\/\/www.stack.com\/([0-9]{4,4})\/([0-9]{2,2})\/([0-9]{2,2})\/(.*?)"/', '/article/$4"', $html);
+		return preg_replace('/(http:\/\/)?www.stack.com\/([0-9]{4,4})\/([0-9]{2,2})\/([0-9]{2,2})\/(.*?)"/', '/article/$5"', $html);
 	}
 
 

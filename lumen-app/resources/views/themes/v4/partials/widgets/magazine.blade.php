@@ -16,7 +16,7 @@
 				@foreach($magazine['articles'] as $key => $value)
 
 					<li>
-						<a href="{{$value['url']}}" alt="{{$value['title']}}">
+						<a href="{{$value['url']}}"> <?php //  alt="{{$value['title']}}" ?>
 							{{$value['title']}}
 						</a>
 					</li>
