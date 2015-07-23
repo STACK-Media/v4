@@ -14,7 +14,7 @@ class ArticleController extends PageController
 
         $this->_set_page_object(new ArticlePage(), array(
             'slug' => $slug, 
-            'type' => 'publish'
+            'type' => $status
         ));
 
         $page_data['widgets'] = $this->_get_widgets('article');

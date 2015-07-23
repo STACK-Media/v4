@@ -7,34 +7,23 @@ class Widgets extends Service
 
 	function get_list($page_type = 'article', $page_object = NULL)
 	{
+		$return = array(
+			'content'      => array(),
+			'sidebar'      => array(),
+			'post_content' => array()
+		);
 
-		return array(
-    		'content' => array(
-    			//'test'
-    			/*
-    			'player',
-				'author',
-				'must-see',
-				*/
-				//'zergnet',
-				//'outbrain',
-				'hero'
-    		),
-    		'sidebar' => array(
-    			'newsletter-optin',
-    			'magazine',
-    			'featured-videos',
-				'popular-videos',
-				//'social-connect',
-				/*
-				'trending-block',
-				'outbrain'
-				*/
-    		),
-    		'post_content' => array(
+		$cfg = config('widgets.'.$page_type);
 
-    		)
-    	);
+		if (is_array($cfg)):
+
+			$return = array_merge($return, $cfg);
+
+		endif;
+
+		var_dump($return);
+
+		return $return;
 	}
 
 	function get_widget($widget, $page_object = NULL)
