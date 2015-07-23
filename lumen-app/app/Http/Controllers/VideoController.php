@@ -1,4 +1,8 @@
-<?php namespace App\Http\Controllers;
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Services\VideoPage;
 
 class VideoController extends PageController
 {

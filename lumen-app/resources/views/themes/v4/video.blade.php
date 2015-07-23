@@ -3,7 +3,6 @@
 
 @section('content-widgets')
 
-	<h1>Video Layout</h1>
-	<p>global::layouts::video</p>
+	@include('theme::partials.videoplayers.'.$page->video['player_name'], $page->video['video_data'])
 
 @stop
