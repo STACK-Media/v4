@@ -17,23 +17,22 @@ class ArticlePage extends Page
 		$this->_object = $articlecms->get_by_slug($slug, $type);
 
 
-		$player    = new Videomanager('player');
-		$video_key = config('videomanager.article_meta_key');
+		$playerservice = new Videomanager('player');
+		$video_key     = config('videomanager.article_meta_key');
 
 		if (property_exists($this->_object, 'meta') && array_key_exists($video_key, $this->_object->meta)):
 
 			$video_id = $this->_object->meta[$video_key];
 
-			$video  = $player->get_article_video($video_id);
+			$player   = $playerservice->get($video_id);
 
-			if ($video):
+			if ($player):
 
-				$this->_object->video = $video;
+				$this->_object->player = $player;
 
 			endif;
 
 		endif;
-
 
 		return parent::initiate();
 	}

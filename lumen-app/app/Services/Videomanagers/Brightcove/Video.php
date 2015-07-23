@@ -4,15 +4,26 @@ namespace App\Services\Videomanagers\Brightcove;
 
 class Video extends Brightcove
 {
-	function get($id)
+	function get($video_id = NULL)
 	{
-		return array(
-			'player_name' => 'brightcove',
-			'video_data'  => array(
-				'player_id'   => '3813396932001',
-				'player_key'  => 'AQ~~,AAAAAEBVkPU~,71bz9Fa_E4NJd1TE6TnJJvxnbF0gLLRt',
-				'video_id'    => '3815310684001'
-			)
+
+		if ( ! $video_id):
+
+			return NULL;
+
+		endif;
+
+		// generate API params
+		$params 		= array(
+			'video_id'     => $video_id, 
+			'video_fields' => 'playsTotal,id,name,thumbnailURL,publishedDate,videoStillURL,shortDescription,longDescription,tags,customFields',
+
 		);
+
+		// grab playlist by id
+		$video 	= Brightcove::api('find_video_by_id', $params, 'object');
+
+		return $video;
+
 	}
 }

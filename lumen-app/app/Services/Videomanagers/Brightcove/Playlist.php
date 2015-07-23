@@ -9,13 +9,12 @@ class Playlist extends Brightcove
 	{
 		// generate API params
 		$params 		= array(
-			'command' 			=> 'find_playlist_by_id', 
 			'playlist_id' 		=> $id, 
 			'media_delivery' 	=> 'default'
 		);
 
 		// grab playlist by id
-		$playlist 	= Brightcove::API($params);
+		$playlist 	= Brightcove::api('find_playlist_by_id', $params);
 
 		// format (if necessary)
 

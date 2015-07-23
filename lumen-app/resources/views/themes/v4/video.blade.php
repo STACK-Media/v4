@@ -3,6 +3,6 @@
 
 @section('content-widgets')
 
-	@include('theme::partials.videoplayers.'.$page->video['player_name'], $page->video['video_data'])
+	@include('theme::partials.videoplayers.'.$page->player['player_name'], $page->player['player_data'])
 
 @stop

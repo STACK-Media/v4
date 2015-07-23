@@ -16,10 +16,12 @@ class Brightcove extends Manager
 		$this->_url 	= 'http://api.brightcove.com/services/library';
 	}
 
-	public function API($data=array())
+	public function api($command, $data=array(), $return_type = 'json')
 	{
 		// initialize variables
 		$url 			= $this->_url;
+
+		$data['command'] = $command;
 
 		// add token to POST fields
 		$data['token']	= $this->_token;
@@ -46,6 +48,8 @@ class Brightcove extends Manager
 
 		curl_close($ch);
 
-		return json_decode($response,TRUE);
+
+
+		return json_decode($response, ($return_type == 'json'));
 	}
 }

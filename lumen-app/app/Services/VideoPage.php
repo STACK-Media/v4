@@ -13,17 +13,21 @@ class VideoPage extends Page
 		$args      = array_merge($paramlist, $args);
 		extract($args);
 
-		$player    = new Videomanager('player');
-		$video_key = config('videomanager.article_meta_key');
+		$videoservice  = new Videomanager('video');
+		$this->_object = $videoservice->get($id);
 
-		$video = $player->get_article_video($id);
+		if ( ! is_object($this->_object)):
 
-		$this->_object = new \stdClass();
+			return FALSE;
 
-		if ($video):
+		endif;
 
-			$this->_object->id    = $id;
-			$this->_object->video = $video;
+		$playerservice = new Videomanager('player');
+		$player        = $playerservice->get($id);
+
+		if ($player):
+
+			$this->_object->player = $player;
 
 		endif;
 

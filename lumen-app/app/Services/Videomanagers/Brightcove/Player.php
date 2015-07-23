@@ -4,21 +4,8 @@ namespace App\Services\Videomanagers\Brightcove;
 
 class Player extends Brightcove
 {
-	function get()
+	function get($video_id = NULL)
 	{
-		return array(
-			'player_name' => 'brightcove',
-			'video_data'  => array(
-				'player_id'   => '3813396932001',
-				'player_key'  => 'AQ~~,AAAAAEBVkPU~,71bz9Fa_E4NJd1TE6TnJJvxnbF0gLLRt',
-				'video_id'    => '3815310684001'
-			)
-		);
-	}
-
-	function get_article_video($video_id)
-	{
-
 		if ( ! $video_id):
 
 			return FALSE;
@@ -27,7 +14,7 @@ class Player extends Brightcove
 
 		return array(
 			'player_name' => 'brightcove',
-			'video_data'  => array(
+			'player_data'  => array(
 				'player_id'   => '3813396932001',
 				'player_key'  => 'AQ~~,AAAAAEBVkPU~,71bz9Fa_E4NJd1TE6TnJJvxnbF0gLLRt',
 				'video_id'    => $video_id
