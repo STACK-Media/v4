@@ -7,7 +7,7 @@
 		<div class="velocity">
 			<h2>Train like a pro</h2>
 			<h3>Find a training center near you</h3>
-			<form action="http://www.velocitysp.com/find_a_location" method="POST" class="velocity-form">
+			<form action="http://www.velocitysp.com/find_a_location" method="POST" class="velocity-form" target="_blank">
 				<input type="text" name="zipcode" placeholder="Enter your zip code" class="placeholder">
 				<input type="submit" value="GO">
 			</form>
