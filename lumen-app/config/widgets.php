@@ -4,7 +4,8 @@ return array(
 	'page_configs' => array(
 		'article' => array(
 			'content' => array(
-				'hero'
+				'hero',
+				'velocity'
 			),
 			'sidebar' => array(
 				'newsletter-optin',

@@ -5,7 +5,7 @@
 
 		@foreach ($widgets['content'] AS $widget => $wdata)
 
-			<div class="row event widget" data-name="content-<?php echo $widget; ?>" data-template="{{$template or "default"}}">
+			<div class="row event widget legroom" data-name="content-<?php echo $widget; ?>" data-template="{{$template or "default"}}">
 
 				<div class="col-lg-12">
 					

@@ -8,7 +8,13 @@
 		<div id="magazine">
 			
 			<a href="{{$magazine['url']}}" target="_blank">
-				<img class="img-responsive" src="{{$magazine['img']}}" data-src="{{$magazine['img']}}" alt="{{$magazine['title']}}">
+				@include('theme::partials.img',
+					array(
+						'src' 		=> Assets::themed($magazine['img']), 
+						'alt' 	=> $magazine['title'],
+						'class'	=> 'img-responsive'
+					)
+				)
 			</a>
 
 			<ul>
