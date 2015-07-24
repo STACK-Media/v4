@@ -23,7 +23,10 @@ class Video extends Brightcove
 		// grab playlist by id
 		$video 	= Brightcove::api('find_video_by_id', $params, 'object');
 
-		return $video;
+
+		return $this->format_video($video);
 
 	}
+
+	
 }

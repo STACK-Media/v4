@@ -52,4 +52,48 @@ class Brightcove extends Manager
 
 		return json_decode($response, ($return_type == 'json'));
 	}
+
+	function format_video($video)
+	{
+
+		if (is_object($video)):
+
+			return $this->_format_video_object($video);
+
+		endif;
+
+		return $this->_format_video_array($video);
+
+
+	}
+
+	function _format_video_object($video)
+	{
+		if ( ! property_exists($video, 'id')):
+			
+			return $video;
+		
+		endif;
+		
+		$video->slug = preg_replace('/[^a-z0-9-]+/', '-', strtolower($video->name));
+		$video->link = routelink('video', array('id' => $video->id, 'slug' => $video->slug));
+
+		return $video;
+	}
+
+	function _format_video_array($video)
+	{
+
+		if ( ! isset($video['id'])):
+			
+			return $video;
+		
+		endif;
+
+		$video['slug'] = preg_replace('/[^a-z0-9-]+/', '-', strtolower($video['name']));
+		$video['link'] = routelink('video', array('id' => $video['id'], 'slug' => $video['slug']));
+
+		return $video;
+
+	}
 }
