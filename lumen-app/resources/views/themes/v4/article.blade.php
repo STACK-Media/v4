@@ -17,7 +17,7 @@
 		
 		@foreach($page->taxonomy['category'] as $category)
 		//
-		<a href="/category/{!! $category->slug !!}">
+		<a href="{!! routelink('category', array('slug' => $category->slug )) !!}">
 			{!! $category->name !!}
 		</a>
 

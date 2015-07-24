@@ -16,7 +16,7 @@
 
 					<div class="col-xs-6 pull-left">
 
-						<a href="/video/{{$value['id']}}/video-title">
+						<a href="{!! routelink('video', array('id' => $value['id'], 'slug' => 'video-title')) !!}">
 							<div class="thumbnail">
 								<img class="img-responsive" src="{{$value['videoStillURL']}}" alt="{{$value['name']}}" />
 							</div>
@@ -24,7 +24,7 @@
 						
 					</div>
 
-					<a href="/video/{{$value['id']}}/video-title">{{$value['name']}}</a>
+					<a href="{!! routelink('video', array('id' => $value['id'], 'slug' => 'video-title')) !!}">{{$value['name']}}</a>
 					<p>Views: {{$value['playsTotal']}}</p>
 
 					<div class="clearfix"></div>

@@ -10,7 +10,7 @@ class Hero extends WidgetService
 		$hero 		= array(
 			'title'	=> 'Get Started Today',
 			'img'	=> '/assets/img/widgets/hero/patrick-willis.jpg',
-			'url'	=> '/train-like-a-pro/'
+			'url'	=> routelink('tag', array('slug' => 'train-like-a-pro'))
 		);
 
 		return array(
