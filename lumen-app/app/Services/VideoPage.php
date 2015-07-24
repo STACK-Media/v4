@@ -23,11 +23,7 @@ class VideoPage extends Page
 
 		endif;
 
-		if (property_exists($this->_object, 'slug') && $this->_object->slug != $slug):
-
-			//redirect()->route('video',$args)->withInput();
-
-		endif;
+		
 
 		$playerservice = new Videomanager('player');
 		$player        = $playerservice->get($id);

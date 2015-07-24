@@ -11,10 +11,20 @@ class VideoController extends PageController
 
     	$status = 'publish';
 
-        $this->_set_page_object(new VideoPage(), array(
+        $args = array(
             'id'   => $id, 
             'slug' => $slug
-        ));
+        );
+
+        $this->_set_page_object(new VideoPage(), $args);
+
+        if ($this->_page_object->slug != $slug):
+
+            $args['slug'] = $this->_page_object->slug;
+
+            return redirect()->route('video', $args);
+
+        endif;
 
         $page_data['widgets'] = $this->_get_widgets('video');
 
