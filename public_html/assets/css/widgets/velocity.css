@@ -47,3 +47,35 @@
 	width: 315px;
 	margin: 0 auto;
 }
+.velocity-form input[type="text"] {
+    width: 80%;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #000;
+    float: left;
+    padding: 8px 0 8px 8px;
+    font-size: 1.4em;
+    color: #222;
+}
+.velocity-form input[type="submit"] {
+    background: linear-gradient(to bottom, #f31f00 0%, #f31f00 52%, #c10400 100%);
+    border-radius: 0 5px 5px 0;
+    color: #FFF;
+    padding-right: 12px;
+    font-weight: bold;
+    width: 20%;
+    border: 1px solid #000;
+    float: left;
+    padding: 8px 0 8px 8px;
+    font-size: 1.4em;
+}
+
+
+
+
+
+
+
+
+
+
+
