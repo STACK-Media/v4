@@ -16,7 +16,7 @@
 
 					<div class="col-xs-6 pull-left">
 
-						<a href="{!! routelink('video', array('id' => $value['id'], 'slug' => 'video-title')) !!}">
+						<a href="{!! routelink('video', array('id' => $value['id'], 'slug' => $value['slug'])) !!}">
 							<div class="thumbnail">
 								@include('theme::partials.img',
 									array(
@@ -30,7 +30,7 @@
 						
 					</div>
 
-					<a href="{!! routelink('video', array('id' => $value['id'], 'slug' => 'video-title')) !!}">{{$value['name']}}</a>
+					<a href="{!! routelink('video', array('id' => $value['id'], 'slug' => $value['slug'])) !!}">{{$value['name']}}</a>
 					<p>Views: {{$value['playsTotal']}}</p>
 
 					<div class="clearfix"></div>

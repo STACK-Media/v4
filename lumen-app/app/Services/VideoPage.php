@@ -13,12 +13,19 @@ class VideoPage extends Page
 		$args      = array_merge($paramlist, $args);
 		extract($args);
 
+
 		$videoservice  = new Videomanager('video');
 		$this->_object = $videoservice->get($id);
 
 		if ( ! is_object($this->_object)):
 
 			return FALSE;
+
+		endif;
+
+		if (property_exists($this->_object, 'slug') && $this->_object->slug != $slug):
+
+			//redirect()->route('video',$args)->withInput();
 
 		endif;
 

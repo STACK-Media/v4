@@ -12,7 +12,7 @@
 
 			<div class="event featured-videos {{$class}} event" data-name="{{$key}}" data-template="featured-videos">
 
-				<a href="{!! routelink('video', array('id' => $value['id'], 'slug' => 'video-title')) !!}">
+				<a href="{!! routelink('video', array('id' => $value['id'], 'slug' => $value['slug'])) !!}">
 					<div class="img-block">
 						@include('theme::partials.img',
 							array(
