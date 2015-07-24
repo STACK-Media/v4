@@ -25,7 +25,7 @@ class VideoPage extends Page
 
 		if (property_exists($this->_object, 'slug') && $this->_object->slug != $slug):
 
-			redirect()->route('video',$args)->withInput();
+			//redirect()->route('video',$args)->withInput();
 
 		endif;
 
