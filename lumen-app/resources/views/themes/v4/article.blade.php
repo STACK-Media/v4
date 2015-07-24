@@ -14,14 +14,45 @@
 		<a href="{!! routelink('home') !!}">
 			Home
 		</a>
-		
-		@foreach($page->taxonomy['category'] as $category)
-		//
-		<a href="{!! routelink('category', array('slug' => $category->slug )) !!}">
-			{!! $category->name !!}
-		</a>
 
-		@endforeach
+		@if(isset($page->taxonomy['category']))
+			
+			@foreach($page->taxonomy['category'] as $category)
+
+				@if(isset($category->parent['name']))
+					
+					//
+					<a href="{!! routelink('category', array('slug' => $category->parent['slug'] )) !!}">
+						{!! $category->parent['name'] !!}
+					</a>
+
+				@endif
+			
+				//
+				<a href="{!! routelink('category', array('slug' => $category->slug )) !!}">
+					{!! $category->name !!}
+				</a>
+
+			@endforeach
+
+		@endif
+
+		@if(isset($page->taxonomy['post_tag']))
+			
+			@foreach($page->taxonomy['post_tag'] as $post_tag)
+
+				@if(isset($post_tag->meta['tag_page_type']) && $post_tag->meta['tag_page_type'] == 'sport')
+			
+					//
+					<a href="{!! routelink('tag', array('slug' => $post_tag->slug )) !!}">
+						{!! $post_tag->name !!}
+					</a>
+
+				@endif
+
+			@endforeach
+
+		@endif
 
 	</div>
 

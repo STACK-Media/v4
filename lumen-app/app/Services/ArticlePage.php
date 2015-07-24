@@ -16,11 +16,11 @@ class ArticlePage extends Page
 		$articlecms    = new Contentmanager('article');
 		$this->_object = $articlecms->get_by_slug($slug, $type);
 
-
-		$playerservice = new Videomanager('player');
 		$video_key     = config('videomanager.article_meta_key');
 
-		if (property_exists($this->_object, 'meta') && array_key_exists($video_key, $this->_object->meta)):
+		if (is_object($this->_object) && property_exists($this->_object, 'meta') && array_key_exists($video_key, $this->_object->meta)):
+
+			$playerservice = new Videomanager('player');
 
 			$video_id = $this->_object->meta[$video_key];
 

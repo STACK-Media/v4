@@ -664,7 +664,24 @@ class Wordpress extends Content
 	 */
 	function wp_fix_article_links($html)
 	{
-		return preg_replace('/(http:\/\/)?www.stack.com\/([0-9]{4,4})\/([0-9]{2,2})\/([0-9]{2,2})\/(.*?)"/', '/article/$5"', $html);
+
+		return preg_replace_callback(
+				'/[http:]*?[\/]*?www.stack.com\/[0-9]{4,4}\/[0-9]{2,2}\/[0-9]{2,2}\/(.*?)[\'|"|\?|&|\/]/', 
+				function($matches){
+					
+					$return = '';
+
+					if (isset($matches[1])):
+
+						$return = routelink('article', array('slug' => $matches[1]));
+
+					endif;
+
+					return $return;
+				},
+				$html
+			);
+
 	}
 
 
