@@ -38,7 +38,7 @@ class TaxonomyModel extends AbstractTaxonomy
     public function get_by_article_id($post_id)
     {
 
-        $tax = DB::table('wp_term_relationships')
+        return DB::table('wp_term_relationships')
             ->select(
                 'wp_term_taxonomy.term_id',
                 'wp_term_taxonomy.taxonomy',
@@ -64,70 +64,10 @@ class TaxonomyModel extends AbstractTaxonomy
                 'wp_term_taxonomy.parent', '=', 'parent_terms.term_id'
             )
             ->get();
-
-
-        // *****************************************************************
-        // *****************************************************************
-        // *****************************************************************
-        // *****************************************************************
-        // 
-        // need t o move all this crap below to the service and pretty it up
-        // 
-        // *****************************************************************
-        // *****************************************************************
-        // *****************************************************************
-        // *****************************************************************
-
-        $ttids = array();
-
-        foreach ($tax as $key => $row):
-
-            $ttids[] = $row->term_taxonomy_id;
-
-        endforeach;
-
-        $meta      = $this->get_metadata_by_ttid($ttids);
-        $metaclean = array();
-
-        foreach ($meta as $key => $arr):
-
-            $meta_key = strtolower($arr->meta_key);
-            $meta_val = $arr->meta_value;
-
-            preg_match_all("/(.*?)_(\d+)$/", $meta_key, $matches);
-
-            if ($matches[0]):
-
-                $meta_num = $matches[2][0];
-                $meta_key = $matches[1][0];
-
-                $metaclean[$arr->term_taxonomy_id][$meta_key][$meta_num] = $meta_val;
-
-            else:
-
-                $metaclean[$arr->term_taxonomy_id][$meta_key] = $meta_val;
-
-            endif;
-
-        endforeach;
-
-        foreach ($tax as $key => $row):
-
-            if ( ! array_key_exists($row->term_taxonomy_id, $metaclean)):
-
-                continue;
-
-            endif;
-
-            $tax[$key]->meta = $metaclean[$row->term_taxonomy_id];
-
-        endforeach;
-
-        return $tax;
         
     }
 
-    public function get_metadata_by_ttid($ttids = array())
+    public function get_term_tax_metadata($ttids = array())
     {
 
         if ( ! is_array($ttids)):
