@@ -2,7 +2,7 @@
 
 namespace App\Services\WidgetServices;
 
-use App\Services\VideoManager;
+use App\Services\Videomanager;
 
 class Featuredvideos extends WidgetService
 {
