@@ -11,7 +11,7 @@
 
 	<div id="breadcrumb">
 
-		<a href="/">
+		<a href="{!! routelink('home') !!}">
 			Home
 		</a>
 		

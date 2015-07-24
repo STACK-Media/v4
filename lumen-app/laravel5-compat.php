@@ -1,7 +1,7 @@
 <?php
 
-if( ! function_exists('config_path'))
-{
+if( ! function_exists('config_path')):
+
 	/**
 	* Return the path to config files
 	* @param null $path
@@ -14,10 +14,10 @@ if( ! function_exists('config_path'))
 
 		return app()->basePath('config').'/'.$path.'.php';
 	}
-}
 
-if( ! function_exists('public_path'))
-{
+endif;
+
+if( ! function_exists('public_path')):
 
 	/**
 	* Return the path to public dir
@@ -28,4 +28,5 @@ if( ! function_exists('public_path'))
 	{
 		return rtrim(app()->basePath('../public_html/'.$path), '/');
 	}
-}
+
+endif;

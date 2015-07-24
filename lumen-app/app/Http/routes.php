@@ -12,6 +12,7 @@
 */
 
 $route_verticals = array('4w');
+
 $route_pages     = array(
 	'' => array(
 		'controller' => 'HomeController',
@@ -62,16 +63,11 @@ $route_pages     = array(
 	)
 );
 
-
-$app->get('/', [
-	'as' => '/', 'uses' => 'App\Http\Controllers\HomeController@index'
-]);
-
-
 foreach ($route_pages as $route_key => $route_arr)
 {
 	$route_params = '';
-	
+	$route_name   = ($route_key ? $route_key : 'home');
+
 	if (isset($route_arr['params'])):
 		
 		$route_params = '{'.implode('}/{',$route_arr['params']).'}';
@@ -79,12 +75,12 @@ foreach ($route_pages as $route_key => $route_arr)
 	endif;
 
 	$app->get($route_key.'/'.$route_params, [
-		'as' => $route_key, 'uses' => 'App\Http\Controllers\\'.$route_arr['controller'].'@'.$route_arr['function']
+		'as' => $route_name, 'uses' => 'App\Http\Controllers\\'.$route_arr['controller'].'@'.$route_arr['function']
 	]);
 
 	foreach ($route_verticals as $route_vertical):
 
-		$app->get($route_vertical.'/'.$route_key.'/'.$route_params, array('as' => $route_vertical.$route_key, function() use ($route_vertical, $route_arr) {
+		$app->get($route_vertical.'/'.$route_key.'/'.$route_params, array('as' => $route_vertical.$route_name, function() use ($route_vertical, $route_arr) {
 
 			$args = func_get_args();
 

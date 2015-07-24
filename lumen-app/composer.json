@@ -20,7 +20,8 @@
             "database/"
         ],
         "files": [
-            "laravel5-compat.php"
+            "laravel5-compat.php",
+            "custom-helpers.php"
         ]
     },
     "autoload-dev": {
