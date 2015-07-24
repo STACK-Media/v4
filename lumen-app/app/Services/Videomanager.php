@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-class VideoManager extends Service
+class Videomanager extends Service 
 {
 
 	private $_namespace = 'Brightcove';
