@@ -14,7 +14,13 @@
 
 				<a href="{!! routelink('video', array('id' => $value['id'], 'slug' => 'video-title')) !!}">
 					<div class="img-block">
-						<img class="img-responsive" src="{{$value['videoStillURL']}}" alt="{{$value['name']}}" />
+						@include('theme::partials.img',
+							array(
+								'src' 	=> $value['videoStillURL'], 
+								'alt' 	=> $value['name'],
+								'class'	=> 'img-responsive'
+							)
+						)
 					</div>
 					{{$value['name']}}
 				</a>

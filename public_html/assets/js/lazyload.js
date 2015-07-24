@@ -55,6 +55,11 @@
 
 })(window.jQuery || window.Zepto);
 
+// unveil
 $(function() {
     $("img").unveil();
+    // add this so that clicking events that show new images unveil them as well
+    $("body").on('click',function(){
+      $("img").unveil();
+    });
 });
