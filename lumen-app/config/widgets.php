@@ -12,6 +12,7 @@ return array(
 				'magazine',
 				'featured-videos',
 				'popular-videos',
+				'trending-block'
 			),
 			'post_content' => array(
 

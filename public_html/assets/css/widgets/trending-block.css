@@ -1,0 +1,40 @@
+
+.trending-block a {
+	display: block;
+	width: 300px;
+	color: #000;
+	position: relative;
+	margin-bottom: 12px;
+	max-height: 155px;
+	border: 1px solid #000;
+	overflow: hidden;
+	border: 1px solid #148bcc;
+	width: 300px;
+	background-color: #148bcc;
+}
+.trending-block a:hover {
+	background-color: rgba(20, 139, 204, 0.8);
+}
+.trending-block a img {
+	width: 100%;
+}
+.trending-block a h3 {
+	line-height: 1.4 !important;
+	font-size: .9em  !important;
+	width: 100%;
+	margin: 0;
+	position: absolute;
+	bottom: 0;
+	color: #FFF !important;
+	background-color: rgba(0, 0, 0, 0.8) !important;
+	padding: 6px;
+	font-family: "Oswald", Arial, sans-serif !important;
+	text-decoration: none;
+	border-right-width: 1px; 
+	border-right-style: solid; 
+	border-right-color: rgb(20, 139, 204);
+	font-weight: normal !important;
+}
+.trending-block a:hover h3 {
+	background-color: rgba(20, 139, 204, 0.8) !important;
+}

@@ -87,5 +87,24 @@ class ArticleModel extends AbstractArticle
             ->get();
 
     }
+
+    public function trending()
+    {
+        return DB::table('wp_latest_items')
+            ->select(
+                'wp_latest_items.latest_image AS image',
+                'wp_latest_items.latest_link AS link',
+                'wp_latest_items.latest_title AS title',
+                'wp_latest_items.latest_exert AS excert',
+                'wp_latest_items.latest_author AS author',
+                'wp_latest_items.latest_date AS date',
+                'wp_latest_items.latest_has_video AS hasVideo',
+                'wp_latest_items.latest_tag_array AS tagArray'
+            )
+            ->where('wp_latest_items.latest_site_id',1)
+            ->where('wp_latest_items.record_type',2)
+            ->orderBy('wp_latest_items.display_order','asc')
+            ->get();
+    }
    
 } 

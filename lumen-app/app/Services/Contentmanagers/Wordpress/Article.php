@@ -169,4 +169,9 @@ class Article extends Wordpress
 		return $statuses;
 	}
 
+	public function trending()
+	{
+		return $this->_model->trending();
+	}
+
 }
