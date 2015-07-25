@@ -15,7 +15,7 @@ return array(
 				'trending-block'
 			),
 			'post_content' => array(
-
+				//'pinterest-block'
 			)
 		)
 	)
