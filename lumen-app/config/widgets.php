@@ -12,7 +12,8 @@ return array(
 				'magazine',
 				'featured-videos',
 				'popular-videos',
-				'trending-block'
+				'trending-block',
+				'news-links',
 			),
 			'post_content' => array(
 				//'pinterest-block'

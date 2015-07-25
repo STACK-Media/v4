@@ -1,3 +1,4 @@
+{!! Assets::queue('stylesheet',  'widgets', 'magazine', '/assets/css/widgets/magazine.css') !!}
 
 <div class="row">
 
