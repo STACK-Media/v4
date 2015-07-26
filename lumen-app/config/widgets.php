@@ -5,7 +5,8 @@ return array(
 		'article' => array(
 			'content' => array(
 				'hero',
-				'velocity'
+				'velocity',
+				'author-featured'
 			),
 			'sidebar' => array(
 				'newsletter-optin',

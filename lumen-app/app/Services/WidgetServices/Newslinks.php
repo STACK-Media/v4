@@ -31,7 +31,7 @@ class Newslinks extends WidgetService
 				),
 				array(
 					'title'	=> 'All News',
-					'url'	=> ''
+					'url'	=> '/news'
 				),
 			)
 		);
