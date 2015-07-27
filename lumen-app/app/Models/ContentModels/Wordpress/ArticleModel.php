@@ -104,10 +104,11 @@ class ArticleModel extends AbstractArticle
             ->where('wp_latest_items.latest_site_id',1)
             ->where('wp_latest_items.record_type',2)
             ->orderBy('wp_latest_items.display_order','asc')
+            ->take(9)
             ->get();
     }
 
-    public function get_by_category_id($id,$limit=5)
+    public function get_by_category_id($id,$limit=5,$offset=0)
     {
         return DB::table('wp_posts')
             ->where('wp_posts.post_status','publish')
@@ -126,11 +127,12 @@ class ArticleModel extends AbstractArticle
                 'wp_term_taxonomy.term_id','=','wp_terms.term_id'
             )
             ->orderBy('wp_posts.post_date','desc')
-            ->take(5)
+            ->skip($offset)
+            ->take($limit)
             ->get();
     }
 
-    public function get_by_user_id($id)
+    public function get_by_user_id($id,$limit=10,$offset=0)
     {
         return DB::table('wp_posts')
             ->where('wp_posts.post_status','publish')
@@ -141,6 +143,8 @@ class ArticleModel extends AbstractArticle
                 'wp_posts.post_author','=','wp_users.ID'
             )
             ->orderBy('wp_posts.post_date','desc')
+            ->skip($offset)
+            ->take($limit)
             ->get();
     }
    

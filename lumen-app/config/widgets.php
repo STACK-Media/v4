@@ -15,6 +15,7 @@ return array(
 				'popular-videos',
 				'trending-block',
 				'news-links',
+				'social-connect'
 			),
 			'post_content' => array(
 				//'pinterest-block'

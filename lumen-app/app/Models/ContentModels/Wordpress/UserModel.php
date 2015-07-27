@@ -26,6 +26,7 @@ class UserModel extends AbstractUser
 	{
 		return DB::table('wp_users')
 			->where('wp_usermeta.meta_key','FeaturedExpert')
+			->where('wp_usermeta.meta_value','True')
 			->join(
                 'wp_usermeta', 
                 'wp_users.id', '=', 'wp_usermeta.user_id'

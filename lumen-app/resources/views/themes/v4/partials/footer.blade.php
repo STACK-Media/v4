@@ -1,11 +1,4 @@
-{!! Assets::queue('javascript', 'global', 'jquery', '/assets/js/jquery-1.11.3.min.js') !!}
-{!! Assets::queue('javascript', 'global', 'bootstrap', '/assets/third-party/initializr/js/vendor/bootstrap.min.js') !!}
-{!! Assets::queue('javascript', 'global', 'viewport', '/assets/js/viewport.js') !!}
-{!! Assets::queue('javascript', 'global', 'events', '/assets/js/events.js') !!}
-{!! Assets::queue('javascript', 'global', 'lazyload', '/assets/js/lazyload.js') !!}
-
 <!-- footer javascript files -->
-
 {!! Assets::get_queued('javascript') !!}
 
 @if(is_array(Assets::get_queued_raw('javascript')))
