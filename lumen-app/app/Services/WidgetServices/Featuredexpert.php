@@ -4,7 +4,7 @@ namespace App\Services\WidgetServices;
 
 use App\Services\Contentmanager;
 
-class Authorfeatured extends WidgetService
+class Featuredexpert extends WidgetService
 {
 	function get($page_object)
 	{

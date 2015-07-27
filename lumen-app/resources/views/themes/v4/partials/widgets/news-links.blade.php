@@ -13,7 +13,7 @@
 				@foreach($news as $key => $value)
 
 					<li>
-						<a href="{!! routelink('article', array('id' => $value['ID'], 'slug' => $value['post_name'])) !!}"> <?php //  alt="{{$value['title']}}" ?>
+						<a href="{!! routelink('article', array('slug' => $value['post_name'])) !!}"> <?php //  alt="{{$value['title']}}" ?>
 							{{$value['post_title']}}
 						</a>
 					</li>

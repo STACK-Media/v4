@@ -6,7 +6,7 @@ return array(
 			'content' => array(
 				'hero',
 				'velocity',
-				'author-featured'
+				'featured-expert'
 			),
 			'sidebar' => array(
 				'newsletter-optin',

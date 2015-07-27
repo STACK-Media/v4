@@ -33,6 +33,20 @@ class User extends Wordpress
 
 	public function get_meta($id)
 	{
-		return $this->_model->get_meta($id);
+		return $this->_format_meta($this->_model->get_meta($id));
+	}
+
+	private function _format_meta($meta)
+	{
+		$data 	= array();
+		foreach($meta AS $key => $value):
+			$data[$value->meta_key]	= array(
+				'meta_id'	=> $value->umeta_id,
+				'user_id'	=> $value->user_id,
+				'value'		=> $value->meta_value
+			);
+		endforeach;
+
+		return $data;
 	}
 }
