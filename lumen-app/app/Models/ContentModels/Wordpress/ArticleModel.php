@@ -106,5 +106,42 @@ class ArticleModel extends AbstractArticle
             ->orderBy('wp_latest_items.display_order','asc')
             ->get();
     }
+
+    public function get_by_category_id($id,$limit=5)
+    {
+        return DB::table('wp_posts')
+            ->where('wp_posts.post_status','publish')
+            ->where('wp_posts.post_type','post')
+            ->where('wp_terms.term_id',$id)
+            ->join(
+                'wp_term_relationships',
+                'wp_posts.ID','=','wp_term_relationships.object_id'
+            )
+            ->join(
+                'wp_term_taxonomy',
+                'wp_term_relationships.term_taxonomy_id','=','wp_term_taxonomy.term_taxonomy_id'
+            )
+            ->join(
+                'wp_terms',
+                'wp_term_taxonomy.term_id','=','wp_terms.term_id'
+            )
+            ->orderBy('wp_posts.post_date','desc')
+            ->take(5)
+            ->get();
+    }
+
+    public function get_by_user_id($id)
+    {
+        return DB::table('wp_posts')
+            ->where('wp_posts.post_status','publish')
+            ->where('wp_posts.post_type','post')
+            ->where('wp_users.ID',$id)
+            ->join(
+                'wp_users',
+                'wp_posts.post_author','=','wp_users.ID'
+            )
+            ->orderBy('wp_posts.post_date','desc')
+            ->get();
+    }
    
 } 

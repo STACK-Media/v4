@@ -10,15 +10,21 @@
 
 			<ul>
 
-				@foreach($news['articles'] as $key => $value)
+				@foreach($news as $key => $value)
 
 					<li>
-						<a href="{{$value['url']}}"> <?php //  alt="{{$value['title']}}" ?>
-							{{$value['title']}}
+						<a href="{!! routelink('video', array('id' => $value['ID'], 'slug' => $value['post_name'])) !!}"> <?php //  alt="{{$value['title']}}" ?>
+							{{$value['post_title']}}
 						</a>
 					</li>
 
 				@endforeach
+
+				<li>
+					<a href="/news"> 
+						All News
+					</a>
+				</li>
 
 			</ul>
 

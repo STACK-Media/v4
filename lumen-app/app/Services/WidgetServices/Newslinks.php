@@ -2,42 +2,20 @@
 
 namespace App\Services\WidgetServices;
 
+use App\Services\Contentmanager;
+
 class Newslinks extends WidgetService
 {
 	function get($page_object)
 	{
-		// get news
-		$news 	= array(
-			'articles'	=> array(
-				array(
-					'title'	=> '"Jurassic World 2" Announced',
-					'url'	=> ''
-				),
-				array(
-					'title'	=> 'Professional Surfer Jamie O\'Brien Rides Dangerous Wave On Fire!',
-					'url'	=> ''
-				),
-				array(
-					'title'	=> '5-foot-8 Cole Beasley Throws Down Massive Dunk on Instagram',
-					'url'	=> ''
-				),
-				array(
-					'title'	=> 'University of Nebraska Reveals "Husker Bold" Alternate Football Uniforms for Homecoming',
-					'url'	=> ''
-				),
-				array(
-					'title'	=> 'Watch this Awesome Video from the 2015 American Street Workout Championship',
-					'url'	=> ''
-				),
-				array(
-					'title'	=> 'All News',
-					'url'	=> '/news'
-				),
-			)
-		);
+		// initialzie the content manager
+		$articles 	= new Contentmanager('article');
+
+		// grab latest news articles
+		$news 	= $articles->get_by_category_id('683');	// 683 = News category
 
 		return array(
-			'news'	=> $news
+			'news'	=> json_decode(json_encode($news),TRUE)
 		);
 	}
 

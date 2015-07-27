@@ -174,4 +174,13 @@ class Article extends Wordpress
 		return $this->_model->trending();
 	}
 
+	public function get_by_category_id($id)
+	{
+		return $this->_model->get_by_category_id($id);
+	}
+
+	public function get_by_user_id($id)
+	{
+		return $this->_model->get_by_user_id($id);
+	}
 }
