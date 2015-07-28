@@ -21,7 +21,7 @@ class Subscription extends SailThru
 		);
 
 		// add subscriber
-		return SailThru::API($this->_method,$data);
+		return $this->API($this->_method,$data);
 	}
 
 	public function Get($email)
@@ -32,12 +32,12 @@ class Subscription extends SailThru
 		);
 
 		// get data
-		return SailThru::API($this->_method,$data);
+		return $this->API($this->_method,$data);
 	}
 
 	public function Update($email,$vars=array(),$lists=array())
 	{
-		return self::Create($email,$vars,$lists);
+		return $this->Create($email,$vars,$lists);
 	}
 
 	public function Unsubscribe()

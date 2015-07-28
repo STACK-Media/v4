@@ -23,6 +23,6 @@ class Event extends SailThru
 		);
 
 		// start job
-		return SailThru::API($this->_method,$data);
+		return $this->API($this->_method,$data);
 	}
 }

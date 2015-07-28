@@ -26,11 +26,11 @@ abstract class Page extends Service
 		return $this->_object->$attrib_name = $value;
 	}
 
-	public function initiate()
+	public function __construct()
 	{
 		if ( ! $this->_object || ! is_object($this->_object) || ! property_exists($this->_object, 'id')):
 
-			return FALSE;
+			abort('404');
 
 		endif;
 

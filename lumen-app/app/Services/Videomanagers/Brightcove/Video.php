@@ -21,7 +21,7 @@ class Video extends Brightcove
 		);
 
 		// grab playlist by id
-		$video 	= Brightcove::api('find_video_by_id', $params, 'object');
+		$video 	= $this->api('find_video_by_id', $params, 'object');
 
 
 		return $this->format_video($video);
@@ -40,7 +40,7 @@ class Video extends Brightcove
 		$params 	= array_merge($params,$data);
 
 		// get the videos
-		$videos 	= Brightcove::api('search_videos', $params, 'json');
+		$videos 	= $this->api('search_videos', $params, 'json');
 
 		return array(
 			'videos'		=> $this->format_videos($videos['items']),

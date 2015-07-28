@@ -17,7 +17,7 @@ class Playlist extends Brightcove
 		);
 
 		// grab playlist by id
-		$playlist 	= Brightcove::api('find_playlist_by_id', $params);
+		$playlist 	= $this->api('find_playlist_by_id', $params);
 
 		// format (if necessary)
 

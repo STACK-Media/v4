@@ -16,7 +16,7 @@ class VideoController extends PageController
             'slug' => $slug
         );
 
-        $this->_set_page_object(new VideoPage(), $args);
+        $this->_set_page_object(new VideoPage($args));
 
         if ($this->_page_object->slug != $slug):
 

@@ -3,6 +3,7 @@
 namespace App\Services\Contentmanagers\Wordpress;
 
 use App\Models\ContentModels\Wordpress\UserModel;
+use App\Services\Cacheturbator as Cacher;
 
 class User extends Wordpress
 {
@@ -13,7 +14,7 @@ class User extends Wordpress
 	{
 		parent::__construct();
 
-		$this->_model = new UserModel;
+		$this->_model = new Cacher(new UserModel);
 	}
 
 	public function get($id)

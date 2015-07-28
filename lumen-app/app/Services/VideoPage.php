@@ -3,7 +3,7 @@
 class VideoPage extends Page
 {
 
-	function initiate($args = array())
+	function __construct($args = array())
 	{
 		$paramlist = array(
 			'id'   => NULL, 
@@ -34,7 +34,7 @@ class VideoPage extends Page
 
 		endif;
 
-		return parent::initiate();
+		return parent::__construct();
 	}
 
 

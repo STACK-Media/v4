@@ -2,6 +2,8 @@
 
 namespace App\Services;
 
+use App\Services\Cacheturbator as Cacher;
+
 class ESPManager extends Service
 {
 
@@ -21,7 +23,7 @@ class ESPManager extends Service
 
 		$class = 'App\\Services\\ESPManagers\\'.$this->_namespace.'\\'.$content_type;
 
-		$this->_class = new $class();
+		$this->_class = new Cacher(new $class());
 	}
 
 	public function __get($attrib_name)

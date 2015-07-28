@@ -4,7 +4,7 @@ namespace App\Services;
 class HomePage extends Page
 {
 
-	function initiate($args = array())
+	function __construct($args = array())
 	{
 		$playlist 	= new Videomanager('playlist');
 
@@ -13,7 +13,7 @@ class HomePage extends Page
 
 		$this->_object = $playlist->get($id);
 	
-		return parent::initiate();
+		return parent::__construct();
 	}
 
 	

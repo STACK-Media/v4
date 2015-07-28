@@ -4,6 +4,7 @@ namespace App\Services\Contentmanagers\Wordpress;
 
 use App\Models\ContentModels\Wordpress\ArticleModel;
 use App\Services\Contentmanagers\Wordpress\Taxonomy;
+use App\Services\Cacheturbator as Cacher;
 
 class Article extends Wordpress
 {
@@ -16,7 +17,7 @@ class Article extends Wordpress
 
 		$this->add_shortcode('caption', array($this,'img_caption_shortcode'));
 
-		$this->_model = new ArticleModel;
+		$this->_model = new Cacher(new ArticleModel);
 	}
 
 	function _format_content($article)

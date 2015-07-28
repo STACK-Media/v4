@@ -12,10 +12,10 @@ class ArticleController extends PageController
 
         $status = 'publish';
 
-        $this->_set_page_object(new ArticlePage(), array(
+        $this->_set_page_object(new ArticlePage(array(
             'slug' => $slug, 
             'type' => $status
-        ));
+        )));
 
         $page_data['widgets'] = $this->_get_widgets('article');
 

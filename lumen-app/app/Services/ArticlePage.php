@@ -3,7 +3,7 @@
 class ArticlePage extends Page
 {
 
-	function initiate($args = array())
+	function __construct($args = array())
 	{
 		$paramlist = array(
 			'slug' => NULL, 
@@ -34,7 +34,7 @@ class ArticlePage extends Page
 
 		endif;
 
-		return parent::initiate();
+		return parent::__construct();
 	}
 
 

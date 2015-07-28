@@ -3,6 +3,7 @@
 namespace App\Services\Contentmanagers\Wordpress;
 
 use App\Models\ContentModels\Wordpress\TaxonomyModel;
+use App\Services\Cacheturbator as Cacher;
 
 class Taxonomy extends Wordpress
 {
@@ -13,7 +14,7 @@ class Taxonomy extends Wordpress
 	{
 		parent::__construct();
 
-		$this->_model = new TaxonomyModel;
+		$this->_model = new Cacher(new TaxonomyModel);
 	}
 
 	function get_by_column($type, $identifier_type, $identifier)
