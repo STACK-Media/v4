@@ -17,11 +17,11 @@ $author_image 	= 'http://blog.stack.com/wp-content/uploads/userphoto/'.$meta['us
 
 <div class="row featured-expert">
 
-	<div class="col-xs-12">
+	<div class="col-xs-12 featured-expert-profile-">
 
 		<h3>Featured Expert</h3>
 
-		<div class="col-xs-3 centered">
+		<div class="col-xs-3">
 			@include('theme::partials.img',
 				array(
 					'src' 	=> $author_image, 
@@ -40,7 +40,7 @@ $author_image 	= 'http://blog.stack.com/wp-content/uploads/userphoto/'.$meta['us
 
 	</div>
 
-	<div class="col-xs-12">
+	<div class="col-xs-12 featured-expert-articles-">
 
 		<h3>Latest Articles By {{$author['display_name']}}</h3>
 

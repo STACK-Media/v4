@@ -25,16 +25,16 @@ class Brightcove extends Manager
 
 		// add token to POST fields
 		$data['token']	= $this->_token;
-	
+
 		// generate query string from post_data
-		$query_string 	= http_build_query($data);
-		
+		$query_string 	= $this->_build_query($data);
+
 		// always exclude MySTack, donotshow & MarketingPromo
 		$query_string 	.= "&none=tag:donotshow&none=tag:MyStack&none=tag:MarketingPromo";
 
 		// initialize curl
 		$ch = curl_init();
-		
+
 		// set parameters
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_POST, 1);
@@ -48,9 +48,40 @@ class Brightcove extends Manager
 
 		curl_close($ch);
 
-
-
 		return json_decode($response, ($return_type == 'json'));
+	}
+
+	private function _build_query($data)
+	{
+		// initialize variables
+		$query 	= '';
+
+		// iterate the data
+		foreach ($data AS $key => $value):
+
+			// if is another array, iterate it
+			if (is_array($value)):
+
+				foreach ($value AS $keys => $values):
+
+					// this allow same key to have multiple lines
+					//$query 	.= $key.'='.urlencode($values).'&';
+					$query 	.= $key.'='.$values.'&';
+
+				endforeach;
+			else:
+
+				//$query 	.= $key.'='.urlencode($value).'&';
+				$query 	.= $key.'='.$value.'&';
+
+			endif;
+
+		endforeach;
+
+		// remove last &
+		$query 	= trim($query,'&');
+
+		return $query;
 	}
 
 	function format_video($video)
@@ -65,6 +96,15 @@ class Brightcove extends Manager
 		return $this->_format_video_array($video);
 
 
+	}
+
+	function format_videos($videos)
+	{
+		$formatted 	= array();
+		foreach ($videos AS $video):
+			$formatted[]	= $this->format_video($video);
+		endforeach;
+		return $formatted;
 	}
 
 	function _format_video_object($video)

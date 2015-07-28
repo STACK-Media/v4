@@ -25,7 +25,29 @@ class Video extends Brightcove
 
 
 		return $this->format_video($video);
+	}
 
+	public function search($data=array())
+	{	
+		// defaut params
+		$params 	= array(
+			'get_item_count'	=> 'true',
+			'sort_by'			=> 'PUBLISH_DATE:DESC',
+			'page_size'			=> '10'
+		);
+
+		// merge the arrays
+		$params 	= array_merge($params,$data);
+
+		// get the videos
+		$videos 	= Brightcove::api('search_videos', $params, 'json');
+
+		return array(
+			'videos'		=> $this->format_videos($videos['items']),
+			'page_number'	=> $videos['page_number'],
+			'page_size'		=> $videos['page_size'],
+			'total_count'	=> $videos['total_count']
+		);
 	}
 
 	

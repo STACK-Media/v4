@@ -111,6 +111,23 @@ class ArticleModel extends AbstractArticle
     public function get_by_category_id($id,$limit=5,$offset=0)
     {
         return DB::table('wp_posts')
+            ->select(
+                DB::raw('"article" AS page_type'),
+                'wp_posts.id', 
+                'wp_posts.post_title AS name',
+                'wp_posts.post_title',
+                'wp_posts.post_name AS slug',
+                'wp_posts.post_name',
+                'wp_posts.post_status', 
+                'wp_posts.post_date', 
+                'wp_posts.post_content', 
+                'wp_posts.post_excerpt',
+                'wp_users.user_nicename AS author_user',
+                'wp_users.display_name AS author_name',
+                'wp_users.user_url AS author_url',
+                'wp_users.user_email AS author_email',
+                'wp_users.ID AS author_id'
+            )
             ->where('wp_posts.post_status','publish')
             ->where('wp_posts.post_type','post')
             ->where('wp_terms.term_id',$id)
@@ -126,6 +143,10 @@ class ArticleModel extends AbstractArticle
                 'wp_terms',
                 'wp_term_taxonomy.term_id','=','wp_terms.term_id'
             )
+            ->join(
+                'wp_users', 
+                'wp_posts.post_author', '=', 'wp_users.ID'
+            )
             ->orderBy('wp_posts.post_date','desc')
             ->skip($offset)
             ->take($limit)
@@ -135,6 +156,23 @@ class ArticleModel extends AbstractArticle
     public function get_by_user_id($id,$limit=10,$offset=0)
     {
         return DB::table('wp_posts')
+            ->select(
+                DB::raw('"article" AS page_type'),
+                'wp_posts.id', 
+                'wp_posts.post_title AS name',
+                'wp_posts.post_title',
+                'wp_posts.post_name AS slug',
+                'wp_posts.post_name',
+                'wp_posts.post_status', 
+                'wp_posts.post_date', 
+                'wp_posts.post_content', 
+                'wp_posts.post_excerpt',
+                'wp_users.user_nicename AS author_user',
+                'wp_users.display_name AS author_name',
+                'wp_users.user_url AS author_url',
+                'wp_users.user_email AS author_email',
+                'wp_users.ID AS author_id'
+            )
             ->where('wp_posts.post_status','publish')
             ->where('wp_posts.post_type','post')
             ->where('wp_users.ID',$id)
