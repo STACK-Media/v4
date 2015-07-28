@@ -15,7 +15,7 @@
 					'title' 		=> $article->name, 
 					'image' 		=> $article->image,
 					'description'	=> $article->post_excerpt,
-					'url'			=> $article->link,
+					'url'			=> routelink('article', array( 'slug' => $article->slug)),
 					'class'			=> 'block-article'				
 				)
 			)

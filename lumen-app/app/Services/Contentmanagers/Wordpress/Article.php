@@ -76,10 +76,6 @@ class Article extends Wordpress
 
 		$article = $this->_reformat_author_fields($article);
 
-		// set link & image fields
-		$article->link 		= routelink('article',array('slug' => $article->slug));
-		$article->image 	= 'http://blog.stack.com/wp-content/uploads/2015/07/3-Steps-to-Alleviate-a-Sore-Neck-STACK-300x168.jpg';
-
 		return $article;
 
 	}
@@ -190,7 +186,9 @@ class Article extends Wordpress
 		// format articles
 		foreach ($articles AS $article):
 
-			$content[] 	= $this->_add_metacontent($article);
+			$article->image 	= 'http://blog.stack.com/wp-content/uploads/2015/07/3-Steps-to-Alleviate-a-Sore-Neck-STACK-300x168.jpg'; 
+
+			$content[] 			= $article;//$this->_add_metacontent($article);
 
 		endforeach;
 
@@ -209,7 +207,9 @@ class Article extends Wordpress
 		// format articles
 		foreach ($articles AS $article):
 
-			$content[] 	= $this->_add_metacontent($article);
+			$article->image 	= 'http://blog.stack.com/wp-content/uploads/2015/07/3-Steps-to-Alleviate-a-Sore-Neck-STACK-300x168.jpg'; 
+
+			$content[] 			= $article;//$this->_add_metacontent($article);
 
 		endforeach;
 
