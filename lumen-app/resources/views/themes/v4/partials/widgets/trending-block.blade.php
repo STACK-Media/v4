@@ -13,7 +13,7 @@
 
 			<div class="event trending-block {{$class}} event" data-name="{{$key}}" data-template="trending-block">
 
-				<a href="{!! routelink('article', array('slug' => $value['link'])) !!}">
+				<a href="{!! routelink('article', array('slug' => $value['slug'])) !!}">
 					@include('theme::partials.img',
 						array(
 							'src' 	=> $value['image'], 
