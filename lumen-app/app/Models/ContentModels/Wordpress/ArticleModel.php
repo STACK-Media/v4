@@ -130,24 +130,20 @@ class ArticleModel extends AbstractArticle
             )
             ->where('wp_posts.post_status','publish')
             ->where('wp_posts.post_type','post')
-            ->where('wp_terms.term_id',$id)
             ->join(
                 'wp_term_relationships',
                 'wp_posts.ID','=','wp_term_relationships.object_id'
             )
-            ->join(
-                'wp_term_taxonomy',
-                'wp_term_relationships.term_taxonomy_id','=','wp_term_taxonomy.term_taxonomy_id'
-            )
-            ->join(
-                'wp_terms',
-                'wp_term_taxonomy.term_id','=','wp_terms.term_id'
-            )
+            ->join('wp_term_taxonomy', function($join) use ($id)
+            {
+                $join->on('wp_term_relationships.term_taxonomy_id', '=', 'wp_term_taxonomy.term_taxonomy_id')
+                    ->where('wp_term_taxonomy.term_id','=',$id);
+            })
             ->join(
                 'wp_users', 
                 'wp_posts.post_author', '=', 'wp_users.ID'
             )
-            ->orderBy('wp_posts.post_date','desc')
+            ->orderBy('wp_posts.id','desc')
             ->skip($offset)
             ->take($limit)
             ->get();
