@@ -7,7 +7,7 @@ return array(
 				'hero',
 				'velocity',
 				'featured-expert',
-				'latest-articles',
+				//'latest-articles',
 				'latest-videos'
 			),
 			'sidebar' => array(
