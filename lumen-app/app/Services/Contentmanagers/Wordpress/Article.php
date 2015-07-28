@@ -76,6 +76,10 @@ class Article extends Wordpress
 
 		$article = $this->_reformat_author_fields($article);
 
+		// set link & image fields
+		$article->link 		= routelink('article',array('slug' => $article->slug));
+		$article->image 	= 'http://blog.stack.com/wp-content/uploads/2015/07/3-Steps-to-Alleviate-a-Sore-Neck-STACK-300x168.jpg';
+
 		return $article;
 
 	}
@@ -174,15 +178,41 @@ class Article extends Wordpress
 		return $this->_model->trending();
 	}
 
-	public function get_by_category_id($id,$limit=5)
+	public function get_by_category_id($id,$limit=5,$offset=0)
 	{
-		$id       = preg_replace("/[^0-9]/", '', $id);
-		return $this->_model->get_by_category_id($id,$limit);
+		// validation
+		$id       	= preg_replace("/[^0-9]/", '', $id);
+		$content 	= array();
+
+		// get articles
+		$articles 	= $this->_model->get_by_category_id($id,$limit,$offset);
+
+		// format articles
+		foreach ($articles AS $article):
+
+			$content[] 	= $this->_add_metacontent($article);
+
+		endforeach;
+
+		return $content;
 	}
 
 	public function get_by_user_id($id)
 	{
-		$id       = preg_replace("/[^0-9]/", '', $id);
-		return $this->_model->get_by_user_id($id);
+		// validation
+		$id       	= preg_replace("/[^0-9]/", '', $id);
+		$content 	= array();
+
+		// get articles
+		$articles 	= $this->_model->get_by_user_id($id);
+
+		// format articles
+		foreach ($articles AS $article):
+
+			$content[] 	= $this->_add_metacontent($article);
+
+		endforeach;
+
+		return $content;
 	}
 }
