@@ -99,6 +99,7 @@ class_alias('Devfactory\Minify\Facades\MinifyFacade', 'Minify');
 
 $app->configure('theming');
 $app->configure('minify.config');
+$app->configure('banners');
 
 require __DIR__.'/../app/Http/routes.php';
 
