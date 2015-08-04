@@ -11,6 +11,8 @@ return array(
 				'latest-videos'
 			),
 			'sidebar' => array(
+				'velocity-sidebar',
+				//'outbrain-sidebar',
 				'newsletter-optin',
 				'magazine',
 				'featured-videos',
@@ -20,7 +22,7 @@ return array(
 				'social-connect'
 			),
 			'post_content' => array(
-				//'pinterest-block'
+				'pinterest-block'
 			)
 		)
 	)

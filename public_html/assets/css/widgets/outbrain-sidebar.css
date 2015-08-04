@@ -1,0 +1,33 @@
+.outbrain-sidebar-widget h2 {
+    background: #A1A1A1;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: Oswald,Impact,Arial,Helvetica,sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 8px 10px;
+    display: block;
+}
+.outbrain-sidebar-widget ul {
+	padding: 0px;
+}
+.outbrain-sidebar-widget ul li {
+	list-style: none;
+	padding-bottom: 4.5%;
+}
+.outbrain-sidebar-widget a.rec-link {
+    color: #148bcc;
+    font-size: 1em;
+    text-decoration: none!important;
+    outline: 0 !important;
+    line-height: 1.3em;
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+.outbrain-sidebar-widget a.rec-src-link {
+	color: lightgray;
+    font-size: .85em;
+    line-height: 1.3em;
+    font-family: sans-serif;
+}
