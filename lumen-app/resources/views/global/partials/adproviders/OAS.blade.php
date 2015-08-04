@@ -1,3 +1,4 @@
-{!! Assets::queue('javascript', 'global', 'oas', '/assets/js/oas.js') !!}
+{!! Assets::queue('javascript', 'global', 'oas', '/assets/js/oasbanner.js') !!}
+{!! Assets::queue('stylesheet', 'global', 'oas', '/assets/css/oasbanner.css') !!}
 
-<div data-banner="{!! $args['name'] !!}" data-banner-w="{!! $width !!}" data-banner-h="{!! $height !!}"></div>
+<div id="oas_{!! $args['name'] !!}" data-banner="{!! $args['name'] !!}" data-banner-w="{!! $width !!}" data-banner-h="{!! $height !!}"></div>
