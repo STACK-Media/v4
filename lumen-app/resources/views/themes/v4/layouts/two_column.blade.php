@@ -95,6 +95,10 @@
 	<div class="col-lg-12">
 
 		@include('theme::partials.navbar')
+	
+		@include('theme::partials.bannerad', array('width' => 728,  'height' => 90,   'args' => array('name' => 'x60')))
+
+		@include('theme::partials.bannerad', array('width' => 1818, 'height' => 1507, 'args' => array('name' => 'x20')))
 
 	</div>
 
