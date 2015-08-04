@@ -1,0 +1,84 @@
+.velocity-sidebar {
+    position: relative;
+    background: url(/assets/img/widgets/velocity/velocity-sidebar.jpg) no-repeat 0 0;
+    background-size: 100%;
+    overflow: hidden;
+    height: 200px;
+    width: 300px;
+    margin: 0 auto;
+}
+.velocity-sidebar header {
+    border-bottom: 0;
+    background: url(/assets/img/widgets/velocity/stack-velocity-logo.jpg) no-repeat 0 0;
+    background-size: 100%;
+    box-shadow: 0 0 6px #404040;
+    padding: 0 24px;
+    float: left;
+    width: 100%;
+    position: relative;
+    margin: 0px;    
+}
+.velocity-sidebar header h2 {
+	background: none;
+    font-family: "Oswald", Arial, sans-serif;
+    float: right;
+    margin-bottom: 7px;
+    font-size: 0.8em;
+    padding: 28px 18px 0;
+    color: white;
+    text-transform: uppercase;
+    font-weight: normal;
+    line-height: 1.2;
+    margin: 0 0 12px 0;
+}
+.velocity-sidebar h1 {
+	font-family: "Oswald", Arial, sans-serif;
+    font-size: 1em;
+    text-transform: uppercase;
+    float: left;
+    color: #FFF;
+    margin: 24px 0 12px 12px;
+    text-shadow: 0 2px 2px #000;
+    font-weight: normal;
+}
+.velocity-sidebar input {
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #000;
+    float: left;
+    padding: 8px 0 8px 8px;
+    font-size: 16px;
+    line-height: normal;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    text-rendering: auto;
+    margin: 0;
+    vertical-align: baseline;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+
+}
+.velocity-sidebar input[type="text"] {
+	width: 209px;
+}
+.velocity-sidebar input[type="submit"] {
+    background: linear-gradient(to bottom, #f31f00 0%, #f31f00 52%, #c10400 100%);
+    width: 46px;
+    border-radius: 0 5px 5px 0;
+    color: #FFF;
+    padding-right: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.velocity-sidebar form {
+	margin-left: 20px;
+}
+
+
+

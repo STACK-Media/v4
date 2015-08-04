@@ -4,25 +4,28 @@ return array(
 	'page_configs' => array(
 		'article' => array(
 			'content' => array(
+				'author',
 				'hero',
 				'velocity',
 				'featured-expert',
 				'latest-articles',
-				'latest-videos'
+				'latest-videos',
+				//'outbrain',
+				//'zergnet',
 			),
 			'sidebar' => array(
-				'velocity-sidebar',
 				//'outbrain-sidebar',
-				'newsletter-optin',
 				'magazine',
+				'social-connect',
 				'featured-videos',
+				'newsletter-optin',
+				//'velocity-sidebar',
 				'popular-videos',
 				'trending-block',
 				'news-links',
-				'social-connect'
 			),
 			'post_content' => array(
-				'pinterest-block'
+				//'pinterest-block'
 			)
 		)
 	)

@@ -1,19 +1,25 @@
-{!! Assets::queue('stylesheet',  'widgets', 'velocity', '/assets/css/widgets/velocity.css') !!}
+{!! Assets::queue('stylesheet',  'widgets', 'velocity-sidebar', '/assets/css/widgets/velocity-sidebar.css') !!}
 
-<div class="row">
+<section data-name="velocity-sidebar">
 
-	<div class="col-xs-12">
+	<div class="row headroom">
 
-		<div class="velocity">
-			<h2>Train like a pro</h2>
-			<h3>Find a training center near you</h3>
-			<form action="http://www.velocitysp.com/find_a_location" method="POST" class="velocity-form" target="_blank">
-				<input type="text" name="zipcode" placeholder="Enter your zip code" class="placeholder">
-				<input type="submit" value="GO">
-			</form>
-			<div class="velocity-logo"></div>
+		<div class="col-xs-12">
+
+			<div class="velocity-sidebar">
+				<header>
+					<h2>Training Centers</h2>
+				</header>
+				<h1>FIND A STACK VELOCITY SPORTS<br> 
+				PERFORMANCE LOCATION NEAR YOU</h1>
+				<form action="http://www.velocitysp.com/find_a_location" method="POST" target="_blank">
+				  <input type="text" name="zipcode" placeholder="Enter your zip code" class="placeholder">
+				  <input class="submit_vsp" type="submit" value="GO">
+				</form>
+			</div>
+
 		</div>
 
 	</div>
 
-</div>
+</section>
