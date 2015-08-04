@@ -86,19 +86,46 @@
 
 @stop
 
+@section('banner-top')
 
-@include('theme::partials.header')
+	
+	@include('theme::partials.bannerad', array('width' => 1818, 'height' => 1507, 'args' => array('name' => 'x20')))
 
+@stop
+
+@section('foot')
+
+	@include('theme::partials.foot')
+
+@stop
+
+
+@section('header')
+
+	@include('theme::partials.header')
+
+@stop
+
+@section('navbar')
+	
+	<div id="navbar">
+		@include('theme::partials.navbar')
+		@include('theme::partials.bannerad', array('width' => 728,  'height' => 90,   'args' => array('name' => 'Top')))
+	</div>
+
+@stop
+
+
+
+@yield('header')
 
 <div class="container">
 	
 	<div class="col-lg-12">
 
-		@include('theme::partials.navbar')
+		@yield('navbar')
 	
-		@include('theme::partials.bannerad', array('width' => 728,  'height' => 90,   'args' => array('name' => 'x60')))
-
-		@include('theme::partials.bannerad', array('width' => 1818, 'height' => 1507, 'args' => array('name' => 'x20')))
+		@yield('banner-top')
 
 	</div>
 
@@ -144,11 +171,10 @@
 
 	<div class="footer headroom legroom">
 
-		@include('theme::partials.foot')
+		@yield('foot')
 
 	</div>	
 
 </div>
-
 
 @include('theme::partials.footer')
