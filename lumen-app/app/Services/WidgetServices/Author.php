@@ -17,7 +17,7 @@ class Author extends WidgetService
 		return array(
 			'author'	=> $page_object->author,
 			'meta'		=> $meta,
-			'image'		=> 'http://blog.stack.com/wp-content/uploads/userphoto/'.$meta['userphoto_image_file']['value']
+			'image'		=> ( ! isset($meta['userphoto_image_file']) ? '' : 'http://blog.stack.com/wp-content/uploads/userphoto/'.$meta['userphoto_image_file']['value'])
 		);
 	}
 

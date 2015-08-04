@@ -24,6 +24,8 @@
 
 @section('sidebar-widgets')
 
+	@include('theme::partials.bannerad', array('width' => 300, 'height' => 250, 'args' => array('name' => 'Right2')))
+
 	<?php
 	$num_widgets = 0;
 	 // iterate sidebar widgets ?>
@@ -37,7 +39,6 @@
 				$num_widgets++; 
 
 				$headroom_class = '';
-
 				?>
 
 				<div class="event widget" data-name="sidebar-{{$widget}}" data-template="{{$template or "default"}}">
@@ -54,11 +55,28 @@
 
 				</div>
 
+				@if($num_widgets==2)
+					
+					</div>
+
+					<div class="row">
+	
+						@include('theme::partials.bannerad', array('width' => 300, 'height' => 250, 'args' => array('name' => 'Right3')))
+					
+					</div>
+
+					<div class="row">
+
+				@endif
+
 			@endforeach
 
 		</div>
 
 	@endif
+
+
+	@include('theme::partials.bannerad', array('width' => 160, 'height' => 600, 'args' => array('name' => 'BottomLeft')))
 
 @stop
 

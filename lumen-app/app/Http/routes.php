@@ -14,11 +14,13 @@
 $route_verticals = array('4w');
 
 $route_pages     = array(
-	'' => array(
+	'home' => array(
+		'slug'       => '',
 		'controller' => 'HomeController',
 		'function'   => 'index',
 	),
 	'api'		=> array(
+		'slug'          => 'api',
 		'controller'	=> 'APIController',
 		'function'		=> 'index',
 		'params'		=> array(
@@ -26,6 +28,7 @@ $route_pages     = array(
 		)
 	),
 	'video' => array(
+		'slug'       => 'v',
 		'controller' => 'VideoController',
 		'function'   => 'index',
 		'params'     => array(
@@ -33,6 +36,7 @@ $route_pages     = array(
 		)
 	),
 	'article' => array(
+		'slug'       => 'a',
 		'controller' => 'ArticleController',
 		'function'   => 'index',
 		'params'     => array(
@@ -41,6 +45,7 @@ $route_pages     = array(
 		)
 	),
 	'category' => array(
+		'slug'       => 'c',
 		'controller' => 'TaxonomyController',
 		'function'   => 'category',
 		'params'     => array(
@@ -48,6 +53,7 @@ $route_pages     = array(
 		)
 	),
 	'tag' => array(
+		'slug'       => 't',
 		'controller' => 'TaxonomyController',
 		'function'   => 'tag',
 		'params'     => array(
@@ -55,6 +61,7 @@ $route_pages     = array(
 		)
 	),
 	'sport' => array(
+		'slug'       => 's',
 		'controller' => 'SportController',
 		'function'   => 'index',
 		'params'     => array(
@@ -74,13 +81,13 @@ foreach ($route_pages as $route_key => $route_arr)
 
 	endif;
 
-	$app->get($route_key.'/'.$route_params, [
+	$app->get($route_arr['slug'].'/'.$route_params, [
 		'as' => $route_name, 'uses' => 'App\Http\Controllers\\'.$route_arr['controller'].'@'.$route_arr['function']
 	]);
 
 	foreach ($route_verticals as $route_vertical):
 
-		$app->get($route_vertical.'/'.$route_key.'/'.$route_params, array('as' => $route_vertical.$route_name, function() use ($route_vertical, $route_arr) {
+		$app->get($route_vertical.'/'.$route_arr['slug'].'/'.$route_params, array('as' => $route_vertical.$route_name, function() use ($route_vertical, $route_arr) {
 
 			$args = func_get_args();
 
