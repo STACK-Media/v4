@@ -89,7 +89,7 @@
 @section('banner-top')
 
 	
-	@include('theme::partials.bannerad', array('width' => 1818, 'height' => 1507, 'args' => array('name' => 'x20')))
+	@include('theme::partials.bannerad', array('width' => 1818, 'height' => 800, 'args' => array('name' => 'x20')))
 
 @stop
 
