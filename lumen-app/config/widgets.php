@@ -8,10 +8,11 @@ return array(
 				'hero',
 				'velocity',
 				'featured-expert',
-				'latest-articles',
+				//'latest-articles',
 				'latest-videos',
 				//'outbrain',
 				//'zergnet',
+				//'related-links',
 			),
 			'sidebar' => array(
 				//'outbrain-sidebar',
