@@ -19,7 +19,7 @@ class User extends Wordpress
 
 	public function get($id)
 	{
-		return $this->_model->get($id);
+		return $this->_model->get_by_id($id);
 	}
 
 	public function get_by_slug($slug)
