@@ -2,31 +2,38 @@
 
 return array(
 	'page_configs' => array(
+		'homepage'	=> array(
+			'content'		=> array(
+				'hero'
+			),
+			'sidebar'		=> array(),
+			'post_content'	=> array()
+		),
 		'article' => array(
 			'content' => array(
 				'author',
 				'hero',
 				'velocity',
 				'featured-expert',
-				//'latest-articles',
+				'latest-articles',
 				'latest-videos',
-				//'outbrain',
-				//'zergnet',
+				'outbrain',
+				'zergnet',
 				//'related-links',
 			),
 			'sidebar' => array(
-				//'outbrain-sidebar',
+				'outbrain-sidebar',
 				'magazine',
 				'social-connect',
 				'featured-videos',
 				'newsletter-optin',
-				//'velocity-sidebar',
+				'velocity-sidebar',
 				'popular-videos',
 				'trending-block',
 				'news-links',
 			),
 			'post_content' => array(
-				//'pinterest-block'
+				'pinterest-block'
 			)
 		)
 	)

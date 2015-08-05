@@ -1,9 +1,50 @@
-.pinterest-block-content {
-	padding-top: 	20px;
+/* http://www.bootply.com/jGSzSv5ucQ */
+*, *:before, *:after {box-sizing:  border-box !important;}
+.pinterest-container {
+	-moz-column-width: 15em;
+	-webkit-column-width: 15em;
+	-moz-column-gap: 1em;
+	-webkit-column-gap: 1em; 
 }
-.pinteresst-block {
-	background-color: 	gray;
+.pinterest-item {
+	display: inline-block;
+	margin:  0.25rem;
+	padding:  0em;
+	width:  100%; 
 }
-.pinterest-block .h2 {
-	min-height: 250px;
+.pinterest-item img {
+	width: 100%;
+	/*-webkit-filter: grayscale(0%);*/
+
+}
+.pinterest-item img:hover {
+	/*-webkit-filter: grayscale(100%);*/
+}
+.pinterest-title-block {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+.pinterest-title {
+    font-family: Arial,Helvetica,sans-serif !important;
+    display: block;
+    width: 100%;
+    margin: 0px;
+    color: #fff;
+    font-size: 20px;
+    line-height: 24px;
+    padding: 9px 5px 11px 15px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.pinterest-img-holder {
+    display: block;
+    position: relative;
+}
+.pinterest-item .pinterest-img-holder:hover .pinterest-title {
+	background: rgba(0,0,0,0.65);
+}
+.pinterest-title:hover {
+	background: rgba(0,0,0,0.65);
 }

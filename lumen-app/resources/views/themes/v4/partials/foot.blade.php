@@ -10,9 +10,11 @@
 
 <div class="row">
 
-	<div class="col-sm-6 col-sm-offset-3 center-txt">
+	<div class="col-sm-6 col-sm-offset-3 center-txt headroom">
 
-		<img class="center-margins" src="/assets/img/partners/yardbarker.gif" alt="Yardbarker: Part of FOX Sports Digital" />
+		<a href="http://www.foxsports.com">
+			<img class="center-margins" src="/assets/img/partners/fox-sports-logo.gif" alt="FOX Sports Digital" />
+		</a>
 
 	</div>
 

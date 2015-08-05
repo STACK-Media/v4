@@ -1,0 +1,44 @@
+{!! Assets::queue('stylesheet',  'widgets', 'pinterest-block', '/assets/css/widgets/pinterest-block.css') !!}
+{!! Assets::queue('javascript',  'widgets', 'masonry', '/assets/js/masonry-2.1.2.min.js') !!}
+{!! Assets::queue('javascript',  'widgets', 'pinterest-block', '/assets/js/widgets/pinterest-block.js') !!}
+
+<section data-name="pinterest-block" class="pinterest-block hidden-xs hidden-sm hidden-md">
+
+	<h3>More Cool Stuff You'll Like</h3>
+
+	<div class="pinterest-masonry">
+		<?php shuffle($pinterest); ?>
+		@foreach($pinterest as $key => $value)
+
+			<?php
+			// set width and height
+			//$class 	= (rand(0,2)==0)? 'pinterest-masonry-item-taller': '';
+			//$class 	= ($key == 0)? 'pinterest-masonry-item-first': $class;
+
+			?>
+
+			<div class="pinterest-masonry-item col-xs-12 col-sm-6 col-md-3">
+
+				<a href="{!! routelink('article', array('slug' => $value['link'])) !!}">
+
+					@include('theme::partials.img',
+						array(
+							'src' 	=> $value['image'], 
+							'alt' 	=> $value['title'],
+							'class'	=> 'img-responsive'
+						)
+					)
+					
+					<!--
+					<img src="<?php echo $value['image']; ?>" alt="<?php echo $value['title']; ?>" />
+					-->
+				</a>
+
+			</div>
+
+		@endforeach
+
+	</div>
+
+</section>
+
