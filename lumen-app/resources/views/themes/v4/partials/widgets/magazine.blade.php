@@ -7,6 +7,8 @@
 		<h3>Current Issue</h3>
 
 		<div id="magazine">
+
+			<?php $magazine = $magazines[rand(0, count($magazines) - 1)]; ?>
 			
 			<a href="{{$magazine['url']}}" target="_blank">
 				@include('theme::partials.img',

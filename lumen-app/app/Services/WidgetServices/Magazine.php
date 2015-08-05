@@ -45,10 +45,10 @@ class Magazine extends WidgetService
 		);
 
 		// grab magazine
-		$magazine 		= $magazines[rand(0,count($magazines)-1)];
+		//$magazine 		= $magazines[rand(0,count($magazines)-1)];
 
 		return array(
-			'magazine'	=> $magazine
+			'magazines'	=> $magazines
 		);
 	}
 
