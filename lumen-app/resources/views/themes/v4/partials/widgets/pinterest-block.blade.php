@@ -1,5 +1,4 @@
 {!! Assets::queue('stylesheet',  'widgets', 'pinterest-block', '/assets/css/widgets/pinterest-block.css') !!}
-{!! Assets::queue('javascript',  'widgets', 'pinterest-block', '/assets/js/widgets/pinterest-block.js') !!}
 
 <section data-name="pinterest-block" class="pinterest-block ">
 
