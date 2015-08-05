@@ -1,0 +1,16 @@
+.pinterest-block h3 {
+    margin: 0 0 18px 0;
+    font-size: 2.4em;
+    line-height: 1;
+    font-family: "Roboto Slab", serif;
+}
+.pinterest-masonry {
+	width: 	100%;
+	margin: 0 auto;
+}
+.pinterest-masonry-item {
+	padding: 	4px;
+}
+.pinterest-masonry-item img {
+	width: 	100%;
+}

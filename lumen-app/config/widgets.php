@@ -15,25 +15,25 @@ return array(
 				'hero',
 				'velocity',
 				'featured-expert',
-				//'latest-articles',
+				'latest-articles',
 				'latest-videos',
-				//'outbrain',
-				//'zergnet',
+				'outbrain',
+				'zergnet',
 				//'related-links',
 			),
 			'sidebar' => array(
-				//'outbrain-sidebar',
+				'outbrain-sidebar',
 				'magazine',
 				'social-connect',
 				'featured-videos',
 				'newsletter-optin',
-				//'velocity-sidebar',
+				'velocity-sidebar',
 				'popular-videos',
 				'trending-block',
 				'news-links',
 			),
 			'post_content' => array(
-				//'pinterest-block'
+				'pinterest-block'
 			)
 		)
 	)
