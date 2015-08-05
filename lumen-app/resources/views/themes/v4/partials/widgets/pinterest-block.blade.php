@@ -11,26 +11,26 @@
 
 			@foreach($pinterest as $key => $value)
 
-		    <div class="pinterest-item"> 
+			    <div class="pinterest-item"> 
 
-				<a href="{!! routelink('article', array('slug' => $value['link'])) !!}">
+					<a href="{!! routelink('article', array('slug' => $value['link'])) !!}">
 
-					<div class="pinterest-img-holder">
-						@include('theme::partials.img',
-							array(
-								'src' 	=> $value['image'], 
-								'alt' 	=> $value['title'],
-								'class'	=> 'img-responsive'
+						<div class="pinterest-img-holder">
+							@include('theme::partials.img',
+								array(
+									'src' 	=> $value['image'], 
+									'alt' 	=> $value['title'],
+									'class'	=> 'img-responsive'
+								)
 							)
-						)
-						<span class="pinterest-title-block">
-							<h2 class="pinterest-title">{{$value['title']}}</h2>
-						</span>
-					</div>
+							<span class="pinterest-title-block">
+								<h2 class="pinterest-title">{{$value['title']}}</h2>
+							</span>
+						</div>
 
-				</a>
+					</a>
 
-		    </div>
+			    </div>
 
 		    @endforeach
 

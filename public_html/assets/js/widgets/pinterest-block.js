@@ -7,7 +7,7 @@ $(document).ready(function(){
 		var max 	= 250;
 		var min 	= 195;
 		// update the image height
-		$(this).css('height',Math.random() * (max - min) + min + 'px');
+		//$(this).css('height',Math.random() * (max - min) + min + 'px');
 
 	});
 
