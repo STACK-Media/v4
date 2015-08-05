@@ -2,6 +2,13 @@
 
 return array(
 	'page_configs' => array(
+		'homepage'	=> array(
+			'content'		=> array(
+				'hero'
+			),
+			'sidebar'		=> array(),
+			'post_content'	=> array()
+		),
 		'article' => array(
 			'content' => array(
 				'author',

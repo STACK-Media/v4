@@ -147,8 +147,11 @@ a {cursor:pointer;}
 	list-style-type: 	none;
 	padding: 			0px;
 	margin: 			0px;
-	color: 				#FFF;
+	color: 				#FFF !important;
 	font-size: 			110%;
+}
+.footer-links li a {
+	color: #FFF !important;
 }
 
 
