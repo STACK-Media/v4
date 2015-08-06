@@ -37,7 +37,9 @@ class Pinterestblock extends WidgetService
 		*/
 
 		$pinterest 	= $content->trending();
-
+print "<pre>";
+print_r($pinterest);
+exit;
 		// return
 		return array(
 			'pinterest'	=> json_decode(json_encode($pinterest),TRUE)

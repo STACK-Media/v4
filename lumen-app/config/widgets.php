@@ -11,7 +11,7 @@ return array(
 		),
 		'article' => array(
 			'content' => array(
-				//'author',
+				'author',
 				'hero',
 				'velocity',
 				'featured-expert',
