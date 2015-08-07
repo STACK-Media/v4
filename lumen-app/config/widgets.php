@@ -4,36 +4,68 @@ return array(
 	'page_configs' => array(
 		'homepage'	=> array(
 			'content'		=> array(
-				'hero'
+				//'latest',
+				'latest-articles',
+				'velocity',
+				//'trending',
+				'latest-videos',
+				'hero',
+				'featured-expert',
 			),
-			'sidebar'		=> array(),
+			'sidebar'		=> array(
+				'featured-videos',
+				'social-connect',
+				//'newsletter_optin',
+				'popular-videos',
+				'magazine',
+				'news-links',
+			),
 			'post_content'	=> array()
 		),
 		'article' => array(
 			'content' => array(
-				//'author',
-				'hero',
-				'velocity',
-				//'featured-expert',
-				//'latest-articles',
-				'latest-videos',
 				'outbrain',
 				'zergnet',
-				//'related-links',
 			),
 			'sidebar' => array(
-				'outbrain-sidebar',
-				'magazine',
-				'social-connect',
 				'featured-videos',
 				//'newsletter-optin',
-				//'velocity-sidebar',
 				'popular-videos',
 				'trending-block',
-				'news-links',
 			),
 			'post_content' => array(
-				'pinterest-block'
+				'pinterest-block',
+				'related-links',
+			)
+		),
+		'category' => array(
+			'content' => array(
+				'latest-articles',
+				'latest-videos',
+			),
+			'sidebar' => array(
+				'featured-videos',
+				'velocity-sidebar',
+				'popular-videos',
+				'trending-block',
+			),
+			'post_content' => array(
+
+			)
+		),
+		'tag' => array(
+			'content' => array(
+				'latest-articles',
+				'latest-videos',
+			),
+			'sidebar' => array(
+				'featured-videos',
+				'velocity-sidebar',
+				'popular-videos',
+				'trending-block',
+			),
+			'post_content' => array(
+
 			)
 		)
 	)

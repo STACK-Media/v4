@@ -1,0 +1,22 @@
+.related-links h3 {
+	font-family: "Roboto Slab", serif;
+	font-size: 1.5em;
+    margin: 0.83em 0;
+    text-align: center;
+    line-height: 1.4;
+}
+.related-links a {
+    margin: 1em 0;
+    line-height: 1.4;
+    font-size: 0.8em;
+    color: #148bcc;
+    font-weight: 300;
+    text-decoration: none;
+    outline: 0 !important;
+}
+.related-links a:hover {
+	text-decoration:	underline;
+}
+.related-links ul li {
+	list-style: none;
+}

@@ -108,8 +108,12 @@ class ArticleModel extends AbstractArticle
             ->get();
     }
 
-    public function get_by_category_id($id,$limit=5,$offset=0)
+    public function get_by_category_id($id,$limit=5,$offset=0,$date=FALSE)
     {
+        // set default date
+        if ( ! $date)
+            $date   = strtotime(date('Y-m-d H:i:s'));
+
         return DB::table('wp_posts')
             ->select(
                 DB::raw('"article" AS page_type'),
@@ -130,6 +134,7 @@ class ArticleModel extends AbstractArticle
             )
             ->where('wp_posts.post_status','publish')
             ->where('wp_posts.post_type','post')
+            //->where('wp_posts.post_date','<',strtotime($date))
             ->join(
                 'wp_term_relationships',
                 'wp_posts.ID','=','wp_term_relationships.object_id'
@@ -147,6 +152,11 @@ class ArticleModel extends AbstractArticle
             ->skip($offset)
             ->take($limit)
             ->get();
+    }
+
+    public function get_by_tag_id($id,$limit=5,$offset=0,$date=FALSE)
+    {
+        return $this->get_by_category_id($id,$limit,$offset,$date);
     }
 
     public function get_by_user_id($id,$limit=10,$offset=0)
