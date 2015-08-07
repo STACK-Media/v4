@@ -19,7 +19,7 @@ return array(
 				'latest-videos',
 				'outbrain',
 				'zergnet',
-				//'related-links',
+				'related-links',
 			),
 			'sidebar' => array(
 				'outbrain-sidebar',

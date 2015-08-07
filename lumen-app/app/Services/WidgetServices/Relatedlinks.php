@@ -3,10 +3,29 @@
 namespace App\Services\WidgetServices;
 
 use App\Services\Contentmanager;
+use App\Services\Videomanager;
 
 class Relatedlinks extends WidgetService
 {
 	function get($page)
+	{
+		// grab related links
+		$videos 		= $this->_get_video_links();
+		$categories 	= $this->_get_category_links();
+		$tags 			= $this->_get_tag_links();
+
+		return array(
+			'links'			=> array(
+				'video'		=> $videos,
+				'category'	=> $categories,
+				'tag'		=> $tags 
+			),
+			//'category'		=> $category,
+		);
+
+	}
+
+	private function _get_video_links()
 	{
 		// initilaize video manager
 		$videos = new VideoManager('video');
@@ -35,16 +54,16 @@ class Relatedlinks extends WidgetService
 		// get the videos
 		$videos 	= $videos->search($params);
 
-		return array(
-			'videos'		=> $videos,
-			'category'		=> $category
-		);
+		return $videos;
+	}
 
+	private function _get_category_links()
+	{
+		return array();
+	}
 
-		return array(
-			'category-1'	=> $articles1,
-			'category-2'	=> $articles2
-			'videos'		=> $category
-		);
+	private function _get_tag_links()
+	{
+		return array();
 	}
 }
