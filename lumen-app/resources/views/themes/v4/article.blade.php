@@ -98,7 +98,20 @@
 
 					<a href="{!! routelink('author', array('slug' => $page->author['username'])) !!}">
 						{{$page->author['name']}}
-					</a> - {{ substr($page->author['meta']['description'], 0, strpos($page->author['meta']['description'], ' ', 180)) }}...
+					</a>
+					
+					<?php
+					$excerpt = $page->author['meta']['description'];
+
+					if (strlen($excerpt) > 180):
+
+						$excerpt = substr($excerpt, 0, strpos($excerpt, ' ', 180)) . '...';
+
+					endif;
+
+					?>
+
+					- {{ $excerpt }}
 					
 					<br>
 					

@@ -13,7 +13,7 @@ class Socialconnect extends WidgetService
 			'youtube'		=> 'https://www.youtube.com/user/STACKVids',
 			'instagram'		=> 'https://instagram.com/stackmedia/',
 			'google'		=> 'https://plus.google.com/u/0/+STACK/posts',
-			'rss'			=> 'https://www.stack.com/feed/',
+			'rss'			=> routelink('feed'),
 		);
 
 		return array(
