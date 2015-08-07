@@ -8,8 +8,12 @@
 	<h1>{!! $page->name !!}</h1>
 
 	<article>
+		
+		@if(isset($page->meta['userphoto_image_file']))
 
-		<img alt="{!! $page->name !!}" src="http://blog.stack.com/wp-content/uploads/userphoto/733.jpg" class="pull-left">
+			<img alt="{!! $page->name !!}" src="http://blog.stack.com/wp-content/uploads/userphoto/{!! $page->meta['userphoto_image_file'] !!}" class="pull-left">
+
+		@endif
 		
 		<p>{!! $page->meta['description'] !!}</p>
 
@@ -34,7 +38,41 @@
 	
 	@foreach($page->posts as $post)
 		
-		{!! var_export($post, TRUE) !!}
+		
+		<div data-template="latest-videos-block" data-name="4" class="row block event" data-viewport="true">
+
+			<div class="col-xs-12 col-sm-6">
+
+				<a href="{!! routelink('article', array('slug' => $post->slug)) !!}">
+					<img alt="{!! $post->name !!}" class="img-responsive" data-src="" src="{!! $post->image !!}">
+				</a>
+
+			</div>
+
+			<div class="col-xs-12 col-sm-6">
+
+				<h3>
+					<a href="{!! routelink('article', array('slug' => $post->slug)) !!}">
+						{!! $post->name !!}
+					</a>
+				</h3>
+
+				<?php
+				$excerpt = strip_tags($post->post_content);
+
+				if (strlen($excerpt) > 180):
+
+					$excerpt = substr($excerpt, 0, strpos($excerpt, ' ', 180)) . '...';
+
+				endif;
+
+				?>
+
+				<p>{!! $excerpt !!}</p>
+
+			</div>
+
+		</div>
 
 	@endforeach
 
