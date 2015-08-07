@@ -7,6 +7,37 @@
 
 	@include('theme::partials.head')
 
+	
+	@if(is_object($page))
+	
+		<?php
+
+		$jstax = array();
+
+		foreach($page->taxonomy as $type => $taxes):
+		
+			foreach($taxes as $tax):
+
+				$jstax[$type] = $tax->slug;
+
+			endforeach;
+
+		endforeach;
+
+		?>
+
+		<script type="text/javascript">
+
+			var pageinfo = {
+				url: "{!! Request::url() !!}",
+				type: "{!! $page->page_type !!}",
+				taxonomy: {!! json_encode($jstax) !!}
+			};
+
+		</script>
+		
+	@endif
+
 	<!-- header javascript files -->
 
 	{!! Assets::get_queued('headscript') !!} 

@@ -4,10 +4,10 @@ return array(
 	'page_configs' => array(
 		'article' => array(
 			'content' => array(
-				'author',
+				//'author',
 				'hero',
 				'velocity',
-				'featured-expert',
+				//'featured-expert',
 				//'latest-articles',
 				'latest-videos',
 				//'outbrain',

@@ -1,11 +1,10 @@
-
 @extends('theme::layouts.two_column')
 
+{!! Assets::queue('stylesheet', 'layout', 'article', '/assets/css/article.css') !!}
 
 @section('content')
 
-
-<article>
+<div>
 
 	{{-- Need to add vertical to breadcrumb links --}}
 
@@ -56,29 +55,83 @@
 
 	</div>
 
-	<h1>
-		{!! $page->name !!}
-	</h1>
-	
-	<time datetime="{!! date('Y-m-d H:i',strtotime($page->post_date)) !!}">{!! date('F d, Y',strtotime($page->post_date)) !!}</time>
+	<article>
 
-	<div id="article_content">
-
-		@if(@$page->video)
-	
-			@include('theme::partials.videoplayers.'.$page->player['player_name'], $page->player['player_data'])
-
-		@endif
+		<h1>
+			{!! $page->name !!}
+		</h1>
 		
+		<time datetime="{!! date('Y-m-d H:i',strtotime($page->post_date)) !!}">{!! date('F d, Y',strtotime($page->post_date)) !!}</time>
 
-		{!! $page->post_content !!}
+		<div id="article_content">
 
-		{{-- Need author block --}}
+			@if(@$page->video)
+		
+				@include('theme::partials.videoplayers.'.$page->player['player_name'], $page->player['player_data'])
 
-		{{-- Need "Topics:" block --}}
+			@endif
+			
 
-	</div>
+			{!! $page->post_content !!}
+
+
+
+			<div id="author">
+
+				<div class="col-xs-2">
+
+					<a href="{!! routelink('article', array('slug' => $page->author['username'])) !!}">
+
+						@include('theme::partials.img',
+							array(
+								'src' 	=> ( ! isset($page->author['meta']['userphoto_image_file']) ? '' : 'http://blog.stack.com/wp-content/uploads/userphoto/'.$page->author['meta']['userphoto_image_file']),
+
+								'alt' 	=> $page->author['name'],
+								'class'	=> 'img-responsive'
+							)
+						)
+
+					</a>
+				</div>
+
+				<div class="col-xs-10">
+
+					<a href="{!! routelink('author', array('slug' => $page->author['username'])) !!}">
+						{{$page->author['name']}}
+					</a> - {{ substr($page->author['meta']['description'], 0, strpos($page->author['meta']['description'], ' ', 180)) }}...
+					
+					<br>
+					
+					<a href="/stack-expert-contributor-program/" target="_blank" alt="STACK Expert Contribution Program">Become a Contributing Expert</a>
+
+				</div>
+
+				<div class="clearfix"></div>
+
+			</div>
+
+
+
+			{{-- Need "Topics:" block --}}
+
+		</div>
+
+	</article>
 	
-</article>
+</div>
 
+<?php 
+/*
+'lacrossesection',
+     'basketballsection',
+     'trainingsection',
+     'strengthtraining',
+     'getfastersection',
+     'sportsskillssection',
+     'flexibilitysection',
+     'sportsinjuriessection',
+     'axonsportssection'
+ */
+// show Bottom2 if article has above
+?>
 @stop

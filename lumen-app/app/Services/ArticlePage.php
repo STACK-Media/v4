@@ -18,7 +18,13 @@ class ArticlePage extends Page
 
 		$video_key     = config('videomanager.article_meta_key');
 
-		if (is_object($this->_object) && property_exists($this->_object, 'meta') && array_key_exists($video_key, $this->_object->meta)):
+		if ( ! is_object($this->_object)):
+
+			return parent::__construct();
+
+		endif;
+
+		if (property_exists($this->_object, 'meta') && array_key_exists($video_key, $this->_object->meta)):
 
 			$playerservice = new Videomanager('player');
 
@@ -31,6 +37,16 @@ class ArticlePage extends Page
 				$this->_object->player = $player;
 
 			endif;
+
+		endif;
+
+		if (property_exists($this->_object, 'author')):
+
+			// initilaize content user manager
+			$user = new Contentmanager('user');
+
+			// grab author meta
+			$this->_object->author['meta'] = $user->get_meta($this->_object->author['id']);
 
 		endif;
 

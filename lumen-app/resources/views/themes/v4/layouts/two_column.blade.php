@@ -104,10 +104,11 @@
 
 @stop
 
-@section('banner-top')
-
+@section('banner-bg')
 	
-	@include('theme::partials.bannerad', array('width' => 1818, 'height' => 800, 'args' => array('name' => 'x20')))
+	<div id="bannerbg">
+		@include('theme::partials.bannerad', array('width' => 1818, 'height' => 800, 'args' => array('name' => 'x20')))
+	</div>
 
 @stop
 
@@ -119,15 +120,17 @@
 
 
 @section('header')
-
+	
 	@include('theme::partials.header')
 
 @stop
 
 @section('navbar')
 	
-	<div id="navbar">
-		@include('theme::partials.navbar')
+	<div>
+		<nav id="navbar">
+			@include('theme::partials.navbar')			
+		</nav>
 		@include('theme::partials.bannerad', array('width' => 728,  'height' => 90,   'args' => array('name' => 'Top')))
 	</div>
 
@@ -137,15 +140,15 @@
 
 @yield('header')
 
+@yield('banner-bg')
+
 <div class="container">
 	
-	<div class="col-lg-12">
-
+	<header role="banner">
+		
 		@yield('navbar')
-	
-		@yield('banner-top')
 
-	</div>
+	</header>
 
 </div>
 
@@ -153,13 +156,13 @@
 
 	<div class="panel headroom">
 		
-		<div class="col-xs-12 col-md-8 col-lg-8" id="content">
+		<main role="main" class="col-xs-12 col-md-8 col-lg-8" id="content">
 
-			<div>
+			<article>
 
 				@yield('content')
 
-			</div>
+			</article>
 
 			<div id="after-content" class="content-widgets">
 
@@ -167,14 +170,14 @@
 
 			</div>
 
-		</div>
+		</main>
 
 		<!-- Sidebar -->
-		<div class="col-xs-12 col-md-4 col-lg-4" id="sidebar">
+		<aside class="col-xs-12 col-md-4 col-lg-4" id="sidebar">
 
 			@yield('sidebar-widgets')
 
-		</div>
+		</aside>
 
 
 		<div class="col-xs-12 content-widgets" id="post-content">
