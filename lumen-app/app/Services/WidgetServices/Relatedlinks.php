@@ -32,7 +32,7 @@ class Relatedlinks extends WidgetService
 	private function _get_video_links()
 	{
 		// initilaize video manager
-		$videos = new Services\VideoManager('video');
+		$videos = new Services\Videomanager('video');
 
 		// initialzie variables
 		$params 	= array();
