@@ -1,10 +1,12 @@
 
 @extends('theme::layouts.two_column')
 
-@section('content-widgets')
+@section('content')
 
-	<h1>Category Layout</h1>
-	<p>global::layouts::category</p>
-	{{$page->id}}
+<?php
+print "<pre>";
+print_r($page);
+print "</pre>";
+?>
 
 @stop
