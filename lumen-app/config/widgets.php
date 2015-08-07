@@ -76,7 +76,22 @@ return array(
 			'post_content' => array(
 
 			)
-		)
+		),
+		'video' => array(
+			'content' => array(
+
+			),
+			'sidebar' => array(
+				'velocity-sidebar',
+				'outbrain-sidebar',
+				'social-connect',
+				//'newsletter-optin',
+				'trending-block',
+			),
+			'post_content' => array(
+
+			)
+		),
 	)
 );
 
