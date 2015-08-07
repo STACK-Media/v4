@@ -78,7 +78,7 @@
 
 			<div id="author">
 
-				<a href="{!! routelink('author', array('slug' => $page->author['username'])) !!}" class="pull-left">
+				<a href="{!! routelink('author', array('slug' => $page->author['slug'])) !!}" class="pull-left">
 
 					@include('theme::partials.img',
 						array(
@@ -91,7 +91,7 @@
 				</a>
 
 
-				<a href="{!! routelink('author', array('slug' => $page->author['username'])) !!}">
+				<a href="{!! routelink('author', array('slug' => $page->author['slug'])) !!}">
 					{{$page->author['name']}}
 				</a>
 				

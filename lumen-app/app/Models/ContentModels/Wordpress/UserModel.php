@@ -18,8 +18,16 @@ class UserModel extends AbstractUser
 	public function get_by_slug($slug)
 	{
 		return DB::table('wp_users')
+			->select(
+    			DB::raw('"author" AS page_type'),
+                'ID AS id',
+                'user_nicename AS slug',
+                'user_email AS email',
+                'user_url AS url',
+                'display_name AS name'
+    		)
 			->where('wp_users.user_nicename',$slug)
-			->get();
+			->take(1)->first();
 	}
 
 	public function get_featured()
@@ -38,6 +46,11 @@ class UserModel extends AbstractUser
 	{
 		return DB::table('wp_usermeta')
 			->where('wp_usermeta.user_id',$user_id)
+			->where('wp_usermeta.meta_key', 'NOT LIKE', 'wp%')
+			->where('wp_usermeta.meta_key', 'NOT LIKE', 'closed%')
+			->where('wp_usermeta.meta_key', 'NOT LIKE', 'metabox%')
+			->where('wp_usermeta.meta_key', 'NOT LIKE', 'meta-box%')
+			->where('wp_usermeta.meta_key', 'NOT LIKE', 'dismissed%')
 			->get();
 	}
 }

@@ -42,11 +42,11 @@ class Article extends Wordpress
 
 	function _reformat_author_fields($article)
 	{
-		$article->author['username'] = $article->author_user;
-		$article->author['name']     = $article->author_name;
-		$article->author['url']      = $article->author_url;
-		$article->author['email']    = $article->author_email;
-		$article->author['id']       = $article->author_id;
+		$article->author['slug']  = $article->author_user;
+		$article->author['name']  = $article->author_name;
+		$article->author['url']   = $article->author_url;
+		$article->author['email'] = $article->author_email;
+		$article->author['id']    = $article->author_id;
 
 		unset($article->author_user);
 		unset($article->author_name);

@@ -9,20 +9,24 @@
 
 	
 	@if(is_object($page))
-	
+
 		<?php
 
 		$jstax = array();
 
-		foreach($page->taxonomy as $type => $taxes):
-		
-			foreach($taxes as $tax):
+		if ( ! is_null($page->taxonomy)):
 
-				$jstax[$type] = $tax->slug;
+			foreach($page->taxonomy as $type => $taxes):
+			
+				foreach($taxes as $tax):
+
+					$jstax[$type] = $tax->slug;
+
+				endforeach;
 
 			endforeach;
 
-		endforeach;
+		endif;
 
 		?>
 

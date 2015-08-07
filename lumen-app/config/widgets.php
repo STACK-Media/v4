@@ -22,6 +22,14 @@ return array(
 			),
 			'post_content'	=> array()
 		),
+		'author' => array(
+			'sidebar' => array(
+				'velocity-sidebar',
+				'social-connect',
+				//'newsletter-optin',
+				'trending-block',
+			)
+		),
 		'article' => array(
 			'content' => array(
 				'outbrain',

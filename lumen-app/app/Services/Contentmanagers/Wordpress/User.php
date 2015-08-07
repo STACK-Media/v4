@@ -54,6 +54,44 @@ class User extends Wordpress
 
 		endforeach;
 
+		$social = array(
+			'googlePlus' => 'plus.google.com',
+			'facebook'   => 'facebook.com',
+			'twitter'    => 'twitter.com'
+		);
+
+		$meta_key['social'] = array();
+
+		foreach($social as $site => $url):
+
+			if (array_key_exists($site, $meta_array) && $meta_array[$site]):
+
+				if (strpos($meta_array[$site], '.com') === FALSE):
+
+					$meta_array[$site] = $url . '/' .$meta_array[$site] . '?rel=author';
+
+				endif;
+
+				if (strpos($meta_array[$site], 'http') === FALSE):
+
+					if (strpos($meta_array[$site], 'www') === FALSE):
+
+						$meta_array[$site] = 'www.'.$meta_array[$site];
+
+					endif;
+
+					$meta_array[$site] = 'https://'.$meta_array[$site];
+
+				endif;
+
+				$meta_array['social'][$site] = $meta_array[$site];
+
+				unset($meta_array[$site]);
+
+			endif;
+
+		endforeach;
+
 		return $meta_array;
 
 		/*
