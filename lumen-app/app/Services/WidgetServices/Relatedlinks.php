@@ -10,9 +10,7 @@ class Relatedlinks extends WidgetService
 	{
 		// initilaize video manager
 		$videos = new VideoManager('video');
-print "<pre>";
-print_r($page);
-exit;
+
 		// initialzie variables
 		$params 	= array();
 		$categories	= (isset($page->taxonomy['category']) AND is_array($page->taxonomy['category']))? $page->taxonomy['category']: array();

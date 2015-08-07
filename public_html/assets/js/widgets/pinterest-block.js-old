@@ -1,0 +1,29 @@
+$(document).ready(function(){
+
+	// verify masonry exists
+	if (typeof $(".pinterest-masonry").masonry == 'function')
+	{
+		// resize images on client side
+		$('.pinterest-masonry img').each(function(){
+			// determine a height for this image
+			var max 	= 250;
+			var min 	= 195;
+			// update the image height
+			$(this).css('height',Math.random() * (max - min) + min + 'px');
+		});
+
+		// initialize masonry
+		var $masonry 	= $('.pinterest-masonry');
+		$masonry.imagesLoaded(function(){
+			$masonry.masonry({
+				itemSelector : '.pinterest-masonry-item'
+			});
+		});
+
+	}
+	else	// else hide the pinterest area altogether 
+	{
+		$(".pinterest-block").hide();
+	}
+
+});
