@@ -78,46 +78,39 @@
 
 			<div id="author">
 
-				<div class="col-xs-2">
+				<a href="{!! routelink('author', array('slug' => $page->author['username'])) !!}" class="pull-left">
 
-					<a href="{!! routelink('article', array('slug' => $page->author['username'])) !!}">
-
-						@include('theme::partials.img',
-							array(
-								'src' 	=> ( ! isset($page->author['meta']['userphoto_image_file']) ? '' : 'http://blog.stack.com/wp-content/uploads/userphoto/'.$page->author['meta']['userphoto_image_file']),
-
-								'alt' 	=> $page->author['name'],
-								'class'	=> 'img-responsive'
-							)
+					@include('theme::partials.img',
+						array(
+							'src' 	=> ( ! isset($page->author['meta']['userphoto_image_file']) ? '' : 'http://blog.stack.com/wp-content/uploads/userphoto/'.$page->author['meta']['userphoto_image_file']),
+							'alt' 	=> $page->author['name'],
+							'class'	=> ''
 						)
+					)
 
-					</a>
-				</div>
+				</a>
 
-				<div class="col-xs-10">
 
-					<a href="{!! routelink('author', array('slug' => $page->author['username'])) !!}">
-						{{$page->author['name']}}
-					</a>
-					
-					<?php
-					$excerpt = $page->author['meta']['description'];
+				<a href="{!! routelink('author', array('slug' => $page->author['username'])) !!}">
+					{{$page->author['name']}}
+				</a>
+				
+				<?php
+				$excerpt = $page->author['meta']['description'];
 
-					if (strlen($excerpt) > 180):
+				if (strlen($excerpt) > 180):
 
-						$excerpt = substr($excerpt, 0, strpos($excerpt, ' ', 180)) . '...';
+					$excerpt = substr($excerpt, 0, strpos($excerpt, ' ', 180)) . '...';
 
-					endif;
+				endif;
 
-					?>
+				?>
 
-					- {{ $excerpt }}
-					
-					<br>
-					
-					<a href="/stack-expert-contributor-program/" target="_blank" alt="STACK Expert Contribution Program">Become a Contributing Expert</a>
-
-				</div>
+				- {{ $excerpt }}
+				
+				<br>
+				
+				<a href="/stack-expert-contributor-program/" target="_blank" alt="STACK Expert Contribution Program">Become a Contributing Expert</a>
 
 				<div class="clearfix"></div>
 
