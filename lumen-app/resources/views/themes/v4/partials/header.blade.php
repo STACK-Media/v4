@@ -14,7 +14,7 @@
 
 		$jstax = array();
 
-		if ( ! is_null($page->taxonomy)):
+		if ( is_array($page->taxonomy)):
 
 			foreach($page->taxonomy as $type => $taxes):
 			
