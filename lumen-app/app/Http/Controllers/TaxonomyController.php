@@ -16,7 +16,7 @@ class TaxonomyController extends PageController
 
         $page_data['widgets'] = $this->_get_widgets($type);
         
-    	return $this->_load_page_view('category', array());
+    	return $this->_load_page_view('category', $page_data);
     }
 
     function category($slug = NULL)
