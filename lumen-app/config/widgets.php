@@ -14,7 +14,7 @@ return array(
 				//'author',
 				'hero',
 				'velocity',
-				'featured-expert',
+				//'featured-expert',
 				//'latest-articles',
 				'latest-videos',
 				'outbrain',

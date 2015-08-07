@@ -34,6 +34,15 @@ abstract class Page extends Service
 
 		endif;
 
+		$required = array(
+			'taxonomy'  => array(),
+			'page_type' => NULL,
+			'name'      => '',
+			'meta'      => array()
+		);
+
+		$this->_object = (object) array_merge($required, (array) $this->_object);
+
 		return TRUE;
 	}
 

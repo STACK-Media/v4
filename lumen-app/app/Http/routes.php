@@ -27,6 +27,12 @@ $route_pages     = array(
 			'service','class','method'
 		)
 	),
+	'feed'		=> array(
+		'slug'          => 'feed',
+		'controller'	=> 'RssController',
+		'function'		=> 'index',
+		'params'		=> array()
+	),
 	'video' => array(
 		'slug'       => 'v',
 		'controller' => 'VideoController',
@@ -38,6 +44,15 @@ $route_pages     = array(
 	'article' => array(
 		'slug'       => 'a',
 		'controller' => 'ArticleController',
+		'function'   => 'index',
+		'params'     => array(
+			'slug'
+			//'id', 'slug'
+		)
+	),
+	'author' => array(
+		'slug'       => 'e',
+		'controller' => 'AuthorController',
 		'function'   => 'index',
 		'params'     => array(
 			'slug'

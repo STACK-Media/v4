@@ -39,6 +39,24 @@ class User extends Wordpress
 
 	private function _format_meta($meta)
 	{
+
+		if ( ! $meta):
+
+			return NULL;
+
+		endif;
+
+		$meta_array = array();
+
+		foreach ($meta as $meta_obj):
+
+			$meta_array[$meta_obj->meta_key] = $meta_obj->meta_value;
+
+		endforeach;
+
+		return $meta_array;
+
+		/*
 		$data 	= array();
 		foreach($meta AS $key => $value):
 			$data[$value->meta_key]	= array(
@@ -49,5 +67,6 @@ class User extends Wordpress
 		endforeach;
 
 		return $data;
+		*/
 	}
 }

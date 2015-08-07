@@ -19,10 +19,9 @@ class VideoPage extends Page
 
 		if ( ! is_object($this->_object)):
 
-			return FALSE;
+			return parent::__construct();
 
 		endif;
-
 		
 
 		$playerservice = new Videomanager('player');
