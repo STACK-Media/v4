@@ -11,18 +11,18 @@ return array(
 		),
 		'article' => array(
 			'content' => array(
-				'author',
+				//'author',
 				'hero',
 				'velocity',
 				'featured-expert',
 				//'latest-articles',
 				'latest-videos',
-				//'outbrain',
-				//'zergnet',
+				'outbrain',
+				'zergnet',
 				//'related-links',
 			),
 			'sidebar' => array(
-				//'outbrain-sidebar',
+				'outbrain-sidebar',
 				'magazine',
 				'social-connect',
 				'featured-videos',
