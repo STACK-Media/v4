@@ -14,15 +14,19 @@
 
 		$jstax = array();
 
-		foreach($page->taxonomy as $type => $taxes):
-		
-			foreach($taxes as $tax):
+		if (isset($page) AND is_object($page) AND property_exists($page,'taxonomy')):
 
-				$jstax[$type] = $tax->slug;
+			foreach($page->taxonomy as $type => $taxes):
+			
+				foreach($taxes as $tax):
+
+					$jstax[$type] = $tax->slug;
+
+				endforeach;
 
 			endforeach;
 
-		endforeach;
+		endif;
 
 		?>
 

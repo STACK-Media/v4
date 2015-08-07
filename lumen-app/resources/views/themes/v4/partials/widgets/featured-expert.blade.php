@@ -10,7 +10,7 @@ exit;
 
 
 // set URL ot author image
-$author_image 	= 'http://blog.stack.com/wp-content/uploads/userphoto/'.$meta['userphoto_image_file']['value'];
+$author_image 	= 'http://blog.stack.com/wp-content/uploads/userphoto/'.$meta['userphoto_image_file'];
 
 ?>
 {!! Assets::queue('stylesheet',  'widgets', 'featured-expert', '/assets/css/widgets/featured-expert.css') !!}
@@ -34,7 +34,7 @@ $author_image 	= 'http://blog.stack.com/wp-content/uploads/userphoto/'.$meta['us
 		<div class="col-xs-9">
 
 			<h2>{{$author['display_name']}}</h2>
-			<p>{{$meta['description']['value']}}</p>
+			<p>{{$meta['description']}}</p>
 
 		</div>
 
@@ -56,8 +56,8 @@ $author_image 	= 'http://blog.stack.com/wp-content/uploads/userphoto/'.$meta['us
 				<a href="{!! routelink('article', array('slug' => $value['post_name'])) !!}">
 					@include('theme::partials.img',
 						array(
-							'src' 	=> 'http://blog.stack.com/wp-content/uploads/2015/07/Shuffle-STACK1-300x168.png', 
-							'alt' 	=> 'Shuffle STACK',
+							'src' 	=> $value['image'], 
+							'alt' 	=> $value['post_name'],
 							'class'	=> 'img-responsive'
 						)
 					)
