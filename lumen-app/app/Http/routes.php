@@ -90,7 +90,7 @@ foreach ($route_pages as $route_key => $route_arr)
 	$route_params = '';
 	$route_name   = ($route_key ? $route_key : 'home');
 
-	if (isset($route_arr['params'])):
+	if (isset($route_arr['params']) && $route_arr['params']):
 		
 		$route_params = '{'.implode('}/{',$route_arr['params']).'}';
 
