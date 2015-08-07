@@ -40,6 +40,7 @@ return array(
 				//'newsletter-optin',
 				'popular-videos',
 				'trending-block',
+				'velocity-sidebar'
 			),
 			'post_content' => array(
 				'pinterest-block',
