@@ -1,6 +1,8 @@
+{!! Assets::queue('stylesheet',  'widgets', 'related-links', '/assets/css/widgets/related-links.css') !!}
+
 <section data-name="related-links-widget">
 
-	<div class="row">
+	<div class="row footroom related-links">
 
 		<?php
 		if (isset($links['category']) AND is_array($links['category']) AND ! empty($links['category'])):
@@ -8,13 +10,20 @@
 
 		<div class="col-xs-12 col-sm-4">
 
-			<h3>More About Get Faster</h3>
+			<h3>More About {{$links['category']['name']}}</h3>
 
 			<ul>
-				<li><a href="#">Link #1</a></li>
-				<li><a href="#">Link #2</a></li>
-				<li><a href="#">Link #3</a></li>
-				<li><a href="#">Link #4</a></li>
+
+				<?php
+				foreach ($links['category']['articles'] AS $article):
+				?>
+
+					<li><a href="{!! routelink('article', array('slug' => $article['slug'])) !!}">{{$article['name']}}</a></li>
+			
+				<?php
+				endforeach;
+				?>
+
 			</ul>
 
 		</div>
@@ -28,13 +37,20 @@
 		
 		<div class="col-xs-12 col-sm-4">
 
-			<h3>More About Speed Training</h3>
+			<h3>More About {{$links['tag']['name']}}</h3>
 
 			<ul>
-				<li><a href="#">Link #1</a></li>
-				<li><a href="#">Link #2</a></li>
-				<li><a href="#">Link #3</a></li>
-				<li><a href="#">Link #4</a></li>
+
+				<?php
+				foreach ($links['tag']['articles'] AS $article):
+				?>
+
+					<li><a href="{!! routelink('article', array('slug' => $article['slug'])) !!}">{{$article['name']}}</a></li>
+			
+				<?php
+				endforeach;
+				?>
+
 			</ul>
 
 		</div>
@@ -52,10 +68,17 @@
 			<h3>Other Great Videos</h3>
 
 			<ul>
-				<li><a href="#">Link #1</a></li>
-				<li><a href="#">Link #2</a></li>
-				<li><a href="#">Link #3</a></li>
-				<li><a href="#">Link #4</a></li>
+
+				<?php
+				foreach ($links['video'] AS $video):
+				?>
+
+					<li><a href="{!! routelink('video', array('id' => $video['id'], 'slug' => $video['slug'])) !!}">{{$video['name']}}</a></li>
+			
+				<?php
+				endforeach;
+				?>
+
 			</ul>
 
 		</div>

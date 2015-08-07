@@ -15,11 +15,10 @@ return array(
 				'hero',
 				'velocity',
 				//'featured-expert',
-				//'latest-articles',
+				'latest-articles',
 				'latest-videos',
 				'outbrain',
 				'zergnet',
-				'related-links',
 			),
 			'sidebar' => array(
 				'outbrain-sidebar',
@@ -33,7 +32,8 @@ return array(
 				'news-links',
 			),
 			'post_content' => array(
-				'pinterest-block'
+				'pinterest-block',
+				'related-links',
 			)
 		)
 	)
