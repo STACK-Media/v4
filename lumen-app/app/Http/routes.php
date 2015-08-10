@@ -11,7 +11,14 @@
 |
 */
 
-$route_verticals = array('4w');
+$route_verticals = array(
+	'4w',
+	'coaches-and-trainers',
+	'fitness',
+	'gamer',
+	'basic-training',
+	'gear'
+);
 
 $route_pages     = array(
 	'home' => array(
