@@ -12,18 +12,18 @@
 
 			    <div class="pinterest-item"> 
 
-					<a href="{!! routelink('article', array('slug' => $value['link'])) !!}">
+					<a href="{!! routelink('article', array('slug' => $value['slug'])) !!}">
 
 						<div class="pinterest-img-holder">
 							@include('theme::partials.img',
 								array(
 									'src' 	=> $value['image'], 
-									'alt' 	=> $value['title'],
+									'alt' 	=> $value['name'],
 									'class'	=> 'img-responsive'
 								)
 							)
 							<span class="pinterest-title-block">
-								<h2 class="pinterest-title">{{$value['title']}}</h2>
+								<h2 class="pinterest-title">{{$value['name']}}</h2>
 							</span>
 						</div>
 
