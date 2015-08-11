@@ -112,7 +112,7 @@ class ArticleModel extends AbstractArticle
     {
         // set default date
         if ( ! $date)
-            $date   = strtotime(date('Y-m-d H:i:s'));
+            $date   = date('Y-m-d H:i:s');
 
         return DB::table('wp_posts')
             ->select(
@@ -132,9 +132,9 @@ class ArticleModel extends AbstractArticle
                 'wp_users.user_email AS author_email',
                 'wp_users.ID AS author_id'
             )
-            ->where('wp_posts.post_status','publish')
-            ->where('wp_posts.post_type','post')
-            //->where('wp_posts.post_date','<',strtotime($date))
+            ->where('wp_posts.post_status','=','publish')
+            ->where('wp_posts.post_type','=','post')
+            ->where('wp_posts.post_date','<',$date)
             ->join(
                 'wp_term_relationships',
                 'wp_posts.ID','=','wp_term_relationships.object_id'
