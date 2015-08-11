@@ -175,14 +175,14 @@ class Article extends Wordpress
 		return $this->_model->trending();
 	}
 
-	public function get_by_category_id($id,$limit=5,$offset=0)
+	public function get_by_category_id($id,$limit=5,$offset=0,$date=FALSE)
 	{
 		// validation
 		$id       	= preg_replace("/[^0-9]/", '', $id);
 		$content 	= array();
 
 		// get articles
-		$articles 	= $this->_model->get_by_category_id($id,$limit,$offset);
+		$articles 	= $this->_model->get_by_category_id($id,$limit,$offset,$date);
 
 		// format articles
 		foreach ($articles AS $article):
