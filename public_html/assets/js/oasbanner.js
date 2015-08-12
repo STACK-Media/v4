@@ -42,7 +42,7 @@ for (banner in banners){
 function show_banners()
 {
 	var oas 		= document.createElement('script');
-	protocol 		= 'https:' == document.location.protocol?'https://': 'http://',
+	protocol 		= 'https:' == document.location.protocol ? 'https://': 'http://',
 	node 			= document.getElementsByTagName('script')[0];
 
 	oas.type 		= 'text/javascript';
