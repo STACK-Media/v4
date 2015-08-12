@@ -17,7 +17,7 @@ if (typeof adtags === 'string'){
 	adtags = [adtags];
 }
 
-adqry = adtags.concat(adcats).join('section,');
+adqry = adtags.concat(adcats).join('section,').replace(/-/g, '');;
 
 $('[data-oas-'+abbrev.toLowerCase()+']').each(function(){
 
@@ -42,8 +42,6 @@ oas_tag.taxonomy 	= 'page=video32'; 			// taxonomy, comma-delimited -- currently
 oas_tag.site_page	= pageinfo.url;
 oas_tag.version 	= '1';
 oas_tag.loadAd 		= oas_tag.loadAd || function() {};
-
-alert(oas_tag.query);
 
 show_banners();
 

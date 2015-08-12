@@ -20,7 +20,13 @@
 			
 				foreach($taxes as $tax):
 
-					$jstax[$type] = $tax->slug;
+					$jstax[$type][] = $tax->slug;
+
+					if (property_exists($tax, 'parent') && isset($tax->parent['slug'])):
+
+						$jstax[$type][] = $tax->parent['slug'];
+
+					endif;
 
 				endforeach;
 
