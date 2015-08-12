@@ -31,7 +31,7 @@ return array(
 		'sidebar-bottom' => array(
 			'desktop' => array( 
 				'name'   => 'BottomLeft',
-				'width'  => '160',
+				'width'  => '300',
 				'height' => '600'
 			),
 			'mobile'  => array(
