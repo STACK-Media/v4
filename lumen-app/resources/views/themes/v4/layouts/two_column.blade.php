@@ -24,7 +24,7 @@
 
 @section('sidebar-widgets')
 
-	@include('theme::partials.bannerad', array('width' => 300, 'height' => 250, 'args' => array('name' => 'Right2')))
+	@include('theme::partials.bannerad', array('position' => 'sidebar-top', 'args' => array()))
 
 	<?php
 	$num_widgets = 0;
@@ -60,8 +60,8 @@
 					</div>
 
 					<div class="row">
-	
-						@include('theme::partials.bannerad', array('width' => 300, 'height' => 250, 'args' => array('name' => 'Right3')))
+						
+						@include('theme::partials.bannerad', array('position' => 'sidebar-mid', 'args' => array()))
 					
 					</div>
 
@@ -76,7 +76,7 @@
 	@endif
 
 
-	@include('theme::partials.bannerad', array('width' => 160, 'height' => 600, 'args' => array('name' => 'BottomLeft')))
+	@include('theme::partials.bannerad', array('position' => 'sidebar-bottom', 'args' => array()))
 
 @stop
 
@@ -107,7 +107,7 @@
 @section('banner-bg')
 	
 	<div id="bannerbg">
-		@include('theme::partials.bannerad', array('width' => 1818, 'height' => 800, 'args' => array('name' => 'x20')))
+		@include('theme::partials.bannerad', array('position' => 'background', 'args' => array()))
 	</div>
 
 @stop
@@ -131,7 +131,9 @@
 		<nav id="navbar">
 			@include('theme::partials.navbar')			
 		</nav>
-		@include('theme::partials.bannerad', array('width' => 728,  'height' => 90,   'args' => array('name' => 'Top')))
+	
+		@include('theme::partials.bannerad', array('position' => 'leader', 'args' => array()))
+		
 	</div>
 
 @stop

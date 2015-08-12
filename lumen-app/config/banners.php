@@ -1,5 +1,5 @@
 <?php
 
-return array(
-	'provider' => 'OAS'
+return array( 
+	'provider'  => 'OAS',
 );

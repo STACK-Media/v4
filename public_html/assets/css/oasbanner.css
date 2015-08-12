@@ -19,8 +19,8 @@ transform: translateZ(0);
 
 #bannerbg {height:1507px;position:absolute;left:0;top:0;overflow:hidden;width:100%;}
 
-.oasbanner {margin:0 auto;}
-.oasbanner_w300 {width:300px;}
-.oasbanner_w500 {width:500px;}
-.oasbanner_w728 {width:728px;}
-.oasbanner_w160 {width:160px;}
+.oas {margin:0 auto;}
+.oas_w300 {width:300px;}
+.oas_w500 {width:500px;}
+.oas_w728 {width:728px;}
+.oas_w160 {width:160px;}

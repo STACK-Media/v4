@@ -127,17 +127,20 @@
 </div>
 
 <?php 
+
 /*
-'lacrossesection',
-     'basketballsection',
-     'trainingsection',
-     'strengthtraining',
-     'getfastersection',
-     'sportsskillssection',
-     'flexibilitysection',
-     'sportsinjuriessection',
-     'axonsportssection'
- */
+ 'lacrossesection',
+ 'basketballsection',
+ 'trainingsection',
+ 'strengthtraining',
+ 'getfastersection',
+ 'sportsskillssection',
+ 'flexibilitysection',
+ 'sportsinjuriessection',
+ 'axonsportssection'
+*/
+
 // show Bottom2 if article has above
+
 ?>
 @stop
