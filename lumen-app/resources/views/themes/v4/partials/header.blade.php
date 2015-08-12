@@ -39,7 +39,7 @@
 		<script type="text/javascript">
 
 			var pageinfo = {
-				url: "{!! preg_replace('#^https?://#', '', str_replace('v4.','stage.',str_replace('.v4','.com',Request::url()))) !!}",
+				url: "{!! preg_replace('#^https?://#', '', str_replace('v4.','www.',str_replace('.v4','.com',Request::url()))) !!}",
 				type: "{!! $page->page_type !!}",
 				taxonomy: {!! json_encode($jstax) !!}
 			};
