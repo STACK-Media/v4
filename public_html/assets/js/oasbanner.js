@@ -3,15 +3,28 @@
 var 
 	banners  = [],
 	is_phone = window.matchMedia("only screen and (max-width: 768px)"),
-	abbrev   = (is_phone.matches ? 'M' : 'D');
+	abbrev   = (is_phone.matches ? 'M' : 'D'),
+	adcats   = (typeof pageinfo.taxonomy.category !== 'undefined') ? pageinfo.taxonomy.category : [],
+	adtags   = (typeof pageinfo.taxonomy.post_tag !== 'undefined') ? pageinfo.taxonomy.post_tag : [],
+	adqry    = '',
+	oas_tag  = oas_tag || {};
+
+if (typeof adcats === 'string'){
+	adcats = [adcats];
+}
+
+if (typeof adtags === 'string'){
+	adtags = [adtags];
+}
+
+adqry = adtags.concat(adcats).join('section,');
 
 $('[data-oas-'+abbrev.toLowerCase()+']').each(function(){
 
-	banners[$(this).data('oas'+abbrev)] = {width: $(this).data('oas'+abbrev+'w'), height: $(this).data('oas'+abbrev+'h')};
+	banners[$(this).data('oas'+abbrev)] = {width: $(this).data('oasW'), height: $(this).data('oasH')};
 
 });
 
-var oas_tag			= oas_tag || {};
 oas_tag.url 		= 'oascentral.stackmag.com';//'oasc17.247realmedia.com';//'delivery.uat.247realmedia.com';
 oas_tag.sizes 		= function() {
 	
@@ -22,12 +35,15 @@ oas_tag.sizes 		= function() {
 	}
 
 };
-oas_tag.query 		= '';	// set keywords to target
+
+oas_tag.query 		= (adqry !== '') ? adqry+'section' : '';	// set keywords to target, comma-delimited (category or tag)
 oas_tag.analytics 	= true;					// collect taxonomy and referral data
-oas_tag.taxonomy 	= 'page=video32'; 			// taxonomy
+oas_tag.taxonomy 	= 'page=video32'; 			// taxonomy, comma-delimited -- currently not being used
 oas_tag.site_page	= pageinfo.url;
 oas_tag.version 	= '1';
 oas_tag.loadAd 		= oas_tag.loadAd || function() {};
+
+alert(oas_tag.query);
 
 show_banners();
 
