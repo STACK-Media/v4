@@ -17,7 +17,11 @@ if (typeof adtags === 'string'){
 	adtags = [adtags];
 }
 
-adqry = adtags.concat(adcats).join('section,').replace(/-/g, '');;
+if (typeof pageinfo.type !== 'undefined' && pageinfo.type != ''){
+	adcats.push(pageinfo.type);
+}
+
+adqry = adtags.concat(adcats).join('section,').replace(/-/g, '');
 
 $('[data-oas-'+abbrev.toLowerCase()+']').each(function(){
 

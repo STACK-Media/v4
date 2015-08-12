@@ -28,11 +28,12 @@ class HomePage extends Page
 		$player 			= $playerservice->get($videos['id']);
 
 		// set page object
-		$this->_object 				= new \stdClass();
-		$this->_object->id 			= $playlist_id;	
-		$this->_object->player 		= $player;
-		$this->_object->playlist 	= $playlist;
-		$this->_object->video 		= $videos;
+		$this->_object            = new \stdClass();
+		$this->_object->page_type = 'home';
+		$this->_object->id        = $playlist_id;	
+		$this->_object->player    = $player;
+		$this->_object->playlist  = $playlist;
+		$this->_object->video     = $videos;
 
 		return parent::__construct();
 	}
