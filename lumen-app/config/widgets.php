@@ -79,7 +79,7 @@ return array(
 		),
 		'video' => array(
 			'content' => array(
-
+				
 			),
 			'sidebar' => array(
 				'velocity-sidebar',

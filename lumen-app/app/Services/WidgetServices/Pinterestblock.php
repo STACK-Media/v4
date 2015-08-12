@@ -11,7 +11,6 @@ class Pinterestblock extends WidgetService
 		// initilaize video manager
 		$content 	= new Contentmanager('article');
 
-		/*
 		// initialzie variables
 		$categories	= (isset($page->taxonomy['category']) AND is_array($page->taxonomy['category']))? $page->taxonomy['category']: array();
 		$pg_num 	= (isset($page->page_number))? $page->page_number: 0;
@@ -34,9 +33,9 @@ class Pinterestblock extends WidgetService
 			break;	// break to only show 1 categories' articles
 
 		endforeach;
-		*/
+		
 
-		$pinterest 	= $content->trending();
+		//$pinterest 	= $content->trending();
 		
 		// return
 		return array(
