@@ -1,48 +1,50 @@
 <?php
 
+// x60 = Top, x62 = Right2, x63 = Right3, x64 = BottomLeft
+
 return array(
 	'positions' => array(
 		'sidebar-top' => array(
-			'desktop' => array( // 'width' => 300, 'height' => 250, 'args' => array('name' => 'Right2')
-				'name'   => '',
-				'width'  => '',
-				'height' => ''
+			'desktop' => array(
+				'name'   => 'Right2',
+				'width'  => '300',
+				'height' => '250'
 			),
 			'mobile'  => array(
-				'name'   => '',
-				'width'  => '',
-				'height' => ''
+				'name'   => 'x62',
+				'width'  => '300',
+				'height' => '250'
 			)
 		),
 		'sidebar-mid' => array(
-			'desktop' => array( // width' => 300, 'height' => 250, 'args' => array('name' => 'Right3')
-				'name'   => '',
-				'width'  => '',
-				'height' => ''
+			'desktop' => array( 
+				'name'   => 'Right3',
+				'width'  => '300',
+				'height' => '250'
 			),
 			'mobile'  => array(
-				'name'   => '',
-				'width'  => '',
-				'height' => ''
+				'name'   => 'x63',
+				'width'  => '300',
+				'height' => '250'
 			)			
 		),
 		'sidebar-bottom' => array(
-			'desktop' => array( // 'width' => 160, 'height' => 600, 'args' => array('name' => 'BottomLeft')
-				'name'   => '',
-				'width'  => '',
-				'height' => ''
+			'desktop' => array( 
+				'name'   => 'BottomLeft',
+				'width'  => '160',
+				'height' => '600'
 			),
 			'mobile'  => array(
-				'name'   => '',
-				'width'  => '',
-				'height' => ''
+				'name'   => 'x64',
+				'width'  => '300',
+				'height' => '250'
 			)			
 		),
 		'background' => array(
-			'desktop' => array( // 'width' => 1818, 'height' => 800, 'args' => array('name' => 'x20')
-				'name'   => '',
-				'width'  => '',
-				'height' => ''
+			'desktop' => array( 
+				'name'   => 'x20',
+				'width'  => '1818',
+				'height' => '1507'
 			),
 			'mobile'  => array(
 				'name'   => '',
@@ -51,15 +53,15 @@ return array(
 			)			
 		),
 		'leader' => array(
-			'desktop' => array( // 'width' => 728,  'height' => 90,   'args' => array('name' => 'Top')
-				'name'   => '',
-				'width'  => '',
-				'height' => ''
+			'desktop' => array( 
+				'name'   => 'Top',
+				'width'  => '728',
+				'height' => '90'
 			),
 			'mobile'  => array(
-				'name'   => '',
-				'width'  => '',
-				'height' => ''
+				'name'   => 'x60',
+				'width'  => '300',
+				'height' => '50'
 			)			
 		)
 	)

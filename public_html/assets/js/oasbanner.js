@@ -1,14 +1,15 @@
 
 
-var banners = [];
+var 
+	banners  = [],
+	is_phone = window.matchMedia("only screen and (max-width: 768px)"),
+	abbrev   = (is_phone.matches ? 'M' : 'D');
 
+$('[data-oas-'+abbrev.toLowerCase()+']').each(function(){
 
-$('[data-banner]').each(function(){
-
-	banners[$(this).data('banner')] = {width: $(this).data('bannerW'), height: $(this).data('bannerH')};
+	banners[$(this).data('oas'+abbrev)] = {width: $(this).data('oas'+abbrev+'w'), height: $(this).data('oas'+abbrev+'h')};
 
 });
-
 
 var oas_tag			= oas_tag || {};
 oas_tag.url 		= 'oascentral.stackmag.com';//'oasc17.247realmedia.com';//'delivery.uat.247realmedia.com';

@@ -3,13 +3,24 @@
 
 <?php
 
-app()->configure('OAS');
-$banner = config('oas.positions.'.$position);
+if ( ! config('OAS.positions')):
 
-var_dump($banner);
+	app()->configure('OAS'); // dont like loading a config in a view but nowhere else ot compartmentalize it
 
-/*
+endif;
+
+$banner = config('OAS.positions.'.$position);
+
 ?>
 
-<div id="oas_{!! $args['name'] !!}" class="oas oas_dw{!! $banner['desktop']['width'] !!} oas_dh{!! $banner['desktop']['height'] !!} oas_mw{!! $banner['mobile']['width'] !!} oas_mh{!! $banner['mobile']['height'] !!}" data-oas-d="{!! $banner['desktop']['name'] !!}" data-oas-dw="{!! $banner['desktop']['width'] !!}" data-oas-dh="{!! $banner['desktop']['height'] !!}" data-oas-m="{!! $banner['mobile']['name'] !!}" data-oas-mw="{!! $banner['mobile']['width'] !!}" data-oas-mh="{!! $banner['mobile']['height'] !!}"></div>
-<?php */
+@if(isset($banner['desktop']['name']) && $banner['desktop']['name'])
+
+	<div id="oas_{!! $banner['desktop']['name'] !!}" class="oas oas_dw{!! $banner['desktop']['width'] !!} oas_dh{!! $banner['desktop']['height'] !!}" data-oas-d="{!! $banner['desktop']['name'] !!}" data-oas-dw="{!! $banner['desktop']['width'] !!}" data-oas-dh="{!! $banner['desktop']['height'] !!}"></div>
+
+@endif
+
+@if(isset($banner['mobile']['name']) && $banner['mobile']['name'])
+
+	<div id="oas_{!! $banner['mobile']['name'] !!}" class="oas oas_mw{!! $banner['mobile']['width'] !!} oas_mh{!! $banner['mobile']['height'] !!}" data-oas-m="{!! $banner['mobile']['name'] !!}" data-oas-mw="{!! $banner['mobile']['width'] !!}" data-oas-mh="{!! $banner['mobile']['height'] !!}"></div>
+
+@endif
