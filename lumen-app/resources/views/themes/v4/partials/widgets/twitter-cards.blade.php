@@ -1,0 +1,1 @@
+twitter-cards.blade.php

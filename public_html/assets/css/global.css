@@ -110,22 +110,7 @@ a {cursor:pointer;}
 	padding-left:0;padding-right:0;
 }
 
-.must-reads {
-	min-height: 		400px;
-	background-color: 	gray;
-}
-.sport-workouts {
-	min-height: 		275px;
-	background-color: 	gray;
-}
-.sport-conditioning {
-	min-height: 		240px;
-	background-color: 	gray;
-}
-.sport-experts {
-	min-height: 		450px;
-	background-color: 	gray;	
-}
+
 
 .pinterest {
 	background-color: 	gray;
