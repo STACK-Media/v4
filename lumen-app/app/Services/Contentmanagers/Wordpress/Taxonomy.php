@@ -37,6 +37,11 @@ class Taxonomy extends Wordpress
 
 	}
 
+	function get_metadata($id)
+	{
+		return $this->_format_meta($this->_model->get_term_tax_metadata($id));
+	}
+
 	function get_by_article_id($article_id)
 	{
 		$categories = $this->_model->get_by_article_id($article_id);
@@ -95,6 +100,35 @@ class Taxonomy extends Wordpress
         endforeach;
 
         return $tax;
+	}
+
+	function _format_meta($meta)
+	{
+        $metaclean = array();
+
+        foreach ($meta as $key => $arr):
+
+            $meta_key = strtolower($arr->meta_key);
+            $meta_val = $arr->meta_value;
+
+            preg_match_all("/(.*?)_(\d+)$/", $meta_key, $matches);
+
+            if ($matches[0]):
+
+                $meta_num = $matches[2][0];
+                $meta_key = $matches[1][0];
+
+                $metaclean[$meta_key][$meta_num] = $meta_val;
+
+            else:
+
+                $metaclean[$meta_key] = $meta_val;
+
+            endif;
+
+        endforeach;
+
+        return $metaclean;
 	}
 
 	function _format_array($categories)

@@ -6,7 +6,7 @@
 	<article>
 
 		<h1>{!! $page->name !!}</h1>
-		<p><i>category description goes here</i></p>
+		<p><i>{!! $page->meta['tax_seo_description'] !!}</i></p>
 
 		@if(@$page->video)
 
