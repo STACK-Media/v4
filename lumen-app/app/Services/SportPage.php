@@ -17,6 +17,8 @@ class SportPage extends Page
 		$taxonomy 	= new Contentmanager('taxonomy');
 		$player 	= new Videomanager('player');
 
+		// TODO: need to verify slug is a sport
+
 		// set page object
 		$this->_object 				= $taxonomy->get_by_column('post_tag', 'slug', $sport);
 		$this->_object->page_type 	= 'sport';
