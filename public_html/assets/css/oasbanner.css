@@ -15,7 +15,8 @@ margin-left: -909px;
 transform: translateZ(0);
 }
 
-#navbar, .container {z-index:2;position:relative;}
+#navbar, .container {z-index:2;}
+.container, .navbar {position:relative;}
 #navbar, #navbar li {z-index:10;}
 
 #bannerbg {height:1507px;position:absolute;left:0;top:0;overflow:hidden;width:100%;}

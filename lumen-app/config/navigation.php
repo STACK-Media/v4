@@ -290,13 +290,13 @@ return array(
 			),
 			array(
 				'args' => array('view' => 'conditioning'),
-				'url' => 'http://conditioning.stack.com/',
+				'url'  => 'http://conditioning.stack.com/',
 				'type' => 'static',
 				'name' => 'STACK Conditioning',
 			),
 			array(
 				'args' => array('view' => 'eastbay'),
-				'url' => 'http://www.eastbay.com',
+				'url'  => 'http://www.eastbay.com',
 				'type' => 'static',
 				'name' => 'Eastbay',
 			),
@@ -309,8 +309,8 @@ return array(
 		'name' => 'Training Centers',
 	),
 	array(
-		'args' => array('slug' => 'guided-search'),
-		'url'  => routelink('category', array('slug' => 'guided-search')),
+		'args' => array('slug' => 'guided'),
+		'url'  => routelink('search', array('slug' => 'guided')),
 		'type' => 'static',
 		'name' => 'Guided Search',
 	),

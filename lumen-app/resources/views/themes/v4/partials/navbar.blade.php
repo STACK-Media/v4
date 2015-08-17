@@ -17,9 +17,53 @@
 				<a class="navbar-brand" href="{!! routelink('home', array()) !!}">
 					<img alt="STACK" src="/assets/img/branding/logos/large_white.png" width="160" height="35">
 				</a>
+
 			</div>
 			
 			<div id="navbar" class="navbar-collapse collapse">
+
+				<div id="toplinks" class="pull-right hidden-sm hidden-xs">
+					
+					<a class="right_five" href="{!! routelink('home') !!}">Home</a> //                     
+					
+					<span class="edition_toggle">
+						
+						Edition:
+						
+						<a class="active right_five" href="http://www.stack.com/">USA</a>
+						
+						<span class="subsite_list">
+
+							<span class="navtoggler">More</span>
+
+							<span class="navtogglee">
+								<a href="http://www.stackactive.com/">ASIA</a>
+								<a href="http://cn.stackactive.com/">CHINA</a>
+								<a href="http://hk.stackactive.com/">HONG KONG</a>
+								<a href="http://ph.stackactive.com/">PHILIPPINES</a>
+							</span>
+
+						</span>
+
+					</span>
+
+					//
+
+					<span class="subsite_list partners">
+
+						<span class="navtoggler">Partner Sites</span>
+
+						<span class="navtogglee">
+							<a href="http://www.foxsports.com" target="_blank">Fox Sports</a>
+							<a href="http://www.yardbarker.com" target="_blank">YardBarker</a>
+							<a href="http://www.eastbay.com" target="_blank">Eastbay</a>
+							<a href="http://www.footlocker.com" target="_blank">Footlocker</a>
+							<a href="http://sports.yahoo.com" target="_blank">Yahoo! Sports</a>
+						</span>
+
+					</span>
+
+				</div>
 
 				<ul class="nav navbar-nav">
 				
@@ -32,55 +76,50 @@
 						$menu_data = $menu;
 						unset($menu_data['submenu']); ?>
 
-						<li class="menu-type-{!! $menu['type'] !!} {!! $dropclass !!}">
-							
-							@if(isset($menu['submenu']))
+						<li class="menu-item-{!! preg_replace("/[^a-z0-9]/", '', strtolower($menu['name'])) !!} menu-type-{!! $menu['type'] !!} {!! $dropclass !!}">
+						
 
-								<a href="{!! $url !!}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{!! $menu['name'] !!}</a>
+							<a href="{!! $url !!}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{!! $menu['name'] !!}</a>
 
-								<ul class="submenu dropdown-menu">
+							<ul class="submenu dropdown-menu">
 
-								@foreach($menu['submenu'] as $submenu)
-				
-									<?php $surl = (isset($submenu['url']) ? $submenu['url'] : ''); ?>
+								@if(isset($menu['submenu']))
 
-									<li class="menu-type-{!! $submenu['type'] !!}">
+									@foreach($menu['submenu'] as $submenu)
+					
+										<?php $surl = (isset($submenu['url']) ? $submenu['url'] : ''); ?>
 
-										<a href="{!! $surl !!}">{!! $submenu['name'] !!}</a>
+										<li class="menu-type-{!! $submenu['type'] !!}">
+
+											<a href="{!! $surl !!}">{!! $submenu['name'] !!}</a>
+											
+											<div class="submenu-preview">
+
+												@if(view()->exists('theme::partials.navbar.'.$submenu['type']))
+
+													@include('theme::partials.navbar.'.$submenu['type'], array('menu_data' => $submenu))
+
+												@endif
+
+											</div>
+
+										</li>
+
+									@endforeach
+
+								@endif
+
+								@if(view()->exists('theme::partials.navbar.'.$menu['type']))
+									
+									<li class="menu-preview">								
 										
-										<div class="menu-preview">
-
-											@if(view()->exists('theme::partials.navbar.'.$submenu['type']))
-
-												@include('theme::partials.navbar.'.$submenu['type'], array('menu_data' => $submenu))
-
-											@endif
-
-										</div>
+										@include('theme::partials.navbar.'.$menu['type'], array('menu_data' => $menu_data))
 
 									</li>
 
-								@endforeach
+								@endif
 
-								</ul>
-
-							@else
-
-								<a href="{!! $url !!}">{!! $menu['name'] !!}</a>
-
-							@endif
-
-							@if(view()->exists('theme::partials.navbar.'.$menu['type']))
-								
-								<div class="menu-preview">								
-									
-									@include('theme::partials.navbar.'.$menu['type'], array('menu_data' => $menu_data))
-
-								</div>
-
-							@endif
-
-							
+							</ul>
 
 						</li>
 
