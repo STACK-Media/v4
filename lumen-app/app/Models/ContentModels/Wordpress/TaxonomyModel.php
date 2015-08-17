@@ -18,6 +18,7 @@ class TaxonomyModel extends AbstractTaxonomy
     			'wp_terms.name',
     			'wp_terms.slug', 
     			'wp_term_taxonomy.taxonomy', 
+                'wp_term_taxonomy.description',
     			'parent_terms.term_id AS parent_id', 
     			'parent_terms.name AS parent_name', 
     			'parent_terms.slug AS parent_slug'
