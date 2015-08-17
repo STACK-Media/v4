@@ -30,9 +30,12 @@ class HomePage extends Page
 		// set page object
 		$this->_object            = new \stdClass();
 		$this->_object->page_type = 'home';
-		$this->_object->id        = $playlist_id;	
+		
+		//$this->_object->id        = $playlist_id; // why set the playlist_id to homepage->id?
+		$this->_object->id        = '1';
+
 		$this->_object->player    = $player;
-		$this->_object->playlist  = $playlist;
+		$this->_object->playlist  = $playlist['playlist'];
 		$this->_object->video     = $videos;
 
 		return parent::__construct();

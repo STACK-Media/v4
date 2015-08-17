@@ -127,13 +127,11 @@
 
 @section('navbar')
 	
-	<div>
-		<nav id="navbar">
-			@include('theme::partials.navbar')			
-		</nav>
+
+	@include('theme::partials.navbar')
 	
+	<div class="container" id="oas_Top_container">
 		@include('theme::partials.bannerad', array('position' => 'leader', 'args' => array()))
-		
 	</div>
 
 @stop
@@ -144,15 +142,14 @@
 
 @yield('banner-bg')
 
-<div class="container">
+
 	
-	<header role="banner">
-		
-		@yield('navbar')
+<header role="banner">
+	
+	@yield('navbar')
 
-	</header>
+</header>
 
-</div>
 
 <div class="container">
 

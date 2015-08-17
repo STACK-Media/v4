@@ -41,7 +41,7 @@ $route_pages     = array(
 		'params'		=> array()
 	),
 	'video' => array(
-		'slug'       => 'v',
+		'slug'       => 'video',
 		'controller' => 'VideoController',
 		'function'   => 'index',
 		'params'     => array(
@@ -58,7 +58,7 @@ $route_pages     = array(
 		)
 	),
 	'author' => array(
-		'slug'       => 'e',
+		'slug'       => 'expert',
 		'controller' => 'AuthorController',
 		'function'   => 'index',
 		'params'     => array(
@@ -83,13 +83,57 @@ $route_pages     = array(
 		)
 	),
 	'sport' => array(
-		'slug'       => 's',
+		'slug'       => 'sport',
 		'controller' => 'SportController',
 		'function'   => 'index',
 		'params'     => array(
 			'slug'
 		)
-	)
+	),
+
+	'videos' => array(
+		'slug'       => 'videos',
+		'controller' => 'VideoController',
+		'function'   => 'archive',
+		'params'     => array(
+			'slug'
+		)
+	),
+
+	// all these need switched out
+	'vertical' => array(
+		'slug'       => 'v',
+		'controller' => 'TaxonomyController',
+		'function'   => 'tag',
+		'params'     => array(
+			'slug'
+		)
+	),
+	'page' => array(
+		'slug'       => 'p',
+		'controller' => 'TaxonomyController',
+		'function'   => 'tag',
+		'params'     => array(
+			'slug'
+		)
+	),
+	'search' => array(
+		'slug'       => 'search',
+		'controller' => 'TaxonomyController',
+		'function'   => 'tag',
+		'params'     => array(
+			'slug'
+		)
+	),
+	'magazine' => array(
+		'slug'       => 'magazine',
+		'controller' => 'VideoController',
+		'function'   => 'archive',
+		'params'     => array(
+			'tag'
+		)
+	),
+
 );
 
 foreach ($route_pages as $route_key => $route_arr)
