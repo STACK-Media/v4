@@ -13,7 +13,7 @@ class Cacheturbator extends Service
 		$cache_on  = FALSE,
 		$flush     = FALSE,
 		$min_cache = 30,
-		$max_cache = 60;
+		$max_cache = 45;
 
 	function __construct($service) 
 	{
