@@ -86,7 +86,7 @@ class PageController extends BaseController
 
 		$page_data['page'] = $this->_page_object;
 
-		return view('theme::'.$page_view, $page_data);
+		return response(view('theme::'.$page_view, $page_data), 200)->header('Content-type', 'text/html; charset=UTF-8', TRUE);
 	}
 
 
