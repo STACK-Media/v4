@@ -7,7 +7,7 @@ namespace App\Services\Videomanagers\Brightcove;
 class Playlist extends Brightcove
 {
 
-	function get($id, $limit = NULL)
+	function get($id, $limit = 10)
 	{
 
 		// generate API params
@@ -28,13 +28,13 @@ class Playlist extends Brightcove
 			$playlist['videoIds'] = array_slice($playlist['videoIds'], 0, $limit, TRUE);
 			$playlist['videos']   = array_slice($playlist['videos'], 0, $limit, TRUE);
 
-			foreach($playlist['videos'] as $key => $video):
-
-				$playlist['videos'][$key] = $this->format_video($video);
-
-			endforeach;
-
 		endif;
+
+		foreach($playlist['videos'] as $key => $video):
+
+			$playlist['videos'][$key] = $this->format_video($video);
+
+		endforeach;
 
 		return array(
 			'playlist'	=> $playlist

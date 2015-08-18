@@ -42,7 +42,7 @@ oas_tag.sizes 		= function() {
 
 oas_tag.query 		= (adqry !== '') ? adqry+'section' : '';	// set keywords to target, comma-delimited (category or tag)
 oas_tag.analytics 	= true;					// collect taxonomy and referral data
-oas_tag.taxonomy 	= 'page=video32'; 			// taxonomy, comma-delimited -- currently not being used
+oas_tag.taxonomy 	= ''; 			// taxonomy, comma-delimited -- currently not being used
 oas_tag.site_page	= pageinfo.url;
 oas_tag.version 	= '1';
 oas_tag.loadAd 		= oas_tag.loadAd || function() {};

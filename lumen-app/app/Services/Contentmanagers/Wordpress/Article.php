@@ -187,7 +187,7 @@ class Article extends Wordpress
 		// format articles
 		foreach ($articles AS $article):
 
-			$article->image 	= 'http://blog.stack.com/wp-content/uploads/2015/07/3-Steps-to-Alleviate-a-Sore-Neck-STACK-300x168.jpg'; 
+			$article->image 	= 'http://blog.stack.com/wp-content/uploads/2015/07/3-Steps-to-Alleviate-a-Sore-Neck-STACK-300x168.jpg?1=2'; 
 
 			$content[] 			= $article;//$this->_add_metacontent($article);
 
@@ -208,7 +208,7 @@ class Article extends Wordpress
 		// format articles
 		foreach ($articles AS $article):
 
-			$article->image 	= 'http://blog.stack.com/wp-content/uploads/2015/07/3-Steps-to-Alleviate-a-Sore-Neck-STACK-300x168.jpg'; 
+			$article->image 	= 'http://blog.stack.com/wp-content/uploads/2015/07/3-Steps-to-Alleviate-a-Sore-Neck-STACK-300x168.jpg?1=2'; 
 
 			$content[] 			= $article;//$this->_add_metacontent($article);
 

@@ -15,12 +15,16 @@ margin-left: -909px;
 transform: translateZ(0);
 }
 
-#navbar, .container {z-index:2;position:relative;}
+#navbar, .container {z-index:2;}
+.container, .navbar {position:relative;}
+#navbar, #navbar li {z-index:10;}
 
 #bannerbg {height:1507px;position:absolute;left:0;top:0;overflow:hidden;width:100%;}
 
-.oas {margin:0 auto;}
+.oas {margin:0 auto;z-index:1;}
 .oas_dw300 {width:300px;}
 .oas_dw500 {width:500px;}
 .oas_dw728 {width:728px;}
 .oas_dw160 {width:160px;}
+
+#oas_Top_container {z-index:1;position:relative;}

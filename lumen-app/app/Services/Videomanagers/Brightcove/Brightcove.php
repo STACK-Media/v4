@@ -101,9 +101,13 @@ class Brightcove extends Manager
 	function format_videos($videos)
 	{
 		$formatted 	= array();
+
 		foreach ($videos AS $video):
+
 			$formatted[]	= $this->format_video($video);
+
 		endforeach;
+
 		return $formatted;
 	}
 
@@ -117,6 +121,22 @@ class Brightcove extends Manager
 		
 		$video->slug = preg_replace('/[^a-z0-9-]+/', '-', strtolower($video->name));
 		$video->link = routelink('video', array('id' => $video->id, 'slug' => $video->slug));
+
+		$remove = array(
+			'renditions',
+			'FLVFullLength',
+			'videoFullLength'
+		);
+
+		foreach ($remove as $rem):
+
+			if (property_exists($video, $rem)):
+
+				unset($video->$rem);
+
+			endif;
+
+		endforeach;
 
 		return $video;
 	}
@@ -132,6 +152,22 @@ class Brightcove extends Manager
 
 		$video['slug'] = preg_replace('/[^a-z0-9-]+/', '-', strtolower($video['name']));
 		$video['link'] = routelink('video', array('id' => $video['id'], 'slug' => $video['slug']));
+
+		$remove = array(
+			'renditions',
+			'FLVFullLength',
+			'videoFullLength'
+		);
+
+		foreach ($remove as $rem):
+
+			if (array_key_exists($rem, $video)):
+
+				unset($video[$rem]);
+
+			endif;
+
+		endforeach;
 
 		return $video;
 

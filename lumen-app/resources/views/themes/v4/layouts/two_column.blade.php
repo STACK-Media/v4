@@ -20,8 +20,6 @@
 	@endif
 	
 @stop
-
-
 @section('sidebar-widgets')
 
 	@include('theme::partials.bannerad', array('position' => 'sidebar-top', 'args' => array()))
@@ -79,8 +77,6 @@
 	@include('theme::partials.bannerad', array('position' => 'sidebar-bottom', 'args' => array()))
 
 @stop
-
-
 @section('post-content-widgets')
 
 	<?php // iterate post content widgets ?>
@@ -103,7 +99,6 @@
 	@endif
 
 @stop
-
 @section('banner-bg')
 	
 	<div id="bannerbg">
@@ -111,48 +106,34 @@
 	</div>
 
 @stop
-
 @section('foot')
 
 	@include('theme::partials.foot')
 
 @stop
-
-
 @section('header')
 	
 	@include('theme::partials.header')
 
 @stop
-
 @section('navbar')
 	
-	<div>
-		<nav id="navbar">
-			@include('theme::partials.navbar')			
-		</nav>
+
+	@include('theme::partials.navbar')
 	
+	<div class="container" id="oas_Top_container">
 		@include('theme::partials.bannerad', array('position' => 'leader', 'args' => array()))
-		
 	</div>
 
 @stop
-
-
-
 @yield('header')
-
 @yield('banner-bg')
-
-<div class="container">
 	
-	<header role="banner">
-		
-		@yield('navbar')
+<header role="banner">
+	
+	@yield('navbar')
 
-	</header>
-
-</div>
+</header>
 
 <div class="container">
 
