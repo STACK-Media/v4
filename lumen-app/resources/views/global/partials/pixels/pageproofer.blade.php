@@ -1,3 +1,4 @@
+@if(strpos(Request::root(), 'v4.stack.com') !== FALSE)
 <script type="text/javascript">
 (function (d, t) {
    var pp = d.createElement(t), s = d.getElementsByTagName(t)[0];
@@ -7,3 +8,4 @@
    s.parentNode.insertBefore(pp, s);
 })(document, 'script');
 </script>
+@endif
