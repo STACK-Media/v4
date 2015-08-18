@@ -20,8 +20,6 @@
 	@endif
 	
 @stop
-
-
 @section('sidebar-widgets')
 
 	@include('theme::partials.bannerad', array('position' => 'sidebar-top', 'args' => array()))
@@ -79,8 +77,6 @@
 	@include('theme::partials.bannerad', array('position' => 'sidebar-bottom', 'args' => array()))
 
 @stop
-
-
 @section('post-content-widgets')
 
 	<?php // iterate post content widgets ?>
@@ -103,7 +99,6 @@
 	@endif
 
 @stop
-
 @section('banner-bg')
 	
 	<div id="bannerbg">
@@ -111,20 +106,16 @@
 	</div>
 
 @stop
-
 @section('foot')
 
 	@include('theme::partials.foot')
 
 @stop
-
-
 @section('header')
 	
 	@include('theme::partials.header')
 
 @stop
-
 @section('navbar')
 	
 
@@ -135,21 +126,14 @@
 	</div>
 
 @stop
-
-
-
 @yield('header')
-
 @yield('banner-bg')
-
-
 	
 <header role="banner">
 	
 	@yield('navbar')
 
 </header>
-
 
 <div class="container">
 

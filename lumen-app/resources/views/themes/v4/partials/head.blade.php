@@ -3,13 +3,11 @@
 {!! Assets::queue('stylesheet', 'global', 'bootstraptheme', '/assets/third-party/initializr/css/bootstrap-theme.min.css') !!}
 {!! Assets::queue('stylesheet', 'global', 'global', '/assets/css/global.css') !!}
 {!! Assets::queue('stylesheet', 'global', 'googlefonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Oswald:400|Roboto+Slab:700') !!}
-
 {!! Assets::queue('javascript', 'global', 'jquery', '/assets/js/jquery-1.11.3.min.js') !!}
 {!! Assets::queue('javascript', 'global', 'bootstrap', '/assets/third-party/initializr/js/vendor/bootstrap.min.js') !!}
 {!! Assets::queue('javascript', 'global', 'viewport', '/assets/js/viewport.js') !!}
 {!! Assets::queue('javascript', 'global', 'events', '/assets/js/events.js') !!}
 {!! Assets::queue('javascript', 'global', 'lazyload', '/assets/js/lazyload.js') !!}
-
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="description" content="">
