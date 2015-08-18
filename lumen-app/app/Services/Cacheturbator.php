@@ -10,8 +10,10 @@ class Cacheturbator extends Service
 
 	protected 
 		$service,
-		$cache_on = FALSE,
-		$flush    = FALSE;
+		$cache_on  = FALSE,
+		$flush     = FALSE,
+		$min_cache = 30,
+		$max_cache = 60;
 
 	function __construct($service) 
 	{
@@ -51,7 +53,7 @@ class Cacheturbator extends Service
 
 		if ($this->cache_on):
 
-			Cache::put($cache_key, $result, 30);
+			Cache::put($cache_key, $result, mt_rand($this->min_cache, $this->max_cache));
 
 		endif;
 
@@ -77,7 +79,7 @@ class Cacheturbator extends Service
 
 		if ($this->cache_on):
 
-			Cache::put($cache_key, $result, 30);
+			Cache::put($cache_key, $result, mt_rand($this->min_cache, $this->max_cache));
 
 		endif;
 
@@ -103,7 +105,7 @@ class Cacheturbator extends Service
 
 		if ($this->cache_on):
 
-			Cache::put($cache_key, $result, 30);
+			Cache::put($cache_key, $result, mt_rand($this->min_cache, $this->max_cache));
 
 		endif;
 
