@@ -1,0 +1,32 @@
+.sport-experts {
+	line-height: 1.2;
+	font-family: "Source Sans Pro", Arial, sans-serif, Arial;
+	font-size: 0.8em;
+	color: #222;
+	margin: 0px;
+    padding: 0px;
+}
+.sport-experts-link {
+	text-decoration: none !important;
+	color: #148bcc !important;
+	line-height: 0.8 !important;
+	font-weight: 	bold !important;
+	font-size: 1.2em !important;
+    font-family: "Source Sans Pro", Arial, sans-serif !important;
+    padding-bottom: 5px;
+}
+.sport-experts-readmore {
+	text-decoration: none !important;
+	color: #148bcc !important;
+	line-height: 1.2 !important;
+	font-weight: 	normal !important;
+	font-size: 1.2em !important;
+    font-family: "Source Sans Pro", Arial, sans-serif !important;
+    padding-bottom: 5px;
+}
+.sport-experts-link:hover {
+	text-decoration: underline;
+}
+.sport-experts-row {
+	padding-top: 	5px;
+}

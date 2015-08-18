@@ -1,6 +1,6 @@
 {!! Assets::queue('stylesheet',  'widgets', 'sport-experts', '/assets/css/widgets/sport-experts.css') !!}
 
-<div class="row">
+<div class="row sport-experts">
 
 	<div class="col-xs-12">
 
@@ -10,7 +10,7 @@
 
 			<?php $class 	= ($key < 3)? '': 'hidden'; ?>
 
-			<div class="row event {{$class}} event" data-name="{{$key}}" data-template="sport-experts">
+			<div class="row event {{$class}} sport-experts-row" data-name="{{$key}}" data-template="sport-experts">
 
 
 				<div class="col-xs-6">
@@ -31,9 +31,9 @@
 
 				<div class="col-xs-6">
 
-					<a href="{!! routelink('article', array('slug' => $value['slug'])) !!}">{{$value['name']}}</a>
+					<a class="sport-experts-link" href="{!! routelink('article', array('slug' => $value['slug'])) !!}">{{$value['name']}}</a>
 					{{$value['desc']}}
-					<a href="{!! routelink('article', array('slug' => $value['slug'])) !!}">Read More</a>
+					<a class="sport-experts-readmore" href="{!! routelink('article', array('slug' => $value['slug'])) !!}">Read More</a>
 
 				</div>
 				<div class="clearfix"></div>
