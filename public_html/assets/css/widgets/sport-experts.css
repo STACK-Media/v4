@@ -30,3 +30,9 @@
 .sport-experts-row {
 	padding-top: 	5px;
 }
+.sport-experts-image img {
+    width: 100px;
+    margin-right: 12px;
+    border: 1px solid black;
+    float: left;
+}
