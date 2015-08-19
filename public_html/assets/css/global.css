@@ -46,10 +46,12 @@ a {cursor:pointer;}
 #sidebar .widget {
 	padding-bottom: 	0px;
 }
+/*
 .adunit {
 	min-height: 		250px;
 	background-color: 	gray;
 }
+*/
 .bottomleft {
 	max-width: 			160px;
 	min-height: 		600px;

@@ -1,0 +1,30 @@
+#dfp_Top {
+margin-top:6px; margin-bottom:6px;
+}
+
+#dfp_x20 {
+position: absolute;
+z-index: 1;
+overflow: hidden;
+height: 1507px;
+width: 1818px;
+top: 0;
+left: 50%;
+margin-left: -909px;
+-webkit-transform: translateZ(0);
+transform: translateZ(0);
+}
+
+#navbar, .container {z-index:2;}
+.container, .navbar {position:relative;}
+#navbar, #navbar li {z-index:10;}
+
+#bannerbg {height:1507px;position:absolute;left:0;top:0;overflow:hidden;width:100%;}
+
+.dfp {margin:0 auto;z-index:1;}
+.dfp_dw300 {width:300px;}
+.dfp_dw500 {width:500px;}
+.dfp_dw728 {width:728px;}
+.dfp_dw160 {width:160px;}
+
+#dfp_Top_container {z-index:1;position:relative;}
