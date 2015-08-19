@@ -7,19 +7,11 @@ class RssController extends PageController
 
     function index()
     {
-
-        /*
-        $status = 'publish';
-
-        $this->_set_page_object(new AuthorPage(array(
-            'slug' => $slug, 
-            'type' => $status
+        $this->_set_page_object(new RssPage(array(
+            'feed' => $feed
         )));
 
-        $page_data['widgets'] = $this->_get_widgets('author');
-
-        return $this->_load_page_view('author', $page_data);
-        */
+        return $this->_load_page_view('rss', $page_data);
     }
 
 } 

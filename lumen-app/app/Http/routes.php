@@ -38,7 +38,9 @@ $route_pages     = array(
 		'slug'          => 'feed',
 		'controller'	=> 'RssController',
 		'function'		=> 'index',
-		'params'		=> array()
+		'params'		=> array(
+			'feed'
+		)
 	),
 	'video' => array(
 		'slug'       => 'video',
