@@ -55,7 +55,7 @@ return array(
 			'sidebar'		=> array(
 				'featured-videos',
 				'social-connect',
-				'newsletter_optin',
+				'newsletter-optin',
 				'popular-videos',
 				'magazine',
 				'news-links',
