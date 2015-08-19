@@ -74,6 +74,22 @@ $route_pages     = array(
 			'slug'
 		)
 	),
+	'magazine' => array(
+		'slug'       => 'magazine',
+		'controller' => 'MagazineController',
+		'function'   => 'index',
+		'params'     => array(
+
+		)
+	),
+	'search' => array(
+		'slug'       => 'search',
+		'controller' => 'SearchController',
+		'function'   => 'index',
+		'params'     => array(
+
+		)
+	),
 	'tag' => array(
 		'slug'       => 't',
 		'controller' => 'TaxonomyController',
@@ -115,22 +131,6 @@ $route_pages     = array(
 		'function'   => 'tag',
 		'params'     => array(
 			'slug'
-		)
-	),
-	'search' => array(
-		'slug'       => 'search',
-		'controller' => 'TaxonomyController',
-		'function'   => 'tag',
-		'params'     => array(
-			'slug'
-		)
-	),
-	'magazine' => array(
-		'slug'       => 'magazine',
-		'controller' => 'VideoController',
-		'function'   => 'archive',
-		'params'     => array(
-			'tag'
 		)
 	),
 
