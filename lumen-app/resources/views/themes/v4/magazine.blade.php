@@ -4,6 +4,6 @@
 @section('content')
 
 	<!-- Show Magazine Issue -->
-	<h3>STACK Magazine</h3>
+	<h1>STACK Magazine</h1>
 	
 @stop

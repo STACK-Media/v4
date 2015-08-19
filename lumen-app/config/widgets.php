@@ -75,6 +75,16 @@ return array(
 			),
 			'post_content'	=> array()
 		),
+		'resources'	=> array(
+			'content'		=> array(),
+			'sidebar'		=> array(
+				'velocity-sidebar',
+				'social-connect',
+				'newsletter-optin',
+				'trending-block'
+			),
+			'post_content'	=> array()
+		),
 		'search'	=> array(
 			'content'		=> array(
 
