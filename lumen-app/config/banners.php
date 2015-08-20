@@ -1,6 +1,6 @@
 <?php
 
 return array( 
-	//'provider'  => 'OAS',
-	'provider' => 'DFP'
+	'provider'  => 'OAS',
+	//'provider' => 'DFP'
 );
