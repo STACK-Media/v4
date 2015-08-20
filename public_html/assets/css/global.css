@@ -244,10 +244,24 @@ article #article_content {margin-top:20px;}
 @media (min-width:768px) {
 	#navbar {float:right;padding-top:10px;}
 
+	#navbar .submenu ul {background:#404040;min-height:250px;padding:12px 0 12px 0px;}
+	#navbar .submenu ul > li {list-style-type:none;padding:3px 0 3px 24px;margin:0;}
+	#navbar .submenu ul > li > a {color:#fff;display:block;}
+
+	#navbar .submenu ul > li:hover {background:#eee;}
+	#navbar .submenu ul > li:hover > a {color:#000;text-decoration:none;}
+
+	#navbar .menu-main-content, #navbar .menu-submenu-content {padding-top:24px;padding-right:24px;}
+
+	#navbar > ul > li > .menu-inner {background:#eee;border:1px solid #000;}
+
 	.menu-item-guidedsearch a {text-indent:-99999px;display:block;background:url('/assets/img/search-icon.png') left top no-repeat;width:15px;height:24px;margin:0 0 0 8px;}
 
 	header .container {z-index:20;position:relative;}
-	#navbar > ul > li:hover > .menu-inner, #navbar > ul > li > .menu-inner:hover {z-index:21;display:block;position:absolute;top:60px;background:#fff;left:0;width:100%;}
+
+	#navbar > ul > li > .menu-inner {z-index:21;position:absolute;top:60px;left:0;width:100%;}
+
+	#navbar > ul > li:hover > .menu-inner, #navbar > ul > li > .menu-inner:hover {display:block;}
 
 	.nav > li {position:static;padding-bottom:10px;}
 

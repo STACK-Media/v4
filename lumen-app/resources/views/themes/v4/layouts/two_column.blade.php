@@ -141,11 +141,7 @@
 		
 		<main role="main" class="col-xs-12 col-md-8 col-lg-8" id="content">
 
-			<article>
-
-				@yield('content')
-
-			</article>
+			@yield('content')
 
 			<div id="after-content" class="content-widgets">
 
