@@ -38,7 +38,9 @@ $route_pages     = array(
 		'slug'          => 'feed',
 		'controller'	=> 'RssController',
 		'function'		=> 'index',
-		'params'		=> array()
+		'params'		=> array(
+			'feed'
+		)
 	),
 	'video' => array(
 		'slug'       => 'video',
@@ -72,6 +74,30 @@ $route_pages     = array(
 		'function'   => 'category',
 		'params'     => array(
 			'slug'
+		)
+	),
+	'magazine' => array(
+		'slug'       => 'magazine',
+		'controller' => 'MagazineController',
+		'function'   => 'index',
+		'params'     => array(
+
+		)
+	),
+	'resources' => array(
+		'slug'       => 'resources',
+		'controller' => 'ResourcesController',
+		'function'   => 'index',
+		'params'     => array(
+
+		)
+	),
+	'search' => array(
+		'slug'       => 'search',
+		'controller' => 'SearchController',
+		'function'   => 'index',
+		'params'     => array(
+
 		)
 	),
 	'tag' => array(
@@ -115,22 +141,6 @@ $route_pages     = array(
 		'function'   => 'tag',
 		'params'     => array(
 			'slug'
-		)
-	),
-	'search' => array(
-		'slug'       => 'search',
-		'controller' => 'TaxonomyController',
-		'function'   => 'tag',
-		'params'     => array(
-			'slug'
-		)
-	),
-	'magazine' => array(
-		'slug'       => 'magazine',
-		'controller' => 'VideoController',
-		'function'   => 'archive',
-		'params'     => array(
-			'tag'
 		)
 	),
 

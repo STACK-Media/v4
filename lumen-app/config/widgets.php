@@ -9,7 +9,7 @@ return array(
 			),
 			'sidebar' => array(
 				'featured-videos',
-				//'newsletter-optin',
+				'newsletter-optin',
 				'popular-videos',
 				'trending-block',
 				'velocity-sidebar'
@@ -23,7 +23,7 @@ return array(
 			'sidebar' => array(
 				'velocity-sidebar',
 				'social-connect',
-				//'newsletter-optin',
+				'newsletter-optin',
 				'trending-block',
 			)
 		),
@@ -55,14 +55,49 @@ return array(
 			'sidebar'		=> array(
 				'featured-videos',
 				'social-connect',
-				//'newsletter_optin',
+				'newsletter-optin',
 				'popular-videos',
 				'magazine',
 				'news-links',
 			),
 			'post_content'	=> array()
 		),
-		'sport' => array(
+		'magazine'	=> array(
+			'content'		=> array(
+				//'magazine-subscribe',
+				//'magazine-issues',
+			),
+			'sidebar'		=> array(
+				'velocity-sidebar',
+				'social-connect',
+				'newsletter-optin',
+				'trending-block'
+			),
+			'post_content'	=> array()
+		),
+		'resources'	=> array(
+			'content'		=> array(),
+			'sidebar'		=> array(
+				'velocity-sidebar',
+				'social-connect',
+				'newsletter-optin',
+				'trending-block'
+			),
+			'post_content'	=> array()
+		),
+		'search'	=> array(
+			'content'		=> array(
+
+			),
+			'sidebar'		=> array(
+				'velocity-sidebar',
+				'social-connect',
+				'newsletter-optin',
+				'trending-block'
+			),
+			'post_content'	=> array()
+		),
+		'sport' 	=> array(
 			'content' => array(
 				'sport-workouts',
 				'must-reads',
@@ -102,7 +137,7 @@ return array(
 				'velocity-sidebar',
 				'outbrain-sidebar',
 				'social-connect',
-				//'newsletter-optin',
+				'newsletter-optin',
 				'trending-block',
 			),
 			'post_content' => array(
