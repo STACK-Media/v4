@@ -4,7 +4,7 @@
 
 	<div class="col-xs-12 latest-videos event" data-name="0" data-template="latest-videos">
 
-		<h3>Latest Videos in <?php echo implode(' & ',$category); ?></h3>
+		<h3>Latest Videos <?php echo ($category) ? 'in ' . implode(' & ',$category) : ''; ?></h3>
 
 		@foreach($videos['videos'] as $key => $video)
 

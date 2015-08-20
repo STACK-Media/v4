@@ -41,7 +41,7 @@ class ArticleModel extends AbstractArticle
     			'wp_users', 
     			'wp_posts.post_author', '=', 'wp_users.ID'
     		)
-    		->orderBy('post_modified', 'desc')
+    		->orderBy('wp_posts.post_modified', 'desc')
     		->take(1)->first();
 	}
 
@@ -69,7 +69,7 @@ class ArticleModel extends AbstractArticle
                 'wp_users', 
                 'wp_posts.post_author', '=', 'wp_users.ID'
             )
-            ->orderBy('post_modified', 'desc')
+            ->orderBy('wp_posts.post_modified', 'desc')
             ->take(1)->first();
     }
 
@@ -191,5 +191,20 @@ class ArticleModel extends AbstractArticle
             ->take($limit)
             ->get();
     }
+
+    
+    function get_featured_image_by_post_id($id)
+    {
+        return DB::table('wp_posts')
+            ->select(
+                'wp_posts.guid AS imgsrc'
+            )
+            ->where('wp_posts.post_parent', $id)
+            ->where('wp_posts.post_type','attachment')
+            ->whereIn('wp_posts.post_status', array('inherit', 'publish'))
+            ->orderBy('wp_posts.post_date','desc')
+            ->take(1)->first();
+    }
+
    
 } 

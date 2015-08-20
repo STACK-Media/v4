@@ -7,7 +7,7 @@
 			
 			<div class="col-sm-4">
 				<a href="{!! routelink('article', array('slug' => $article->slug)) !!}">
-					<img src="{!! $article->image !!}"/> <br/>
+					<img src="{!! $article->image !!}" class="img-responsive"/> <br/>
 					{!! $article->name !!}
 				</a>
 			</div>

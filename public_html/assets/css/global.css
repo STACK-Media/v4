@@ -223,42 +223,38 @@ article #article_content {margin-top:20px;}
 
 
 
-/* navbar. horrible mess */
-.submenu-preview {display:none;}
-
-#navbar .menu-preview {position:absolute;left:200px;max-width:700px;top:0;}
-
+/* navbar */
 #navbar li a {font-family:"Oswald",Impact,Arial,Helvetica,sans-serif;font-size:16px;}
 #navbar > ul > li > a  {color:#fff;text-transform:uppercase;padding:0 8px;}
 
 #navbar .menu-item-trainingcenters a {background:url('/assets/img/branding/logos/velocity-icon.png') 8px center no-repeat;padding-left:38px;}
+.navbar-nav {clear:right;}
 
 #toplinks {font-size:11px;font-family: "Source Sans Pro",Arial,Helvetica,sans-serif;padding-bottom:5px;}
 #toplinks a, #toplinks {color:#fff;}
-
-.navbar-nav {clear:right;}
-
 .navtogglee {display:none;}
 
-.submenu {width:100%;position:relative;}
+.menu-inner {display:none;width:100%;}
+.submenu .menu-preview {display:none;}
+
+@media (min-width:751px) and (max-width:975px) {
+	#navbar .menu-item-trainingcenters a {background:none;padding-left:8px;}
+}
 
 @media (min-width:768px) {
-	
 	#navbar {float:right;padding-top:10px;}
 
 	.menu-item-guidedsearch a {text-indent:-99999px;display:block;background:url('/assets/img/search-icon.png') left top no-repeat;width:15px;height:24px;margin:0 0 0 8px;}
-	
-	#navbar li {position:static;}
 
-	.navbar-nav .submenu {position:absolute;top:55px;left:0;width:100%;}
+	header .container {z-index:20;position:relative;}
+	#navbar > ul > li:hover > .menu-inner, #navbar > ul > li > .menu-inner:hover {z-index:21;display:block;position:absolute;top:60px;background:#fff;left:0;width:100%;}
+
+	.nav > li {position:static;padding-bottom:10px;}
+
+	#menu-submenu-content {display:none;}
 }
 
 @media (max-width:975px) {
 	.nav .menu-item-guidedsearch {display:none;}
 }
 
-@media (min-width:751px) and (max-width:975px) {
-	#navbar {clear:left;padding-left:0;padding-right:0;}
-
-	#navbar .menu-item-trainingcenters a {background:none;padding-left:8px;}
-}
