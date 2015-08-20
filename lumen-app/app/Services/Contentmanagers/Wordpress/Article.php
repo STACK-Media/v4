@@ -225,11 +225,11 @@ class Article extends Wordpress
 	{
 
 		$id  = preg_replace("/[^0-9]/", '', $id);
-		$img = '';
+		$img = '/assets/img/branding/no_image.png';
 
 		$result = $this->_model->get_featured_image_by_post_id($id);
 
-		if (is_object($result) && property_exists($result, 'imgsrc')):
+		if (is_object($result) && property_exists($result, 'imgsrc') && $result->imgsrc):
 
 			$img = $result->imgsrc;
 

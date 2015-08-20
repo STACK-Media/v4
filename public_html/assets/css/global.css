@@ -235,7 +235,9 @@ article #article_content {margin-top:20px;}
 .navtogglee {display:none;}
 
 .menu-inner {display:none;width:100%;}
+
 .submenu .menu-preview {display:none;}
+#menu-submenu-content {display:none;}
 
 @media (min-width:751px) and (max-width:975px) {
 	#navbar .menu-item-trainingcenters a {background:none;padding-left:8px;}
@@ -265,7 +267,9 @@ article #article_content {margin-top:20px;}
 
 	.nav > li {position:static;padding-bottom:10px;}
 
-	#menu-submenu-content {display:none;}
+	.nav-post a, .nav-post span {display:block;}
+	.nav-post img {max-height:126px;}
+	.nav-post span {color:#000;font-weight:normal;margin-top:10px;font-family: "Source Sans Pro",Arial,Helvetica,sans-serif;}
 }
 
 @media (max-width:975px) {
