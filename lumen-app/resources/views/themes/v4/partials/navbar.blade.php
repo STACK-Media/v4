@@ -73,7 +73,7 @@
 
 						$url          = (isset($menu['url']) ? $menu['url'] : ''); 
 						$menu_data    = $menu;
-						$submenu_cols = (view()->exists('theme::partials.navbar.'.$menu['type'])) ? 9 : 12; 
+						$submenu_cols = (view()->exists('theme::partials.navbar.'.$menu['type'])) ? 9 : 0; 
 
 						unset($menu_data['submenu']); 
 						
@@ -86,7 +86,7 @@
 
 								<div class="row">
 
-									<div class="submenu col-sm-{!! (12 - $submenu_cols) !!}">
+									<div class="submenu col-sm-{!! (12 - $submenu_cols) !!}" data-cols="{!! $submenu_cols !!}">
 
 										@if(isset($menu['submenu']))
 
