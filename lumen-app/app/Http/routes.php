@@ -175,6 +175,9 @@ foreach ($route_pages as $route_key => $route_arr)
 	endforeach;
 }
 
+// HACK to make magazine page work without params
+$app->get('magazine',['as' => 'magazine', 'uses' => 'App\Http\Controllers\MagazineController@index']);
+
 
 /*
 // ****************************

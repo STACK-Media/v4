@@ -7,9 +7,9 @@
 
 	<div class="row magazine footroom">
 
-		<div class="col-xs-12">
+		<div class="col-xs-12 magazine-dropdown">
 
-			<select class="magazine-dropdown">
+			<select name="issue">
 	
 				<option value="">Choose an Issue</option>
 
@@ -24,7 +24,7 @@
 		</div>
 
 		<div class="col-xs-12">
-			<h1>STACK Magazine</h1>
+			<h1>{{$page->name.' Issue: '.$page->athlete}}</h1>
 		</div>
 
 		<div class="col-xs-12 col-sm-6">

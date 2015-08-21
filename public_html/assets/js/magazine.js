@@ -2,7 +2,7 @@
 
 	"use strict";
 
-	$(".magazine-dropdown").on('change',function(){
+	$(".magazine-dropdown select").on('change',function(){
 		
 		// grab magazine to redirect to
 		var magazine 		= $(this).val();
