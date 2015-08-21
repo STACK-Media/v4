@@ -43,12 +43,14 @@
 
 			@foreach ($page->articles AS $key => $value)
 
-				<p>
-					<a href="{!! routelink('article', array('slug' => $value->slug)) !!}">
-						{{$value->title}}
-					</a>
-					{{$value->description}}
-				</p>
+				@if ($value->featured == 1)
+					<p>
+						<a href="{!! routelink('article', array('slug' => $value->slug)) !!}">
+							{{$value->title}}
+						</a>
+						{{$value->description}}
+					</p>
+				@endif
 
 			@endforeach
 
