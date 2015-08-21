@@ -10,7 +10,7 @@
 
 			<div class="col-xs-12 col-md-4">
 
-				<a href="{!! routelink('magazine', array('slug' => $value->slug)) !!}">
+				<a href="{!! routelink('magazine', array('issue' => $value->slug)) !!}">
 					@include('theme::partials.img',
 						array(
 							'src' 	=> $value->image, 
