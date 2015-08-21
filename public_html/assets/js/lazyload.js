@@ -8,7 +8,7 @@
  * https://github.com/luis-almeida
  */
 
-;(function($) {
+(function($) {
 
   $.fn.unveil = function(threshold, callback) {
 

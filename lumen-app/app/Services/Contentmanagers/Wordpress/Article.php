@@ -137,9 +137,11 @@ class Article extends Wordpress
 	function get_by_id($id, $type = 'publish')
 	{
 
-		$id       = preg_replace("/[^0-9]/", '', $id);
-		$statuses = $this->_get_statuses($type);
-		$article  = $this->_model->get_by_id($id, $statuses);
+		$id             = preg_replace("/[^0-9]/", '', $id);
+		$statuses       = $this->_get_statuses($type);
+		$article        = $this->_model->get_by_id($id, $statuses);
+		
+		$article->image = $this->get_featured_image_by_post_id($article->id);
 
 		return $this->_add_metacontent($article);
 
@@ -149,9 +151,11 @@ class Article extends Wordpress
 	function get_by_slug($slug, $type = 'publish')
 	{
 
-		$slug     = preg_replace("/[^a-z0-9-]/",'',strtolower($slug));
-		$statuses = $this->_get_statuses($type);
-		$article  = $this->_model->get_by_slug($slug, $statuses);
+		$slug           = preg_replace("/[^a-z0-9-]/",'',strtolower($slug));
+		$statuses       = $this->_get_statuses($type);
+		$article        = $this->_model->get_by_slug($slug, $statuses);
+
+		$article->image = $this->get_featured_image_by_post_id($article->id);
 
 		return $this->_add_metacontent($article);
 
@@ -187,7 +191,7 @@ class Article extends Wordpress
 		// format articles
 		foreach ($articles AS $article):
 
-			$article->image 	= 'http://blog.stack.com/wp-content/uploads/2015/07/3-Steps-to-Alleviate-a-Sore-Neck-STACK-300x168.jpg?1=2'; 
+			$article->image 	= $this->get_featured_image_by_post_id($article->id);
 
 			$content[] 			= $article;//$this->_add_metacontent($article);
 
@@ -208,12 +212,29 @@ class Article extends Wordpress
 		// format articles
 		foreach ($articles AS $article):
 
-			$article->image 	= 'http://blog.stack.com/wp-content/uploads/2015/07/3-Steps-to-Alleviate-a-Sore-Neck-STACK-300x168.jpg?1=2'; 
+			$article->image 	= $this->get_featured_image_by_post_id($article->id);
 
 			$content[] 			= $article;//$this->_add_metacontent($article);
 
 		endforeach;
 
 		return $content;
+	}
+
+	public function get_featured_image_by_post_id($id)
+	{
+
+		$id  = preg_replace("/[^0-9]/", '', $id);
+		$img = '/assets/img/branding/no_image.png';
+
+		$result = $this->_model->get_featured_image_by_post_id($id);
+
+		if (is_object($result) && property_exists($result, 'imgsrc') && $result->imgsrc):
+
+			$img = $result->imgsrc;
+
+		endif;
+
+		return $img;
 	}
 }

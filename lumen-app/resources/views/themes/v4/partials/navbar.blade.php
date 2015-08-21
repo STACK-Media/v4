@@ -20,7 +20,7 @@
 
 			</div>
 			
-			<div id="navbar" class="navbar-collapse collapse">
+			<div id="navbar" class="collapse navbar-collapse">
 
 				<div id="toplinks" class="pull-right hidden-sm hidden-xs">
 					
@@ -71,55 +71,78 @@
 					
 						<?php 
 
-						$url       = (isset($menu['url']) ? $menu['url'] : ''); 
-						$dropclass = (isset($menu['submenu'])) ? 'dropdown' : '';
-						$menu_data = $menu;
-						unset($menu_data['submenu']); ?>
+						$url          = (isset($menu['url']) ? $menu['url'] : ''); 
+						$menu_data    = $menu;
+						$submenu_cols = (view()->exists('theme::partials.navbar.'.$menu['type'])) ? 9 : 0; 
 
-						<li class="menu-item-{!! preg_replace("/[^a-z0-9]/", '', strtolower($menu['name'])) !!} menu-type-{!! $menu['type'] !!} {!! $dropclass !!}">
+						unset($menu_data['submenu']); 
 						
+						?>
 
-							<a href="{!! $url !!}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{!! $menu['name'] !!}</a>
+						<li class="menu-item-{!! preg_replace("/[^a-z0-9]/", '', strtolower($menu['name'])) !!} menu-type-{!! $menu['type'] !!}">					
+							<a href="{!! $url !!}">{!! $menu['name'] !!}</a>
 
-							<ul class="submenu dropdown-menu">
+							<div class="menu-inner">
 
-								@if(isset($menu['submenu']))
+								<div class="row">
 
-									@foreach($menu['submenu'] as $submenu)
-					
-										<?php $surl = (isset($submenu['url']) ? $submenu['url'] : ''); ?>
+									<div class="submenu col-sm-{!! (12 - $submenu_cols) !!}" data-cols="{!! $submenu_cols !!}">
 
-										<li class="menu-type-{!! $submenu['type'] !!}">
+										@if(isset($menu['submenu']))
 
-											<a href="{!! $surl !!}">{!! $submenu['name'] !!}</a>
+											<ul>
+
+												@foreach($menu['submenu'] as $submenu)
+								
+													<?php $surl = (isset($submenu['url']) ? $submenu['url'] : ''); ?>
+
+													<li class="menu-type-{!! $submenu['type'] !!}">
+
+														<a href="{!! $surl !!}">{!! $submenu['name'] !!}</a>
+														
+														<div class="menu-preview">
+
+															@if(view()->exists('theme::partials.navbar.'.$submenu['type']))
+
+																@include('theme::partials.navbar.'.$submenu['type'], array('menu_data' => $submenu))
+
+															@endif
+
+														</div>
+
+													</li>
+
+												@endforeach
+
+											</ul>
+
+										@endif
+
+									</div>
+
+									@if(view()->exists('theme::partials.navbar.'.$menu['type']))
 											
-											<div class="submenu-preview">
+										<div class="menu-preview col-sm-{!! $submenu_cols !!}">
 
-												@if(view()->exists('theme::partials.navbar.'.$submenu['type']))
-
-													@include('theme::partials.navbar.'.$submenu['type'], array('menu_data' => $submenu))
-
-												@endif
+											<div class="menu-main-content">						
+												
+												@include('theme::partials.navbar.'.$menu['type'], array('menu_data' => $menu_data))
 
 											</div>
 
-										</li>
+											<div class="menu-submenu-content">
 
-									@endforeach
+											</div>
 
-								@endif
+										</div>
 
-								@if(view()->exists('theme::partials.navbar.'.$menu['type']))
-									
-									<li class="menu-preview">								
-										
-										@include('theme::partials.navbar.'.$menu['type'], array('menu_data' => $menu_data))
+									@endif
 
-									</li>
+									<div class="clearfix"></div>
 
-								@endif
+								</div>
 
-							</ul>
+							</div>
 
 						</li>
 

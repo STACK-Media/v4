@@ -4,6 +4,7 @@
 {!! Assets::queue('stylesheet', 'global', 'global', '/assets/css/global.css') !!}
 {!! Assets::queue('stylesheet', 'global', 'googlefonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Oswald:400|Roboto+Slab:700') !!}
 {!! Assets::queue('javascript', 'global', 'jquery', '/assets/js/jquery-1.11.3.min.js') !!}
+{!! Assets::queue('javascript', 'global', 'navbar', '/assets/js/navbar.js') !!}
 {!! Assets::queue('javascript', 'global', 'bootstrap', '/assets/third-party/initializr/js/vendor/bootstrap.min.js') !!}
 {!! Assets::queue('javascript', 'global', 'viewport', '/assets/js/viewport.js') !!}
 {!! Assets::queue('javascript', 'global', 'events', '/assets/js/events.js') !!}

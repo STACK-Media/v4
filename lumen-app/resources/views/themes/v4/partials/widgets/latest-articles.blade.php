@@ -4,7 +4,7 @@
 
 	<div class="col-xs-12 latest-articles event" data-name="0" data-template="latest-articles">
 
-		<h3>Latest Articles in <?php echo implode(' & ',$category); ?></h3>
+		<h3>Latest Articles <?php echo ($category) ? 'in ' . implode(' & ',$category) : ''; ?></h3>
 
 		@foreach($articles as $key => $article)
 
