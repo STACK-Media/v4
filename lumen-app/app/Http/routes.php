@@ -81,7 +81,7 @@ $route_pages     = array(
 		'controller' => 'MagazineController',
 		'function'   => 'index',
 		'params'     => array(
-
+			'issue'
 		)
 	),
 	'resources' => array(

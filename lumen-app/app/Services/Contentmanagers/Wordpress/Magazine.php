@@ -18,9 +18,9 @@ class Magazine extends Wordpress
 		$this->_model = new Cacher(new MagazineModel);
 	}
 
-	public function get($id)
+	public function get($slug=FALSE)
 	{
-		return array();
+		return $this->_model->get($slug);
 	}
 
 	public function all()
@@ -30,6 +30,11 @@ class Magazine extends Wordpress
 
 	public function current()
 	{
-		return array();
+		return $this->_model->current();
+	}
+
+	public function articles($id)
+	{
+		return $this->_model->articles($id);
 	}
 }
