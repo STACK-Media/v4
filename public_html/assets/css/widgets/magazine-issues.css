@@ -1,0 +1,15 @@
+.magazine_issues_block h3 {
+    margin: 0 0 18px 0;
+    font-size: 2.4em;
+    line-height: 1;
+    font-family: "Roboto Slab", serif;
+}
+.magazine_issues_block p {
+	color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    outline: none !important;
+    font-size: 1.4em;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    line-height: 1.2;
+}

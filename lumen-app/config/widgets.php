@@ -64,8 +64,8 @@ return array(
 		),
 		'magazine'	=> array(
 			'content'		=> array(
-				//'magazine-subscribe',
-				//'magazine-issues',
+				'magazine-subscribe',
+				'magazine-issues',
 			),
 			'sidebar'		=> array(
 				'velocity-sidebar',
