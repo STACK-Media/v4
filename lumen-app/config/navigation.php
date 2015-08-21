@@ -190,7 +190,7 @@ return array(
 	),
 	array(
 		'args'    => array('slug' => 'magazine'),
-		'url'     => 'REPLACE_ME',
+		'url'     => routelink('magazine', array()),
 		//'url'     => routelink('category', array('slug' => 'magazine')),
 		'type'    => 'static',
 		'name'    => 'Magazine',
