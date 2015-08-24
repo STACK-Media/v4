@@ -1,5 +1,5 @@
 <?php
 
 return array(
-	'magazine' => 'Summer 2015'
+	'current' => 'mariota-summer-2015'
 );
