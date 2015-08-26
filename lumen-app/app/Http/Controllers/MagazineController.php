@@ -6,10 +6,10 @@ use App\Services\MagazinePage;
 class MagazineController extends PageController
 {
 
-    function index()
+    function index($issue=FALSE)
     {
 		$this->_set_page_object(new MagazinePage(array(
-
+			'issue'	=> $issue
 		)));
 
     	$page_data['widgets'] = $this->_get_widgets('magazine');

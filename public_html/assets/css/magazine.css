@@ -1,0 +1,61 @@
+.magazine h1 {
+	margin: 0 0 18px 0;
+    font-size: 2.4em;
+    line-height: 1;
+    font-family: "Roboto Slab", serif;
+    float: left;
+    clear: left;
+}
+.magazine h2 {
+	margin: 0 0 12px;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-size: 1.4em;
+    line-height: 1;
+    font-weight: normal;
+}
+.magazine-dropdown {
+	float: left;
+	margin: 3px 0 12px;
+	font-size: 1em;
+    line-height: 1.4;
+    color: #222;
+    font-family: sans-serif;
+}
+.magazine-dropdown select {
+    width: 299px;
+    height: 24px;
+    font-size: 16px;
+    margin-top: 6px;
+    color: #222;
+    text-transform: none;
+    margin: 0;
+    vertical-align: baseline;
+
+	font-size: 1em;
+    background-color: #FFF;
+    color: #000;
+    border: 1px solid #000;
+    max-width: 300px;
+    border-radius: 0;
+    font-family: "Source Sans Pro", Arial, sans-serif, Arial;
+    line-height: 1.4;
+
+	font-size: 1em;
+	font-family: "Source Sans Pro", Arial, sans-serif, Arial;
+	line-height: 1.4;
+	width: 285px !important;
+	background: url(/assets/img/dropdown_arrow.png) no-repeat center right;
+    padding: 4px 6px 4px;
+    display: inline-block;
+}
+.customSelect {
+
+}
+.customSelectInner {
+
+}
+
+
+
+
+
