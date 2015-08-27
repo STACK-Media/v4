@@ -6,25 +6,7 @@
 			<h3>Magazine Issues</h3>
 		</div>
 
-		<div id="magazineCarousel" class="carousel slide" data-ride="">
-
-			<!-- Indicators --
-			<ol class="carousel-indicators">
-
-				<?php
-				// count issues and divide by 3 to get # of slides needed
-				for ($i=0;$i<(count($issues)/3);$i++):
-					$slider_active_class 	= ($i ==0)? 'active': '';
-				?>
-
-					<li data-target="#magazineCarousel" data-slide-to="{{$i}}" class="{{$slider_active_class}}"></li>
-
-				<?php
-				endfor;
-				?>
-
-			</ol>
-			-->
+		<div id="magazineCarousel" class="carousel slide" data-ride="" data-interval="false">
 
 			<div class="carousel-inner" role="listbox">
 
