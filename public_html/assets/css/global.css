@@ -232,6 +232,10 @@ article #article_content {margin-top:20px;}
 
 #toplinks {font-size:11px;font-family: "Source Sans Pro",Arial,Helvetica,sans-serif;padding-bottom:5px;}
 #toplinks a, #toplinks {color:#fff;}
+
+.navtoggler:after {content:'+';}
+.navtoggler:hover {text-decoration:underline;cursor:pointer;}
+
 .navtogglee {display:none;}
 
 .menu-inner {display:none;width:100%;}
@@ -239,12 +243,19 @@ article #article_content {margin-top:20px;}
 .submenu .menu-preview {display:none;}
 #menu-submenu-content {display:none;}
 
+.navbar-brand {height:auto;padding:8px 15px;}
+.navbar-header > a {display:block;}
+.navbar-header > a > img {display:block;}
+
+nav.navbar {margin-bottom:0;}
+
 @media (min-width:751px) and (max-width:975px) {
 	#navbar .menu-item-trainingcenters a {background:none;padding-left:8px;}
 }
 
 @media (min-width:768px) {
-	#navbar {float:right;padding-top:10px;}
+	#navbar {float:right;padding-top:3px;}
+	#toplinks {padding-bottom:6px;}
 
 	#navbar .submenu ul {background:#404040;min-height:250px;padding:12px 0 12px 0px;}
 	#navbar .submenu ul > li {list-style-type:none;padding:3px 0 3px 24px;margin:0;}
@@ -261,11 +272,11 @@ article #article_content {margin-top:20px;}
 
 	header .container {z-index:20;position:relative;}
 
-	#navbar > ul > li > .menu-inner {z-index:21;position:absolute;top:60px;left:0;width:100%;}
+	#navbar > ul > li > .menu-inner {z-index:21;position:absolute;top:50px;left:0;width:100%;}
 
 	#navbar > ul > li:hover > .menu-inner, #navbar > ul > li > .menu-inner:hover {display:block;}
 
-	.nav > li {position:static;padding-bottom:10px;}
+	.nav > li {position:static;padding-bottom:6px;}
 
 	.nav-post a, .nav-post span {display:block;}
 	.nav-post img {max-height:126px;}

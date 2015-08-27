@@ -31,7 +31,7 @@
 
 @endif
 
-@include('theme::partials.pixels.pageproofer')
+<?php /* @include('theme::partials.pixels.pageproofer') */ ?>
 
 </body>
 </html>
