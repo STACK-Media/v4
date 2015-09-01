@@ -11,6 +11,8 @@
 |
 */
 
+
+
 $route_verticals = array(
 	'4w',
 	'coaches-and-trainers',
@@ -26,6 +28,7 @@ $route_pages     = array(
 		'controller' => 'HomeController',
 		'function'   => 'index',
 	),
+	/*
 	'api'		=> array(
 		'slug'          => 'api',
 		'controller'	=> 'APIController',
@@ -34,6 +37,7 @@ $route_pages     = array(
 			'service','class','method'
 		)
 	),
+	*/
 	'feed'		=> array(
 		'slug'          => 'feed',
 		'controller'	=> 'RssController',
@@ -177,6 +181,24 @@ foreach ($route_pages as $route_key => $route_arr)
 
 // HACK to make magazine page work without params
 $app->get('magazine',['as' => 'magazine', 'uses' => 'App\Http\Controllers\MagazineController@index']);
+
+
+// API Routes
+$app->group(['prefix' => 'api/v1/esp','namespace' => 'App\Http\Controllers\API\v1\ESP'], function($app) {
+
+	// lead
+	$app->get('lead',			'LeadController@index');
+	$app->get('lead/{id}',		'LeadController@show');
+	$app->post('lead',			'LeadController@create');
+	$app->put('lead/{id}',		'LeadController@update');
+	$app->delete('lead/{id}',	'LeadController@delete');
+
+});
+
+
+
+
+
 
 
 /*
