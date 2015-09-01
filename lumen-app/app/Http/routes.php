@@ -183,7 +183,34 @@ foreach ($route_pages as $route_key => $route_arr)
 $app->get('magazine',['as' => 'magazine', 'uses' => 'App\Http\Controllers\MagazineController@index']);
 
 
-// API Routes
+##########################################################################################
+## API ROUTING
+
+// define all active API routes
+// NOTE: This is not currently used
+$api_routes 	= array(
+	'esp'	=> array(
+		'namespace'	=> 'App\Http\Controllers\API\v1\ESP',
+		'methods'	=> array(
+			'lead'		=> array(
+				'index',
+				'show',
+				'create',
+				'update',
+				'delete'
+			),
+			'template'	=> array(
+				'index',
+				'show',
+				'create',
+				'update',
+				'delete'
+			)
+		)
+	)
+);
+
+// ESP Manager
 $app->group(['prefix' => 'api/v1/esp','namespace' => 'App\Http\Controllers\API\v1\ESP'], function($app) {
 
 	// lead
@@ -192,6 +219,13 @@ $app->group(['prefix' => 'api/v1/esp','namespace' => 'App\Http\Controllers\API\v
 	$app->post('lead',			'LeadController@create');
 	$app->put('lead/{id}',		'LeadController@update');
 	$app->delete('lead/{id}',	'LeadController@delete');
+
+	// template
+	$app->get('template',			'TemplateController@index');
+	$app->get('template/{id}',		'TemplateController@show');
+	$app->post('template',			'TemplateController@create');
+	$app->put('template/{id}',		'TemplateController@update');
+	$app->delete('template/{id}',	'TemplateController@delete');
 
 });
 
