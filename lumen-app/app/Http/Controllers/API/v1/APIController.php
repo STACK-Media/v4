@@ -14,7 +14,7 @@ class APIController extends BaseController {
 
 	public function response($success=TRUE,$response=array())
 	{
-		http_response_code(200);
+		//http_response_code(200);
 
 		$response  	= array(
 			'success'	=> $success,
