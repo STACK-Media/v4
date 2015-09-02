@@ -10,6 +10,12 @@ function validate_email(email)
 
 $(document).ready(function(){
 
+	// if cookie exists, don't display newsletter
+	if ($.cookie('_stack_lead'))
+	{
+		$(".newsletter-optin").html("");
+	}
+
 	// button submit
 	$(".esp-submit").on('click',function(){
 
@@ -52,6 +58,9 @@ function _newsletter_callback(success,data)
 	// show success/fail options
 	if (success == true)
 	{
+		// set cookie
+		$.cookie("_stack_lead",true);
+
 		// show success message
 		$("#newsletter-form").addClass("error");
 		$("#newsletter-form").html(data.email + " has successfully registered for our newsletter.");
