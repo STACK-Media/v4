@@ -14,10 +14,22 @@ class PlaylistController extends VMSController {
 	}
 
 	/* GET: get single */
-	public function show($id,$limit=10)
+	public function show($id)
 	{
 		// grab lead
-		return $this->response(TRUE,'testing');
+		return $this->_format($this->vms->get($id));
+	}
+
+	private function _format($result)
+	{
+		// was lead insertion successful?
+		$success 	= ( ! isset($result['playlist']))? FALSE: TRUE;
+
+		// set final response
+		$response 	= ($success)? $result['playlist']: 'There was an error grabbing playlist information.';
+
+		// return API response
+		return $this->response($success,$response);
 	}
 
 }

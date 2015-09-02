@@ -189,17 +189,25 @@ $app->get('magazine',['as' => 'magazine', 'uses' => 'App\Http\Controllers\Magazi
 // define all active API routes
 // NOTE: This is not currently used
 $api_routes 	= array(
+	'cms'	=> array(
+		'namespace'	=> 'App\Http\Controllers\API\v1\CMS',
+		'methods'	=> array(
+			'article'	=> array(
+				'show'
+			)
+		)
+	),
 	'esp'	=> array(
 		'namespace'	=> 'App\Http\Controllers\API\v1\ESP',
 		'methods'	=> array(
+			'event'		=> array(
+				'trigger'
+			),
 			'lead'		=> array(
 				'show',
 				'create',
 				'update',
 				'delete'
-			),
-			'event'		=> array(
-				'trigger'
 			),
 			'template'	=> array(
 				'send',
@@ -210,7 +218,8 @@ $api_routes 	= array(
 		'namespace'	=> 'App\Http\Controllers\API\v1\VMS',
 		'method'	=> array(
 			'video'		=> array(
-				'show'
+				'show',
+				'search'
 			),
 			'playlist'	=> array(
 				'show'
@@ -222,8 +231,22 @@ $api_routes 	= array(
 	)
 );
 
+// Content Manager
+$app->group(['prefix' => 'api/v1/cms','namespace' => 'App\Http\Controllers\API\v1\CMS', 'middleware' => 'api-auth'], function($app) {
+
+	// article
+	$app->get('article/{slug}',	'ArticleController@show');
+
+	// category
+	// tag
+
+});
+
 // ESP Manager
-$app->group(['prefix' => 'api/v1/esp','namespace' => 'App\Http\Controllers\API\v1\ESP'], function($app) {
+$app->group(['prefix' => 'api/v1/esp','namespace' => 'App\Http\Controllers\API\v1\ESP', 'middleware' => 'api-auth'], function($app) {
+
+	// event
+	$app->post('event',			'EventController@trigger');
 
 	// lead
 	$app->get('lead/{id}',		'LeadController@show');
@@ -234,33 +257,20 @@ $app->group(['prefix' => 'api/v1/esp','namespace' => 'App\Http\Controllers\API\v
 	// template
 	$app->post('template',		'TemplateController@send');
 
-	// event
-	$app->post('event',			'EventController@trigger');
-
 });
 
 // Video Manager
-$app->group(['prefix' => 'api/v1/vms','namespace' => 'App\Http\Controllers\API\v1\VMS'], function($app) {
+$app->group(['prefix' => 'api/v1/vms','namespace' => 'App\Http\Controllers\API\v1\VMS', 'middleware' => 'api-auth'], function($app) {
 
 	// playlist
-	//$app->get('playlist/{id}/{limit}',	'PlaylistController@show');
+	$app->get('playlist/{id}',	'PlaylistController@show');
 
 	// player
-	//$app->get('player/{id}',			'PlayerController@show');
+	$app->get('player/{id}',	'PlayerController@show');
 
 	// video
-	//$app->get('video/{id}',				'VideoController@show');
-
-});
-
-// Content Manager
-$app->group(['prefix' => 'api/v1/cms','namespace' => 'App\Http\Controllers\API\v1\CMS'], function($app) {
-
-	// article
-	$app->get('article/{slug}',	'ArticleController@show');
-
-	// category
-	// tag
+	$app->get('video/{id}',		'VideoController@show');
+	$app->post('video/search',	'VideoController@search');
 
 });
 
