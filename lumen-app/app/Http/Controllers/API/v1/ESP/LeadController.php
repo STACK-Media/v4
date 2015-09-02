@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\API\v1\ESP;
 
 use App\Http\Controllers\API\v1\ESP\ESPController;
-use App\Services\ESPManager;
+use App\Services\ESPmanager;
 use Illuminate\Http\Request;
 
 class LeadController extends ESPController {
