@@ -13,12 +13,11 @@ $(document).ready(function(){
 	// if cookie exists, don't display newsletter
 	// grab all cookies
 	var cookies	 	= document.cookie;
-	alert(cookies);
-	if (cookies.indexOf("_stack_lead"))
+
+	if (cookies.indexOf("_stack_lead") == -1)
 	{
-		alert('remove newsletter');
 		// remove newsletter optin widget from sidebar
-		$(".newsletter-optin").closest('.div').remove();
+		$(".newsletter-optin").closest('.widget').remove();
 	}
 
 	// button submit
@@ -64,8 +63,8 @@ function _newsletter_callback(success,data)
 	if (success == true)
 	{
 		// set cookie
-		$.cookie("_stack_lead",		true);
-		$.cookie("_newsletter_lead",true);
+		document.cookie 	= '_stack_lead=true';
+		document.cookie 	= '_newsletter=true'
 
 		// show success message
 		$("#newsletter-form").addClass("error");
