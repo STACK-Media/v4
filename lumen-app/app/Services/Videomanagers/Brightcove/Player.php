@@ -4,14 +4,8 @@ namespace App\Services\Videomanagers\Brightcove;
 
 class Player extends Brightcove
 {
-	function get($video_id = NULL)
+	function get($video_id)
 	{
-		if ( ! $video_id):
-
-			return FALSE;
-
-		endif;
-
 		return array(
 			'player_name' => 'brightcove',
 			'player_data'  => array(

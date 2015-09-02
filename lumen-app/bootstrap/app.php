@@ -63,9 +63,9 @@ $app->singleton(
 //     // 'Laravel\Lumen\Http\Middleware\VerifyCsrfToken',
 // ]);
 
-// $app->routeMiddleware([
-
-// ]);
+$app->routeMiddleware([
+	'api-auth'	=> 'App\Http\Middleware\APIAuthMiddleware'
+]);
 
 /*
 |--------------------------------------------------------------------------

@@ -218,7 +218,8 @@ $api_routes 	= array(
 		'namespace'	=> 'App\Http\Controllers\API\v1\VMS',
 		'method'	=> array(
 			'video'		=> array(
-				'show'
+				'show',
+				'search'
 			),
 			'playlist'	=> array(
 				'show'
@@ -231,7 +232,7 @@ $api_routes 	= array(
 );
 
 // Content Manager
-$app->group(['prefix' => 'api/v1/cms','namespace' => 'App\Http\Controllers\API\v1\CMS'], function($app) {
+$app->group(['prefix' => 'api/v1/cms','namespace' => 'App\Http\Controllers\API\v1\CMS', 'middleware' => 'api-auth'], function($app) {
 
 	// article
 	$app->get('article/{slug}',	'ArticleController@show');
@@ -242,7 +243,7 @@ $app->group(['prefix' => 'api/v1/cms','namespace' => 'App\Http\Controllers\API\v
 });
 
 // ESP Manager
-$app->group(['prefix' => 'api/v1/esp','namespace' => 'App\Http\Controllers\API\v1\ESP'], function($app) {
+$app->group(['prefix' => 'api/v1/esp','namespace' => 'App\Http\Controllers\API\v1\ESP', 'middleware' => 'api-auth'], function($app) {
 
 	// event
 	$app->post('event',			'EventController@trigger');
@@ -259,16 +260,17 @@ $app->group(['prefix' => 'api/v1/esp','namespace' => 'App\Http\Controllers\API\v
 });
 
 // Video Manager
-$app->group(['prefix' => 'api/v1/vms','namespace' => 'App\Http\Controllers\API\v1\VMS'], function($app) {
+$app->group(['prefix' => 'api/v1/vms','namespace' => 'App\Http\Controllers\API\v1\VMS', 'middleware' => 'api-auth'], function($app) {
 
 	// playlist
-	//$app->get('playlist/{id}/{limit}',	'PlaylistController@show');
+	$app->get('playlist/{id}',	'PlaylistController@show');
 
 	// player
-	//$app->get('player/{id}',				'PlayerController@show');
+	$app->get('player/{id}',	'PlayerController@show');
 
 	// video
-	//$app->get('video/{id}',				'VideoController@show');
+	$app->get('video/{id}',		'VideoController@show');
+	$app->post('video/search',	'VideoController@search');
 
 });
 
