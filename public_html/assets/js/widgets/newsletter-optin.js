@@ -16,6 +16,7 @@ $(document).ready(function(){
 	alert(cookies);
 	if (cookies.indexOf("_stack_lead"))
 	{
+		alert('remove newsletter');
 		// remove newsletter form
 		$(".newsletter-optin").html("");
 	}
