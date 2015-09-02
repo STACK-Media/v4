@@ -252,7 +252,7 @@ $app->group(['prefix' => 'api/v1/esp','namespace' => 'App\Http\Controllers\API\v
 	$app->get('lead/{id}',		'LeadController@show');
 	$app->post('lead',			'LeadController@store');
 	$app->put('lead/{id}',		'LeadController@update');
-	$app->delete('lead/{id}',	'LeadController@delete');
+	//$app->delete('lead/{id}',	'LeadController@delete');
 
 	// template
 	$app->post('template',		'TemplateController@send');

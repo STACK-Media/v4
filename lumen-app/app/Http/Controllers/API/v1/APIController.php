@@ -7,11 +7,6 @@ use Laravel\Lumen\Routing\Controller as BaseController;
 
 class APIController extends BaseController {
 
-	public function __construct()
-	{
-
-	}
-
 	public function response($success=TRUE,$data=array())
 	{
 		//http_response_code(200);

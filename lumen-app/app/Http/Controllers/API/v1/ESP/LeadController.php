@@ -26,8 +26,8 @@ class LeadController extends ESPController {
 		// initialize parameters
 		$params 	= $http->all();
 		$email 		= $params['email'];
-		$vars 		= $params['vars'];
-		$lists 		= $params['lists'];
+		$vars 		= (isset($params['vars']))? $params['vars']: array();
+		$lists 		= (isset($params['lists']))? $params['lists']: array();
 
 		return $this->format($this->lead->Create($email,$vars,$lists));
 	}

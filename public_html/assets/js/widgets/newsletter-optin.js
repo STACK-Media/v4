@@ -8,9 +8,7 @@ function validate_email(email)
 	return false;
 }
 
-(function ($, window) {
-
-	"use strict";
+$(document).ready(function(){
 
 	// button submit
 	$(".esp-submit").on('click',function(){
@@ -26,8 +24,6 @@ function validate_email(email)
 		{
 			// submit form
 			$(".esp-optin").submit();
-			$("#newsletter-form").addClass("error");
-			$("#newsletter-form").html("You have successfully registered for our newsletter.");
 
 		} else {
 
@@ -41,13 +37,31 @@ function validate_email(email)
 	$(".esp-optin").on('submit',function(){
 		
 		// grab form values
-		var serialize 	= JSON.stringify($(this).serialize());
+		var data 		= $(this).serializeArray();
 
-		// submit data to ESP
-
-		// show success message if user has
+		// make API call
+		var success 	= API('esp/lead',data,'POST',_newsletter_callback);
 
 		return false;
 	});
 
-})(window.jQuery, window);
+});
+
+function _newsletter_callback(success,data)
+{
+	// show success/fail options
+	if (success == true)
+	{
+		// show success message
+		$("#newsletter-form").addClass("error");
+		$("#newsletter-form").html(data.email + " has successfully registered for our newsletter.");
+
+	} else {
+
+		// show error message
+		$(".esp-message").html("There was an error adding your email.  Please try again.");
+
+	}
+}
+
+

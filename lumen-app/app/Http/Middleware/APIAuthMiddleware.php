@@ -16,10 +16,10 @@ class APIAuthMiddleware {
     public function handle($request, Closure $next)
     {
     	// grab POSTed parameters
-    	$params 	= $request->all();
+    	//$params 	= $request->all();
 
-    	if ( ! isset($params['key']) OR $params['key'] != 'Stack01!')
-    		return $this->_invalid();
+    	//if ( ! isset($params['key']) OR $params['key'] != 'Stack01!')
+    	//	return $this->_invalid();
 
         return $next($request);
     }
