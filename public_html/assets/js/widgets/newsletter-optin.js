@@ -18,7 +18,7 @@ $(document).ready(function(){
 	{
 		alert('remove newsletter');
 		// remove newsletter optin widget from sidebar
-		$(".newsletter-optin").closest('.section').remove();
+		$(".newsletter-optin").closest('.div').remove();
 	}
 
 	// button submit
