@@ -2,45 +2,26 @@
 
 namespace App\Http\Controllers\API\v1\ESP;
 
-use App\Http\Controllers;
-use Laravel\Lumen\Routing\Controller as BaseController;
-use App\Services\Cacheturbator as Cacher;
-use Request;
+use App\Http\Controllers\API\v1\ESP\ESPController;
+use App\Services\ESPManager;
+use Illuminate\Http\Request;
 
-class TemplateController extends BaseController {
+class TemplateController extends ESPController {
 
 	public function __construct()
 	{
-
-	}
-
-	/* GET: get all */
-	public function index()
-	{
-		echo 'get all templates';
+		$this->template 	= new ESPManager('template');
 	}
 
 	/* GET: get single */
-	public function show($id)
+	public function send(Request $http)
 	{
-		echo 'get template: '.$id;
+		// initialize parameters
+		$params 	= $http->all();
+		$email 		= $params['email'];
+		$template 	= $params['template'];
+
+		return $this->format($this->template->Send($email,$template));
 	}
 
-	/* POST: create new */
-	public function create()
-	{
-		echo 'create new template';
-	}
-
-	/* PUT: update */
-	public function update($id)
-	{
-		echo 'update tempalte: '.$id;
-	}
-
-	/* DELETE:  remove */
-	public function delete($id)
-	{
-		echo 'remove template: '.$id;
-	}
 }

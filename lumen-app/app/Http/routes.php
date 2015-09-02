@@ -193,18 +193,30 @@ $api_routes 	= array(
 		'namespace'	=> 'App\Http\Controllers\API\v1\ESP',
 		'methods'	=> array(
 			'lead'		=> array(
-				'index',
 				'show',
 				'create',
 				'update',
 				'delete'
 			),
+			'event'		=> array(
+				'trigger'
+			),
 			'template'	=> array(
-				'index',
-				'show',
-				'create',
-				'update',
-				'delete'
+				'send',
+			)
+		)
+	),
+	'vms'			=> array(
+		'namespace'	=> 'App\Http\Controllers\API\v1\VMS',
+		'method'	=> array(
+			'video'		=> array(
+				'show'
+			),
+			'playlist'	=> array(
+				'show'
+			),
+			'player'	=> array(
+				'show'
 			)
 		)
 	)
@@ -214,23 +226,43 @@ $api_routes 	= array(
 $app->group(['prefix' => 'api/v1/esp','namespace' => 'App\Http\Controllers\API\v1\ESP'], function($app) {
 
 	// lead
-	$app->get('lead',			'LeadController@index');
 	$app->get('lead/{id}',		'LeadController@show');
-	$app->post('lead',			'LeadController@create');
+	$app->post('lead',			'LeadController@store');
 	$app->put('lead/{id}',		'LeadController@update');
 	$app->delete('lead/{id}',	'LeadController@delete');
 
 	// template
-	$app->get('template',			'TemplateController@index');
-	$app->get('template/{id}',		'TemplateController@show');
-	$app->post('template',			'TemplateController@create');
-	$app->put('template/{id}',		'TemplateController@update');
-	$app->delete('template/{id}',	'TemplateController@delete');
+	$app->post('template',		'TemplateController@send');
+
+	// event
+	$app->post('event',			'EventController@trigger');
 
 });
 
+// Video Manager
+$app->group(['prefix' => 'api/v1/vms','namespace' => 'App\Http\Controllers\API\v1\VMS'], function($app) {
 
+	// playlist
+	//$app->get('playlist/{id}/{limit}',	'PlaylistController@show');
 
+	// player
+	//$app->get('player/{id}',			'PlayerController@show');
+
+	// video
+	//$app->get('video/{id}',				'VideoController@show');
+
+});
+
+// Content Manager
+$app->group(['prefix' => 'api/v1/cms','namespace' => 'App\Http\Controllers\API\v1\CMS'], function($app) {
+
+	// article
+	$app->get('article/{slug}',	'ArticleController@show');
+
+	// category
+	// tag
+
+});
 
 
 

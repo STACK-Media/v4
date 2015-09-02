@@ -12,15 +12,13 @@ class APIController extends BaseController {
 
 	}
 
-	public function response($success=TRUE,$response=array())
+	public function response($success=TRUE,$data=array())
 	{
 		//http_response_code(200);
 
-		$response  	= array(
+		echo json_encode(array(
 			'success'	=> $success,
-			'data'		=> $response
-		);
-
-		echo json_encode($response);
+			'data'		=> $data
+		));
 	}
 }

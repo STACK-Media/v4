@@ -2,45 +2,51 @@
 
 namespace App\Http\Controllers\API\v1\ESP;
 
-use App\Http\Controllers\API\v1\APIController;
+use App\Http\Controllers\API\v1\ESP\ESPController;
 use App\Services\ESPManager;
+use Illuminate\Http\Request;
 
-class LeadController extends APIController {
+class LeadController extends ESPController {
 
 	public function __construct()
 	{
-		$this->_ESP 	= new ESPManager('subscription');
-	}
-
-	/* GET: get all */
-	public function index()
-	{
-		echo 'get all leads';
-		//return $this->response(TRUE,$this->_ESP->Get());
+		$this->lead 	= new ESPManager('subscription');
 	}
 
 	/* GET: get single */
 	public function show($id)
 	{
-		$response 	= $this->_ESP->Get($id);
-		return $this->response((is_array($response)),$response);
+		// grab lead
+		return $this->format($this->lead->Get($id));
 	}
 
 	/* POST: create new */
-	public function create()
+	public function store(Request $http)
 	{
-		return $this->response(TRUE,'create new lead');
+		// initialize parameters
+		$params 	= $http->all();
+		$email 		= $params['email'];
+		$vars 		= $params['vars'];
+		$lists 		= $params['lists'];
+
+		return $this->format($this->lead->Create($email,$vars,$lists));
 	}
 
 	/* PUT: update */
-	public function update($id)
+	public function update(Request $http, $id)
 	{
-		return $this->response(TRUE,'update lead: '.$id);
+		// initialize parameters
+		$params 	= $http->all();
+		$email 		= $params['email'];
+		$vars 		= $params['vars'];
+		$lists 		= $params['lists'];
+
+		return $this->format($this->lead->Update($email,$vars,$lists));
 	}
 
 	/* DELETE:  remove */
 	public function delete($id)
 	{
-		return $this->response(TRUE,'remove lead: '.$id);
+		return $this->format($this->lead->Unsubscribe($id));
 	}
 }

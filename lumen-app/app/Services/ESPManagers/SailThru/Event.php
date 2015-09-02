@@ -17,11 +17,12 @@ class Event extends SailThru
 		$data 		= array(
 			'event'	=> $event,
 			'id'	=> $email,
+			'email'	=> $email,
 			'vars'	=> array(
 				'value'	=> $value
 			)
 		);
-
+		
 		// start job
 		return $this->API($this->_method,$data);
 	}

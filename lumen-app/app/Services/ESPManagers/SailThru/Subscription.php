@@ -40,8 +40,8 @@ class Subscription extends SailThru
 		return $this->Create($email,$vars,$lists);
 	}
 
-	public function Unsubscribe()
+	public function Unsubscribe($email)
 	{
-
+		return TRUE;
 	}
 }
