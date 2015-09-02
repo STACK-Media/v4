@@ -11,8 +11,12 @@ function validate_email(email)
 $(document).ready(function(){
 
 	// if cookie exists, don't display newsletter
-	if ($.cookie('_stack_lead'))
+	// grab all cookies
+	var cookies	 	= document.cookie;
+	alert(cookies);
+	if (cookies.indexOf("_stack_lead"))
 	{
+		// remove newsletter form
 		$(".newsletter-optin").html("");
 	}
 
