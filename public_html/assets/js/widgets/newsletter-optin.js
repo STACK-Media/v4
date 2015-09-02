@@ -59,7 +59,8 @@ function _newsletter_callback(success,data)
 	if (success == true)
 	{
 		// set cookie
-		$.cookie("_stack_lead",true);
+		$.cookie("_stack_lead",		true);
+		$.cookie("_newsletter_lead",true);
 
 		// show success message
 		$("#newsletter-form").addClass("error");
