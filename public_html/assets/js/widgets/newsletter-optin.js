@@ -40,7 +40,7 @@ $(document).ready(function(){
 		var data 		= $(this).serializeArray();
 
 		// make API call
-		var success 	= API('esp/lead',data,'POST',_newsletter_callback);
+		API('esp/lead',data,'POST',_newsletter_callback);
 
 		return false;
 	});
