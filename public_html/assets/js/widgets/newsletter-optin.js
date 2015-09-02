@@ -17,8 +17,8 @@ $(document).ready(function(){
 	if (cookies.indexOf("_stack_lead"))
 	{
 		alert('remove newsletter');
-		// remove newsletter form
-		$(".newsletter-optin").html("");
+		// remove newsletter optin widget from sidebar
+		$(".newsletter-optin").closest('.section').remove();
 	}
 
 	// button submit
