@@ -1,6 +1,8 @@
 {!! Assets::queue('stylesheet', 'global', 	'brightcove', 		'/assets/css/players/brightcove.css') !!}
+{!! Assets::queue('javascript', 'globally', 'brightcove', 		'/assets/js/players/brightcove.js') !!}
+<!--
 {!! Assets::queue('javascript', 'globally', 'brightcove', 		'/assets/js/players/brightcove-async.js') !!}
-<!--{!! Assets::queue('javascript', 'global', 'brightcove-player', 	'//players.brightcove.net/<?php echo $account_id; ?>/<?php echo $player_id; ?>_default/index.min.js') !!}
+{!! Assets::queue('javascript', 'global', 'brightcove-player', 	'//players.brightcove.net/<?php echo $account_id; ?>/<?php echo $player_id; ?>_default/index.min.js') !!}
 {!! Assets::queue('javascript', 'global', 'brightcove-video-js','//players.brightcove.net/<?php echo $account_id; ?>/<?php echo $player_id; ?>_default/node_modules/video.js/dist/video-js/video.js') !!}
 -->
 
@@ -17,5 +19,6 @@
 </div>
 <!-- Brightcove Javascript --
 <script src="//players.brightcove.net/1079349493/<?php echo $player_id; ?>_default/node_modules/video.js/dist/video-js/video.js"></script>
-<script src="//players.brightcove.net/1079349493/<?php echo $player_id; ?>_default/index.min.js"></script>
 -->
+<script src="//players.brightcove.net/1079349493/<?php echo $player_id; ?>_default/index.min.js"></script>
+
