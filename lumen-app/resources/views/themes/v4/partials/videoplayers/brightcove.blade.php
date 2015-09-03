@@ -17,4 +17,4 @@
 </div>
 <!-- Brightcove Javascript --
 <script src="//players.brightcove.net/1079349493/<?php echo $player_id; ?>_default/node_modules/video.js/dist/video-js/video.js"></script>-->
-<script async src="//players.brightcove.net/1079349493/<?php echo $player_id; ?>_default/index.min.js"></script>
+<script src="//players.brightcove.net/1079349493/<?php echo $player_id; ?>_default/index.min.js"></script>
