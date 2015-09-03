@@ -182,6 +182,9 @@ foreach ($route_pages as $route_key => $route_arr)
 // HACK to make magazine page work without params
 $app->get('magazine',['as' => 'magazine', 'uses' => 'App\Http\Controllers\MagazineController@index']);
 
+// MRSS Feeds
+$app->get('mrss/{feed}',['uses' => 'App\Http\Controllers\MRSSController@index']);
+
 
 ##########################################################################################
 ## API ROUTING
