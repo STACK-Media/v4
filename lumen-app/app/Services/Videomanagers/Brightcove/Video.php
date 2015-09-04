@@ -33,7 +33,8 @@ class Video extends Brightcove
 		$params 	= array(
 			'get_item_count'	=> 'true',
 			'sort_by'			=> 'PUBLISH_DATE:DESC',
-			'page_size'			=> '10'
+			'page_size'			=> '10',
+			'media_delivery'	=> 'http'
 		);
 
 		// merge the arrays

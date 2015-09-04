@@ -8,6 +8,40 @@ use App\Models\ContentModels\AbstractArticle;
 
 class ArticleModel extends AbstractArticle
 {
+    public function get_recent($limit=10,$offset=0,$date=FALSE)
+    {
+        // default date
+        if ( ! $date)
+            $date   = date('Y-m-d H:i:s');
+
+        return DB::table('wp_posts')
+            ->select(
+                'wp_posts.id', 
+                'wp_posts.post_title AS name',
+                'wp_posts.post_name AS slug',
+                'wp_posts.post_status', 
+                'wp_posts.post_date', 
+                'wp_posts.post_content', 
+                'wp_posts.guid AS guid',
+                'wp_posts.post_excerpt AS description',
+                'wp_users.user_nicename AS author_user',
+                'wp_users.display_name AS author_name',
+                'wp_users.user_url AS author_url',
+                'wp_users.user_email AS author_email',
+                'wp_users.ID AS author_id'
+            )
+            ->join(
+                'wp_users', 
+                'wp_posts.post_author', '=', 'wp_users.ID'
+            )
+            ->where('wp_posts.post_date','<',$date)
+            ->where('wp_posts.post_status','publish')
+            ->orderBy('wp_posts.post_date','desc')
+            ->skip($offset)
+            ->take($limit)
+            ->get();
+    }
+
 	public function get_by_id($id, $statuses = array('publish'))
 	{
 		return DB::table('wp_posts')
