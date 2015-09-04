@@ -208,7 +208,7 @@ class MRSSController extends BaseController
                     'link'      => $value['link'],
                     'title'     => $title,
                     'guid'      => array(
-                        'value'         => $value['id'].'?utm_source=yahoo&utm_medium=mrss',
+                        'value'         => $value['id'],
                         'isPermalink'   => 'false'
                     ),
                     'pubDate'   => date('D, d M Y H:i:s +0000',($value['publishedDate']/1000)),
