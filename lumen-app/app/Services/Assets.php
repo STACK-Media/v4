@@ -21,6 +21,9 @@ class Assets extends Service {
 	static function get_queued($type)
 	{
 
+		$environment     = app()->environment();
+		$default_attribs = array();
+
 		$funcs = array(
 			'stylesheet' => 'stylesheet',
 			'javascript' => 'javascript',
@@ -39,9 +42,15 @@ class Assets extends Service {
 
 		foreach ($queued as $key => $array):
 
+			if ($environment == 'local'):
+
+				$default_attribs = array('data-grp' => $array['group']);
+
+			endif;
+
 			$groups[$array['group']]['scripts'][] = $array['src'];
 
-			$groups[$array['group']]['attribs']   = (isset($groups[$array['group']]['attribs']) ? $groups[$array['group']]['attribs'] : array());
+			$groups[$array['group']]['attribs']   = (isset($groups[$array['group']]['attribs']) ? $groups[$array['group']]['attribs'] : $default_attribs);
 
 			if (isset($array['custom']) && is_array($array['custom'])):
 
