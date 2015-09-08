@@ -45,6 +45,23 @@ class TaxonomyPage extends Page
 
 		$category['meta'] = $cms->get_metadata($category['term_id']);
 
+		// set player vars in page object
+		if (isset($category['meta']['stackvideoid'])):
+
+			$playerservice 	= new Videomanager('player');
+
+			$video_id 		= '4384563185001';//$category['meta']['stackvideoid'];
+
+			$player   		= $playerservice->get($video_id);
+
+			if ($player):
+
+				$this->_object->player = $player;
+
+			endif;
+
+		endif;
+
 
 		$this->_object->taxonomy = array(
 			$this->_object->taxonomy => array(

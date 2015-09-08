@@ -3,10 +3,17 @@
 
 @section('content')
 
-<h1>{!! $page->name !!}</h1>
-<p>{!! $page->description !!}</p>
+	<div>
 
-<strong style="display:block;text-align:center;padding:0 20px;text-transform:uppercase;font-size:18px;">put video here</strong>
+		<h1>{!! $page->name !!}</h1>
+		<p>{!! $page->description !!}</p>
 
+		@if(@$page->player)
+
+			@include('theme::partials.videoplayers.'.$page->player['player_name'], $page->player['player_data'])
+
+		@endif
+
+	</div>
 
 @stop
