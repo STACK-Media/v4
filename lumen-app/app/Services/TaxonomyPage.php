@@ -50,7 +50,7 @@ class TaxonomyPage extends Page
 
 			$playerservice 	= new Videomanager('player');
 
-			$video_id 		= '4384563185001';//$category['meta']['stackvideoid'];
+			$video_id 		= $category['meta']['stackvideoid'];
 
 			$player   		= $playerservice->get($video_id);
 
