@@ -7,6 +7,8 @@ class Video extends Brightcove
 	function get($video_id = NULL)
 	{
 
+
+
 		if ( ! $video_id):
 
 			return NULL;
@@ -49,6 +51,26 @@ class Video extends Brightcove
 			'page_size'		=> $videos['page_size'],
 			'total_count'	=> $videos['total_count']
 		);
+	}
+
+	public function latest_by_category($category,$limit=5,$page=0)
+	{
+		// initialzie variables
+		$params 				= array();
+
+		// add category to params
+		$params['any'][]		= 'maincategory:'.urlencode($category);
+		$params['any'][]		= 'subcategory:'.urlencode($category);
+
+		// set additional params
+		$params['page_size']	= $limit;
+		$params['page_number']	= $page;
+
+		// get the videos
+		$videos 				= $this->search($params);
+
+		// return videos
+		return (isset($videos['videos']))? $videos['videos']: array();
 	}
 
 	

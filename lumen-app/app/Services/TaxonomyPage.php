@@ -45,23 +45,9 @@ class TaxonomyPage extends Page
 
 		$category['meta'] = $cms->get_metadata($category['term_id']);
 
-		// set player vars in page object
-		if (isset($category['meta']['stackvideoid'])):
-
-			$playerservice 	= new Videomanager('player');
-
-			$video_id 		= $category['meta']['stackvideoid'];
-
-			$player   		= $playerservice->get($video_id);
-
-			if ($player):
-
-				$this->_object->player = $player;
-
-			endif;
-
-		endif;
-
+		// set latest videos & player objects
+		$this->_object->latest 	= $this->_latest_videos_object();
+		$this->_object->player 	= $this->_player_object();
 
 		$this->_object->taxonomy = array(
 			$this->_object->taxonomy => array(
@@ -74,5 +60,29 @@ class TaxonomyPage extends Page
 
 	}
 
-	
+	private function _latest_videos_object()
+	{
+		################
+		## [START] Get Latest Videos to power video player (for some stupid reason)
+		$manager 				= new Videomanager('video');
+
+		// grab page number (default to 0)
+		$pg_num 		= (isset($this->_object->page_number))? $this->_object->page_number: 0;
+
+		// set latest videos object
+		return $manager->latest_by_category($this->_object->name,5,$pg_num);
+	}
+
+	private function _player_object()
+	{
+		// load services 
+		$manager  	= new Videomanager('player');
+
+		// initialize variables
+		// TODO: This method assumes this ID exists - is that ok?
+		$video_id 	= $this->_object->latest[0]['id'];
+
+		// return player object
+		return $manager->get($video_id);
+	}
 } 
