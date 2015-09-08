@@ -49,6 +49,7 @@ class TaxonomyPage extends Page
 		$this->_object->latest 	= $this->_latest_videos_object();
 		$this->_object->player 	= $this->_player_object();
 
+
 		$this->_object->taxonomy = array(
 			$this->_object->taxonomy => array(
 				(object) $category
