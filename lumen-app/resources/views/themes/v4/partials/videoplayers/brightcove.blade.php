@@ -1,34 +1,24 @@
+{!! Assets::queue('stylesheet', 'global', 	'brightcove', 		'/assets/css/players/brightcove.css') !!}
+{!! Assets::queue('javascript', 'globally', 'brightcove', 		'/assets/js/players/brightcove.js') !!}
+<!--
+{!! Assets::queue('javascript', 'globally', 'brightcove', 		'/assets/js/players/brightcove-async.js') !!}
+{!! Assets::queue('javascript', 'global', 'brightcove-player', 	'//players.brightcove.net/<?php echo $account_id; ?>/<?php echo $player_id; ?>_default/index.min.js') !!}
+{!! Assets::queue('javascript', 'global', 'brightcove-video-js','//players.brightcove.net/<?php echo $account_id; ?>/<?php echo $player_id; ?>_default/node_modules/video.js/dist/video-js/video.js') !!}
+-->
 
-{!! Assets::queue('stylesheet', 'global', 'brightcove', '/assets/widgets/css/brightcove.css') !!}
+<div class="outer">
+	<video
+		id 				= "{!! $player_key !!}"
+		data-account	= "{!! $account_id !!}"
+		data-player		= "{!! $player_id !!}"
+		data-video-id 	= "{!! $video_id !!}" 
+		data-embed		= "default"
+		class 			= "video-js" 
+		controls>
+	</video>
+</div>
+<!-- Brightcove Javascript --
+<script src="//players.brightcove.net/1079349493/<?php echo $player_id; ?>_default/node_modules/video.js/dist/video-js/video.js"></script>
+-->
+<script src="//players.brightcove.net/1079349493/<?php echo $player_id; ?>_default/index.min.js"></script>
 
-{!! Assets::queue('javascript', 'global', 'brightcove', '/assets/widgets/js/brightcove.js') !!}
-
-{!! Assets::queue('javascript', 'global', 'bcexperiences', '//admin.brightcove.com/js/BrightcoveExperiences.js') !!}
-
-
-
-    <div class="bcove-outer-container">
-
-		<object id="myExperienceMediaPlayer" class="BrightcoveExperience">
-			<param name="bgcolor" value="#FFFFFF" />
-			<param name="width" value="692" />
-			<param name="height" value="389" />
-			<param name="playerID" value="{!! $player_id !!}" />
-			<param name="playerKey" value="{!! $player_key !!}" />
-			<param name="@videoPlayer" value="{!! $video_id !!}" />
-			<param name="isVid" value="true" />
-			<param name="isUI" value="true" />
-			<param name="autoStart" value="true" />
-			<param name="dynamicStreaming" value="true" />
-			<param name="includeAPI" value="true" />
-			<param name="templateLoadHandler" value="onTemplateLoaded" />
-			<param name="templateReadyHandler" value="onTemplateReady" />										  
-		</object>
-
-	</div>
-
-
-<?php /*
-<script type="text/javascript">brightcove.createExperiences();</script>
-*/ ?>
-<!-- End of Brightcove Player -->

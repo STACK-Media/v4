@@ -293,3 +293,8 @@ nav.navbar {margin-bottom:0;}
 	.nav .menu-item-guidedsearch {display:none;}
 }
 
+.error {
+	font-weight:	bold;
+	color: 			red;
+}
+

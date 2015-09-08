@@ -1,3 +1,36 @@
+function get_device_type()
+{
+	return (is_phone()) ? 'phone' : 'desktop';
+}
+
+function is_phone()
+{
+
+	var matches_phone = window.matchMedia("only screen and (max-width: 768px)");
+
+	return matches_phone.matches;
+
+}
+
+function init_nav(device)
+{
+
+	var resize_device = get_device_type();
+
+	if (resize_device !== device){
+
+		if (resize_device == 'phone')
+		{
+
+			//$('#navbar').hide();
+
+		}
+
+	}
+
+	return resize_device;
+
+}
 
 (function ($, window) {
 
@@ -53,37 +86,3 @@
 	// on window.resize, re-evaluate is_phone
 
 })(window.jQuery, window);
-
-function get_device_type()
-{
-	return (is_phone()) ? 'phone' : 'desktop';
-}
-
-function is_phone()
-{
-
-	var matches_phone = window.matchMedia("only screen and (max-width: 768px)");
-
-	return matches_phone.matches;
-
-}
-
-function init_nav(device)
-{
-
-	var resize_device = get_device_type();
-
-	if (resize_device !== device){
-
-		if (resize_device == 'phone')
-		{
-
-			//$('#navbar').hide();
-
-		}
-
-	}
-
-	return resize_device;
-
-}

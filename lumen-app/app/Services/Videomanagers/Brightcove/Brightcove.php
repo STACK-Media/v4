@@ -123,7 +123,7 @@ class Brightcove extends Manager
 		$video->link = routelink('video', array('id' => $video->id, 'slug' => $video->slug));
 
 		$remove = array(
-			'renditions',
+			//'renditions',
 			'FLVFullLength',
 			'videoFullLength'
 		);
@@ -154,7 +154,7 @@ class Brightcove extends Manager
 		$video['link'] = routelink('video', array('id' => $video['id'], 'slug' => $video['slug']));
 
 		$remove = array(
-			'renditions',
+			//'renditions',
 			'FLVFullLength',
 			'videoFullLength'
 		);

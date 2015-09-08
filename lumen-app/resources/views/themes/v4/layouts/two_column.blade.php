@@ -126,9 +126,14 @@
 	</div>
 
 @stop
+@section('modal')
+	
+	@include('theme::partials.modal')
+
+@stop
 @yield('header')
 @yield('banner-bg')
-	
+
 <header role="banner">
 	
 	@yield('navbar')
@@ -176,5 +181,7 @@
 	</div>	
 
 </div>
+
+@yield('modal');
 
 @include('theme::partials.footer')

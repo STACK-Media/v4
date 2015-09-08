@@ -179,6 +179,26 @@ class Article extends Wordpress
 		return $this->_model->trending();
 	}
 
+	public function get_recent($limit=5,$offset=0,$date=FALSE)
+	{
+		// validation
+		$content 	= array();
+
+		// get articles
+		$articles 	= $this->_model->get_recent($limit,$offset,$date);
+
+		// format articles
+		foreach ($articles AS $article):
+
+			$article->image 	= $this->get_featured_image_by_post_id($article->id);
+
+			$content[] 			= $article;//$this->_add_metacontent($article);
+
+		endforeach;
+
+		return $content;
+	}
+
 	public function get_by_category_id($id,$limit=5,$offset=0,$date=FALSE)
 	{
 		// validation
