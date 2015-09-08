@@ -8,13 +8,15 @@ class TaxonomyController extends PageController
     function index($type = 'category', $slug = NULL)
     {
 
+        $page_data = array();
+
         $this->_set_page_object(new TaxonomyPage(array(
             'type'            => $type,
             'identifier'      => $slug,
             'identifier_type' => 'slug'
         )));
 
-        $page_data['widgets'] = $this->_get_widgets($type);
+        //$page_data['widgets'] = $this->_get_widgets($type);
         
     	return $this->_load_page_view('category', $page_data);
     }

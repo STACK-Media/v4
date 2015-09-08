@@ -10,14 +10,15 @@ class ArticleController extends PageController
     function index($slug)
     {
 
-        $status = 'publish';
+        $status    = 'publish';
+        $page_data = array();
 
         $this->_set_page_object(new ArticlePage(array(
             'slug' => $slug, 
             'type' => $status
         )));
 
-        $page_data['widgets'] = $this->_get_widgets('article');
+        //$page_data['widgets'] = $this->_get_widgets('article');
 
         return $this->_load_page_view('article', $page_data);
     }
