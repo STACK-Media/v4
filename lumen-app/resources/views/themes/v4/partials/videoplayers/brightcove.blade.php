@@ -1,5 +1,5 @@
 {!! Assets::queue('stylesheet', 'global', 	'brightcove', 		'/assets/css/players/brightcove.css') !!}
-{!! Assets::queue('javascript', 'globally', 'brightcove', 		'/assets/js/players/brightcove.js') !!}
+{!! Assets::queue('javascript', 'global', 'brightcove', 		'/assets/js/players/brightcove.js') !!}
 <!--
 {!! Assets::queue('javascript', 'globally', 'brightcove', 		'/assets/js/players/brightcove-async.js') !!}
 {!! Assets::queue('javascript', 'global', 'brightcove-player', 	'//players.brightcove.net/<?php echo $account_id; ?>/<?php echo $player_id; ?>_default/index.min.js') !!}

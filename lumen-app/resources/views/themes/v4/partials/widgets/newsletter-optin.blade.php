@@ -1,5 +1,5 @@
 {!! Assets::queue('stylesheet', 'widgets', 	'newsletter', 	'/assets/css/widgets/newsletter-optin.css') !!}
-{!! Assets::queue('javascript', 'globally', 'api', 			'/assets/js/api.js') !!}
+{!! Assets::queue('javascript', 'global', 'api', 			'/assets/js/api.js') !!}
 {!! Assets::queue('javascript', 'widgets', 	'newsletter', 	'/assets/js/widgets/newsletter-optin.js') !!}
 
 <div class="row">

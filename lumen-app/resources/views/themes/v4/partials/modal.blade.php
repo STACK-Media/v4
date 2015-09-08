@@ -1,4 +1,4 @@
-{!! Assets::queue('javascript', 'globally', 'modal', '/assets/js/modal.js') !!}
+{!! Assets::queue('javascript', 'global', 'modal', '/assets/js/modal.js') !!}
 
 <div class="modal fade" id="modal" role="dialog">
 	<div class="modal-dialog">

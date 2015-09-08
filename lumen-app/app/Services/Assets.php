@@ -44,11 +44,11 @@ class Assets extends Service {
 
 			if ($environment == 'local'):
 
-				$default_attribs = array('data-grp' => $array['group']);
+				$default_attribs = array('grp' => $array['group']);
 
 			endif;
 
-			$groups[$array['group']]['scripts'][] = $array['src'];
+			$groups[$array['group']]['scripts'][$key] = $array['src'];
 
 			$groups[$array['group']]['attribs']   = (isset($groups[$array['group']]['attribs']) ? $groups[$array['group']]['attribs'] : $default_attribs);
 
@@ -62,6 +62,13 @@ class Assets extends Service {
 
 
 		if (array_key_exists('global', $groups)):
+
+			if (array_key_exists('scripts', $groups['global']) && array_key_exists('jquery', $groups['global']['scripts'])):
+
+				// want jquery first in javascript list for dependencies
+				$groups['global']['scripts'] = array('jquery' => $groups['global']['scripts']['jquery']) + $groups['global']['scripts'];
+
+			endif;
 
 			// want global stuff first
 			$groups = array('global' => $groups['global']) + $groups;
