@@ -61,7 +61,7 @@ class MRSSController extends BaseController
     			$response[]	= array(
     				'id' 		=> $value['id'],
     				'title'		=> $title,
-    				'link' 		=> $value['link'].'?utm_source=cbs&utm_medium=mrss',
+    				'link' 		=> urlencode($value['link'].'?utm_source=cbs&utm_medium=mrss'),
     				'published'	=> date('D, d M Y H:i:s +0000',($value['publishedDate']/1000)),
     				'media'		=> array(
     					'content'		=> array(
