@@ -6,7 +6,7 @@
 
 		<h3>Latest Videos <?php echo ($category) ? 'in ' . implode(' & ',$category) : ''; ?></h3>
 
-		@foreach($videos['videos'] as $key => $video)
+		@foreach($videos as $key => $video)
 
 			@include('theme::partials.block',
 				array(
