@@ -42,7 +42,7 @@ return array(
 
 			)
 		),
-		'homepage'	=> array(
+		'home'	=> array(
 			'content'		=> array(
 				//'latest',
 				'latest-articles',
