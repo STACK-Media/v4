@@ -75,6 +75,20 @@ return array(
 			),
 			'post_content'	=> array()
 		),
+		'page' => array(
+			'content' => array(
+				
+			),
+			'sidebar' => array(
+				'featured-videos',
+				'velocity-sidebar',
+				'popular-videos',
+				'trending-block',
+			),
+			'post_content' => array(
+
+			)
+		),
 		'resources'	=> array(
 			'content'		=> array(),
 			'sidebar'		=> array(

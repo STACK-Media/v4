@@ -1,20 +1,21 @@
 <?php namespace App\Services;
 
-class ArticlePage extends Page
+class ContentPage extends Page
 {
 
 	function __construct($args = array())
 	{
 		$paramlist = array(
-			'slug' => NULL, 
-			'type' => 'publish'
+			'slug' 	=> NULL, 
+			'type' 	=> 'publish',
+			'page'	=> 'article'
 		);
 		
 		$args      = array_merge($paramlist, $args);
 		extract($args);
 
-		$articlecms    = new Contentmanager('article');
-		$this->_object = $articlecms->get_by_slug($slug, $type);
+		$contentcms    = new Contentmanager($page);
+		$this->_object = $contentcms->get_by_slug($slug, $type);
 
 		$video_key     = config('videomanager.article_meta_key');
 
