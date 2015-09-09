@@ -56,7 +56,7 @@ $route_pages     = array(
 	),
 	'article' => array(
 		'slug'       => 'a',
-		'controller' => 'ArticleController',
+		'controller' => 'ContentController',
 		'function'   => 'index',
 		'params'     => array(
 			'slug'
@@ -141,8 +141,8 @@ $route_pages     = array(
 	),
 	'page' => array(
 		'slug'       => 'p',
-		'controller' => 'TaxonomyController',
-		'function'   => 'tag',
+		'controller' => 'ContentController',
+		'function'   => 'page',
 		'params'     => array(
 			'slug'
 		)
