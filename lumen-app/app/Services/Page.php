@@ -43,16 +43,6 @@ abstract class Page extends Service
 
 		$this->_object = (object) array_merge($required, (array) $this->_object);
 
-		$navservice    = new Contentmanager('navigation');
-
-		$this->_object->nav = $navservice->get(array(
-			'type'     => $this->_object->page_type,
-			'name'     => $this->_object->name,
-			'id'       => $this->_object->id,
-			'subtheme' => config('theming.subtheme'),
-			'theme'    => config('theme.theme')
-		));
-
 		return TRUE;
 	}
 

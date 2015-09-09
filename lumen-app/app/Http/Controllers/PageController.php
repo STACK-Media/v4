@@ -3,6 +3,7 @@
 use Laravel\Lumen\Routing\Controller as BaseController;
 use App\Services\Cacheturbator as Cacher;
 use App\Services\Widgets;
+use App\Services\Contentmanager;
 use Request;
 
 class PageController extends BaseController
@@ -84,9 +85,30 @@ class PageController extends BaseController
 	protected function _load_page_view($page_view, $page_data = array())
 	{
 
-		$page_data['page'] = $this->_page_object;
+		$page_data['page']    = $this->_page_object;
+		$page_data['nav']     = $this->_get_nav();
+		$page_data['promos']  = $this->_get_promos();
+		$page_data['widgets'] = $this->_get_widgets();
 
 		return response(view('theme::'.$page_view, $page_data), 200)->header('Content-type', 'text/html; charset=UTF-8', TRUE);
+	}
+
+	protected function _get_promos()
+	{
+
+	}
+
+	protected function _get_nav()
+	{
+		$navservice    = new Contentmanager('navigation');
+
+		return $navservice->get(array(
+			'type'     => $this->_page_object->page_type,
+			'name'     => $this->_page_object->name,
+			'id'       => $this->_page_object->id,
+			'subtheme' => config('theming.subtheme'),
+			'theme'    => config('theme.theme')
+		));
 	}
 
 
@@ -102,11 +124,12 @@ class PageController extends BaseController
 
 	}
 
-	protected function _get_widgets($page_type)
+	protected function _get_widgets()
 	{
+
 		$widget_service = new Cacher(new Widgets());
 
-		$widget_config  = $widget_service->get_list($page_type, $this->_page_object);
+		$widget_config  = $widget_service->get_list($this->_page_object->page_type, $this->_page_object);
 
 		$widget_array   = array();
 

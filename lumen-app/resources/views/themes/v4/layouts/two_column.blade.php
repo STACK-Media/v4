@@ -126,12 +126,17 @@
 	</div>
 
 @stop
+
+<?php /*
 @section('modal')
 	
 	@include('theme::partials.modal')
 
 @stop
+*/ ?>
+
 @yield('header')
+
 @yield('banner-bg')
 
 <header role="banner">
@@ -182,6 +187,8 @@
 
 </div>
 
+<?php /*
 @yield('modal');
+*/ ?>
 
 @include('theme::partials.footer')

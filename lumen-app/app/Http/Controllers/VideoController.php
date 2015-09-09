@@ -9,7 +9,8 @@ class VideoController extends PageController
     function index($id, $slug = NULL)
     {
 
-    	$status = 'publish';
+    	$status    = 'publish';
+        $page_data = array();
 
         $args = array(
             'id'   => $id, 
@@ -26,8 +27,8 @@ class VideoController extends PageController
 
         endif;
 
-        $page_data['widgets'] = $this->_get_widgets('video');
+        //$page_data['widgets'] = $this->_get_widgets('video');
 
-    	return $this->_load_page_view('video', array());
+    	return $this->_load_page_view('video', $page_data);
     }
 } 

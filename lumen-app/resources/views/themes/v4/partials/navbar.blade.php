@@ -67,7 +67,7 @@
 
 				<ul class="nav navbar-nav">
 				
-					@foreach($page->nav as $menu)
+					@foreach($nav as $menu)
 					
 						<?php 
 
