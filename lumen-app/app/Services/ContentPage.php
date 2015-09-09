@@ -14,9 +14,13 @@ class ContentPage extends Page
 		$args      = array_merge($paramlist, $args);
 		extract($args);
 
+		// grab content manager based on page type
 		$contentcms    = new Contentmanager($page);
+
+		// grab content
 		$this->_object = $contentcms->get_by_slug($slug, $type);
 
+		// this if for article page type (doesnt hurt to be here, though)
 		$video_key     = config('videomanager.article_meta_key');
 
 		if ( ! is_object($this->_object)):
