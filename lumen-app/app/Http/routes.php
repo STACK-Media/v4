@@ -88,6 +88,17 @@ $route_pages     = array(
 			'issue'
 		)
 	),
+	'marketing' => array(
+		'slug'       => 'marketing',
+		'controller' => 'MarketingController',
+		'function'   => 'index',
+		'params'     => array(
+			'slug',
+			'player',
+			'playlist',
+			'video'
+		)
+	),
 	'resources' => array(
 		'slug'       => 'resources',
 		'controller' => 'ResourcesController',
