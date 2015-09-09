@@ -21,11 +21,14 @@ class Promotions extends Service {
 
 		foreach ($this->cfg['groups'] as $gkey => $group):
 
+			/*
 			if (isset($group['type']) && $group['type'] == 'random'):
 
+				// remove, make randomize JS side
 				$group['creatives'] = $this->_shuffle_assoc($group['creatives']);
 
 			endif;
+			*/
 
 			foreach ($group['creatives'] as $ckey => $creative):
 
@@ -94,7 +97,9 @@ class Promotions extends Service {
 					$remove = array('js', 'views', 'whitelist', 'blacklist');
 					$remove = array_combine($remove, array_fill(0, count($remove), NULL));
 
-					$promos[$gkey][$ckey] = array_diff_key($creative, $remove);
+					$promos[$gkey]['type']             = $group['type'];
+					$promos[$gkey]['frequency']        = $group['frequency'];
+					$promos[$gkey]['creatives'][$ckey] = array_diff_key($creative, $remove);
 
 				endif;
 

@@ -101,7 +101,6 @@ class PageController extends BaseController
 
 		return $promo_service->get_for_page($this->_page_object);
 
-
 	}
 
 	protected function _get_nav()

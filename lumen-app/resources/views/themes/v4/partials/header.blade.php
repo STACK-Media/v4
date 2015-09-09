@@ -41,7 +41,8 @@
 			var pageinfo = {
 				url: "{!! preg_replace('#^https?://#', '', str_replace('v4.','www.',str_replace('.v4','.com',Request::url()))) !!}",
 				type: "{!! $page->page_type !!}",
-				taxonomy: {!! json_encode($jstax) !!}
+				taxonomy: {!! json_encode($jstax) !!},
+				promos: {!! json_encode($promos) !!}
 			};
 
 		</script>

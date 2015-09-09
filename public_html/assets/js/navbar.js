@@ -1,8 +1,3 @@
-function get_device_type()
-{
-	return (is_phone()) ? 'phone' : 'desktop';
-}
-
 function is_phone()
 {
 
@@ -10,6 +5,11 @@ function is_phone()
 
 	return matches_phone.matches;
 
+}
+
+function get_device_type()
+{
+	return (is_phone()) ? 'phone' : 'desktop';
 }
 
 function init_nav(device)
