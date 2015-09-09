@@ -36,8 +36,6 @@ class Playlist extends Brightcove
 
 		endforeach;
 
-		return array(
-			'playlist'	=> $playlist
-		);
+		return $playlist;
 	}
 }
