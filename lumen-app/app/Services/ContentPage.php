@@ -20,8 +20,8 @@ class ContentPage extends Page
 		// grab content
 		$this->_object = $contentcms->get_by_slug($slug, $type);
 
-		// this if for article page type (doesnt hurt to be here, though)
-		$video_key     = config('videomanager.article_meta_key');
+		// explicitly set page type
+		$this->_object->page_type 	= $page;
 
 		if ( ! is_object($this->_object)):
 
@@ -29,22 +29,31 @@ class ContentPage extends Page
 
 		endif;
 
+		// this if for article page type (doesnt hurt to be here, though)
+		$video_key     = 'top_video_id';//config('videomanager.article_meta_key');
+
+		## Get Video Data
 		if (property_exists($this->_object, 'meta') && array_key_exists($video_key, $this->_object->meta)):
 
+			// load the service needed
 			$playerservice = new Videomanager('player');
 
+			// grab video id
 			$video_id = $this->_object->meta[$video_key];
 
+			// get player
 			$player   = $playerservice->get($video_id);
 
 			if ($player):
 
+				// set player objet
 				$this->_object->player = $player;
 
 			endif;
 
 		endif;
 
+		## Author Data
 		if (property_exists($this->_object, 'author')):
 
 			// initilaize content user manager
@@ -55,8 +64,6 @@ class ContentPage extends Page
 
 		endif;
 
-		// explicitely set page type
-		$this->_object->page_type 	= $page;
 
 		return parent::__construct();
 	}
