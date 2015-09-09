@@ -65,7 +65,7 @@
 
 		<div id="article_content">
 
-			@if(@$page->video)
+			@if(@$page->player)
 		
 				@include('theme::partials.videoplayers.'.$page->player['player_name'], $page->player['player_data'])
 
