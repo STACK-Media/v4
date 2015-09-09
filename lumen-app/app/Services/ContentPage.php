@@ -55,6 +55,9 @@ class ContentPage extends Page
 
 		endif;
 
+		// explicitely set page type
+		$this->_object->page_type 	= $page;
+
 		return parent::__construct();
 	}
 

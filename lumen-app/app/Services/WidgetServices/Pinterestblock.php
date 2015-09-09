@@ -14,6 +14,7 @@ class Pinterestblock extends WidgetService
 		// initialzie variables
 		$categories	= (isset($page->taxonomy['category']) AND is_array($page->taxonomy['category']))? $page->taxonomy['category']: array();
 		$pg_num 	= (isset($page->page_number))? $page->page_number: 0;
+		$pinterest 	= array();
 		$category 	= array();
 		$articles 	= array();
 		$limit 		= 20;

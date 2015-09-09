@@ -116,6 +116,7 @@ class Relatedlinks extends WidgetService
 
 		// initialzie variables
 		$tags		= (isset($this->page->taxonomy['post_tag']) AND is_array($this->page->taxonomy['post_tag']))? $this->page->taxonomy['post_tag']: array();
+		$tag 		= '';
 		$category 	= '';
 		$articles 	= array();
 		$limit 		= 5;

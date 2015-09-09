@@ -17,9 +17,9 @@ class ContentController extends PageController
             'page'  => 'article'
         )));
 
-        $page_data['widgets'] = $this->_get_widgets('article');
+        //$page_data['widgets'] = $this->_get_widgets('article');
 
-        return $this->_load_page_view('article', $page_data);
+        return $this->_load_page_view('article', array());
     }
 
     public function page($slug)
@@ -32,9 +32,9 @@ class ContentController extends PageController
             'page'  => 'page'
         )));
 
-        $page_data['widgets'] = $this->_get_widgets('page');
+        //$page_data['widgets'] = $this->_get_widgets('page');
 
-        return $this->_load_page_view('page', $page_data);
+        return $this->_load_page_view('page', array());
     }
 
 } 
