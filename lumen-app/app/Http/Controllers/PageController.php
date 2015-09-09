@@ -3,6 +3,7 @@
 use Laravel\Lumen\Routing\Controller as BaseController;
 use App\Services\Cacheturbator as Cacher;
 use App\Services\Widgets;
+use App\Services\Promotions;
 use App\Services\Contentmanager;
 use Request;
 
@@ -95,6 +96,11 @@ class PageController extends BaseController
 
 	protected function _get_promos()
 	{
+
+		$promo_service = new Cacher(new Promotions());
+
+		return $promo_service->get_for_page($this->_page_object);
+
 
 	}
 
