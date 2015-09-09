@@ -1,0 +1,26 @@
+.panel {
+	background-color: 	#000 !important;
+	color: 				#FFF !important;
+}
+.video32 h3 {
+	color: 			#FFF;
+	font-weight: 	bold;
+	font-size: 		11pt;
+}
+.video32 img {
+	min-height: 	84px;
+	min-width: 		145px;
+}
+.video32 .views {
+	color: 			gray;
+	font-size: 		9pt;
+}
+
+.video32 .thumbnails {
+	min-width: 	300px;
+}
+
+.video32 .thumbnails .block {
+	padding-bottom: 	10px;
+	min-width: 			350px;
+}

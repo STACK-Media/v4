@@ -13,7 +13,9 @@ class Featuredvideos extends WidgetService
 		// for now, we hard code the playlist
 		$id 	  = '4131748612001';
 
-		return $playlist->get($id, 8); // need to add some arguments
+		return array(
+			'playlist'	=> $playlist->get($id, 8)
+		);
 	}
 
 }

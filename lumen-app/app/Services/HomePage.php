@@ -21,7 +21,7 @@ class HomePage extends Page
 		$playlist 			= $playlistservice->get($playlist_id);
 
 		// set video (1st id in the playlist)
-		$videos 			= $playlist['playlist']['videos'][0];
+		$videos 			= $playlist['videos'][0];
 
 		// grab player information
 		## TODO: The player service needs updated to allow page template (that should determine player - right?)
@@ -35,7 +35,7 @@ class HomePage extends Page
 		$this->_object->id        = '1';
 
 		$this->_object->player    = $player;
-		$this->_object->playlist  = $playlist['playlist'];
+		$this->_object->playlist  = $playlist;
 		$this->_object->video     = $videos;
 
 		return parent::__construct();

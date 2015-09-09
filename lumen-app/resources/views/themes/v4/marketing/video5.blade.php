@@ -1,5 +1,6 @@
 @extends('theme::layouts.marketing.two_column')
 
+{!! Assets::queue('stylesheet', 'layout', 'article', '/assets/css/marketing/video5.css') !!}
 
 @section('content')
 
