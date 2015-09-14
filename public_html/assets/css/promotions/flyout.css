@@ -1,0 +1,4 @@
+#flyout {bottom:0;right:0;position:absolute;display:none;position:fixed;z-index:500;width:420px;}
+#flyout img {border:2px solid #fff;box-shadow:0 4px 10px #000;display:block;width:100%;border-right:none;border-bottom:none;}
+#flyout span.flyswat {position:absolute;top:-40px;border-radius:20px;background:#f00;color:#fff;padding:5px 8px;font-family:Arial,Helvetica,sans-serif;font-weight:700;line-height:1em;padding:5px 10px;right:10px;cursor:pointer;font-size:20px;}
+#flyout a {display:block;width:100%;}

@@ -20,14 +20,14 @@ return array(
 						)
 					),
 					'views'     => array( // randomly select one view from array
-						'global/partials/promotions/interstitial/adunit',
+						'global.partials.promotions.interstitial.adunit',
 					),
 					'frequency' => '86400', // false, show every pageview (note: overridden by group 86400 frequency)
 				),
 				// promotion can only have "blacklist" or "whitelist" - if not whitelist, it'll be global everywhere except the blacklist
 				'kaepernick' => array(
 					'views'     => array( // randomly select one view from array
-						'global/partials/promotions/popups/kaepernick',
+						'global.partials.promotions.popups.kaepernick',
 					),
 					'frequency' => '86400', // false, show every pageview (note: overridden by group 86400 frequency)
 				)
@@ -53,12 +53,13 @@ return array(
 						)
 					),
 					'views'     => array(
-						'global/partials/promotions/flyouts/speed-kills-10', // randomly select a view
-						//'global/partials/promotions/flyouts/speed-kills-4'
+						'global.partials.promotions.flyouts.speed-kills-10', // randomly select a view
+						'global.partials.promotions.flyouts.speed-kills-inverted',
+						'global.partials.promotions.flyouts.speed-kills-inverted-darkfont'
 					),
 					'frequency' => FALSE
 				),
-				/* 'conditioning' => array(
+				'conditioning' => array(
 					'whitelist' => array(
 						array(
 							'type'      => 'pagetype',
@@ -68,10 +69,10 @@ return array(
 						)
 					),
 					'views'     => array(
-						'global/partials/promotions/flyouts/conditioning'
+						'global.partials.promotions.flyouts.conditioning'
 					),
 					'frequency' => FALSE
-				) */
+				)
 			)
 		)
 	)
