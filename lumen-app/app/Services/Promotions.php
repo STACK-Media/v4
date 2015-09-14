@@ -14,6 +14,11 @@ class Promotions extends Service {
 
 	}
 
+	function get($group, $creative)
+	{
+		return $this->cfg['groups'][$group]['creatives'][$creative];
+	}
+
 	function get_for_page($page_object)
 	{
 

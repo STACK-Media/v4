@@ -105,6 +105,10 @@ for(group in pageinfo.promos){
 			continue;
 		}
 
+		if ( ! (group in showpromos)){
+			showpromos[group] = [];
+		}
+
 		// undefined showpromos[group] - need to fix
 		showpromos[group][okeys[i]] = pageinfo.promos[group].creatives[okeys[i]];
 
@@ -117,9 +121,43 @@ for(group in pageinfo.promos){
 for (group in showpromos){
 		
 	for (creative in showpromos[group]){
-		alert(group+' '+creative);
-	}
 
+		$.getJSON('/api/v1/promos/'+group+'/'+creative, function( data ) {
+
+			var assets = ['javascript', 'stylesheet'];
+
+			if ( ! data.success){
+				return;
+			}
+
+			if ('stylesheet' in data.data && data.data.stylesheet){
+
+				for (i in data.data.stylesheet){
+					
+					$('head').append('<link rel="stylesheet" href="'+data.data.stylesheet[i]+'" type="text/css" />');
+
+				}
+
+			}
+
+
+			$('body').append(data.data.view);
+			
+
+			if ('javascript' in data.data && data.data.javascript){
+
+				for (i in data.data.javascript){
+
+					$.getScript(data.data.javascript[i]);
+
+				}
+
+			}
+
+
+		});
+
+	}
 	
 }
 

@@ -288,7 +288,8 @@ $app->group(['prefix' => 'api/v1/vms','namespace' => 'App\Http\Controllers\API\v
 
 });
 
-
+// Promos Ajax
+$app->get('api/v1/promos/{group}/{promo}', 'App\Http\Controllers\API\v1\PromosController@show');
 
 
 /*
