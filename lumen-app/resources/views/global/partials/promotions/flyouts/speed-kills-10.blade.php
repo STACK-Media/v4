@@ -1,5 +1,5 @@
 {!! Assets::queue_raw('javascript', 'global', 'masonrytest', '/assets/js/masonry-3.3.1.min.js') !!}
-{!! Assets::queue_raw('stylesheet', 'global', 'testsheet', '/assets/css/testsheet.css') !!}
+{!! /*Assets::queue_raw('stylesheet', 'global', 'testsheet', '/assets/css/testsheet.css')*/ !!}
 <div data-name="asics_flyout" class="asics_flyout" id="slidebox" style="display: block; right: 0px;">
 
 	<a class="close">Close</a>

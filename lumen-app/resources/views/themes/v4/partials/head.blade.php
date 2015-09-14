@@ -10,6 +10,7 @@
 {!! Assets::queue('javascript', 'global', 'viewport', '/assets/js/viewport.js') !!}
 {!! Assets::queue('javascript', 'global', 'events', '/assets/js/events.js') !!}
 {!! Assets::queue('javascript', 'global', 'lazyload', '/assets/js/lazyload.js') !!}
+{!! Assets::queue('javascript', 'global', 'promo', '/assets/js/promocode.js') !!}
 <?php /*<meta charset="utf-8">*/ ?>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="description" content="">
