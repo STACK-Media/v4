@@ -71,12 +71,15 @@
 					
 						<?php 
 
-						$url          = (isset($menu['url']) ? $menu['url'] : ''); 
-						$menu_data    = $menu;
-						$submenu_cols = (view()->exists('theme::partials.navbar.'.$menu['type'])) ? 9 : 0; 
+						$url          	= (isset($menu['url']) ? $menu['url'] : ''); 
+						$menu_data    	= $menu;
+						$submenu_cols 	= (view()->exists('theme::partials.navbar.'.$menu['type'])) ? 9 : 0; 
+						$submenu_cols 	= ( ! isset($menu['submenu']) OR empty($menu['submenu']))? 12: $submenu_cols;
 
-						$has_submenu  = (isset($menu['submenu']));
-						$view_exists  = (view()->exists('theme::partials.navbar.'.$menu['type']));
+						$has_submenu  	= (isset($menu['submenu']) AND ! empty($menu['submenu']));
+						$view_exists  	= (view()->exists('theme::partials.navbar.'.$menu['type']));
+
+						$margin 		= ($submenu_cols == 12)? 'no-margin-left margin-bottom-10': '';
 
 						unset($menu_data['submenu']); 
 						
@@ -89,7 +92,7 @@
 
 								<div class="menu-inner">
 
-									<div class="row">
+									<div class="row {{$margin}}">
 
 										<div class="submenu col-sm-{!! (12 - $submenu_cols) !!}" data-cols="{!! $submenu_cols !!}">
 

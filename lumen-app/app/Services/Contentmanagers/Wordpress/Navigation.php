@@ -74,7 +74,10 @@ class Navigation extends Wordpress
 
 		$articleservice = new Article;
 
-		return array('articles' => $articleservice->get_by_category_id($args['id'], 3));
+		// get count
+		$count 		= (isset($args['count']))? $args['count']: 3;
+
+		return array('articles' => $articleservice->get_by_category_id($args['id'], $count));
 
 	}
 
