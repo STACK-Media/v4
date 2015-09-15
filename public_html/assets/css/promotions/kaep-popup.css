@@ -1,0 +1,51 @@
+#kaepernick {
+display:block;
+width:100%;
+background:url('/assets/img/promotions/ck_newsletter.jpg') no-repeat center center; 
+background-size: 100%;
+
+padding:55px 30px 30px;
+border:2px solid #fff;
+}
+
+#kaepernick p {font-family:Oswald,Impact,arial,helvetica,sans-serif;
+color:#fff;font-size:28px;text-align:center;margin:0 0 20px;}
+
+.kaepopup .modal-body {padding:0;border:none;}
+.kaepopup .modal-header, .kaepopup .modal-footer {display:none;}
+.kaepopup .modal-content {border-radius:0;background:transparent;}
+
+#kaepinner {background:url('/assets/img/promotions/black-90-opaque.png') left top repeat;border:1px solid #fff;padding-top:20px;padding-bottom:20px;}
+
+#kaepinner .btn, #kaepemail {font-size:18px;font-weight:normal;font-family:"Source Sans Pro",Arial,Helvetica,sans-serif;padding-top:5px;padding-bottom:5px;border-radius:0;}
+
+#kaepinner .btn {
+	background: #f31f00; /* Old browsers */
+	background: -moz-linear-gradient(top, #f31f00 48%, #ca0900 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(48%,#f31f00), color-stop(100%,#ca0900)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #f31f00 48%,#ca0900 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #f31f00 48%,#ca0900 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #f31f00 48%,#ca0900 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #f31f00 48%,#ca0900 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f31f00', endColorstr='#ca0900',GradientType=0 ); /* IE6-9 */
+
+	border:1px solid #fff;
+	margin-top:15px;
+	
+}
+
+#kaepemail {background:transparent;} 
+
+#kaepinner .btn:inner {
+	background: #bd0400; /* Old browsers */
+	background: -moz-linear-gradient(top, #bd0400 48%, #950300 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(48%,#bd0400), color-stop(100%,#950300)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #bd0400 48%,#950300 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #bd0400 48%,#950300 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #bd0400 48%,#950300 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #bd0400 48%,#950300 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bd0400', endColorstr='#950300',GradientType=0 ); /* IE6-9 */
+}
+
+
+

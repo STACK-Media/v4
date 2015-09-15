@@ -28,7 +28,7 @@ function shuffle_keys(object)
 
 function _check_cancel_cookie(cookiename, frequency)
 {
-	if ($.cookie(cookiename)){
+	if ( false && $.cookie(cookiename)){
 		return false;
 	}
 
@@ -84,6 +84,8 @@ for(group in pageinfo.promos){
 
 }
 
+var jsarray = [];
+
 for (group in showpromos){
 		
 	for (creative in showpromos[group]){
@@ -112,14 +114,23 @@ for (group in showpromos){
 
 			if ('javascript' in data.data && data.data.javascript){
 
-				for (i in data.data.javascript){
+				var jsfiledelay = function (jsfiles) {
 
-					$.getScript(data.data.javascript[i]);
+					setTimeout(function() {
 
-				}
+						for (i in jsfiles){
+
+							$.getScript(jsfiles[i]);
+
+						}
+
+					}, 300);
+				
+				};
+
+				jsfiledelay(data.data.javascript);
 
 			}
-
 
 		});
 
