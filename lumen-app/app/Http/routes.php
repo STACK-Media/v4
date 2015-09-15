@@ -292,6 +292,19 @@ $app->group(['prefix' => 'api/v1/vms','namespace' => 'App\Http\Controllers\API\v
 $app->get('api/v1/promos/{group}/{promo}', 'App\Http\Controllers\API\v1\PromosController@show');
 
 
+// Custom pages
+// a to z
+$app->get('a-to-z',['uses' => 'App\Http\Controllers\CustomController@atoz']);
+
+
+
+
+
+
+
+
+
+
 /*
 // ****************************
 // OPTIONAL PARAMETERS EXAMPLE
