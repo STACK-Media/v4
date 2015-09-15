@@ -42,6 +42,20 @@ return array(
 
 			)
 		),
+		'custom' => array(
+			'content' => array(
+
+			),
+			'sidebar' => array(
+				'featured-videos',
+				'velocity-sidebar',
+				'popular-videos',
+				'trending-block',
+			),
+			'post_content' => array(
+
+			)
+		),
 		'home'	=> array(
 			'content'		=> array(
 				//'latest',
