@@ -200,6 +200,7 @@ return array(
 		'args'    => array('slug' => 'videos'),
 		'url'     => routelink('videos', array('slug' => '')),
 		'type'    => 'videos',
+		'partial' => 'videos',
 		'name'    => 'Videos',
 		'submenu' => array(
 			array(

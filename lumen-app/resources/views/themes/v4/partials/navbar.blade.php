@@ -110,9 +110,9 @@
 															
 															<div class="menu-preview">
 
-																@if(view()->exists('theme::partials.navbar.'.$submenu['type']))
+																@if(view()->exists('theme::partials.navbar.'.$submenu['partial']))
 
-																	@include('theme::partials.navbar.'.$submenu['type'], array('menu_data' => $submenu))
+																	@include('theme::partials.navbar.'.$submenu['partial'], array('menu_data' => $submenu))
 
 																@endif
 

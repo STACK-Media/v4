@@ -16,9 +16,11 @@ class Navigation extends Wordpress
 		parent::__construct();
 
 		app()->configure('navigation');
+		app()->configure('verticals');
 
 		// set default nav
-		$this->_nav = config('navigation');
+		$this->_nav 		= config('navigation');
+		$this->_verticals 	= config('verticals');
 	}
 
 	function get($page_data)
@@ -38,7 +40,6 @@ class Navigation extends Wordpress
 		endforeach;
 
 		return $this->_nav;
-
 	}
 
 	function _build_nav($menu, $page_data)
@@ -76,8 +77,28 @@ class Navigation extends Wordpress
 
 		// get count
 		$count 		= (isset($args['count']))? $args['count']: 3;
+		$vertical 	= (isset($args['vertical']))? TRUE: FALSE;
+
+		// if vertical is used, then gran articles by category & vertical
+		if ($vertical)
+			return $this->_get_nav_content_vertical_category($args,$page_data);
 
 		return array('articles' => $articleservice->get_by_category_id($args['id'], $count));
+
+	}
+
+	function _get_nav_content_vertical_category($args, $page_data) {
+
+		$articleservice = new Article;
+
+		// get count
+		$count 		= (isset($args['count']))? $args['count']: 3;
+		$vertical 	= (isset($this->_verticals[$args['vertical']]))? $this->_verticals[$args['vertical']]: $this->_verticals['4w'];
+
+		return array('articles' => $articleservice->get_by_category_vertical($args['id'], $vertical, $count));
+	}
+
+	function _get_nav_content_vertical_videos($args, $page_data) {
 
 	}
 

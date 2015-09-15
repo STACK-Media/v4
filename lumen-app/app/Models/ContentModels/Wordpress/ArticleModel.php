@@ -188,6 +188,114 @@ class ArticleModel extends AbstractArticle
             ->get();
     }
 
+    public function get_by_vertical($vertical,$limit=FALSE,$offset=0,$date=FALSE)
+    {
+        // set default date
+        if ( ! $date)
+            $date   = date('Y-m-d H:i:s');
+
+        $query      = DB::table('wp_posts')
+            ->select(
+                'wp_posts.id', 
+                'wp_posts.post_title AS name',
+                'wp_posts.post_title',
+                'wp_posts.post_name AS slug',
+                'wp_posts.post_name',
+                'wp_posts.post_status', 
+                'wp_posts.post_date', 
+                'wp_posts.post_content', 
+                'wp_posts.post_excerpt',
+                'wp_users.user_nicename AS author_user',
+                'wp_users.display_name AS author_name',
+                'wp_users.user_url AS author_url',
+                'wp_users.user_email AS author_email',
+                'wp_users.ID AS author_id'
+            )
+            ->where('wp_posts.post_status','publish')
+            ->where('wp_posts.post_type','post')
+            ->join(
+                'wp_term_relationships',
+                'wp_term_relationships.object_id',    '=', 'wp_posts.ID'
+            )
+            ->join('wp_term_taxonomy', function($join) use ($vertical)
+            {
+                $join->on('wp_term_relationships.term_taxonomy_id', '=', 'wp_term_taxonomy.term_taxonomy_id')
+                    ->where('wp_term_taxonomy.term_id',             '=', $vertical);
+            })
+            ->join(
+                'wp_users', 
+                'wp_posts.post_author', '=', 'wp_users.ID'
+            )
+            ->orderBy('wp_posts.id','desc');
+
+        if ($limit):
+
+            $query->skip($offset)->take($limit);
+
+        endif;
+
+        $results    = $query->get();
+
+        return $results;
+    }
+
+    /* ugliest query ever to grab articles by category and vertical */
+    public function get_by_category_vertical($id,$vertical,$limit=5,$offset=0,$date=FALSE)
+    {
+        // set default date
+        if ( ! $date)
+            $date   = date('Y-m-d H:i:s');
+
+        // grab all post IDs in this vertical
+        $verticals      = $this->get_by_vertical($vertical);
+
+        // create an array with just IDs
+        $posts  = array();
+        foreach ($verticals AS $key => $value):
+            $posts[]    = $value->id;
+        endforeach;
+
+        return DB::table('wp_posts')
+            ->select(
+                DB::raw('"article" AS page_type'),
+                'wp_posts.id', 
+                'wp_posts.post_title AS name',
+                'wp_posts.post_title',
+                'wp_posts.post_name AS slug',
+                'wp_posts.post_name',
+                'wp_posts.post_status', 
+                'wp_posts.post_date', 
+                'wp_posts.post_content', 
+                'wp_posts.post_excerpt',
+                'wp_users.user_nicename AS author_user',
+                'wp_users.display_name AS author_name',
+                'wp_users.user_url AS author_url',
+                'wp_users.user_email AS author_email',
+                'wp_users.ID AS author_id'
+            )
+            ->where('wp_posts.post_status','=','publish')
+            ->where('wp_posts.post_type','=','post')
+            ->where('wp_posts.post_date','<',$date)
+            ->whereIn('wp_posts.ID',$posts)
+            ->join(
+                'wp_term_relationships',
+                'wp_posts.ID','=','wp_term_relationships.object_id'
+            )
+            ->join('wp_term_taxonomy', function($join) use ($id)
+            {
+                $join->on('wp_term_relationships.term_taxonomy_id', '=', 'wp_term_taxonomy.term_taxonomy_id')
+                    ->where('wp_term_taxonomy.term_id','=',$id);
+            })
+            ->join(
+                'wp_users', 
+                'wp_posts.post_author', '=', 'wp_users.ID'
+            )
+            ->orderBy('wp_posts.id','desc')
+            ->skip($offset)
+            ->take($limit)
+            ->get();
+    }
+
     public function get_by_tag_id($id,$limit=5,$offset=0,$date=FALSE)
     {
         return $this->get_by_category_id($id,$limit,$offset,$date);
