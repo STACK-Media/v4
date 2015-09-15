@@ -1,4 +1,4 @@
-{!! Assets::queue_raw('javascript', 'global', 'flyout', '/assets/js/promotions/popup.js') !!}
+{!! Assets::queue_raw('javascript', 'global', 'popup', '/assets/js/promotions/popup.js') !!}
 
 <div class="modal fade {!! (isset($modal_class) ? $modal_class : '') !!}" id="intropop">
 	<div class="modal-dialog">

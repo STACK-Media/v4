@@ -1,4 +1,4 @@
-function is_phone()
+function is_phone_device()
 {
 
 	var matches_phone = window.matchMedia("only screen and (max-width: 768px)");
@@ -9,7 +9,7 @@ function is_phone()
 
 function get_device_type()
 {
-	return (is_phone()) ? 'phone' : 'desktop';
+	return (is_phone_device()) ? 'phone' : 'desktop';
 }
 
 function init_nav(device)

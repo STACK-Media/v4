@@ -1,6 +1,5 @@
-<!-- footer javascript files -->
-{!! Assets::get_queued('javascript') !!}
 
+<!-- footer javascript files -->
 @if(is_array(Assets::get_queued_raw('javascript')))
 
 	@foreach (Assets::get_queued_raw('javascript') as $key => $arr)
@@ -30,6 +29,8 @@
 	@endforeach
 
 @endif
+
+{!! Assets::get_queued('javascript') !!}
 
 </body>
 </html>

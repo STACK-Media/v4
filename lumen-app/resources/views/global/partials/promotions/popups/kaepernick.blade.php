@@ -1,4 +1,5 @@
-{!! Assets::queue_raw('stylesheet', 'global', 'flyout', '/assets/css/promotions/kaep-popup.css') !!}
+{!! Assets::queue_raw('stylesheet', 'global', 'kaepcss', '/assets/css/promotions/kaep-popup.css') !!}
+{!! Assets::queue_raw('javascript', 'global', 'kaepjs', '/assets/js/promotions/kaep-popup.js') !!}
 @extends('global.partials.promotions.popups.popup_layout', array('modal_class' => 'kaepopup'))
 
 @section('modal-header')
