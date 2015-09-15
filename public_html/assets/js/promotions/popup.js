@@ -8,11 +8,17 @@ setTimeout(function(){
 
 		myPlayer.pause();
 
-	}else{
-
-		alert('ugh');
-
 	}
 
 }, 300);
 
+
+$('#intropop').on('hidden.bs.modal', function (e) {
+
+	if (typeof myPlayer !== "undefined" && typeof myPlayer.play === "function") {
+
+		myPlayer.play();
+
+	}
+
+})
