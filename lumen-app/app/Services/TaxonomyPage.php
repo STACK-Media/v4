@@ -79,6 +79,9 @@ class TaxonomyPage extends Page
 		// load services 
 		$manager  	= new Videomanager('player');
 
+		if ( ! isset($this->_object->latest[0]))
+			return NULL;
+
 		// initialize variables
 		// TODO: This method assumes this ID exists - is that ok?
 		$video_id 	= $this->_object->latest[0]['id'];
