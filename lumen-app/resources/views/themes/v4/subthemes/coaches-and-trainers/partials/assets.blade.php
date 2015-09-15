@@ -1,0 +1,2 @@
+{!! Assets::queue('stylesheet', 'global', 'vertical', '/assets/css/verticals/coaches-and-trainers.css') !!}
+{!! Assets::queue('javascript', 'global', 'vertical', '/assets/js/verticals/coaches-and-trainers.js') !!}

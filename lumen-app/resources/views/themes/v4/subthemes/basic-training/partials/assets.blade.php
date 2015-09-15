@@ -1,0 +1,2 @@
+{!! Assets::queue('stylesheet', 'global', 'vertical', '/assets/css/verticals/basic-training.css') !!}
+{!! Assets::queue('javascript', 'global', 'vertical', '/assets/js/verticals/basic-training.js') !!}
