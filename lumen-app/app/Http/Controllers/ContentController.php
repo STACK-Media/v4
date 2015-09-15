@@ -7,6 +7,7 @@ use App\Services\ContentPage;
 class ContentController extends PageController
 {
 
+    /* wp post */
     function index($slug)
     {
         $status = 'publish';
@@ -22,6 +23,7 @@ class ContentController extends PageController
         return $this->_load_page_view('article', array());
     }
 
+    /* wp page */
     public function page($slug)
     {
         $status = 'publish';

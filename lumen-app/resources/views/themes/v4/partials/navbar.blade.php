@@ -15,7 +15,7 @@
 				</button>
 
 				<a class="navbar-brand" href="{!! routelink('home', array()) !!}">
-					<img alt="STACK" class="img-responsive" src="/assets/img/branding/logos/large_white.png" width="160" height="35">
+					@include('theme::partials.navbar.logo')
 				</a>
 
 			</div>

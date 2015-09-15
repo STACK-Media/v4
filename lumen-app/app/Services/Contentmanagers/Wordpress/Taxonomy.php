@@ -17,6 +17,11 @@ class Taxonomy extends Wordpress
 		$this->_model = new Cacher(new TaxonomyModel);
 	}
 
+	function all($type=FALSE)
+	{
+		return $this->_model->all($type);
+	}
+
 	function get_by_column($type, $identifier_type, $identifier)
 	{
 

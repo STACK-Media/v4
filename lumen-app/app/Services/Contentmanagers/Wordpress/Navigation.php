@@ -17,12 +17,19 @@ class Navigation extends Wordpress
 
 		app()->configure('navigation');
 
+		// set default nav
 		$this->_nav = config('navigation');
-
 	}
 
 	function get($page_data)
 	{
+		if ( ! is_array($this->_nav))
+			$this->_nav 	= array();
+
+		// override navigation for verticals
+		app()->configure('navigation-'.$page_data['subtheme']);
+		if (is_array(config('navigation-'.$page_data['subtheme'])))
+			$this->_nav 	= config('navigation-'.$page_data['subtheme']);
 
 		foreach ($this->_nav as $key => $menu):
 
