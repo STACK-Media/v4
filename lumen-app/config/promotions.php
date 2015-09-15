@@ -10,7 +10,7 @@ return array(
 			'type'            => 'sequential', // or random (if sequential, shows one by one in order - if random, selects from all eligible)
 			'frequency'       => FALSE, // in seconds (note frequency is per-group AND per-promotion, group always has to be higher)
 			'creatives'       => array(
-				'interstitial' => array(
+				/*'interstitial' => array(
 					'whitelist' => array(
 						array(
 							'type'      => 'pagetype',
@@ -23,7 +23,7 @@ return array(
 						'global.partials.promotions.interstitial.adunit',
 					),
 					'frequency' => '86400', // false, show every pageview (note: overridden by group 86400 frequency)
-				),
+				),*/
 				// promotion can only have "blacklist" or "whitelist" - if not whitelist, it'll be global everywhere except the blacklist
 				'kaepernick' => array(
 					'views'     => array( // randomly select one view from array

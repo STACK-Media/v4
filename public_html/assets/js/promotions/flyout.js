@@ -5,25 +5,21 @@ function show_flyout()
 		return;
 	}
 
-	if ($(document).scrollTop() > 1000){
+	if ($(document).scrollTop() > 750){
 		$('#flyout').slideDown();
 	}
 }
 
-setTimeout(function(){
+show_flyout();
 
-	show_flyout();
+$(window).scroll(function() {
 	
-	$(window).scroll(function() {
-		
-		clearTimeout($.data(this, 'scrollTimer'));
-		
-		$.data(this, 'scrollTimer', setTimeout(function() {
-			
-			show_flyout();
-
-		}, 300));
+	clearTimeout($.data(this, 'scrollTimer'));
 	
-	});
+	$.data(this, 'scrollTimer', setTimeout(function() {
+		
+		show_flyout();
 
-}, 300);
+	}, 300));
+
+});
