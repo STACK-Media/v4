@@ -257,8 +257,7 @@ class ArticleModel extends AbstractArticle
 
         return DB::table('wp_posts')
             ->select(
-                DB::raw('"article" AS page_type'),
-                'wp_posts.id', 
+                'wp_posts.id AS id', 
                 'wp_posts.post_title AS name',
                 'wp_posts.post_title',
                 'wp_posts.post_name AS slug',
@@ -284,13 +283,14 @@ class ArticleModel extends AbstractArticle
             ->join('wp_term_taxonomy', function($join) use ($id)
             {
                 $join->on('wp_term_relationships.term_taxonomy_id', '=', 'wp_term_taxonomy.term_taxonomy_id')
-                    ->where('wp_term_taxonomy.term_id','=',$id);
+                    ->where('wp_term_taxonomy.term_id',             '=', $id);
             })
             ->join(
                 'wp_users', 
                 'wp_posts.post_author', '=', 'wp_users.ID'
             )
             ->orderBy('wp_posts.id','desc')
+            ->groupBy('wp_posts.id')
             ->skip($offset)
             ->take($limit)
             ->get();

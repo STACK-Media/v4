@@ -8,8 +8,8 @@ return array(
 		'submenu' => array(),
 	),
 	array(
-		'args'    => array('slug' => 'nutrition', 'id' => 15, 'count' => 4, 'vertical' => '4w'),
-		'url'     => routelink('category', array('slug' => 'nutrition')),
+		'args'    => array('slug' => 'nutrition-2', 'id' => 15, 'count' => 4, 'vertical' => '4w'),
+		'url'     => routelink('category', array('slug' => 'nutrition-2')),
 		'type'    => 'category',
 		'name'    => 'Nutrition',
 		'submenu' => array(),
