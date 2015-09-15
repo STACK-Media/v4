@@ -8,10 +8,16 @@
 
 		<h1>STACK's A to Z Guide</h1>
 
-		@foreach ($tags AS $key => $value)
+		@foreach ($taxonomies AS $key => $value)
+
+			<?php
+			// update for routelink
+			if ($value->taxonomy == 'post_tag')
+				$value->taxonomy 	= 'tag';
+			?>
 
 			<div class="col-xs-12 col-sm-4">
-				<a href="#">{{$value->name}}</a>
+				<a href="{!! routelink($value->taxonomy, array('slug' => $value->slug)) !!}">{{$value->name}}</a>
 			</div>
 
 		@endforeach

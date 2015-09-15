@@ -17,13 +17,13 @@ class CustomController extends PageController
 		)));
 
 		// initialize needed services
-		$taxonomy 		= new Contentmanager('taxonomy');
+		$taxonomy 			= new Contentmanager('taxonomy');
 
-		// grab tags
-		$tags			= $taxonomy->all('post_tag',1,1);
+		// grab all categories and tags
+		$taxonomies			= $taxonomy->all();
 
 		// set data variables
-		$data['tags']	= $tags;
+		$data['taxonomies']	= $taxonomies;
 		
         return $this->_load_page_view('custom.atoz', $data);
     }

@@ -17,7 +17,7 @@ class Taxonomy extends Wordpress
 		$this->_model = new Cacher(new TaxonomyModel);
 	}
 
-	function all($type='category')
+	function all($type=FALSE)
 	{
 		return $this->_model->all($type);
 	}

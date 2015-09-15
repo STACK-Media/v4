@@ -17,7 +17,7 @@ class CustomPage extends Page
 
 		// initialize variables
 		$this->_object->id 			= 1;
-		$this->_object->page_type 	= 'page';
+		$this->_object->page_type 	= 'custom';
 		$this->_object->slug 		= $slug;
 
 		return parent::__construct();
