@@ -27,21 +27,6 @@ return array(
 				'trending-block',
 			)
 		),
-		'category' => array(
-			'content' => array(
-				'latest-articles',
-				'latest-videos',
-			),
-			'sidebar' => array(
-				'featured-videos',
-				'velocity-sidebar',
-				'popular-videos',
-				'trending-block',
-			),
-			'post_content' => array(
-
-			)
-		),
 		'custom' => array(
 			'content' => array(
 
@@ -142,7 +127,7 @@ return array(
 
 			)
 		),
-		'tag' => array(
+		'taxonomy' => array(
 			'content' => array(
 				'latest-articles',
 				'latest-videos',
