@@ -47,5 +47,5 @@ color:#fff;font-size:28px;text-align:center;margin:0 0 20px;}
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bd0400', endColorstr='#950300',GradientType=0 ); /* IE6-9 */
 }
 
-
-
+#kaepclose {position:absolute;right:10px;top:10px;color:#fff;font-size:28px;z-index:510;font-face:"Source Sans Pro", Arial, Helvetica, sans-serif;opacity:1;}
+#kaepclose:hover {opacity:0.8};
