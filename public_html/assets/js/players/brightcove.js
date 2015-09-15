@@ -1,3 +1,6 @@
+
+var myPlayer = {};
+
 (function ($, window) {
 
 	"use strict";
@@ -6,7 +9,7 @@
 	var player_key 	= $(".video-js").attr("id");
 	var video_id 	= $(".video-js").data("video-id");
 
-	var myPlayer 	= videojs(player_key);	// the video player object
+	myPlayer 	= videojs(player_key);	// the video player object
 
 	// on ready
 	myPlayer.ready(function(data){
@@ -39,7 +42,11 @@
 			myPlayer.src(video.sources);
 			myPlayer.poster(video.poster);
 			myPlayer.play();
-		});
+
+			if ($('.modal').is(':visible')){
+				myPlayer.pause();
+			}
+		});		
 
 		//changeOverlay(id);
 	}
