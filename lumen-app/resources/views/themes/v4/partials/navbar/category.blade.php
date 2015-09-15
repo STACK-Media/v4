@@ -7,7 +7,7 @@
 			
 			<?php
 			// determine how many colums to display
-			$cols 	= (count($menu_data['data']['articles']) == 4)? 'col-sm-3': 'col-sm-4';
+			$cols 	= (count($menu_data['data']['articles']) > 3)? 'col-sm-3': 'col-sm-4';
 			?>
 
 			<div class="{{$cols}}">
