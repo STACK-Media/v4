@@ -9,15 +9,11 @@ hr {
 .right {
 	text-align: 		right;
 }
-.no-margin-left {
-	margin-left: 	0px !important;
+.navbar-margin {
+	margin-left: 	20px !important;
+	margin-bottom: 	20px !important;
 }
-.no-margin-right {
-	margin-right: 	0px !important;
-}
-.margin-bottom-10 {
-	margin-bottom: 	10px !important;
-}
+
 /* Navbar */
 .navbar-inverse {
 	background-image: 	linear-gradient(to bottom,#000 0,#000 100%);

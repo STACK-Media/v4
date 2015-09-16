@@ -1,7 +1,19 @@
 <?php
 
 return array(
-	'page_configs' => array(
+	'gamer'			=> array(
+		'home'		=> array(
+			'content'	=> array(),
+			'sidebar'	=> array(
+				'featured-videos',
+				'social-connect',
+				'newsletter-optin',
+				'trending-block',
+				'magazine',
+			)
+		)
+	),
+	'default' 	=> array(
 		'article' => array(
 			'content' => array(
 				'outbrain',

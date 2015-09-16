@@ -136,7 +136,6 @@ class Article extends Wordpress
 
 	function get_by_id($id, $type = 'publish')
 	{
-
 		$id             = preg_replace("/[^0-9]/", '', $id);
 		$statuses       = $this->_get_statuses($type);
 		$article        = $this->_model->get_by_id($id, $statuses);
@@ -144,7 +143,6 @@ class Article extends Wordpress
 		$article->image = $this->get_featured_image_by_post_id($article->id);
 
 		return $this->_add_metacontent($article);
-
 	}
 
 
@@ -207,6 +205,48 @@ class Article extends Wordpress
 
 		// get articles
 		$articles 	= $this->_model->get_by_category_id($id,$limit,$offset,$date);
+
+		// format articles
+		foreach ($articles AS $article):
+
+			$article->image 	= $this->get_featured_image_by_post_id($article->id);
+
+			$content[] 			= $article;//$this->_add_metacontent($article);
+
+		endforeach;
+
+		return $content;
+	}
+
+	public function get_by_vertical($id,$limit=5,$offset=0,$date=FALSE)
+	{
+		// validation
+		$id       	= preg_replace("/[^0-9]/", '', $id);
+		$content 	= array();
+
+		// get articles
+		$articles 	= $this->_model->get_by_vertical($id,$limit,$offset,$date);
+
+		// format articles
+		foreach ($articles AS $article):
+
+			$article->image 	= $this->get_featured_image_by_post_id($article->id);
+
+			$content[] 			= $article;//$this->_add_metacontent($article);
+
+		endforeach;
+
+		return $content;
+	}
+
+	public function get_by_category_vertical($id,$vertical,$limit=5,$offset=0,$date=FALSE)
+	{
+		// validation
+		$id       	= preg_replace("/[^0-9]/", '', $id);
+		$content 	= array();
+
+		// get articles
+		$articles 	= $this->_model->get_by_category_vertical($id,$vertical,$limit,$offset,$date);
 
 		// format articles
 		foreach ($articles AS $article):

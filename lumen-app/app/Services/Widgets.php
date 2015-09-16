@@ -20,7 +20,12 @@ class Widgets extends Service
 			'post_content' => array()
 		);
 
-		$cfg = config('widgets.page_configs.'.$page_type);
+		// first attempt to get config from vertical
+		$vrt 	= config('widgets.'.$page_object->subtheme.'.'.$page_type);
+		$cfg 	= config('widgets.default.'.$page_type);
+
+		// set default config if unable to grab by vertical
+		$cfg 	= ( ! is_array($vrt))? $cfg: array_merge($cfg,$vrt);
 
 		if (is_array($cfg)):
 

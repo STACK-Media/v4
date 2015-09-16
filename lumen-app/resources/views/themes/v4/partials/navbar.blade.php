@@ -79,7 +79,7 @@
 						$has_submenu  	= (isset($menu['submenu']) AND ! empty($menu['submenu']));
 						$view_exists  	= (view()->exists('theme::partials.navbar.'.$menu['type']));
 
-						$margin 		= ($submenu_cols == 12)? 'no-margin-left margin-bottom-10': '';
+						$margin 		= ($submenu_cols == 12)? 'navbar-margin': '';
 
 						unset($menu_data['submenu']); 
 						
