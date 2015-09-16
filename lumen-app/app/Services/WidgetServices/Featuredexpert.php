@@ -10,15 +10,22 @@ class Featuredexpert extends WidgetService
 	{
 		$user 		= new Contentmanager('user');
 		$article 	= new Contentmanager('article');
+		$meta 		= array();
+		$articles 	= array();
 
 		// grab featured author object
 		$author 	= $user->get_featured();
 
-		// get author meta
-		$meta 		= $user->get_meta($author->ID);
+		// make sure we were able to grab the featured author
+		if (isset($author->ID)):
 
-		// get author articles
-		$articles 	= $article->get_by_user_id($author->ID);
+			// get author meta
+			$meta 		= $user->get_meta($author->ID);
+
+			// get author articles
+			$articles 	= $article->get_by_user_id($author->ID);
+
+		endif;
 
 		return array(
 			'author' 	=> json_decode(json_encode($author),TRUE),
