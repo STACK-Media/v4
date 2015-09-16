@@ -36,9 +36,9 @@ return array(
 		'submenu' => array(),
 	),
 	array(
-		'args'    => array('slug' => 'videos'),
+		'args'    => array('slug' => 'videos', 'all' => array('tag:fit'), 'count' => 4),
 		'url'     => routelink('videos', array('slug' => '')),
-		'type'    => 'videos',
+		'type'    => 'video',
 		'name'    => 'Videos',
 		'submenu' => array(),
 	),
