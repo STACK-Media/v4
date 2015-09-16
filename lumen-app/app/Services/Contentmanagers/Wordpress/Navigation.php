@@ -5,6 +5,7 @@ namespace App\Services\Contentmanagers\Wordpress;
 use App\Services\Cacheturbator as Cacher;
 
 use App\Services\Contentmanagers\Wordpress\Article;
+use App\Services\Videomanager;
 
 class Navigation extends Wordpress
 {
@@ -91,13 +92,31 @@ class Navigation extends Wordpress
 		return array('articles' => $articles);
 	}
 
-	function _get_nav_content_vertical_videos($args, $page_data) {
+	function _get_nav_content_video($args, $page_data) 
+	{
+		// intiialize classes
+		$manager 	= new Videomanager('video');
+		
+		// initialize variables
+		$videos 	= array();
+		$count 		= (isset($args['count']))? $args['count']: 3;	// default to 3 videos
+		
+		// set params
+		$params 	= array(
+			'all'			=> $args['all'],
+			'page_size'		=> $count
+		);
 
+		// grab videos from brightcove
+		$videos 	= $manager->search($params);
+
+		// error handling
+		$videos 	= (isset($videos['videos']))? $videos['videos']: array();
+
+		// return videos
+		return array('videos' => $videos);
 	}
 
-	function _get_nav_content_videos($args, $page_data) {
-
-	}
 
 	// function _get_nav_content_vertical($args, $page_data) {}
 	// function _get_nav_content_static($args, $page_data) {}
