@@ -11,7 +11,7 @@
 			?>
 
 			<div class="{{$cols}}">
-				<a class="nav-post" href="{!! routelink('video', array('slug' => $video['slug'])) !!}">
+				<a class="nav-post" href="{!! routelink('video', array('slug' => $video['slug'], 'id' => $video['id'])) !!}">
 					<img src="{!! $video['videoStillURL'] !!}" class="img-responsive"/>
 					<span>{!! $video['name'] !!}</span>
 				</a>

@@ -3,37 +3,37 @@ return array(
 	array(
 		'args'    => array('slug' => 'training', 'id' => 24),
 		'url'     => routelink('category', array('slug' => 'training')),
-		'type'    => 'category',
+		'type'    => 'taxonomy',
 		'name'    => 'Training',
 		'submenu' => array(
 			array(
 				'args' => array('slug' => 'strength-training', 'id' => 118),
 				'url'  => routelink('category', array('slug' => 'strength-training')),
-				'type' => 'category',
+				'type' => 'taxonomy',
 				'name' => 'Strength',
 			),
 			array(
 				'args' => array('slug' => 'get-faster', 'id' => 119),
 				'url'  => routelink('category', array('slug' => 'get-faster')),
-				'type' => 'category',
+				'type' => 'taxonomy',
 				'name' => 'Get Faster',
 			),
 			array(
 				'args' => array('slug' => 'sports-skills', 'id' => 8625),
 				'url'  => routelink('category', array('slug' => 'sports-skills')),
-				'type' => 'category',
+				'type' => 'taxonomy',
 				'name' => 'Skills',
 			),
 			array(
 				'args' => array('slug' => 'flexibility-training', 'id' => 121),
 				'url'  => routelink('category', array('slug' => 'flexibility-training')),
-				'type' => 'category',
+				'type' => 'taxonomy',
 				'name' => 'Flexibility',
 			),
 			array(
 				'args' => array('slug' => 'sports-injuries', 'id' => 5135),
 				'url'  => routelink('category', array('slug' => 'sports-injuries')),
-				'type' => 'category',
+				'type' => 'taxonomy',
 				'name' => 'Injuries',
 			),
 			array(
@@ -59,31 +59,31 @@ return array(
 	array(
 		'args'    => array('slug' => 'nutrition-2', 'id' => 15),
 		'url'     => routelink('category', array('slug' => 'nutrition-2')),
-		'type'    => 'category',
+		'type'    => 'taxonomy',
 		'name'    => 'Nutrition',
 		'submenu' => array(
 			array(
 				'args' => array('slug' => 'eat-healthy-nutrition', 'id' => 127),
 				'url'  => routelink('category', array('slug' => 'eat-healthy-nutrition')),
-				'type' => 'category',
+				'type' => 'taxonomy',
 				'name' => 'Eat Healthy',
 			),
 			array(
 				'args' => array('slug' => 'hydration-nutrition', 'id' => 129),
 				'url'  => routelink('category', array('slug' => 'hydration-nutrition')),
-				'type' => 'category',
+				'type' => 'taxonomy',
 				'name' => 'Hydration',
 			),
 			array(
 				'args' => array('slug' => 'healthy-recipes', 'id' => 8618),
 				'url'  => routelink('category', array('slug' => 'healthy-recipes')),
-				'type' => 'category',
+				'type' => 'taxonomy',
 				'name' => 'Meals &amp; Recipes',
 			),
 			array(
 				'args' => array('slug' => 'sports-supplements', 'id' => 126),
 				'url'  => routelink('category', array('slug' => 'sports-supplements')),
-				'type' => 'category',
+				'type' => 'taxonomy',
 				'name' => 'Supplements',
 			),
 		),
@@ -91,37 +91,37 @@ return array(
 	array(
 		'args'    => array('slug' => 'performance-gear', 'id' => 25),
 		'url'     => routelink('category', array('slug' => 'performance-gear')),
-		'type'    => 'category',
+		'type'    => 'taxonomy',
 		'name'    => 'Gear',
 		'submenu' => array(
 			array(
 				'args' => array('slug' => 'apparel-gear', 'id' => 150),
 				'url'  => routelink('category', array('slug' => 'apparel-gear')),
-				'type' => 'category',
+				'type' => 'taxonomy',
 				'name' => 'Apparel',
 			),
 			array(
 				'args' => array('slug' => 'equipment-gear', 'id' => 6325),
 				'url'  => routelink('category', array('slug' => 'equipment-gear')),
-				'type' => 'category',
+				'type' => 'taxonomy',
 				'name' => 'Equipment',
 			),
 			array(
 				'args' => array('slug' => 'lifestyle', 'id' => 11),
 				'url'  => routelink('category', array('slug' => 'lifestyle')),
-				'type' => 'category',
+				'type' => 'taxonomy',
 				'name' => 'Lifestyle',
 			),
 			array(
 				'args' => array('slug' => 'shoes-gear', 'id' => 149),
 				'url'  => routelink('category', array('slug' => 'shoes-gear')),
-				'type' => 'category',
+				'type' => 'taxonomy',
 				'name' => 'Shoes',
 			),
 			array(
 				'args' => array('slug' => 'training-tools-gear', 'id' => 152),
 				'url'  => routelink('category', array('slug' => 'training-tools-gear')),
-				'type' => 'category',
+				'type' => 'taxonomy',
 				'name' => 'Workout Tools',
 			),
 		),
@@ -197,9 +197,9 @@ return array(
 		//'submenu' => array()
 	),
 	array(
-		'args'    => array('slug' => 'videos'),
+		'args'    => array('slug' => 'videos', 'all' => array('')),
 		'url'     => routelink('videos', array('slug' => '')),
-		'type'    => 'videos',
+		'type'    => 'video',
 		'partial' => 'videos',
 		'name'    => 'Videos',
 		'submenu' => array(
@@ -280,7 +280,7 @@ return array(
 			array(
 				'args' => array('slug' => 'news', 'id' => 683),
 				'url'  => routelink('category', array('slug' => 'news')),
-				'type' => 'category',
+				'type' => 'taxonomy',
 				'name' => 'News',
 			),
 			array(

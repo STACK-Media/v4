@@ -72,7 +72,7 @@ class Navigation extends Wordpress
 
 	}
 
-	function _get_nav_content_category($args, $page_data) 
+	function _get_nav_content_taxonomy($args, $page_data) 
 	{
 		$articleservice = new Article;
 
