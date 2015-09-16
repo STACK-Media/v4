@@ -1,28 +1,36 @@
 {!! Assets::queue('stylesheet',  'widgets', 'latest-videos', '/assets/css/widgets/latest-videos.css') !!}
 
-<div class="row">
+<?php
+if (is_array($videos) AND count($videos) > 1):
+?>
 
-	<div class="col-xs-12 latest-videos event" data-name="0" data-template="latest-videos">
+	<div class="row">
 
-		<h3>Latest Videos <?php echo ($category) ? 'in ' . implode(' & ',$category) : ''; ?></h3>
+		<div class="col-xs-12 latest-videos event" data-name="0" data-template="latest-videos">
 
-		@foreach($videos as $key => $video)
+			<h3>Latest Videos <?php echo ($category) ? 'in ' . implode(' & ',$category) : ''; ?></h3>
 
-			@include('theme::partials.block',
-				array(
-					'key'			=> $key,
-					'widget'		=> 'latest-videos',				
-					'title' 		=> $video['name'], 
-					'image' 		=> $video['videoStillURL'],
-					'description'	=> $video['shortDescription'],
-					'url'			=> $video['link'],
-					'class'			=> 'block-video',
-					'author'		=> ''
+			@foreach($videos as $key => $video)
+
+				@include('theme::partials.block',
+					array(
+						'key'			=> $key,
+						'widget'		=> 'latest-videos',				
+						'title' 		=> $video['name'], 
+						'image' 		=> $video['videoStillURL'],
+						'description'	=> $video['shortDescription'],
+						'url'			=> $video['link'],
+						'class'			=> 'block-video',
+						'author'		=> ''
+					)
 				)
-			)
 
-		@endforeach
+			@endforeach
+
+		</div>
 
 	</div>
 
-</div>
+<?php
+endif;
+?>

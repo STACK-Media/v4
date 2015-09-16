@@ -71,31 +71,24 @@ class Navigation extends Wordpress
 
 	}
 
-	function _get_nav_content_category($args, $page_data) {
-
+	function _get_nav_content_category($args, $page_data) 
+	{
 		$articleservice = new Article;
 
 		// get count
+		$id 		= $args['id'];
 		$count 		= (isset($args['count']))? $args['count']: 3;
-		$vertical 	= (isset($args['vertical']))? TRUE: FALSE;
+		$vertical 	= (isset($args['vertical']) AND isset($this->_verticals[$args['vertical']]))? $this->_verticals[$args['vertical']]: FALSE;
 
-		// if vertical is used, then gran articles by category & vertical
-		if ($vertical)
-			return $this->_get_nav_content_vertical_category($args,$page_data);
+		// if vertical is used, then grab articles by category & vertical
+		$articles 	= ($vertical)? $articleservice->get_by_category_vertical($id,$vertical,$count): $articleservice->get_by_category_id($id, $count);
 
-		return array('articles' => $articleservice->get_by_category_id($args['id'], $count));
+		// error handling
+		if ( ! is_array($articles))
+			$articles  	= array();
 
-	}
-
-	function _get_nav_content_vertical_category($args, $page_data) {
-
-		$articleservice = new Article;
-
-		// get count
-		$count 		= (isset($args['count']))? $args['count']: 3;
-		$vertical 	= (isset($this->_verticals[$args['vertical']]))? $this->_verticals[$args['vertical']]: $this->_verticals['4w'];
-
-		return array('articles' => $articleservice->get_by_category_vertical($args['id'], $vertical, $count));
+		// return the articles
+		return array('articles' => $articles);
 	}
 
 	function _get_nav_content_vertical_videos($args, $page_data) {

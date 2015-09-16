@@ -1,108 +1,32 @@
 <?php 
 return array(
 	array(
-		'args'    => array('slug' => 'training', 'id' => 24),
-		'url'     => routelink('category', array('slug' => 'training')),
+		'args'    => array('slug' => 'gaming-lifestyle', 'id' => 134, 'count' => 4, 'vertical' => 'gamer'),
+		'url'     => routelink('category', array('slug' => 'gaming-lifestyle')),
 		'type'    => 'category',
 		'name'    => 'Gaming',
-		'submenu' => array(
-			array(
-				'args' => array('slug' => 'strength-training', 'id' => 118),
-				'url'  => routelink('category', array('slug' => 'strength-training')),
-				'type' => 'category',
-				'name' => 'Strength',
-			),
-			array(
-				'args' => array('slug' => 'get-faster', 'id' => 119),
-				'url'  => routelink('category', array('slug' => 'get-faster')),
-				'type' => 'category',
-				'name' => 'Get Faster',
-			),
-			array(
-				'args' => array('view' => 'conditioning'),
-				'url'  => 'http://conditioning.stack.com/',
-				'type' => 'static',
-				'name' => 'Conditioning',
-			),
-		),
+		'submenu' => array(),
 	),
 	array(
-		'args'    => array('slug' => 'training', 'id' => 24),
-		'url'     => routelink('category', array('slug' => 'training')),
+		'args'    => array('slug' => 'features', 'id' => 8396, 'count' => 4, 'vertical' => 'gamer'),
+		'url'     => routelink('tag', array('slug' => 'features')),
 		'type'    => 'category',
 		'name'    => 'Features',
-		'submenu' => array(
-			array(
-				'args' => array('slug' => 'strength-training', 'id' => 118),
-				'url'  => routelink('category', array('slug' => 'strength-training')),
-				'type' => 'category',
-				'name' => 'Strength',
-			),
-			array(
-				'args' => array('slug' => 'get-faster', 'id' => 119),
-				'url'  => routelink('category', array('slug' => 'get-faster')),
-				'type' => 'category',
-				'name' => 'Get Faster',
-			),
-			array(
-				'args' => array('view' => 'conditioning'),
-				'url'  => 'http://conditioning.stack.com/',
-				'type' => 'static',
-				'name' => 'Conditioning',
-			),
-		),
+		'submenu' => array(),
 	),
 	array(
-		'args'    => array('slug' => 'training', 'id' => 24),
-		'url'     => routelink('category', array('slug' => 'training')),
+		'args'    => array('slug' => 'entertainment', 'id' => 6890, 'count' => 4, 'vertical' => 'gamer'),
+		'url'     => routelink('category', array('slug' => 'entertainment')),
 		'type'    => 'category',
 		'name'    => 'Entertainment',
-		'submenu' => array(
-			array(
-				'args' => array('slug' => 'strength-training', 'id' => 118),
-				'url'  => routelink('category', array('slug' => 'strength-training')),
-				'type' => 'category',
-				'name' => 'Strength',
-			),
-			array(
-				'args' => array('slug' => 'get-faster', 'id' => 119),
-				'url'  => routelink('category', array('slug' => 'get-faster')),
-				'type' => 'category',
-				'name' => 'Get Faster',
-			),
-			array(
-				'args' => array('view' => 'conditioning'),
-				'url'  => 'http://conditioning.stack.com/',
-				'type' => 'static',
-				'name' => 'Conditioning',
-			),
-		),
+		'submenu' => array(),
 	),
 	array(
-		'args'    => array('slug' => 'training', 'id' => 24),
-		'url'     => routelink('category', array('slug' => 'training')),
+		'args'    => array('slug' => 'tech-lifestyle', 'id' => 146, 'count' => 4, 'vertical' => 'gamer'),
+		'url'     => routelink('category', array('slug' => 'tech-lifestyle')),
 		'type'    => 'category',
 		'name'    => 'Tech',
-		'submenu' => array(
-			array(
-				'args' => array('slug' => 'strength-training', 'id' => 118),
-				'url'  => routelink('category', array('slug' => 'strength-training')),
-				'type' => 'category',
-				'name' => 'Strength',
-			),
-			array(
-				'args' => array('slug' => 'get-faster', 'id' => 119),
-				'url'  => routelink('category', array('slug' => 'get-faster')),
-				'type' => 'category',
-				'name' => 'Get Faster',
-			),
-			array(
-				'args' => array('view' => 'conditioning'),
-				'url'  => 'http://conditioning.stack.com/',
-				'type' => 'static',
-				'name' => 'Conditioning',
-			),
-		),
+		'submenu' => array(),
 	),
 	array(
 		'args' => array('slug' => 'resources'),
