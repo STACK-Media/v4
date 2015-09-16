@@ -29,7 +29,7 @@ return array(
 					'views'     => array( // randomly select one view from array
 						'global.partials.promotions.popups.kaepernick',
 					),
-					'frequency' => '86400', // false, show every pageview (note: overridden by group 86400 frequency)
+					'frequency' => '86400', // show daily
 				)
 			)
 		),

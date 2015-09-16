@@ -28,7 +28,7 @@ function shuffle_keys(object)
 
 function _check_cancel_cookie(cookiename, frequency)
 {
-	if ( false && $.cookie(cookiename)){
+	if ($.cookie(cookiename)){
 		return false;
 	}
 
