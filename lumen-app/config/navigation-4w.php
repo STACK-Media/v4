@@ -43,7 +43,7 @@ return array(
 		'submenu' => array(),
 	),
 	array(
-		'args'    => array('slug' => 'videos'),
+		'args'    => array('slug' => 'videos', 'vertical' => '4w'),
 		'url'     => routelink('videos', array('slug' => '')),
 		'type'    => 'vertical_videos',
 		'name'    => 'Videos',
