@@ -43,9 +43,9 @@ return array(
 		'submenu' => array(),
 	),
 	array(
-		'args'    => array('slug' => 'videos'),
+		'args'    => array('slug' => 'videos', 'all' => array('tag:4w'), 'count' => 4),
 		'url'     => routelink('videos', array('slug' => '')),
-		'type'    => 'vertical_videos',
+		'type'    => 'video',
 		'name'    => 'Videos',
 		'submenu' => array(),
 	),
