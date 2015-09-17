@@ -14,7 +14,7 @@ $(document).ready(function(){
 	// grab all cookies
 	var cookies	 	= document.cookie;
 
-	if (cookies.indexOf("_stack_lead") == -1)
+	if (cookies.indexOf("_stack_lead") != -1)
 	{
 		// remove newsletter optin widget from sidebar
 		$(".newsletter-optin").closest('.widget').remove();
