@@ -1,7 +1,7 @@
 <?php 
 return array(
 	array(
-		'args'    => array('slug' => 'training', 'id' => 24),
+		'args'    => array('slug' => 'training'),
 		'url'     => routelink('category', array('slug' => 'training')),
 		'type'    => 'taxonomy',
 		'name'    => 'Training',
