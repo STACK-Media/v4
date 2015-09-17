@@ -110,6 +110,7 @@ class Cacheturbator extends Service
 
 				if (mb_strlen($cache_key, 'utf8') > 50):
 				$cache_key = substr(md5($cache_key), 0, 50);
+				var_dump($cache_key);
 				var_dump(mb_strlen($cache_key, 'utf8') . ' ' . strlen($cache_key));exit();
 				endif;
 
