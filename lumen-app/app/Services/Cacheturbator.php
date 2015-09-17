@@ -132,8 +132,9 @@ class Cacheturbator extends Service
     private function _limit_key_size($cache_key)
     {
     	if (mb_strlen($cache_key, 'UTF-8') > 250):
+
 			$cache_key = substr(md5($cache_key), 0, 250);
-			var_dump($cache_key); exit();
+		
 		endif;
 
 		return $cache_key;
