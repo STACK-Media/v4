@@ -71,7 +71,7 @@ class Navigation extends Wordpress
 		return $menu;
 
 	}
-/*
+
 	function _get_nav_content_taxonomy($args, $page_data) 
 	{
 		$articleservice = new Article;
@@ -116,7 +116,6 @@ class Navigation extends Wordpress
 		// return videos
 		return array('videos' => $videos);
 	}
-*/
 
 	// function _get_nav_content_vertical($args, $page_data) {}
 	// function _get_nav_content_static($args, $page_data) {}
