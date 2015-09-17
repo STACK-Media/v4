@@ -70,8 +70,6 @@ class Cacheturbator extends Service
 
 		endif;
 
-		var_dump($class);exit();
-
 		return $class;
 	}
 
@@ -107,6 +105,8 @@ class Cacheturbator extends Service
 		if ($this->cache_on):
 
 			$cache_key = 's.'.$this->_get_class_name().'.m.'.$method_name.'.a.'.json_encode($args);
+
+			var_dump($cache_key);exit();
 
 			if ( ! $this->flush && Cache::has($cache_key)):
 
