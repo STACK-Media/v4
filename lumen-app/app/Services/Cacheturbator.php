@@ -82,6 +82,16 @@ class Cacheturbator extends Service
 			$cache_key = 's.'.$this->_get_class_name().'.a.'.$attrib_name.'.v.'.json_encode($value);
 			$cache_key = $this->_limit_key_size($cache_key);
 
+			Cache::put($cache_key, $value, mt_rand($this->min_cache, $this->max_cache));
+
+		endif;
+
+		/*
+		if ($this->cache_on):
+
+			$cache_key = 's.'.$this->_get_class_name().'.a.'.$attrib_name.'.v.'.json_encode($value);
+			$cache_key = $this->_limit_key_size($cache_key);
+
 			if ( ! $this->flush && Cache::has($cache_key)):
 
 				return Cache::get($cache_key);
@@ -99,6 +109,7 @@ class Cacheturbator extends Service
 		endif;
 
 		return $result;
+		*/
 	}
 
 	function __call($method_name, $args = NULL)
