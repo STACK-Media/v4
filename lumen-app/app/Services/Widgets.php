@@ -21,11 +21,11 @@ class Widgets extends Service
 		);
 
 		// first attempt to get config from vertical
-		$vrt 	= config('widgets.'.$page_object->subtheme.'.'.$page_type);
+		//$vrt 	= config('widgets.'.$page_object->subtheme.'.'.$page_type);
 		$cfg 	= config('widgets.default.'.$page_type);
 
 		// set default config if unable to grab by vertical
-		$cfg 	= ( ! is_array($vrt))? $cfg: array_merge($cfg,$vrt);
+		//$cfg 	= ( ! is_array($vrt))? $cfg: array_merge($cfg,$vrt);
 
 		if (is_array($cfg)):
 
