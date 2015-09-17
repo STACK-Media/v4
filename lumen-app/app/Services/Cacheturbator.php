@@ -39,7 +39,7 @@ class Cacheturbator extends Service
 
 		if ($this->cache_on):
 
-			$cache_key = 's.'.get_class($this->service).'.a.'.$attrib_name;
+			$cache_key = 's.'.$this->_get_class_name().'.a.'.$attrib_name;
 
 			if ( ! $this->flush && Cache::has($cache_key)):
 
@@ -60,20 +60,25 @@ class Cacheturbator extends Service
 		return $result;
 	}
 
+	private function _get_class_name()
+	{
+		$class = get_class($this->service);
+
+		if (strpos($class, '/') !== FALSE):
+
+			$class = join('', array_slice(explode('\\', $class), -1));
+
+		endif;
+
+		return $class;
+	}
+
 	function __set($attrib_name, $value)
 	{
 
 		if ($this->cache_on):
 
-			$class = get_class($this->service);
-
-			if (strpos($class, '/') !== FALSE):
-
-				$class = join('', array_slice(explode('\\', $class), -1))
-
-			endif;
-
-			$cache_key = 's.'.$class.'.a.'.$attrib_name.'.v.'.json_encode($value);
+			$cache_key = 's.'.$this->_get_class_name().'.a.'.$attrib_name.'.v.'.json_encode($value);
 
 			if ( ! $this->flush && Cache::has($cache_key)):
 
@@ -99,15 +104,7 @@ class Cacheturbator extends Service
 
 		if ($this->cache_on):
 
-			$class = get_class($this->service);
-
-			if (strpos($class, '/') !== FALSE):
-
-				$class = join('', array_slice(explode('\\', $class), -1))
-
-			endif;
-
-			$cache_key = 's.'.$class.'.m.'.$method_name.'.a.'.json_encode($args);
+			$cache_key = 's.'.$this->_get_class_name().'.m.'.$method_name.'.a.'.json_encode($args);
 
 			if ( ! $this->flush && Cache::has($cache_key)):
 
