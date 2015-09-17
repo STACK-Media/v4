@@ -197,7 +197,7 @@ return array(
 		//'submenu' => array()
 	),
 	array(
-		'args'    => array('slug' => 'videos', 'all' => array('')),
+		'args'    => array('slug' => 'videos', 'all' => array('4w')),
 		'url'     => routelink('videos', array('slug' => '')),
 		'type'    => 'video',
 		'partial' => 'videos',
