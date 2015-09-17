@@ -147,7 +147,9 @@ class PageController extends BaseController
 			endforeach;
 
 		endforeach;
-
+print "<pre>";
+print_r($widget_array);
+exit;
         return $widget_array;
 	}
 }
