@@ -136,7 +136,7 @@ class PageController extends BaseController
 
 		$widget_config  = $widget_service->get_list($this->_page_object->page_type, $this->_page_object);
 print "<pre>";
-print_r($widget_config);
+print_r($widget_service);
 		$widget_array   = array();
 
 		foreach ($widget_config AS $position => $widgets):
