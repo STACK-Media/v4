@@ -64,7 +64,7 @@ class Cacheturbator extends Service
 	{
 		$class = get_class($this->service);
 
-		if (strpos($class, '/') !== FALSE):
+		if (strpos($class, '\\') !== FALSE):
 
 			$class = join('', array_slice(explode('\\', $class), -1));
 
