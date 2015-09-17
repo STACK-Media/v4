@@ -108,7 +108,7 @@ class Cacheturbator extends Service
 
 			if ( ! $this->flush && Cache::has($cache_key)):
 
-				if (strlen($cache_key) > 100):
+				if (strlen($cache_key) > 50):
 				var_dump($cache_key);exit();
 				endif;
 
