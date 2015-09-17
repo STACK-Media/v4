@@ -70,6 +70,8 @@ class Cacheturbator extends Service
 
 		endif;
 
+		var_dump($class);exit();
+
 		return $class;
 	}
 
