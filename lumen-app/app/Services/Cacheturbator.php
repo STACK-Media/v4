@@ -108,6 +108,8 @@ class Cacheturbator extends Service
 
 			if ( ! $this->flush && Cache::has($cache_key)):
 
+				var_dump($cache_key);exit();
+
 				return Cache::get($cache_key);
 
 			endif;
