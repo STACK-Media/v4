@@ -133,9 +133,7 @@ class PageController extends BaseController
 	{
 
 		$widget_service = new Cacher(new Widgets());
-print "<pre>";
-print_r($this->_page_object);
-exit;
+
 		$widget_config  = $widget_service->get_list($this->_page_object->page_type, $this->_page_object);
 
 		$widget_array   = array();
