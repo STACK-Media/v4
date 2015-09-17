@@ -105,9 +105,9 @@ class Navigation extends Wordpress
 		$videos 	= array();
 		$count 		= (isset($args['count']))? $args['count']: 3;	// default to 3 videos
 		
-		// if no id is passed, then just return empty array of articles
+		// if no id is passed, then grab all
 		if ( ! isset($args['all']))
-			return array('articles' => array());
+			$args['all']	= array('');
 
 		// set params
 		$params 	= array(
