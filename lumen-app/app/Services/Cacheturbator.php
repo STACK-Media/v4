@@ -40,6 +40,7 @@ class Cacheturbator extends Service
 		if ($this->cache_on):
 
 			$cache_key = 's.'.$this->_get_class_name().'.a.'.$attrib_name;
+			$cache_key = $this->_limit_key_size($cache_key);
 
 			if ( ! $this->flush && Cache::has($cache_key)):
 
@@ -79,6 +80,7 @@ class Cacheturbator extends Service
 		if ($this->cache_on):
 
 			$cache_key = 's.'.$this->_get_class_name().'.a.'.$attrib_name.'.v.'.json_encode($value);
+			$cache_key = $this->_limit_key_size($cache_key);
 
 			if ( ! $this->flush && Cache::has($cache_key)):
 
@@ -105,14 +107,9 @@ class Cacheturbator extends Service
 		if ($this->cache_on):
 
 			$cache_key = 's.'.$this->_get_class_name().'.m.'.$method_name.'.a.'.json_encode($args);
+			$cache_key = $this->_limit_key_size($cache_key);
 
 			if ( ! $this->flush && Cache::has($cache_key)):
-
-				if (mb_strlen($cache_key, 'UTF-8') > 50):
-				$cache_key = substr(md5($cache_key), 0, 50);
-				var_dump($cache_key);
-				var_dump(mb_strlen($cache_key, 'UTF-8') . ' ' . strlen($cache_key));exit();
-				endif;
 
 				return Cache::get($cache_key);
 
@@ -130,5 +127,15 @@ class Cacheturbator extends Service
 
 		return $result;
     
+    }
+
+    private function _limit_key_size($cache_key)
+    {
+    	if (mb_strlen($cache_key, 'UTF-8') > 250):
+			$cache_key = substr(md5($cache_key), 0, 250);
+			var_dump($cache_key); exit();
+		endif;
+
+		return $cache_key;
     }
 } 
