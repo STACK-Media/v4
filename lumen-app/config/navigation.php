@@ -1,7 +1,7 @@
 <?php 
 return array(
 	array(
-		'args'    => array('slug' => 'training'),
+		'args'    => array('slug' => 'training', 'id' => 24),
 		'url'     => routelink('category', array('slug' => 'training')),
 		'type'    => 'taxonomy',
 		'name'    => 'Training',
@@ -57,7 +57,7 @@ return array(
 		),
 	),
 	array(
-		'args'    => array('slug' => 'nutrition-2'),
+		'args'    => array('slug' => 'nutrition-2', 'id' => 15),
 		'url'     => routelink('category', array('slug' => 'nutrition-2')),
 		'type'    => 'taxonomy',
 		'name'    => 'Nutrition',
@@ -89,7 +89,7 @@ return array(
 		),
 	),
 	array(
-		'args'    => array('slug' => 'performance-gear'),
+		'args'    => array('slug' => 'performance-gear', 'id' => 25),
 		'url'     => routelink('category', array('slug' => 'performance-gear')),
 		'type'    => 'taxonomy',
 		'name'    => 'Gear',
