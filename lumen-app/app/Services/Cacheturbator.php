@@ -106,8 +106,6 @@ class Cacheturbator extends Service
 
 			$cache_key = 's.'.$this->_get_class_name().'.m.'.$method_name.'.a.'.json_encode($args);
 
-			var_dump($cache_key);exit();
-
 			if ( ! $this->flush && Cache::has($cache_key)):
 
 				return Cache::get($cache_key);
