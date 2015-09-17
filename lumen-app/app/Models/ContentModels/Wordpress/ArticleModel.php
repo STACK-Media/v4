@@ -341,8 +341,7 @@ class ArticleModel extends AbstractArticle
     {
         return DB::table('wp_posts')
             ->select(
-                'wp_posts.guid AS imgsrc',
-                'wp_posts.id'
+                'wp_posts.guid AS imgsrc'
             )
             ->where('wp_posts.post_parent', $id)
             ->where('wp_posts.post_type','attachment')
