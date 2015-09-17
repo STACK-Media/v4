@@ -53,7 +53,7 @@ class Cacheturbator extends Service
 
 		if ($this->cache_on):
 
-			Cache::put($cache_key, json_encode($result), mt_rand($this->min_cache, $this->max_cache));
+			Cache::put($cache_key, $result, mt_rand($this->min_cache, $this->max_cache));
 
 		endif;
 
@@ -92,7 +92,7 @@ class Cacheturbator extends Service
 
 		if ($this->cache_on):
 
-			Cache::put($cache_key, json_encode($result), mt_rand($this->min_cache, $this->max_cache));
+			Cache::put($cache_key, $result, mt_rand($this->min_cache, $this->max_cache));
 
 		endif;
 
@@ -118,7 +118,7 @@ class Cacheturbator extends Service
 
 		if ($this->cache_on):
 
-			Cache::put($cache_key, json_encode($result), mt_rand($this->min_cache, $this->max_cache));
+			Cache::put($cache_key, $result, mt_rand($this->min_cache, $this->max_cache));
 
 		endif;
 
