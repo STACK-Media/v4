@@ -146,7 +146,11 @@ class Cacheturbator extends Service
 
     private function _limit_key_size($cache_key)
     {
+    	var_dump($cache_key);
+
     	$cache_key = preg_replace("/[^A-Za-z0-9 -_]/", '', $cache_key);
+
+    	var_dump($cache_key);
 
     	if (mb_strlen($cache_key, 'UTF-8') > 250):
 
