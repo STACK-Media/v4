@@ -241,6 +241,9 @@ class Article extends Wordpress
 
 	public function get_by_category_vertical($id,$vertical,$limit=5,$offset=0,$date=FALSE)
 	{
+
+		return new stdClass();
+
 		// validation
 		$id       	= preg_replace("/[^0-9]/", '', $id);
 		$content 	= array();
