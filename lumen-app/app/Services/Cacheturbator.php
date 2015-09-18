@@ -79,7 +79,7 @@ class Cacheturbator extends Service
 
 		if ($this->cache_on):
 
-			$cache_key = 's.'.$this->_get_class_name().'.a.'.$attrib_name.'.v.'.json_encode($value);
+			$cache_key = 's.'.$this->_get_class_name().'.a.'.$attrib_name.'.v.'.serialize($value);
 			$cache_key = $this->_limit_key_size($cache_key);
 
 			Cache::put($cache_key, serialize($value), mt_rand($this->min_cache, $this->max_cache));
@@ -93,7 +93,7 @@ class Cacheturbator extends Service
 		/*
 		if ($this->cache_on):
 
-			$cache_key = 's.'.$this->_get_class_name().'.a.'.$attrib_name.'.v.'.json_encode($value);
+			$cache_key = 's.'.$this->_get_class_name().'.a.'.$attrib_name.'.v.'.serialize($value);
 			$cache_key = $this->_limit_key_size($cache_key);
 
 			if ( ! $this->flush && Cache::has($cache_key)):
@@ -121,7 +121,7 @@ class Cacheturbator extends Service
 
 		if ($this->cache_on):
 
-			$cache_key = 's.'.$this->_get_class_name().'.m.'.$method_name.'.a.'.json_encode($args);
+			$cache_key = 's.'.$this->_get_class_name().'.m.'.$method_name.'.a.'.serialize($args);
 			$cache_key = $this->_limit_key_size($cache_key);
 
 			if ( ! $this->flush && Cache::has($cache_key)):
