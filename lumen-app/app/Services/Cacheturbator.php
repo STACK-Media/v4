@@ -154,6 +154,8 @@ class Cacheturbator extends Service
 		
 		endif;
 
+		var_dump($cache_key);exit();
+
 		return $cache_key;
     }
 } 
