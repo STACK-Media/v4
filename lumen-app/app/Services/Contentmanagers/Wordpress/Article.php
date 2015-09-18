@@ -241,9 +241,6 @@ class Article extends Wordpress
 
 	public function get_by_category_vertical($id,$vertical,$limit=5,$offset=0,$date=FALSE)
 	{
-
-		return array();
-
 		// validation
 		$id       	= preg_replace("/[^0-9]/", '', $id);
 		$content 	= array();
@@ -286,8 +283,6 @@ class Article extends Wordpress
 
 	public function get_featured_image_by_post_id($id)
 	{
-
-		return '';
 
 		$id  = preg_replace("/[^0-9]/", '', $id);
 		$img = '/assets/img/branding/no_image.png';
