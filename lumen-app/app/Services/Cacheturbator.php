@@ -148,7 +148,7 @@ class Cacheturbator extends Service
     {
     	var_dump($cache_key);
 
-    	$cache_key = preg_replace("/[^a-zA-Z0-9]/", "", $cache_key);
+    	$cache_key = preg_replace("/[^a-zA-Z0-9 -_]/", "-", $cache_key);
 
     	var_dump($cache_key);
 
