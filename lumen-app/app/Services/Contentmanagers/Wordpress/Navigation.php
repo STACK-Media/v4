@@ -77,9 +77,13 @@ class Navigation extends Wordpress
 		$articleservice = new Article;
 
 		// get count
-		$id 		= $args['id'];
+		$id 		= (isset($args['id']))? $args['id']: FALSE;
 		$count 		= (isset($args['count']))? $args['count']: 3;
 		$vertical 	= (isset($args['vertical']) AND isset($this->_verticals[$args['vertical']]))? $this->_verticals[$args['vertical']]: FALSE;
+
+		// if no id is passed, then just return empty array of articles
+		if ( ! $id)
+			return array('articles' => array());
 
 		// if vertical is used, then grab articles by category & vertical
 		$articles 	= ($vertical)? $articleservice->get_by_category_vertical($id,$vertical,$count): $articleservice->get_by_category_id($id, $count);
@@ -101,6 +105,10 @@ class Navigation extends Wordpress
 		$videos 	= array();
 		$count 		= (isset($args['count']))? $args['count']: 3;	// default to 3 videos
 		
+		// if no id is passed, then grab all
+		if ( ! isset($args['all']))
+			$args['all']	= array('');
+
 		// set params
 		$params 	= array(
 			'all'			=> $args['all'],

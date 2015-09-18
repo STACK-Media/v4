@@ -132,7 +132,7 @@ class PageController extends BaseController
 	protected function _get_widgets()
 	{
 
-		$widget_service = new Cacher(new Widgets());
+		$widget_service = new Widgets();//new Cacher(new Widgets());
 
 		$widget_config  = $widget_service->get_list($this->_page_object->page_type, $this->_page_object);
 
