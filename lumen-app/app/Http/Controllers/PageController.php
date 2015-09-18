@@ -87,7 +87,7 @@ class PageController extends BaseController
 	{
 
 		$page_data['page']    = $this->_page_object;
-		$page_data['nav']     = array(); //$this->_get_nav();
+		$page_data['nav']     = $this->_get_nav();
 		$page_data['promos']  = $this->_get_promos();
 		$page_data['widgets'] = $this->_get_widgets();
 
@@ -112,7 +112,7 @@ class PageController extends BaseController
 			'name'     => $this->_page_object->name,
 			'id'       => $this->_page_object->id,
 			'subtheme' => config('theming.subtheme'),
-			'theme'    => config('theme.theme')
+			'theme'    => config('theming.theme')
 		));
 	}
 
