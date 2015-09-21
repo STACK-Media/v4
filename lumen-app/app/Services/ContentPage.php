@@ -20,14 +20,14 @@ class ContentPage extends Page
 		// grab content
 		$this->_object = $contentcms->get_by_slug($slug, $type);
 
-		// explicitly set page type
-		$this->_object->page_type 	= $page;
-
 		if ( ! is_object($this->_object)):
 
 			return parent::__construct();
 
 		endif;
+
+		// explicitly set page type
+		$this->_object->page_type 	= $page;
 
 		// this if for article page type (doesnt hurt to be here, though)
 		$video_key     = 'top_video_id';//config('videomanager.article_meta_key');
