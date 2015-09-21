@@ -107,8 +107,6 @@ class PageController extends BaseController
 	{
 		$navservice    = new Contentmanager('navigation');
 
-		var_dump(array($this->_page_object->page_type, $this->_page_object->name, $this->_page_object->id));exit();
-
 		return $navservice->get(array(
 			'type'     => $this->_page_object->page_type,
 			'name'     => $this->_page_object->name,
