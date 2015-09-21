@@ -176,8 +176,7 @@ class ArticleModel extends AbstractArticle
             ->join('wp_term_taxonomy', function($join) use ($id)
             {
                 $join->on('wp_term_relationships.term_taxonomy_id', '=', 'wp_term_taxonomy.term_taxonomy_id')
-                    ->where('wp_term_taxonomy.term_id','=',$id)
-                    ->orWhere('wp_term_taxonomy.parent','=',$id);
+                    ->where('wp_term_taxonomy.term_id','=',$id);
             })
             ->join(
                 'wp_users', 
