@@ -27,7 +27,12 @@ return array(
 				// promotion can only have "blacklist" or "whitelist" - if not whitelist, it'll be global everywhere except the blacklist
 				'kaepernick' => array(
 					'blacklist'	=> array(
-						'marketing'
+						array(
+							'type'		=> 'pagetype',
+							'arguments'	=> array(
+								'type'	=> 'marketing'
+							)
+						)
 					),
 					'views'     => array( // randomly select one view from array
 						'global.partials.promotions.popups.kaepernick',
