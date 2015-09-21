@@ -1,8 +1,5 @@
 <?php 
 return array(
-);
-/*
-return array(
 	array(
 		'args'    => array('slug' => 'training', 'id' => 24),
 		'url'     => routelink('category', array('slug' => 'training')),
@@ -325,4 +322,3 @@ return array(
 		'name' => 'Guided Search',
 	),
 );
-*/
