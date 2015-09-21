@@ -15,7 +15,7 @@ class ContentPage extends Page
 		extract($args);
 
 		// grab content manager based on page type
-		$contentcms    = new Contentmanager($page);
+		$contentcms    = new Contentmanager('Article');
 
 		// grab content
 		$this->_object = $contentcms->get_by_slug($slug, $type);
