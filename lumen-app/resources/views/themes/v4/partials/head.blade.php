@@ -28,7 +28,7 @@
 
 @if(Input::get('whatami'))
 
-<!-- {!! echo (defined('HHVM_VERSION')) ? 'HHVM' : 'PHP' !!} -->
+<!-- {!! ((defined('HHVM_VERSION')) ? 'HHVM' : 'PHP') !!} -->
 
 @endif
 
