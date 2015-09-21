@@ -28,7 +28,7 @@ class Cacheturbator extends Service
 
 		if (Request::input('flushcache')):
 
-			$this->flush = TRUE;
+			//$this->flush = TRUE;
 
 		endif;
 
@@ -44,9 +44,7 @@ class Cacheturbator extends Service
 
 			if ( ! $this->flush && Cache::has($cache_key)):
 
-				echo $cache_key; //return null;
-
-				//return unserialize(Cache::get($cache_key));
+				return unserialize(Cache::get($cache_key));
 
 			endif;
 
@@ -128,9 +126,7 @@ class Cacheturbator extends Service
 
 			if ( ! $this->flush && Cache::has($cache_key)):
 
-				echo $cache_key;
-
-				//return unserialize(Cache::get($cache_key));
+				return unserialize(Cache::get($cache_key));
 
 			endif;
 
