@@ -26,13 +26,7 @@
 
 <title>{!! (is_object($page) && $page->name) ? $page->name . ' |' : ''; !!} STACK</title>
 
-<?php /*
-@if(Input::get('whatami'))
-
 <!-- {!! ((defined('HHVM_VERSION')) ? 'HHVM' : 'PHP') !!} -->
-
-@endif
-*/ ?>
 
 @include('theme::partials.pixels.global')
 
