@@ -56,7 +56,7 @@
 	@endif
 
 
-	@include('theme::partials.bannerad', array('position' => 'sidebar-bottom', 'args' => array()))
+	@include('theme::partials.bannerad', array('position' => 'sidebar-mid', 'args' => array()))
 
 
 @stop

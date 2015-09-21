@@ -29,6 +29,7 @@ class Navigation extends Wordpress
 		if ( ! is_array($this->_nav))
 			$this->_nav 	= array();
 
+		/*
 		// override navigation for verticals
 		app()->configure('navigation-'.$page_data['subtheme']);
 		if (is_array(config('navigation-'.$page_data['subtheme'])))
@@ -41,7 +42,8 @@ class Navigation extends Wordpress
 		endforeach;
 
 		var_dump($this->_nav); exit();
-
+		*/
+		
 		return $this->_nav;
 	}
 
