@@ -26,6 +26,12 @@
 
 <title>{!! (is_object($page) && $page->name) ? $page->name . ' |' : ''; !!} STACK</title>
 
+@if(Input::get('whatami'))
+
+<!-- {!! echo (defined('HHVM_VERSION')) ? 'HHVM' : 'PHP' !!} -->
+
+@endif
+
 @include('theme::partials.pixels.global')
 
 <?php
