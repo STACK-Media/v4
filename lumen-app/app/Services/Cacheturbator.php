@@ -82,7 +82,7 @@ class Cacheturbator extends Service
 			$cache_key = 's.'.$this->_get_class_name().'.a.'.$attrib_name.'.v.'.serialize($value);
 			$cache_key = $this->_limit_key_size($cache_key);
 
-			Cache::put($cache_key, serialize($value), mt_rand($this->min_cache, $this->max_cache));
+			//Cache::put($cache_key, serialize($value), mt_rand($this->min_cache, $this->max_cache));
 
 		endif;
 
