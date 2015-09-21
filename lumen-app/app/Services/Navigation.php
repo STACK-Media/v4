@@ -1,13 +1,13 @@
 <?php 
 
-namespace App\Services\Contentmanagers\Wordpress;
+namespace App\Services;
 
 use App\Services\Cacheturbator as Cacher;
 
-use App\Services\Contentmanagers\Wordpress\Article;
+use App\Services\Contentmanager;
 use App\Services\Videomanager;
 
-class Navigation extends Wordpress
+class Navigation extends Service
 {
 
 	private $_nav;
@@ -26,13 +26,20 @@ class Navigation extends Wordpress
 
 	function get($page_data)
 	{
-		if ( ! is_array($this->_nav))
+		if ( ! is_array($this->_nav)):
+		
 			$this->_nav 	= array();
+		
+		endif;
 
 		// override navigation for verticals
 		app()->configure('navigation-'.$page_data['subtheme']);
-		if (is_array(config('navigation-'.$page_data['subtheme'])))
+
+		if (is_array(config('navigation-'.$page_data['subtheme']))):
+		
 			$this->_nav 	= config('navigation-'.$page_data['subtheme']);
+
+		endif;
 
 		foreach ($this->_nav as $key => $menu):
 
@@ -74,7 +81,7 @@ class Navigation extends Wordpress
 
 	function _get_nav_content_taxonomy($args, $page_data) 
 	{
-		$articleservice = new Article;
+		$articleservice = new Contentmanager('article');
 
 		// get count
 		$id 		= (isset($args['id']))? $args['id']: FALSE;
@@ -86,7 +93,7 @@ class Navigation extends Wordpress
 			return array('articles' => array());
 
 		// if vertical is used, then grab articles by category & vertical
-		$articles 	= ($vertical)? $articleservice->get_by_category_vertical($id,$vertical,$count): $articleservice->get_by_category_id($id, $count);
+		$articles 	= ($vertical) ? $articleservice->get_by_category_vertical($id,$vertical,$count) : $articleservice->get_by_category_id($id, $count);
 
 		// error handling
 		if ( ! is_array($articles))

@@ -4,7 +4,7 @@ use Laravel\Lumen\Routing\Controller as BaseController;
 use App\Services\Cacheturbator as Cacher;
 use App\Services\Widgets;
 use App\Services\Promotions;
-use App\Services\Contentmanager;
+use App\Services\Navigation;
 use Request;
 
 class PageController extends BaseController
@@ -105,7 +105,7 @@ class PageController extends BaseController
 
 	protected function _get_nav()
 	{
-		$navservice    = new Contentmanager('navigation');
+		$navservice    = new Navigation;
 
 		return $navservice->get(array(
 			'type'     => $this->_page_object->page_type,
