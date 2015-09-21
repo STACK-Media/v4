@@ -74,7 +74,7 @@
 
 	@include('theme::partials.navbar-nolinks')
 	
-	<div class="container navbar" id="oas_Top_container">
+	<div class="container" id="oas_Top_container">
 		@include('theme::partials.bannerad', array('position' => 'leader', 'args' => array()))
 	</div>
 

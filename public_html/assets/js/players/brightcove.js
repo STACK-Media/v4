@@ -1,14 +1,11 @@
-
+// initialize variables
 var myPlayer = {};
+var player_key 	= $(".video-js").attr("id");
+var video_id 	= $(".video-js").data("video-id");
 
-(function ($, window) {
+$(document).ready(function(){
 
-	"use strict";
-
-	// initialize variables
-	var player_key 	= $(".video-js").attr("id");
-	var video_id 	= $(".video-js").data("video-id");
-
+	// initialize player object
 	myPlayer 	= videojs(player_key);	// the video player object
 
 	// on ready
@@ -22,33 +19,89 @@ var myPlayer = {};
 
 		// set event listeners 
 		//myPlayer.on("play",myPlayer.onPlay);
-		//myPlayer.on("ended",myPlayer.onEnded);
+		myPlayer.on("ended",onMediaComplete);
 
 		// load first video 
-		loadVideo(video_id);
+		play(video_id);
 	});
 
+	// onclick of new video
+	$(".play-video").on('click',function(){
 
-	// load specific video
-	function loadVideo(id)
-	{
-		// first we must pause current video 
-		myPlayer.pause();
-		
-		// get video from brightcove catalog
-		myPlayer.bcCatalog.getVideo(id,function(error,video){
+		// initialize variables
+		var video_id 	= $(this).data('id');
 
-			// play video
-			myPlayer.src(video.sources);
-			myPlayer.poster(video.poster);
-			myPlayer.play();
+		// play new video
+		play(video_id);
 
-			if ($('.modal').is(':visible')){
-				myPlayer.pause();
-			}
-		});		
+	});
 
-		//changeOverlay(id);
-	}
+});
 
-})(window.jQuery, window);
+// load specific video
+function play(id)
+{
+	// first we must pause current video 
+	myPlayer.pause();
+	
+	// get video from brightcove catalog
+	myPlayer.bcCatalog.getVideo(id,function(error,video){
+
+		// play video
+		myPlayer.src(video.sources);
+		myPlayer.poster(video.poster);
+		myPlayer.play();
+
+		if ($('.modal').is(':visible')){
+			myPlayer.pause();
+		}
+	});		
+
+	nowplaying(id);
+}
+
+function nowplaying(id)
+{
+	// remove all nowplaying classes
+	// iterate all videos available to play
+	$(".play-video").each(function(){
+		$(this).removeClass('nowplaying');
+	});
+
+	// add nowplaying class to proper video
+	$(".play-video[data-id='" + id + "']").addClass('nowplaying');
+}
+
+function onMediaComplete()
+{
+	// initialize variables
+	var toplay 	= false;
+
+	// iterate all videos available to play
+	$(".play-video").each(function(){
+
+		// initialize variables
+		var video_id 	= $(this).data('id');
+
+		// if we need to play this video, then lets do that
+		if (toplay)
+		{
+			play(video_id);
+			return false;
+		}
+
+		// if this is the nowplaying video, then we need to grab thenext video_id to play
+		if ($(this).hasClass('nowplaying'))
+		{
+			toplay 	= true;
+		}
+
+	});
+
+	// if we made it here, then there wasn't a video found to play
+	return false;
+
+}
+
+
+
