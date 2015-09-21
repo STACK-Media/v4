@@ -40,6 +40,8 @@ class Navigation extends Wordpress
 
 		endforeach;
 
+		var_dump($this->_nav); exit();
+
 		return $this->_nav;
 	}
 

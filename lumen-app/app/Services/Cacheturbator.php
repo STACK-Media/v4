@@ -44,7 +44,7 @@ class Cacheturbator extends Service
 
 			if ( ! $this->flush && Cache::has($cache_key)):
 
-				return Cache::get($cache_key);
+				return unserialize(Cache::get($cache_key));
 
 			endif;
 
@@ -54,7 +54,7 @@ class Cacheturbator extends Service
 
 		if ($this->cache_on):
 
-			Cache::put($cache_key, $result, mt_rand($this->min_cache, $this->max_cache));
+			Cache::put($cache_key, serialize($result), mt_rand($this->min_cache, $this->max_cache));
 
 		endif;
 
@@ -79,10 +79,10 @@ class Cacheturbator extends Service
 
 		if ($this->cache_on):
 
-			$cache_key = 's.'.$this->_get_class_name().'.a.'.$attrib_name.'.v.'.json_encode($value);
+			$cache_key = 's.'.$this->_get_class_name().'.a.'.$attrib_name.'.v.'.serialize($value);
 			$cache_key = $this->_limit_key_size($cache_key);
 
-			Cache::put($cache_key, $value, mt_rand($this->min_cache, $this->max_cache));
+			Cache::put($cache_key, serialize($value), mt_rand($this->min_cache, $this->max_cache));
 
 		endif;
 
@@ -93,7 +93,7 @@ class Cacheturbator extends Service
 		/*
 		if ($this->cache_on):
 
-			$cache_key = 's.'.$this->_get_class_name().'.a.'.$attrib_name.'.v.'.json_encode($value);
+			$cache_key = 's.'.$this->_get_class_name().'.a.'.$attrib_name.'.v.'.serialize($value);
 			$cache_key = $this->_limit_key_size($cache_key);
 
 			if ( ! $this->flush && Cache::has($cache_key)):
@@ -121,12 +121,12 @@ class Cacheturbator extends Service
 
 		if ($this->cache_on):
 
-			$cache_key = 's.'.$this->_get_class_name().'.m.'.$method_name.'.a.'.json_encode($args);
+			$cache_key = 's.'.$this->_get_class_name().'.m.'.$method_name.'.a.'.serialize($args);
 			$cache_key = $this->_limit_key_size($cache_key);
 
 			if ( ! $this->flush && Cache::has($cache_key)):
 
-				return Cache::get($cache_key);
+				return unserialize(Cache::get($cache_key));
 
 			endif;
 
@@ -136,7 +136,7 @@ class Cacheturbator extends Service
 
 		if ($this->cache_on):
 
-			Cache::put($cache_key, $result, mt_rand($this->min_cache, $this->max_cache));
+			Cache::put($cache_key, serialize($result), mt_rand($this->min_cache, $this->max_cache));
 
 		endif;
 
@@ -146,6 +146,7 @@ class Cacheturbator extends Service
 
     private function _limit_key_size($cache_key)
     {
+
     	if (mb_strlen($cache_key, 'UTF-8') > 250):
 
 			$cache_key = substr(md5($cache_key), 0, 250);

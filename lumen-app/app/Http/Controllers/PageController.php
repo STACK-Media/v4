@@ -112,7 +112,7 @@ class PageController extends BaseController
 			'name'     => $this->_page_object->name,
 			'id'       => $this->_page_object->id,
 			'subtheme' => config('theming.subtheme'),
-			'theme'    => config('theme.theme')
+			'theme'    => config('theming.theme')
 		));
 	}
 
