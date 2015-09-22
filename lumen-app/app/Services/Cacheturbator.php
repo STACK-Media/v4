@@ -120,7 +120,7 @@ class Cacheturbator extends Service
 
 				Cache::add($cache_key, serialize($result), mt_rand($this->min_cache, $this->max_cache));
 
-				
+
 
 
 			endif;
@@ -136,7 +136,7 @@ class Cacheturbator extends Service
 
     	if (mb_strlen($cache_key, 'UTF-8') > 250):
 
-			$cache_key = substr(md5($cache_key), 0, 250);
+			$cache_key = substr($cache_key, -200).md5($cache_key);
 		
 		endif;
 
