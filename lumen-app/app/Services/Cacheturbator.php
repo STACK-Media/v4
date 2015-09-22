@@ -113,7 +113,14 @@ class Cacheturbator extends Service
 
 				file_put_contents('/var/www/CACHE_PUT_LOG.log', '--------CACHE_KEY--------'."\n".$cache_key."\n".'--------CACHE_BODY--------'."\n".serialize($result)."\n".'--------CACHE_EXPIRY--------'."\n".mt_rand($this->min_cache, $this->max_cache)."\n=========================\n\n\n\n", FILE_APPEND);
 
-			Cache::put($cache_key, serialize($result), mt_rand($this->min_cache, $this->max_cache));
+				try {
+				Cache::put($cache_key, serialize($result), mt_rand($this->min_cache, $this->max_cache));
+			} catch (Exception $e){
+				var_dump(array($cache_key));
+				var_dump($result); exit();
+				var_dump($e);
+				exit();
+			}
 
 			endif;
 
