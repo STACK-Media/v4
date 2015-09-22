@@ -156,10 +156,12 @@ $hugestr = trim($hugestr);
 
     $key = 's.Article.m.get_by_category_vertical.a.a:3:{i:0;i:8661;i:1;s:4:"8661";i:2;i:3;}';
 
-
+    for ($x = 0; $x <= 1000; $x++) {
     $result = \Cache::put($key, $hugestr, 30);
 
-    var_dump($result);
+    //var_dump($result);
+
+}
 
 
     }
