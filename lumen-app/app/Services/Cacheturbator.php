@@ -140,6 +140,8 @@ class Cacheturbator extends Service
 		
 		endif;
 
+		$cache_key = preg_replace("/[^A-Za-z0-9 ]/", '', $cache_key);
+
 		return $cache_key;
     }
 } 
