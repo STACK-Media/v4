@@ -153,8 +153,6 @@ class Article extends Wordpress
 		$statuses       = $this->_get_statuses($type);
 		$article        = $this->_model->get_by_slug($slug, $statuses);
 
-		var_dump(array($slug, $statuses));
-
 		$article->image = $this->get_featured_image_by_post_id($article->id);
 
 		return $this->_add_metacontent($article);

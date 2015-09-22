@@ -98,7 +98,7 @@ class ArticleModel extends AbstractArticle
             )
             ->where('wp_posts.post_name', $slug)
             ->whereIn('wp_posts.post_status', $statuses)
-            //->where('wp_posts.post_type', 'post')
+            ->where('wp_posts.post_type', 'post')
             ->join(
                 'wp_users', 
                 'wp_posts.post_author', '=', 'wp_users.ID'
