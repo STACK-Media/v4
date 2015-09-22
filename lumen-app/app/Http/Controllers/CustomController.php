@@ -46,4 +46,9 @@ class CustomController extends PageController
     	return $this->index('terms-of-use');	
     }
 
+    public function velocity()
+    {
+    	return $this->index('stack-velocity');	
+    }
+
 }

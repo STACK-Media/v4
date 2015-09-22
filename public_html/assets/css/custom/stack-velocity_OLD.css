@@ -1,0 +1,43 @@
+.vps_home {
+}
+.vsp_text {
+    float: left;
+    clear: both;
+    border-bottom: 1px dashed #148bcc;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    font-size: 1em;
+    line-height: 1.4;
+}
+.vsp_logo img {
+	margin-bottom: 	10px;
+}
+.vsp_hero {
+	margin-bottom: 	18px;
+}
+.vsp_bucket {
+    background-color: 	#000;
+    height: 			300px;
+}
+.vsp_bucket h2 {
+	background-color: #a1a1a1;
+    margin: 0;
+    padding: 6px 0;
+    font-family: "Oswald", Arial, sans-serif;
+    color: #FFF;
+    font-size: 2em;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+.vsp_bucket p {
+    text-align: center;
+    color: #FFF;
+    padding: 36px 24px;
+    font-size: 1.6em;
+}
+.input_container {
+	width: 90%;
+    display: inline-block;
+    margin: 0 5% 5%;
+}
