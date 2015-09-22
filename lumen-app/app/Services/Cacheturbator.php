@@ -113,7 +113,7 @@ class Cacheturbator extends Service
 
 			if ($result):
 
-			Cache::put($cache_key, serialize($result), mt_rand($this->min_cache, $this->max_cache));
+			//Cache::put($cache_key, serialize($result), mt_rand($this->min_cache, $this->max_cache));
 
 			endif;
 
