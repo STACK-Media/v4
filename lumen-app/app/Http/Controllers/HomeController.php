@@ -9,7 +9,7 @@ class HomeController extends PageController
     function index()
     {
 
-        //return $this->_test_cache_put();
+        return $this->_test_cache_put();
 
     	$page_data = array();
     	
