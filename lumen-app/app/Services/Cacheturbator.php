@@ -113,7 +113,7 @@ class Cacheturbator extends Service
 
 				$result    = '';
 				//$cache_key = rand(0,10000).'randomkey';
-				Cache::add($cache_key, serialize($result), mt_rand($this->min_cache, $this->max_cache));
+				Cache::add($cache_key, $result, mt_rand($this->min_cache, $this->max_cache));
 
 			endif;
 
