@@ -294,11 +294,20 @@ $app->get('api/v1/promos/{group}/{promo}', 'App\Http\Controllers\API\v1\PromosCo
 
 // Custom pages
 // a to z
-$app->get('a-to-z',			['uses' => 'App\Http\Controllers\CustomController@atoz']);
-$app->get('terms-of-use',	['uses' => 'App\Http\Controllers\CustomController@terms']);
+$app->get('a-to-z',			['as' => 'a-to-z', 			'uses' => 'App\Http\Controllers\CustomController@atoz']);
+$app->get('terms-of-use',	['as' => 'terms-of-use', 	'uses' => 'App\Http\Controllers\CustomController@terms']);
+$app->get('stack-velocity',	['as' => 'stack-velocity', 	'uses' => 'App\Http\Controllers\CustomController@velocity']);
 
 
+// Vanity URLs
+$app->get('vanity',			['uses' => 'App\Http\Controllers\VanityController@index']);
 
+
+/*
+$app->group([], function($app){
+	return $app->make('ContentController')->index('maya-moore-featured');
+});
+*/
 
 
 
