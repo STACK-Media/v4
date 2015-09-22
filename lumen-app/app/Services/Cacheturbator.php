@@ -111,8 +111,8 @@ class Cacheturbator extends Service
 
 			if ($result && ! Cache::has($cache_key)):
 
-				$result    = array();
-				$cache_key = rand(0,10000).'randomkey';
+				//$result    = array();
+				//$cache_key = rand(0,10000).'randomkey';
 				Cache::add($cache_key, serialize($result), mt_rand($this->min_cache, $this->max_cache));
 
 			endif;
@@ -132,7 +132,7 @@ class Cacheturbator extends Service
 		
 		endif;
 
-		//$cache_key = preg_replace("/[^A-Za-z0-9 ]/", '-', $cache_key);
+		$cache_key = preg_replace("/[^A-Za-z0-9 ]/", '-', $cache_key);
 
 		return $cache_key;
     }
