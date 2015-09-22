@@ -251,7 +251,7 @@ class Article extends Wordpress
 		// format articles
 		foreach ($articles AS $article):
 
-			#### $article->image 	= $this->get_featured_image_by_post_id($article->id);
+			$article->image 	= $this->get_featured_image_by_post_id($article->id);
 
 			$content[] 			= $article;//$this->_add_metacontent($article);
 
