@@ -54,7 +54,7 @@ class Cacheturbator extends Service
 
 		if ($this->cache_on):
 
-			Cache::put($cache_key, serialize($result), mt_rand($this->min_cache, $this->max_cache));
+			//Cache::put($cache_key, serialize($result), mt_rand($this->min_cache, $this->max_cache));
 
 		endif;
 
@@ -82,38 +82,11 @@ class Cacheturbator extends Service
 			$cache_key = 's.'.$this->_get_class_name().'.a.'.$attrib_name.'.v.'.serialize($value);
 			$cache_key = $this->_limit_key_size($cache_key);
 
-			Cache::put($cache_key, serialize($value), mt_rand($this->min_cache, $this->max_cache));
+			//Cache::put($cache_key, serialize($value), mt_rand($this->min_cache, $this->max_cache));
 
 		endif;
 
 		$this->service->$attrib_name = $value;
-
-
-
-		/*
-		if ($this->cache_on):
-
-			$cache_key = 's.'.$this->_get_class_name().'.a.'.$attrib_name.'.v.'.serialize($value);
-			$cache_key = $this->_limit_key_size($cache_key);
-
-			if ( ! $this->flush && Cache::has($cache_key)):
-
-				return Cache::get($cache_key);
-
-			endif;
-
-		endif;
-
-		$result = $this->service->$attrib_name = $value;
-
-		if ($this->cache_on):
-
-			Cache::put($cache_key, $result, mt_rand($this->min_cache, $this->max_cache));
-
-		endif;
-
-		return $result;
-		*/
 	}
 
 	function __call($method_name, $args = NULL)
@@ -136,7 +109,7 @@ class Cacheturbator extends Service
 
 		if ($this->cache_on):
 
-			Cache::put($cache_key, serialize($result), mt_rand($this->min_cache, $this->max_cache));
+			//Cache::put($cache_key, serialize($result), mt_rand($this->min_cache, $this->max_cache));
 
 		endif;
 

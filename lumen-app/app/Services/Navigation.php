@@ -43,6 +43,8 @@ class Navigation extends Service
 
 		foreach ($this->_nav as $key => $menu):
 
+			//var_dump($menu);var_dump($key);
+
 			$this->_nav[$key] = $this->_build_nav($menu, $page_data);
 
 		endforeach;
