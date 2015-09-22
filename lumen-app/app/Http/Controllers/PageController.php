@@ -86,10 +86,8 @@ class PageController extends BaseController
 	protected function _load_page_view($page_view, $page_data = array())
 	{
 
-
-
 		$page_data['page']    = $this->_page_object;
-		$page_data['nav']     = $this->_get_nav(); //exit();
+		//$page_data['nav']     = $this->_get_nav(); //exit();
 		$page_data['promos']  = $this->_get_promos();
 		$page_data['widgets'] = $this->_get_widgets();
 
