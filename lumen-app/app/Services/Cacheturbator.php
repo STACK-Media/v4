@@ -109,18 +109,13 @@ class Cacheturbator extends Service
 
 		if ($this->cache_on):
 
-			if ($result):
+			if ($result && ! Cache::has($cache_key)):
 
-				file_put_contents('/var/www/CACHE_PUT_LOG.log', '--------CACHE_KEY--------'."\n".$cache_key."\n".'--------CACHE_BODY--------'."\n".serialize($result)."\n".'--------CACHE_EXPIRY--------'."\n".mt_rand($this->min_cache, $this->max_cache)."\n=========================\n\n\n\n", FILE_APPEND);
-
-				try {
-				Cache::put($cache_key, serialize($result), mt_rand($this->min_cache, $this->max_cache));
-			} catch (Exception $e){
-				var_dump(array($cache_key));
-				var_dump($result); exit();
-				var_dump($e);
-				exit();
-			}
+				//$result    = '';
+				//$cache_key = rand(0,10000).'randomkey';
+				//Cache::add($cache_key, $result, mt_rand($this->min_cache, $this->max_cache));
+				
+				Cache::add($cache_key, '', mt_rand($this->min_cache, $this->max_cache));
 
 			endif;
 
@@ -135,9 +130,11 @@ class Cacheturbator extends Service
 
     	if (mb_strlen($cache_key, 'UTF-8') > 250):
 
-			$cache_key = substr(md5($cache_key), 0, 250);
+			$cache_key = substr($cache_key, -200).md5($cache_key);
 		
 		endif;
+
+		$cache_key = preg_replace("/[^A-Za-z0-9 ]/", '-', $cache_key);
 
 		return $cache_key;
     }

@@ -100,7 +100,7 @@ class Article extends Wordpress
 
 			$replace = '';
 
-			if (array_key_exists($key, $meta)):
+			if (is_array($key) && array_key_exists($key, $meta)):
 
 				$replace = $meta[$key];
 
@@ -153,7 +153,11 @@ class Article extends Wordpress
 		$statuses       = $this->_get_statuses($type);
 		$article        = $this->_model->get_by_slug($slug, $statuses);
 
-		$article->image = $this->get_featured_image_by_post_id($article->id);
+		if (is_object($article) && property_exists($article, 'id')):
+
+			$article->image = $this->get_featured_image_by_post_id($article->id);
+
+		endif;
 
 		return $this->_add_metacontent($article);
 
@@ -206,14 +210,18 @@ class Article extends Wordpress
 		// get articles
 		$articles 	= $this->_model->get_by_category_id($id,$limit,$offset,$date);
 
-		// format articles
-		foreach ($articles AS $article):
+		if (is_array($articles)):
 
-			$article->image 	= $this->get_featured_image_by_post_id($article->id);
+			// format articles
+			foreach ($articles AS $article):
 
-			$content[] 			= $article;//$this->_add_metacontent($article);
+				$article->image 	= $this->get_featured_image_by_post_id($article->id);
 
-		endforeach;
+				$content[] 			= $article;//$this->_add_metacontent($article);
+
+			endforeach;
+
+		endif;
 
 		return $content;
 	}

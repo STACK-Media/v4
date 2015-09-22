@@ -61,48 +61,60 @@ class Taxonomy extends Wordpress
 	{
 		$ttids = array();
 
-        foreach ($tax as $key => $row):
+		if (is_array($tax)):
 
-            $ttids[] = $row->term_taxonomy_id;
+	        foreach ($tax as $key => $row):
 
-        endforeach;
+	            $ttids[] = $row->term_taxonomy_id;
+
+	        endforeach;
+
+        endif;
 
         $meta      = $this->_model->get_term_tax_metadata($ttids);
         $metaclean = array();
 
-        foreach ($meta as $key => $arr):
+        if (is_array($meta)):
 
-            $meta_key = strtolower($arr->meta_key);
-            $meta_val = $arr->meta_value;
+	        foreach ($meta as $key => $arr):
 
-            preg_match_all("/(.*?)_(\d+)$/", $meta_key, $matches);
+	            $meta_key = strtolower($arr->meta_key);
+	            $meta_val = $arr->meta_value;
 
-            if ($matches[0]):
+	            preg_match_all("/(.*?)_(\d+)$/", $meta_key, $matches);
 
-                $meta_num = $matches[2][0];
-                $meta_key = $matches[1][0];
+	            if ($matches[0]):
 
-                $metaclean[$arr->term_taxonomy_id][$meta_key][$meta_num] = $meta_val;
+	                $meta_num = $matches[2][0];
+	                $meta_key = $matches[1][0];
 
-            else:
+	                $metaclean[$arr->term_taxonomy_id][$meta_key][$meta_num] = $meta_val;
 
-                $metaclean[$arr->term_taxonomy_id][$meta_key] = $meta_val;
+	            else:
 
-            endif;
+	                $metaclean[$arr->term_taxonomy_id][$meta_key] = $meta_val;
 
-        endforeach;
+	            endif;
 
-        foreach ($tax as $key => $row):
+	        endforeach;
 
-            if ( ! array_key_exists($row->term_taxonomy_id, $metaclean)):
+        endif;
 
-                continue;
+        if (is_array($tax)):
 
-            endif;
+	        foreach ($tax as $key => $row):
 
-            $tax[$key]->meta = $metaclean[$row->term_taxonomy_id];
+	            if ( ! array_key_exists($row->term_taxonomy_id, $metaclean)):
 
-        endforeach;
+	                continue;
+
+	            endif;
+
+	            $tax[$key]->meta = $metaclean[$row->term_taxonomy_id];
+
+	        endforeach;
+
+        endif;
 
         return $tax;
 	}
