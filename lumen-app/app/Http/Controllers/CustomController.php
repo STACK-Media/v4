@@ -6,7 +6,20 @@ use App\Services\Contentmanager;
 
 class CustomController extends PageController
 {
-    function atoz()
+	private function index($slug)
+	{
+    	// initialize variables
+    	$data 	= array();
+    	
+    	// set page object
+		$this->_set_page_object(new CustomPage(array(
+			'slug'	=> $slug
+		)));
+
+		return $this->_load_page_view('custom.'.$slug, $data);
+	}
+
+    public function atoz()
     {
     	// initialize variables
     	$data 	= array();
@@ -25,7 +38,12 @@ class CustomController extends PageController
 		// set data variables
 		$data['taxonomies']	= $taxonomies;
 		
-        return $this->_load_page_view('custom.atoz', $data);
+        return $this->_load_page_view('custom.a-to-z', $data);
+    }
+
+    public function terms()
+    {
+    	return $this->index('terms-of-use');	
     }
 
 }

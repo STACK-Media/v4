@@ -294,7 +294,8 @@ $app->get('api/v1/promos/{group}/{promo}', 'App\Http\Controllers\API\v1\PromosCo
 
 // Custom pages
 // a to z
-$app->get('a-to-z',['uses' => 'App\Http\Controllers\CustomController@atoz']);
+$app->get('a-to-z',			['uses' => 'App\Http\Controllers\CustomController@atoz']);
+$app->get('terms-of-use',	['uses' => 'App\Http\Controllers\CustomController@terms']);
 
 
 
