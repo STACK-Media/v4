@@ -112,7 +112,7 @@ class Cacheturbator extends Service
 			if ($result && ! Cache::has($cache_key)):
 
 				$result    = '';
-				//$cache_key = rand(0,10000).'randomkey';
+				$cache_key = rand(0,10000).'randomkey';
 				Cache::add($cache_key, $result, mt_rand($this->min_cache, $this->max_cache));
 
 			endif;
