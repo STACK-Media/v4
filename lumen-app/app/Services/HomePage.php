@@ -20,12 +20,19 @@ class HomePage extends Page
 		// set playlist information
 		$playlist 			= $playlistservice->get($playlist_id);
 
-		// set video (1st id in the playlist)
-		$videos 			= $playlist['videos'][0];
+		$videos = FALSE;
+		$player = FALSE;
 
-		// grab player information
-		## TODO: The player service needs updated to allow page template (that should determine player - right?)
-		$player 			= $playerservice->get($videos['id']);
+		if (isset($playlist['videos'])):
+
+			// set video (1st id in the playlist)
+			$videos 			= $playlist['videos'][0];
+
+			// grab player information
+			## TODO: The player service needs updated to allow page template (that should determine player - right?)
+			$player 			= $playerservice->get($videos['id']);
+
+		endif;
 
 		// set page object
 		$this->_object            = new \stdClass();
