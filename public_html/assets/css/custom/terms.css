@@ -4,3 +4,10 @@
     line-height: 1;
     font-family: "Roboto Slab", serif;
 }
+.accordion h3 {
+	border: 	none !important;
+	background:	none !important;
+}
+.accordion-body {
+	height: 	auto !important;
+}
