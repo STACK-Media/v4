@@ -109,7 +109,7 @@ class Cacheturbator extends Service
 
 		if ($this->cache_on):
 
-			if ($result):
+			if ($result && ! Cache::has($cache_key)):
 
 				file_put_contents('/var/www/CACHE_PUT_LOG.log', '--------CACHE_KEY--------'."\n".$cache_key."\n".'--------CACHE_BODY--------'."\n".serialize($result)."\n".'--------CACHE_EXPIRY--------'."\n".mt_rand($this->min_cache, $this->max_cache)."\n=========================\n\n\n\n", FILE_APPEND);
 
