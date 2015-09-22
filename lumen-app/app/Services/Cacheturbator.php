@@ -54,7 +54,7 @@ class Cacheturbator extends Service
 
 		if ($this->cache_on):
 
-			//Cache::put($cache_key, serialize($result), mt_rand($this->min_cache, $this->max_cache));
+			Cache::put($cache_key, serialize($result), mt_rand($this->min_cache, $this->max_cache));
 
 		endif;
 
@@ -82,7 +82,7 @@ class Cacheturbator extends Service
 			$cache_key = 's.'.$this->_get_class_name().'.a.'.$attrib_name.'.v.'.serialize($value);
 			$cache_key = $this->_limit_key_size($cache_key);
 
-			//Cache::put($cache_key, serialize($value), mt_rand($this->min_cache, $this->max_cache));
+			Cache::put($cache_key, serialize($value), mt_rand($this->min_cache, $this->max_cache));
 
 		endif;
 
@@ -109,7 +109,20 @@ class Cacheturbator extends Service
 
 		if ($this->cache_on):
 
-			//Cache::put($cache_key, serialize($result), mt_rand($this->min_cache, $this->max_cache));
+			if ($result):
+
+				file_put_contents('/var/www/CACHE_PUT_LOG.log', '--------CACHE_KEY--------'."\n".$cache_key."\n".'--------CACHE_BODY--------'."\n".serialize($result)."\n".'--------CACHE_EXPIRY--------'."\n".mt_rand($this->min_cache, $this->max_cache)."\n=========================\n\n\n\n", FILE_APPEND);
+
+				try {
+				Cache::put($cache_key, serialize($result), mt_rand($this->min_cache, $this->max_cache));
+			} catch (Exception $e){
+				var_dump(array($cache_key));
+				var_dump($result); exit();
+				var_dump($e);
+				exit();
+			}
+
+			endif;
 
 		endif;
 
