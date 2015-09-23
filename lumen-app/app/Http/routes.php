@@ -288,6 +288,14 @@ $app->group(['prefix' => 'api/v1/vms','namespace' => 'App\Http\Controllers\API\v
 
 });
 
+// Email Manager
+$app->group(['prefix' => 'api/v1/email','namespace' => 'App\Http\Controllers\API\v1\Email', 'middleware' => 'api-auth'], function($app) {
+
+	// playlist
+	$app->get('message/send',	'MessageController@send');
+
+});
+
 // Promos Ajax
 $app->get('api/v1/promos/{group}/{promo}', 'App\Http\Controllers\API\v1\PromosController@show');
 
