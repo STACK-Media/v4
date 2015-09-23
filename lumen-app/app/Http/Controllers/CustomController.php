@@ -41,6 +41,11 @@ class CustomController extends PageController
         return $this->_load_page_view('custom.a-to-z', $data);
     }
 
+    public function contact()
+    {
+        return $this->index('contact');  
+    }
+
     public function terms()
     {
     	return $this->index('terms-of-use');	

@@ -5,7 +5,14 @@ body {
 hr { 
 	border-bottom: 		1px dashed #148bcc;
 }
-
+.stack-red {
+	color: 		#bf2f37;
+}
+.btn-stack {
+	color: 				#FFF;
+	font-weight: 		bold;
+	background-image: 	linear-gradient(to bottom,#bf2f37 0,#bf2f37 100%);
+}
 .right {
 	text-align: 		right;
 }

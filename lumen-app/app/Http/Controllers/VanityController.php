@@ -25,13 +25,14 @@ class VanityController extends BaseController
 		
 		// see if this vanity URL exists
 		if ( ! isset($this->_vanity[$vanity]))
-			die('you have reached this page in error');
+			abort(404);
 
+		// grab needed variables
+		$page		= $this->_vanity[$vanity]['page'];
+		$params 	= $this->_vanity[$vanity]['params'];
 
-		redirect()->route('stack-velocity');
-		//\Route::action('ContentController@index');
-		//echo 'still good';
-		exit;
+		// perform redirect
+		return redirect()->route($page,$params);
 	}
 
 }
