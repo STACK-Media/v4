@@ -66,97 +66,101 @@
 				</div>
 
 				<ul class="nav navbar-nav">
-				
-					@foreach($nav as $menu)
-					
-						<?php 
+		
+					@if(isset($nav))
 
-						$url          	= (isset($menu['url']) ? $menu['url'] : ''); 
-						$menu_data    	= $menu;
-						$submenu_cols 	= (view()->exists('theme::partials.navbar.'.$menu['type'])) ? 9 : 0; 
-						$submenu_cols 	= ( ! isset($menu['submenu']) OR empty($menu['submenu']))? 12: $submenu_cols;
-
-						$has_submenu  	= (isset($menu['submenu']) AND ! empty($menu['submenu']));
-						$view_exists  	= (view()->exists('theme::partials.navbar.'.$menu['type']));
-
-						$margin 		= ($submenu_cols == 12)? 'navbar-margin': '';
-
-						unset($menu_data['submenu']); 
+						@foreach($nav as $menu)
 						
-						?>
+							<?php 
 
-						<li class="menu-item-{!! preg_replace("/[^a-z0-9]/", '', strtolower($menu['name'])) !!} menu-type-{!! $menu['type'] !!}">					
-							<a href="{!! $url !!}">{!! $menu['name'] !!}</a>
+							$url          	= (isset($menu['url']) ? $menu['url'] : ''); 
+							$menu_data    	= $menu;
+							$submenu_cols 	= (view()->exists('theme::partials.navbar.'.$menu['type'])) ? 9 : 0; 
+							$submenu_cols 	= ( ! isset($menu['submenu']) OR empty($menu['submenu']))? 12: $submenu_cols;
 
-							@if($has_submenu || $view_exists)
+							$has_submenu  	= (isset($menu['submenu']) AND ! empty($menu['submenu']));
+							$view_exists  	= (view()->exists('theme::partials.navbar.'.$menu['type']));
 
-								<div class="menu-inner">
+							$margin 		= ($submenu_cols == 12)? 'navbar-margin': '';
 
-									<div class="row {{$margin}}">
+							unset($menu_data['submenu']); 
+							
+							?>
 
-										<div class="submenu col-sm-{!! (12 - $submenu_cols) !!}" data-cols="{!! $submenu_cols !!}">
+							<li class="menu-item-{!! preg_replace("/[^a-z0-9]/", '', strtolower($menu['name'])) !!} menu-type-{!! $menu['type'] !!}">					
+								<a href="{!! $url !!}">{!! $menu['name'] !!}</a>
 
-											@if($has_submenu)
+								@if($has_submenu || $view_exists)
 
-												<ul>
+									<div class="menu-inner">
 
-													@foreach($menu['submenu'] as $submenu)
-									
-														<?php $surl = (isset($submenu['url']) ? $submenu['url'] : ''); ?>
+										<div class="row {{$margin}}">
 
-														<li class="menu-type-{!! $submenu['type'] !!}">
+											<div class="submenu col-sm-{!! (12 - $submenu_cols) !!}" data-cols="{!! $submenu_cols !!}">
 
-															<a href="{!! $surl !!}">{!! $submenu['name'] !!}</a>
-															
-															<div class="menu-preview">
+												@if($has_submenu)
 
-																@if(view()->exists('theme::partials.navbar.'.$submenu['type']))
+													<ul>
 
-																	@include('theme::partials.navbar.'.$submenu['type'], array('menu_data' => $submenu))
+														@foreach($menu['submenu'] as $submenu)
+										
+															<?php $surl = (isset($submenu['url']) ? $submenu['url'] : ''); ?>
 
-																@endif
+															<li class="menu-type-{!! $submenu['type'] !!}">
 
-															</div>
+																<a href="{!! $surl !!}">{!! $submenu['name'] !!}</a>
+																
+																<div class="menu-preview">
 
-														</li>
+																	@if(view()->exists('theme::partials.navbar.'.$submenu['type']))
 
-													@endforeach
+																		@include('theme::partials.navbar.'.$submenu['type'], array('menu_data' => $submenu))
 
-												</ul>
+																	@endif
 
-											@endif
+																</div>
 
-										</div>
+															</li>
 
-										@if($view_exists)
-												
-											<div class="menu-preview col-sm-{!! $submenu_cols !!}">
+														@endforeach
 
-												<div class="menu-main-content">						
-													
-													@include('theme::partials.navbar.'.$menu['type'], array('menu_data' => $menu_data))
+													</ul>
 
-												</div>
-
-												<div class="menu-submenu-content">
-
-												</div>
+												@endif
 
 											</div>
 
-										@endif
+											@if($view_exists)
+													
+												<div class="menu-preview col-sm-{!! $submenu_cols !!}">
 
-										<div class="clearfix"></div>
+													<div class="menu-main-content">						
+														
+														@include('theme::partials.navbar.'.$menu['type'], array('menu_data' => $menu_data))
+
+													</div>
+
+													<div class="menu-submenu-content">
+
+													</div>
+
+												</div>
+
+											@endif
+
+											<div class="clearfix"></div>
+
+										</div>
 
 									</div>
 
-								</div>
+								@endif
 
-							@endif
+							</li>
 
-						</li>
+						@endforeach
 
-					@endforeach
+					@endif
 
 				</ul>
 

@@ -1,7 +1,9 @@
 
+var flyout_hidden = false;
+
 function show_flyout()
 {
-	if ($('#flyout').is(':visible')){
+	if ($('#flyout').is(':visible') || flyout_hidden){
 		return;
 	}
 
@@ -21,5 +23,15 @@ $(window).scroll(function() {
 		show_flyout();
 
 	}, 300));
+
+});
+
+$('#flyout').on('click', '.flyswat', function(e){
+
+	e.preventDefault();
+
+	flyout_hidden = true;
+
+	$('#flyout').hide();
 
 });

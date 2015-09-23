@@ -3,7 +3,7 @@
 
 <div id="flyout">
 
-	<span class="flyswat">&times;</span>
+	<span class="flyswat close">&times;</span>
 
 	<a href="{!! $link !!}" target="_blank">
 		<img src="{!! $img !!}" alt="{!! $alt !!}" />
