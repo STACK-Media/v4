@@ -1,6 +1,7 @@
 @extends('theme::layouts.two_column')
 
 {!! Assets::queue('stylesheet', 'layout', 'contact', '/assets/css/custom/contact.css') !!}
+{!! Assets::queue('javascript', 'global', 'api', 			'/assets/js/api.js') !!}
 {!! Assets::queue('javascript', 'layout', 'contact', '/assets/js/custom/contact.js') !!}
 
 @section('content')
@@ -45,7 +46,7 @@
 						</div>
 						<div class="col-xs-12 col-sm-10">
 
-							<input class="form-control" type="text" name="email" id="email" placeholder="Please enter your email" />
+							<input class="form-control contact-email" type="text" name="to" id="email" placeholder="Please enter your email" />
 
 						</div>
 						
@@ -59,16 +60,16 @@
 							<div class="input-group">
 								<select name="department" id="department">
 
-									<option value="">Letters To The Editor</option>
-									<option value="">High School Registration</option>
-									<option value="">Paid Subscriptions</option>
-									<option value="">Business Development Opportunities</option>
-									<option value="">Advertising/Marketing Opportunities</option>
-									<option value="">Press</option>
-									<option value="">Jobs</option>
-									<option value="">Address Changes</option>
-									<option value="">Current and Back Issues</option>
-									<option value="">Other</option>
+									<option>Letters To The Editor</option>
+									<option>High School Registration</option>
+									<option>Paid Subscriptions</option>
+									<option>Business Development Opportunities</option>
+									<option>Advertising/Marketing Opportunities</option>
+									<option>Press</option>
+									<option>Jobs</option>
+									<option>Address Changes</option>
+									<option>Current and Back Issues</option>
+									<option>Other</option>
 
 								</select>
 							</div>

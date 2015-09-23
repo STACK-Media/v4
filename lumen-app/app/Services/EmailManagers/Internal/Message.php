@@ -18,8 +18,6 @@ class Message extends Internal
 
 	public function send($to,$params=array())
 	{
-		$to 	= 'thompson2091@gmail.com';
-
 		// override defaults
 		$this->_params['from'] 		= (isset($params['from']))? $params['from']: $this->_params['from'];
 		$this->_params['reply']		= (isset($params['reply']))? $params['reply']: $this->_params['reply'];

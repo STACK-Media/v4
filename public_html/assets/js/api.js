@@ -15,7 +15,7 @@ function API(method,data,type,callback)
 		success: 	function(data, textStatus, jqXHR) {
 
 			// parse the data
-			var data 	= JSON.parse(data);
+			//var data 	= JSON.parse(data);
 
 			// callback
 			callback(data.success,data.data);

@@ -292,7 +292,7 @@ $app->group(['prefix' => 'api/v1/vms','namespace' => 'App\Http\Controllers\API\v
 $app->group(['prefix' => 'api/v1/email','namespace' => 'App\Http\Controllers\API\v1\Email', 'middleware' => 'api-auth'], function($app) {
 
 	// playlist
-	$app->get('message/send',	'MessageController@send');
+	$app->post('message/send',	'MessageController@send');
 
 });
 
