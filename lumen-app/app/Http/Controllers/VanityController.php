@@ -27,10 +27,11 @@ class VanityController extends BaseController
 		if ( ! isset($this->_vanity[$vanity]))
 			die('you have reached this page in error');
 
-		echo 'good';
-		redirect('a/maya-moore-feature');
+
+		redirect()->route('stack-velocity');
 		//\Route::action('ContentController@index');
-		echo 'still good';
+		//echo 'still good';
+		exit;
 	}
 
 }
