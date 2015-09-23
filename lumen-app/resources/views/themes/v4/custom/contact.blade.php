@@ -19,7 +19,7 @@
 
 			<div class="col-xs-12 headroom footroom">
 
-				<form name="contact">
+				<form name="contact" class="contact-form">
 
 					<div class="row">
 
@@ -94,11 +94,13 @@
 
 						<div class="col-xs-12 text-center">
 
-							<button type="submit" class="btn btn-stack submit-button">Send</button>
+							<button type="submit" class="btn btn-stack contact-submit">Send</button>
 
 						</div>
 
 					</div>
+
+					<p class="contact-error text-center"></p>
 
 				</form>
 
