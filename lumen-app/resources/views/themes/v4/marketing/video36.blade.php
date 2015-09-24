@@ -31,7 +31,7 @@
 						)
 					)
 				</a>
-				<p>{{$value['name']}}</p>
+				<p><b>{{$value['name']}}</b><br><span class="video36-video-plays">Views: 1,000,000</span></p>
 
 			</div>
 

@@ -55,3 +55,18 @@ body {
 .video36-videos li:hover {
 	font-weight: 	bold;
 }
+.video36-video-plays {
+    line-height: 1;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: gray;
+    min-width: 176px;
+}
+.playlist div {
+    min-height:     200px;
+}
+
+
+
+
+
