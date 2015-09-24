@@ -31,7 +31,7 @@
 						)
 					)
 				</a>
-				<p><b>{{$value['name']}}</b><br><span class="video36-video-plays">Views: 1,000,000</span></p>
+				<p><b>{{$value['name']}}</b><br><span class="video36-video-plays">Views: <?php echo number_format($value['playsTotal'],0,'.',','); ?></span></p>
 
 			</div>
 
