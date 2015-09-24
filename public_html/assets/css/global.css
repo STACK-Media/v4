@@ -26,6 +26,12 @@ hr {
 .logo-nolinks {
 	padding: 		20px;	
 }
+.for-the-athlete {
+    height: 35px;
+    float: left;
+    padding: 17px 10px;
+    line-height: 60px;
+}
 .white {
 	color: 	#FFF 	!important;
 }

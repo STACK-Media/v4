@@ -26,7 +26,7 @@
 
 			<div class="col-xs-12 col-sm-4">
 
-				<a href="#" class="play-video {{$class}}" data-id="{{$value['id']}}">
+				<a href="#true_top" class="play-video {{$class}}" data-id="{{$value['id']}}">
 					@include('theme::partials.img',
 						array(
 							'src' 	=> $value['videoStillURL'], 

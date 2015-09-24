@@ -22,7 +22,7 @@ $(document).ready(function(){
 		myPlayer.on("ended",onMediaComplete);
 
 		// load first video 
-		play(video_id);
+		//play(video_id);
 	});
 
 	// onclick of new video
@@ -40,7 +40,13 @@ $(document).ready(function(){
 
 // load specific video
 function play(id)
-{
+{	
+	// if refresh adds method exists, then use it here
+	if (typeof refreshAds != 'undefined')
+	{
+		refreshAds();
+	}
+
 	// first we must pause current video 
 	myPlayer.pause();
 	
@@ -72,6 +78,7 @@ function nowplaying(id)
 	$(".play-video[data-id='" + id + "']").addClass('nowplaying');
 }
 
+// play next video in playlist upon media complete
 function onMediaComplete()
 {
 	// initialize variables

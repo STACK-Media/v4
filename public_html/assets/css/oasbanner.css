@@ -1,6 +1,9 @@
 #oas_Top {
 margin-top:6px; margin-bottom:6px;
 }
+#oas_Bottom {
+margin-top:6px; margin-bottom:6px;
+}
 
 #oas_x20 {
 position: absolute;
@@ -28,3 +31,4 @@ transform: translateZ(0);
 .oas_dw160 {width:160px;}
 
 #oas_Top_container {z-index:1;position:relative;}
+#oas_Bottom_container {z-index:1;position:relative;}

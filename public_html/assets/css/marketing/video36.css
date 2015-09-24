@@ -1,0 +1,57 @@
+body {
+	background-color: 	#FFF !important; 
+}
+.logo {
+	background-color: #000;
+	height: 70px;
+	line-height: 70px;
+    padding-left:   20px;
+}
+.logo-img {
+	height: 	35px !important;
+	margin: 	17px 10px;
+	width: 		160px !important;
+	float:left;
+}
+.logo-title {
+	font-family: "Source Sans Pro",Arial,sans-serif;
+	font-weight: bold;
+	color: #FFF;
+}
+#bydathlete4dathlete {
+	height:35px;
+	float:left;
+	padding:17px 10px;
+	line-height:60px;
+}
+.video36-title {
+    background: #A1A1A1;
+    color: #000 !important;
+    text-transform: uppercase;
+    font-family: Oswald,Impact,Arial,Helvetica,sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 8px 10px;
+    display: block;
+    margin: 0 auto;
+    width: 300px !important;
+    margin-top: 10px;
+}
+.video36-videos li {
+    cursor: pointer;
+    line-height: 1.5;
+    margin: 5px;
+    font-family: "Source Sans Pro",Arial,sans-serif;
+    color: 		#000 !important;
+}
+.video36-videos li a {
+    cursor: pointer;
+    line-height: 1.5;
+    margin: 5px;
+    font-family: "Source Sans Pro",Arial,sans-serif;
+    color: 		#000 !important;
+    font-size: 	115%;
+}
+.video36-videos li:hover {
+	font-weight: 	bold;
+}

@@ -1,3 +1,5 @@
+<div id="true_top"></div>
+
 <div class="container">
 
 	<!-- Navbar -->

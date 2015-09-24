@@ -1,3 +1,5 @@
+<div id="true_top"></div>
+
 <div id="stack_logo">
 
 	<div class="container navbar">

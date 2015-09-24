@@ -22,6 +22,9 @@
 
 				<form name="contact" class="contact-form">
 
+					<input type="hidden" class="contact-subject" name="params[subject]" value="STACK Contact Form Submission" />
+					<input type="hidden" class="contact-body" name="params[body]" value="" />
+
 					<div class="row">
 
 						<div class="col-xs-0  col-sm-2">
