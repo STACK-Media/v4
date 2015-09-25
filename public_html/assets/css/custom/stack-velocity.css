@@ -1,6 +1,7 @@
+
 /* line 466, ../scss/main.scss */
 #main_content.vsp_home {
-  padding: 0 24px;
+
 }
 /* line 467, ../scss/main.scss */
 #main_content.vsp_home #logo {
@@ -62,7 +63,6 @@
   color: #FFF;
   padding: 36px 24px;
   font-size: 1.6em;
-  height: 104px;
 }
 /* line 478, ../scss/main.scss */
 #main_content.vsp_home section .vsp_bucket .input_container {
@@ -78,7 +78,6 @@
   border-radius: 8px 0 0 8px;
   padding: 11px 0 11px 12px;
   border: 0;
-  width: 250px;
 }
 /* line 481, ../scss/main.scss */
 #main_content.vsp_home section .vsp_bucket input[type="submit"], #main_content.vsp_home section .vsp_bucket input[type="button"] {
