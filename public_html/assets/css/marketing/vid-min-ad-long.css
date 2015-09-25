@@ -11,16 +11,26 @@
     border: 		1px solid #bf2f37;
 }
 .vid-min-ad-long .video-title {
-	font-size: 1.6em;
     color: #FFF;
     line-height: 1.4;
     font-family: sans-serif;
+}
+.vid-min-ad-long .bigger {
+    font-size: 1.6em;
 }
 .vid-min-ad-long .video-description {
     color: gray;
     line-height: 1.4;
     font-family: sans-serif;
+    font-size: .9em;
 }
 .vid-min-ad-long .video-player {
     border: 		1px solid #bf2f37;
+}
+.vid-min-ad-long .media-block2 {
+    min-height:     300px;
+    border:         1px solid #bf2f37;
+}
+.vid-min-ad-long .playlist-block p {
+    font-size: 8pt;
 }

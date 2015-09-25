@@ -2,59 +2,6 @@
 @stop
 
 @section('sidebar-widgets')
-
-
-	@include('theme::partials.bannerad', array('position' => 'sidebar-top', 'args' => array()))
-
-	<?php
-	$num_widgets = 0;
-	 // iterate sidebar widgets ?>
-	@if(isset($widgets['sidebar']))
-
-		<div class="row">
-
-			@foreach ($widgets['sidebar'] AS $widget => $wdata)
-
-				<?php 
-				$num_widgets++; 
-
-				$headroom_class = '';
-				?>
-
-				<div class="event widget" data-name="sidebar-{{$widget}}" data-template="{{$template or "default"}}">
-
-					<div class="col-xs-12 col-sm-6 col-md-12">
-
-						<div class="dashed-bottom legroom {{$headroom_class}}">
-
-							@include('theme::partials.widgets.'.$widget, $wdata)		
-
-						</div>
-
-					</div>
-
-				</div>
-
-				@if($num_widgets==2)
-					
-					</div>
-
-					<div class="row">
-						
-						@include('theme::partials.bannerad', array('position' => 'sidebar-mid', 'args' => array()))
-					
-					</div>
-
-					<div class="row">
-
-				@endif
-
-			@endforeach
-
-		</div>
-
-	@endif
-
 @stop
 
 @section('post-content-widgets')
