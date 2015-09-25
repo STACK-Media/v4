@@ -288,13 +288,8 @@ $app->group(['prefix' => 'api/v1/vms','namespace' => 'App\Http\Controllers\API\v
 
 });
 
-// Email Manager
-$app->group(['prefix' => 'api/v1/smtp','namespace' => 'App\Http\Controllers\API\v1', 'middleware' => 'api-auth'], function($app) {
-
-	// send SMTP email
-	$app->post('send',	'SMTPController@send');
-
-});
+// SMTP API
+$app->get('api/v1/smtp/send', 'App\Http\Controllers\API\v1\SMTPController@send');
 
 // Promos Ajax
 $app->get('api/v1/promos/{group}/{promo}', 'App\Http\Controllers\API\v1\PromosController@show');
