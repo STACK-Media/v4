@@ -78,7 +78,7 @@ $app->routeMiddleware([
 |
 */
 
-// $app->register('App\Providers\AppServiceProvider');
+$app->register('App\Providers\AppServiceProvider');
 $app->register('App\Providers\AssetsProvider');
 $app->register('Devfactory\Minify\MinifyServiceProvider');
 //$app->register('App\Providers\CacheProvider');

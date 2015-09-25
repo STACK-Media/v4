@@ -289,10 +289,10 @@ $app->group(['prefix' => 'api/v1/vms','namespace' => 'App\Http\Controllers\API\v
 });
 
 // Email Manager
-$app->group(['prefix' => 'api/v1/email','namespace' => 'App\Http\Controllers\API\v1\Email', 'middleware' => 'api-auth'], function($app) {
+$app->group(['prefix' => 'api/v1/smtp','namespace' => 'App\Http\Controllers\API\v1', 'middleware' => 'api-auth'], function($app) {
 
-	// playlist
-	$app->post('message/send',	'MessageController@send');
+	// send SMTP email
+	$app->post('send',	'SMTPController@send');
 
 });
 
