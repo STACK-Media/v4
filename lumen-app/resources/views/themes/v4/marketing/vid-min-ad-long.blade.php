@@ -9,7 +9,7 @@
 		<div class="col-xs-12 col-md-8 col-lg-8">
 
 			<div class="media-block">
-				<div class="video-title">{{$page->playlist['videos'][0]['name']}}</div>
+				<div class="video-title"></div>
 			</div>
 			
 			@if(@$page->player)
