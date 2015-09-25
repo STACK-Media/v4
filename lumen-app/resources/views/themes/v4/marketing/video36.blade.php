@@ -22,7 +22,7 @@
 
 			<div class="col-xs-12 col-sm-4">
 
-				<a href="#true_top" class="play-video {{$class}}" data-id="{{$value['id']}}">
+				<a href="#oas_Top" class="play-video {{$class}}" data-id="{{$value['id']}}">
 					@include('theme::partials.img',
 						array(
 							'src' 	=> $value['videoStillURL'], 
@@ -56,15 +56,15 @@
 
 			<ul class="video36-videos">
 
-				<li><a href="#true_top" class="play-video" data-id="4234780710001">James Harrison Performs 215-Pound Weighted Dips and 800-Pound Deadlift</a></li>
-				<li><a href="#true_top" class="play-video" data-id="4247134863001">Shawn Oakman Lands a 40-Inch Box Jump With 140 Pounds</a></li>
-				<li><a href="#true_top" class="play-video" data-id="4251721839001">WWE Star John Cena's Full-Range-of-Motion 600-Plus-Pound Squat</a></li>
-				<li><a href="#true_top" class="play-video" data-id="4101690918001">Marcus Mariota: Speed is Key</a></li>
-				<li><a href="#true_top" class="play-video" data-id="4328363719001">Aaron Rodgers is Now Pretending He's in X-Men to Train For Next Season</a></li>
-				<li><a href="#true_top" class="play-video" data-id="4204546273001">Lorenzo Mauldin: Never Forget the Past</a></li>
-				<li><a href="#true_top" class="play-video" data-id="4204497850001">Basketball Comes Easy For James Harden</a></li>
-				<li><a href="#true_top" class="play-video" data-id="4283320333001">NFL Cornerback Joe Haden Still Believes in the Cleveland Cavaliers</a></li>
-				<li><a href="#true_top" class="play-video" data-id="4251830983001">J.R. Smith Throws Down Sick Reverse Alley-oop From Shumpert</a></li>
+				<li><a href="#oas_Top" class="play-video" data-id="4234780710001">James Harrison Performs 215-Pound Weighted Dips and 800-Pound Deadlift</a></li>
+				<li><a href="#oas_Top" class="play-video" data-id="4247134863001">Shawn Oakman Lands a 40-Inch Box Jump With 140 Pounds</a></li>
+				<li><a href="#oas_Top" class="play-video" data-id="4251721839001">WWE Star John Cena's Full-Range-of-Motion 600-Plus-Pound Squat</a></li>
+				<li><a href="#oas_Top" class="play-video" data-id="4101690918001">Marcus Mariota: Speed is Key</a></li>
+				<li><a href="#oas_Top" class="play-video" data-id="4328363719001">Aaron Rodgers is Now Pretending He's in X-Men to Train For Next Season</a></li>
+				<li><a href="#oas_Top" class="play-video" data-id="4204546273001">Lorenzo Mauldin: Never Forget the Past</a></li>
+				<li><a href="#oas_Top" class="play-video" data-id="4204497850001">Basketball Comes Easy For James Harden</a></li>
+				<li><a href="#oas_Top" class="play-video" data-id="4283320333001">NFL Cornerback Joe Haden Still Believes in the Cleveland Cavaliers</a></li>
+				<li><a href="#oas_Top" class="play-video" data-id="4251830983001">J.R. Smith Throws Down Sick Reverse Alley-oop From Shumpert</a></li>
 
 			</ul>
 
@@ -90,16 +90,16 @@
 
 			<ul class="video36-videos">
 
-				<li><a href="#true_top" class="play-video" data-id="4204497852001">Why Mevin Gordon is NFL Ready</a></li>
-				<li><a href="#true_top" class="play-video" data-id="4204526806001">Football is Danny Shelton's Outlet</a></li>
-				<li><a href="#true_top" class="play-video" data-id="4187042750001">Jordan Kilganon Sets World Record With 75-Inch Box Jump</a></li>
-				<li><a href="#true_top" class="play-video" data-id="4204546271001">How Ricky Rubio Keeps Getting Better</a></li>
-				<li><a href="#true_top" class="play-video" data-id="4204546272001">Kasan Williams 'Wins the Day'</a></li>
-				<li><a href="#true_top" class="play-video" data-id="4204465974001">Shaq Thompson's Guide to Overcoming Failure</a></li>
-				<li><a href="#true_top" class="play-video" data-id="4204465972001">How Tim Shaw Stays Positive While Battling ALS</a></li>
-				<li><a href="#true_top" class="play-video" data-id="4204526804001">Trae Waynes on Reaching His NFL Dream</a></li>
-				<li><a href="#true_top" class="play-video" data-id="4204465968001">Tim Tebow: It's All About the Work Eithic</a></li>
-				<li><a href="#true_top" class="play-video" data-id="4204497848001">Skylar Diggins on Why the WNBA Deserves Your Attention</a></li>
+				<li><a href="#oas_Top" class="play-video" data-id="4204497852001">Why Mevin Gordon is NFL Ready</a></li>
+				<li><a href="#oas_Top" class="play-video" data-id="4204526806001">Football is Danny Shelton's Outlet</a></li>
+				<li><a href="#oas_Top" class="play-video" data-id="4187042750001">Jordan Kilganon Sets World Record With 75-Inch Box Jump</a></li>
+				<li><a href="#oas_Top" class="play-video" data-id="4204546271001">How Ricky Rubio Keeps Getting Better</a></li>
+				<li><a href="#oas_Top" class="play-video" data-id="4204546272001">Kasan Williams 'Wins the Day'</a></li>
+				<li><a href="#oas_Top" class="play-video" data-id="4204465974001">Shaq Thompson's Guide to Overcoming Failure</a></li>
+				<li><a href="#oas_Top" class="play-video" data-id="4204465972001">How Tim Shaw Stays Positive While Battling ALS</a></li>
+				<li><a href="#oas_Top" class="play-video" data-id="4204526804001">Trae Waynes on Reaching His NFL Dream</a></li>
+				<li><a href="#oas_Top" class="play-video" data-id="4204465968001">Tim Tebow: It's All About the Work Eithic</a></li>
+				<li><a href="#oas_Top" class="play-video" data-id="4204497848001">Skylar Diggins on Why the WNBA Deserves Your Attention</a></li>
 
 			</ul>
 
