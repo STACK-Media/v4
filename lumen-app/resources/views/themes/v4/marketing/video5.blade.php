@@ -5,11 +5,26 @@
 
 @section('content')
 
-	@if(@$page->player)
+	<div class="video5">
 
-		@include('theme::partials.videoplayers.'.$page->player['player_name'], $page->player['player_data'])
+		<div class="media-block">
+			<div class="video-title bigger"></div>
+		</div>
+		
+		@if(@$page->player)
 
-	@endif
+			<div class="video-player">
+				@include('theme::partials.videoplayers.'.$page->player['player_name'], $page->player['player_data'])
+			</div>
+
+		@endif
+
+		<div class="media-block">
+			<div class="video-title"></div>
+			<div class="video-description"></div>
+		</div>
+
+	</div>
 
 @stop
 
@@ -26,7 +41,7 @@
 
 			<div class="col-xs-12 col-sm-4">
 
-				<a href="#true_top" class="play-video {{$class}}" data-id="{{$value['id']}}">
+				<a href="#oas_Top" class="play-video {{$class}}" data-id="{{$value['id']}}">
 					@include('theme::partials.img',
 						array(
 							'src' 	=> $value['videoStillURL'], 

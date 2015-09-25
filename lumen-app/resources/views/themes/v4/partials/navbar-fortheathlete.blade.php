@@ -1,4 +1,4 @@
-<div class="logo" id="true_top">
+<div class="logo">
 	<div>
 		<img src="http://www.stack.com/img/logo_large_white.png" class="logo-img" data-pin-nopin="true"> 
 		<div id="bydathlete4dathlete">
