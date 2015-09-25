@@ -112,6 +112,12 @@
 
 		</aside>
 
+		<div class="col-xs-12">
+
+			@yield('post-content-widgets')
+
+		</div>
+
 
 		<div class="clearfix"></div>	
 

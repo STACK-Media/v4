@@ -1,6 +1,6 @@
 @extends('theme::layouts.marketing.one_column')
 
-{!! Assets::queue('stylesheet', 'layout', 'article', '/assets/css/marketing/video32.css') !!}
+{!! Assets::queue('stylesheet', 'marketing', 'video32', '/assets/css/marketing/video32.css') !!}
 
 @section('content')
 

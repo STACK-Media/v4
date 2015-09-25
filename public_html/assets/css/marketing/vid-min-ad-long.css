@@ -1,0 +1,26 @@
+.panel {
+	background-color: 	#000 !important;
+	color: 				#FFF !important;
+}
+.vid-min-ad-long .views {
+	color: 			#EEE;
+	font-size: 		9pt;
+}
+.vid-min-ad-long .media-block {
+    padding: 		30px;
+    border: 		1px solid #bf2f37;
+}
+.vid-min-ad-long .video-title {
+	font-size: 1.6em;
+    color: #FFF;
+    line-height: 1.4;
+    font-family: sans-serif;
+}
+.vid-min-ad-long .video-description {
+    color: gray;
+    line-height: 1.4;
+    font-family: sans-serif;
+}
+.vid-min-ad-long .video-player {
+    border: 		1px solid #bf2f37;
+}
