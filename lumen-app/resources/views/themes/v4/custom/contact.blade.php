@@ -34,7 +34,7 @@
 						</div>
 						<div class="col-xs-12 col-sm-10">
 
-							<input class="form-control" type="text" name="name" id="name" placeholder="Please enter your name" />
+							<input class="form-control" type="text" name="name" class="contact-name" placeholder="Please enter your name" />
 
 						</div>
 
@@ -61,18 +61,18 @@
 						<div class="col-xs-12 col-sm-10">
 
 							<div class="input-group">
-								<select name="department" id="department">
+								<select name="department" class="contact-department">
 
-									<option>Letters To The Editor</option>
-									<option>High School Registration</option>
-									<option>Paid Subscriptions</option>
-									<option>Business Development Opportunities</option>
-									<option>Advertising/Marketing Opportunities</option>
-									<option>Press</option>
-									<option>Jobs</option>
-									<option>Address Changes</option>
-									<option>Current and Back Issues</option>
-									<option>Other</option>
+									<option value="letters@stackmag.com">Letters To The Editor</option>
+									<option value="requests@stackmag.com">High School Registration</option>
+									<option value="subs@stackmag.com">Paid Subscriptions</option>
+									<option value="letters@stackmag.com">Business Development Opportunities</option>
+									<option value="sales@stackmag.com">Advertising/Marketing Opportunities</option>
+									<option value="letters@stackmag.com">Press</option>
+									<option value="letters@stackmag.com">Jobs</option>
+									<option value="subs@stackmag.com">Address Changes</option>
+									<option value="subs@stackmag.com">Current and Back Issues</option>
+									<option value="letters@stackmag.com">Other</option>
 
 								</select>
 							</div>
@@ -87,7 +87,7 @@
 						<div class="col-xs-12 col-sm-10">
 
 							<div class="input-group">
-								<textarea rows="8" cols="30" placeholder="Enter your comments here"></textarea>
+								<textarea rows="8" cols="30" name="comments" class="contact-comments" placeholder="Enter your comments here"></textarea>
 							</div>
 
 						</div>

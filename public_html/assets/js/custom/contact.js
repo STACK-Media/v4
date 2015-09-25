@@ -12,20 +12,29 @@ $(document).ready(function(){
 		} else {
 
 			// initialize variables
+			var name 					= $(".contact-name").val();
 			var email 					= $(".contact-email").val();
+			var from 					= $(".contact-department").val();
+			var comments 				= $(".contact-comments").val();
+
 			var data 					= {
-				to: 	email,
+				template: 		"params",
+				subject: 		"STACK Contact Form Submission ",
+				to: 			[
+					from,
+				],
 				params: {
-					subject: 	'my subject',
-					body: 		'my body'
+					name: 		name,
+					email: 		email,
+					comments: 	comments
 				}
 			};
 
 			// json encode
-			data 		= JSON.stringify(data);
+			//data 		= JSON.stringify(data);
 
 			// make API call
-			API('email/message/send',data,'POST',_contact_callback);
+			API('smtp/send',data,'POST',_contact_callback);
 		}
 
 		return false;
@@ -52,12 +61,12 @@ function _contact_callback(success,data)
 	if (success == true)
 	{
 		// display success message
-		$(".contact-error").html("Thank you for submitting your question/comment.").addClass('green bold headroom text-center');
+		$(".contact-error").html("Thank you for submitting your question/comment.").addClass('green bold headroom text-center').removeClass('stack-red');
 
 	} else {
 
 		// show error message
-		$(".contact-error").html("There was an error adding your email.  Please try again.").addClass('stack-red bold headroom text-center');
+		$(".contact-error").html("There was an error adding your email.  Please try again.").addClass('stack-red bold headroom text-center').removeClass('green');
 
 	}
 }

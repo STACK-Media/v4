@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\API\v1;
 
+use Illuminate\Http\Request;
+
 class SMTPController extends APIController 
 {
 	var $smtp 	= array(
@@ -56,7 +58,7 @@ class SMTPController extends APIController
 				->subject($params['subject']); 
 		});
 
-		return $this->response($sent,$params);
+		return $this->response(($sent>0),$params);
 	}
 
 }
