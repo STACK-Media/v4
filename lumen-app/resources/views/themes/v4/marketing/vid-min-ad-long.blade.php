@@ -24,7 +24,7 @@
 				<div class="video-title"></div>
 				<div class="video-description"></div>
 			</div>
-			
+
 		</div>
 
 		<div class="col-xs-12 col-md-4">
@@ -54,7 +54,7 @@
 
 			<div class="col-xs-12 col-sm-4">
 
-				<a href="#true_top" class="play-video {{$class}}" data-id="{{$value['id']}}">
+				<a href="#oas_Top" class="play-video {{$class}}" data-id="{{$value['id']}}">
 					@include('theme::partials.img',
 						array(
 							'src' 	=> $value['videoStillURL'], 
