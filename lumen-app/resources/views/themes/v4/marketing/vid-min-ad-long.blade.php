@@ -24,38 +24,7 @@
 				<div class="video-title"></div>
 				<div class="video-description"></div>
 			</div>
-
-			<div class="media-block2">
-
-				@foreach ($page->playlist['videos'] AS $key => $value)
-
-					<?php
-					if ($key > 3)
-						continue;
-
-					// determine if this is the current video being player
-					$class 	= ($page->player['player_data']['video_id'] == $value['id'])? 'nowplaying': '';
-					?>
-
-					<div class="col-xs-12 col-md-3">
-
-						<a href="#true_top" class="play-video {{$class}}" data-id="{{$value['id']}}">
-							@include('theme::partials.img',
-								array(
-									'src' 	=> $value['videoStillURL'], 
-									'alt' 	=> $value['name'],
-									'class'	=> 'img-responsive'
-								)
-							)
-						</a>
-						<p>{{$value['name']}}<br><span class="views">Views: <?php echo number_format($value['playsTotal'],0,'.',','); ?></span></p>
-
-					</div>
-
-				@endforeach
-
-			</div>
-
+			
 		</div>
 
 		<div class="col-xs-12 col-md-4">
@@ -79,9 +48,6 @@
 		@foreach ($page->playlist['videos'] AS $key => $value)
 
 			<?php
-			if ($key < 4)
-				continue;
-
 			// determine if this is the current video being player
 			$class 	= ($page->player['player_data']['video_id'] == $value['id'])? 'nowplaying': '';
 			?>
