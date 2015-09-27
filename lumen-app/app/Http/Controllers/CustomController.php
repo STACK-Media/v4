@@ -56,4 +56,9 @@ class CustomController extends PageController
     	return $this->index('stack-velocity');	
     }
 
+    public function originals()
+    {
+        return $this->index('stack-originals');  
+    }
+
 }
