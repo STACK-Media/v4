@@ -28,16 +28,6 @@ $route_pages     = array(
 		'controller' => 'HomeController',
 		'function'   => 'index',
 	),
-	/*
-	'api'		=> array(
-		'slug'          => 'api',
-		'controller'	=> 'APIController',
-		'function'		=> 'index',
-		'params'		=> array(
-			'service','class','method'
-		)
-	),
-	*/
 	'feed'		=> array(
 		'slug'          => 'feed',
 		'controller'	=> 'RssController',
@@ -131,16 +121,6 @@ $route_pages     = array(
 			'slug'
 		)
 	),
-
-	'videos' => array(
-		'slug'       => 'videos',
-		'controller' => 'VideoController',
-		'function'   => 'archive',
-		'params'     => array(
-			'slug'
-		)
-	),
-
 	// all these need switched out
 	'vertical' => array(
 		'slug'       => 'v',
@@ -261,6 +241,7 @@ $app->get('resources',			['as' => 'resources', 			'uses' => 'App\Http\Controller
 $app->get('terms-of-use',		['as' => 'terms-of-use', 		'uses' => 'App\Http\Controllers\CustomController@terms']);
 $app->get('stack-velocity',		['as' => 'stack-velocity', 		'uses' => 'App\Http\Controllers\CustomController@velocity']);
 $app->get('stack-originals',	['as' => 'stack-originals', 	'uses' => 'App\Http\Controllers\CustomController@originals']);
+$app->get('videos',				['as' => 'videos', 				'uses' => 'App\Http\Controllers\VideosController@index']);
 $app->get('vsptrial',			['as' => 'vsptrial', 			'uses' => 'App\Http\Controllers\CustomController@vsptrial']);
 
 
