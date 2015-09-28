@@ -959,7 +959,7 @@
 						<div class="circular b_hall"></div>
 						<div class="bio">
 							<p><strong>Brandon Hall - Assistant Content Director</strong></p>
-							<p>Brandon Hall is an editorial intern who creates content and helps with the daily operations at STACK. In 2014, he graduated from Lafayette College as an English major and an Anthropology & Sociology minor. He was a 4-year letter winner at tight end for Lafayette's football team, and he helped them win their first outright Patriot League championship since 1994.</p>
+							<p>Brandon Hall is an Assistant Content Director who creates content and helps with the daily operations at STACK. In 2014, he graduated from Lafayette College as an English major and an Anthropology & Sociology minor. He was a 4-year letter winner at tight end for Lafayette's football team, and he helped them win their first outright Patriot League championship since 1994.</p>
 							<p><em>"As an athlete, my biggest joy was seeing my discipline and hard work pay off on the field. I love working at STACK because it gives me the chance to help other athletes be successful."</em></p>
 						</div>
 					</li>
