@@ -254,8 +254,9 @@ $app->get('api/v1/promos/{group}/{promo}', 'App\Http\Controllers\API\v1\PromosCo
 // Custom pages
 // a to z
 $app->get('a-to-z',				['as' => 'a-to-z', 				'uses' => 'App\Http\Controllers\CustomController@atoz']);
+$app->get('about-us',			['as' => 'about-us', 			'uses' => 'App\Http\Controllers\CustomController@about']);
 $app->get('beast-squad-signup',	['as' => 'beast-squad-signup', 	'uses' => 'App\Http\Controllers\CustomController@beast']);
-$app->get('beast-squad-us',		['as' => 'beast-squad-us', 			'uses' => 'App\Http\Controllers\CustomController@beast-squad']);
+$app->get('contact-us',			['as' => 'contact-us', 			'uses' => 'App\Http\Controllers\CustomController@contact']);
 $app->get('resources',			['as' => 'resources', 			'uses' => 'App\Http\Controllers\CustomController@resources']);
 $app->get('terms-of-use',		['as' => 'terms-of-use', 		'uses' => 'App\Http\Controllers\CustomController@terms']);
 $app->get('stack-velocity',		['as' => 'stack-velocity', 		'uses' => 'App\Http\Controllers\CustomController@velocity']);
