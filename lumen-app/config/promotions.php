@@ -22,7 +22,7 @@ return array(
 					'views'     => array( // randomly select one view from array
 						'global.partials.promotions.interstitial.adunit',
 					),
-					'frequency' => '86400', // false, show every pageview (note: overridden by group 86400 frequency)
+					'frequency' => false, // false, show every pageview
 				),*/
 				// promotion can only have "blacklist" or "whitelist" - if not whitelist, it'll be global everywhere except the blacklist
 				'kaepernick' => array(
@@ -78,6 +78,18 @@ return array(
 					),
 					'views'     => array(
 						'global.partials.promotions.flyouts.conditioning'
+					),
+					'frequency' => FALSE
+				)
+			)
+		),
+		'exitpops' => array(
+			'type'      => 'sequential',
+			'frequency' => FALSE,
+			'creatives' => array(
+				'testpop' => array(
+					'views'     => array(
+						'global.partials.promotions.exitpops.testpop',
 					),
 					'frequency' => FALSE
 				)

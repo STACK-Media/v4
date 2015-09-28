@@ -66,15 +66,8 @@
 				</div>
 
 				<ul class="nav navbar-nav">
-<<<<<<< HEAD
-		
-					@if(isset($nav))
-=======
 				
-					<?php
-					if(isset($nav) AND is_array($nav)):
-					?> 
->>>>>>> dac8a6ed3e24cc04871b60acc89a0b77407630f8
+					@if(isset($nav) AND is_array($nav))
 
 						@foreach($nav as $menu)
 						
@@ -167,13 +160,7 @@
 
 						@endforeach
 
-<<<<<<< HEAD
 					@endif
-=======
-					<?php
-					endif;
-					?>
->>>>>>> dac8a6ed3e24cc04871b60acc89a0b77407630f8
 
 				</ul>
 
