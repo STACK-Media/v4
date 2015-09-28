@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Services\CustomPage;
 use App\Services\Contentmanager;
+use Request;
 
 class CustomController extends PageController
 {
@@ -15,6 +16,11 @@ class CustomController extends PageController
 
 		return $this->_load_page_view('custom.'.$slug, $data);
 	}
+
+    private function redirect($url,$code=301)
+    {
+        echo redirect()->to($url,301);
+    }
 
     public function atoz()
     {
@@ -55,6 +61,12 @@ class CustomController extends PageController
 
         // show page
         return $this->index('stack-originals',$data);  
+    }
+
+    public function vsptrial()
+    {
+        // redirect 
+        $this->redirect('http://www.velocitysp.com/free_trial');
     }
 
 }

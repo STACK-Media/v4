@@ -302,6 +302,7 @@ $app->get('contact-us',		['as' => 'contact-us', 		'uses' => 'App\Http\Controller
 $app->get('terms-of-use',	['as' => 'terms-of-use', 	'uses' => 'App\Http\Controllers\CustomController@terms']);
 $app->get('stack-velocity',	['as' => 'stack-velocity', 	'uses' => 'App\Http\Controllers\CustomController@velocity']);
 $app->get('stack-originals',['as' => 'stack-originals', 'uses' => 'App\Http\Controllers\CustomController@originals']);
+$app->get('vsptrial',		['as' => 'vsptrial', 		'uses' => 'App\Http\Controllers\CustomController@vsptrial']);
 
 
 // Vanity URLs
