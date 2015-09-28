@@ -28,6 +28,18 @@ return array(
 				'height' => '250'
 			)			
 		),
+		'sidebar-topleft' => array(
+			'desktop' => array(
+				'name'   => 'TopLeft',
+				'width'  => '300',
+				'height' => '250'
+			),
+			'mobile'  => array(
+				'name'   => 'x62',
+				'width'  => '300',
+				'height' => '250'
+			)
+		),
 		'sidebar-bottom' => array(
 			'desktop' => array( 
 				'name'   => 'BottomLeft',
@@ -35,7 +47,7 @@ return array(
 				'height' => '600'
 			),
 			'mobile'  => array(
-				'name'   => 'x64',
+				'name'   => 'x65',
 				'width'  => '300',
 				'height' => '250'
 			)			
@@ -60,6 +72,18 @@ return array(
 			),
 			'mobile'  => array(
 				'name'   => 'x60',
+				'width'  => '300',
+				'height' => '50'
+			)			
+		),
+		'leader-bottom' => array(
+			'desktop' => array( 
+				'name'   => 'Bottom',
+				'width'  => '728',
+				'height' => '90'
+			),
+			'mobile'  => array(
+				'name'   => 'x66',
 				'width'  => '300',
 				'height' => '50'
 			)			

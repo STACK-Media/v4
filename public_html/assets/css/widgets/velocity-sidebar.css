@@ -32,14 +32,14 @@
     margin: 0 0 12px 0;
 }
 .velocity-sidebar h1 {
-	font-family: "Oswald", Arial, sans-serif;
-    font-size: 1em;
-    text-transform: uppercase;
-    float: left;
-    color: #FFF;
-    margin: 24px 0 12px 12px;
-    text-shadow: 0 2px 2px #000;
-    font-weight: normal;
+	font-family: "Oswald", Arial, sans-serif !important;
+    font-size: 1em !important;
+    text-transform: uppercase !important;
+    float: left !important;
+    color: #FFF !important;
+    margin: 24px 0 12px 12px !important;
+    text-shadow: 0 2px 2px #000 !important;
+    font-weight: normal !important;
 }
 .velocity-sidebar input {
     border-radius: 5px 0 0 5px;

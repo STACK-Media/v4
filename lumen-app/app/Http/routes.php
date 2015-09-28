@@ -199,52 +199,6 @@ $app->get('mrss/{feed}',['uses' => 'App\Http\Controllers\MRSSController@index'])
 
 ##########################################################################################
 ## API ROUTING
-
-// define all active API routes
-// NOTE: This is not currently used
-$api_routes 	= array(
-	'cms'	=> array(
-		'namespace'	=> 'App\Http\Controllers\API\v1\CMS',
-		'methods'	=> array(
-			'article'	=> array(
-				'show'
-			)
-		)
-	),
-	'esp'	=> array(
-		'namespace'	=> 'App\Http\Controllers\API\v1\ESP',
-		'methods'	=> array(
-			'event'		=> array(
-				'trigger'
-			),
-			'lead'		=> array(
-				'show',
-				'create',
-				'update',
-				'delete'
-			),
-			'template'	=> array(
-				'send',
-			)
-		)
-	),
-	'vms'			=> array(
-		'namespace'	=> 'App\Http\Controllers\API\v1\VMS',
-		'method'	=> array(
-			'video'		=> array(
-				'show',
-				'search'
-			),
-			'playlist'	=> array(
-				'show'
-			),
-			'player'	=> array(
-				'show'
-			)
-		)
-	)
-);
-
 // Content Manager
 $app->group(['prefix' => 'api/v1/cms','namespace' => 'App\Http\Controllers\API\v1\CMS', 'middleware' => 'api-auth'], function($app) {
 
@@ -288,45 +242,55 @@ $app->group(['prefix' => 'api/v1/vms','namespace' => 'App\Http\Controllers\API\v
 
 });
 
-// Email Manager
-$app->group(['prefix' => 'api/v1/email','namespace' => 'App\Http\Controllers\API\v1\Email', 'middleware' => 'api-auth'], function($app) {
-
-	// playlist
-	$app->get('message/send',	'MessageController@send');
-
-});
+// SMTP API
+$app->post('api/v1/smtp/send', 'App\Http\Controllers\API\v1\SMTPController@send');
 
 // Promos Ajax
 $app->get('api/v1/promos/{group}/{promo}', 'App\Http\Controllers\API\v1\PromosController@show');
 
 
+
+##################################################################################
 // Custom pages
 // a to z
 $app->get('a-to-z',			['as' => 'a-to-z', 			'uses' => 'App\Http\Controllers\CustomController@atoz']);
 $app->get('contact-us',		['as' => 'contact-us', 		'uses' => 'App\Http\Controllers\CustomController@contact']);
 $app->get('terms-of-use',	['as' => 'terms-of-use', 	'uses' => 'App\Http\Controllers\CustomController@terms']);
 $app->get('stack-velocity',	['as' => 'stack-velocity', 	'uses' => 'App\Http\Controllers\CustomController@velocity']);
+$app->get('stack-originals',['as' => 'stack-originals', 'uses' => 'App\Http\Controllers\CustomController@originals']);
+$app->get('vsptrial',		['as' => 'vsptrial', 		'uses' => 'App\Http\Controllers\CustomController@vsptrial']);
 
 
+##################################################################################
 // Vanity URLs
-$app->get('billy-winn',				['uses' => 'App\Http\Controllers\VanityController@index']);
-$app->get('new-balance-giveaway',	['uses' => 'App\Http\Controllers\VanityController@index']);
-$app->get('beast-squad-signup',		['uses' => 'App\Http\Controllers\VanityController@index']);
-$app->get('marcus-mariota',			['uses' => 'App\Http\Controllers\VanityController@index']);
-$app->get('summerfootball2015',		['uses' => 'App\Http\Controllers\VanityController@index']);
-$app->get('summersoccer2015',		['uses' => 'App\Http\Controllers\VanityController@index']);
-$app->get('summerbasketball2015',	['uses' => 'App\Http\Controllers\VanityController@index']);
-$app->get('summertrack2015',		['uses' => 'App\Http\Controllers\VanityController@index']);
-$app->get('summerwrestling2015',	['uses' => 'App\Http\Controllers\VanityController@index']);
-$app->get('summerbaseball2015',		['uses' => 'App\Http\Controllers\VanityController@index']);
-$app->get('summerlacrosse2015',		['uses' => 'App\Http\Controllers\VanityController@index']);
+$vanity 	= array(
+	'billy-winn',
+	'new-balance-giveaway',
+	'beast-squad-signup',
+	'in-season-strength',
+	'kaepernick',
+	'lebron-video',
+	'lolo-plan',
+	'marcus-mariota',
+	'muscle-up',
+	'summerfootball2015',
+	'summersoccer2015',
+	'summerbasketball2015',
+	'summertrack2015',
+	'summerwrestling2015',
+	'summerbaseball2015',
+	'summerlacrosse2015'
+);
+
+foreach ($vanity AS $slug):
+
+	$app->get($slug, ['uses' => 'App\Http\Controllers\VanityController@index']);
+
+endforeach;
+##################################################################################
 
 
-/*
-$app->group([], function($app){
-	return $app->make('ContentController')->index('maya-moore-featured');
-});
-*/
+
 
 
 

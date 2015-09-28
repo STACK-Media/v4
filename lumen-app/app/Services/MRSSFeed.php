@@ -10,7 +10,7 @@ class MRSSFeed extends Service
 	{
     	// verify valid feed was passed
     	if ( ! $feed OR ! method_exists($this,$feed))
-    		die('invalid mrss feed');
+    		abort(404);
 
     	return $this->$feed();
 	}

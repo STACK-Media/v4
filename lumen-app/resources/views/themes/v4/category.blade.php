@@ -3,10 +3,13 @@
 
 @section('content')
 
-	<div>
 
-		<h1>{!! $page->name !!}</h1>
-		<p>{!! $page->description !!}</p>
+	<section class="tag">
+
+		<div class="col-xs-12 dashed">
+			<h1>{!! $page->name !!}</h1>
+			<p class="small"><i>{!! $page->description !!}</i></p>
+		</div>
 
 		@if(@$page->player)
 
@@ -14,6 +17,6 @@
 
 		@endif
 
-	</div>
+	</section>
 
 @stop

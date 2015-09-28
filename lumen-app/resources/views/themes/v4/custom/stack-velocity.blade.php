@@ -18,23 +18,27 @@
 			better today by locating the facility nearest you and signing up for a free trial.</p>
 		</section>
 		<section>
-			<div class="vsp_bucket">
-				<h2>Sign up for a Free Trial</h2>
-				<p>Challenge yourself. Be the best <b>YOU</b> you can be. Start your <b>FREE</b> Trial today.</p>
-				<div class="input_container">
-					<form action="http://www.velocitysp.com/free_trial" method="GET" target="_blank">
-						<input type="submit" value="TRY STACK VELOCITY NOW" ></input>
-					</form>
+			<div class="col-xs-12 col-sm-6 headroom footroom">
+				<div class="vsp_bucket">
+					<h2>Sign up for a Free Trial</h2>
+					<p class="stack-velocity-text">Challenge yourself. Be the best <b>YOU</b> you can be. Start your <b>FREE</b> Trial today.</p>
+					<div class="input_container">
+						<form action="http://www.velocitysp.com/free_trial" method="GET" target="_blank">
+							<input type="submit" value="TRY STACK VELOCITY NOW" ></input>
+						</form>
+					</div>
 				</div>
 			</div>
-			<div class="vsp_bucket">
-				<h2>FIND A FACILTY</h2>
-				<p>Enter your ZIP code below to find a STACK Velocity near you.</p>
-				<div class="input_container">
-					<form action="http://www.velocitysp.com/find_a_location" method="POST" target="_blank">
-						<input type="text" name="zipcode" placeholder="Enter your zip code"></input>
-						<input type="submit" value="FIND" class="short_btn"></input>
-					</form>
+			<div class="col-xs-12 col-sm-6 headroom footroom">
+				<div class="vsp_bucket">
+					<h2>FIND A FACILTY</h2>
+					<p class="stack-velocity-text">Enter your ZIP code below to find a STACK Velocity near you.</p>
+					<div class="input_container">
+						<form action="http://www.velocitysp.com/find_a_location" method="POST" target="_blank">
+							<input type="text" name="zipcode" placeholder="Enter your zip code"></input>
+							<input type="submit" value="FIND" class="short_btn"></input>
+						</form>
+					</div>
 				</div>
 			</div>
 		</section>

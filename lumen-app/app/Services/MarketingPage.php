@@ -26,7 +26,7 @@ class MarketingPage extends Page
 		// initialize object variables
 		$this->_object->id 			= $slug;
 		$this->_object->playlist 	= $playlistcms->get($playlist);
-		$this->_object->player 		= $playercms->get($video);
+		$this->_object->player 		= $playercms->get($video,$playlist);
 		$this->_object->page_type 	= 'marketing';
 
 		// set theme

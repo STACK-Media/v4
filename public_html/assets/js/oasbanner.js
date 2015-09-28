@@ -4,8 +4,9 @@ var
 	banners  = [],
 	is_phone = window.matchMedia("only screen and (max-width: 768px)"),
 	abbrev   = (is_phone.matches ? 'M' : 'D'),
-	adcats   = (typeof pageinfo.taxonomy.category !== 'undefined') ? pageinfo.taxonomy.category : [],
-	adtags   = (typeof pageinfo.taxonomy.post_tag !== 'undefined') ? pageinfo.taxonomy.post_tag : [],
+	adcats   = (typeof pageinfo.taxonomy.category 	!== 'undefined') ? pageinfo.taxonomy.category : [],
+	adtags   = (typeof pageinfo.taxonomy.post_tag 	!== 'undefined') ? pageinfo.taxonomy.post_tag : [],
+	adslug   = (typeof pageinfo.slug 				!== 'undefined') ? pageinfo.slug : '',
 	adqry    = '',
 	oas_tag  = oas_tag || {};
 
@@ -21,7 +22,9 @@ if (typeof pageinfo.type !== 'undefined' && pageinfo.type != ''){
 	adcats.push(pageinfo.type);
 }
 
-adqry = adtags.concat(adcats).join('section,').replace(/-/g, '');
+adqry 	= adtags.concat(adcats).join('section,').replace(/-/g, '');
+adqry 	= (adqry !== '') ? adqry+'section' : '';
+adqry 	= (adqry !== '') ? adqry + ',' + adslug : adslug;
 
 $('[data-oas-'+abbrev.toLowerCase()+']').each(function(){
 
@@ -40,7 +43,7 @@ oas_tag.sizes 		= function() {
 
 };
 
-oas_tag.query 		= (adqry !== '') ? adqry+'section' : '';	// set keywords to target, comma-delimited (category or tag)
+oas_tag.query 		= adqry;	// set keywords to target, comma-delimited (category or tag)
 oas_tag.analytics 	= true;					// collect taxonomy and referral data
 oas_tag.taxonomy 	= ''; 			// taxonomy, comma-delimited -- currently not being used
 oas_tag.site_page	= pageinfo.url;

@@ -3,14 +3,12 @@ namespace App\Http\Controllers;
 
 use App\Services\CustomPage;
 use App\Services\Contentmanager;
+use Request;
 
 class CustomController extends PageController
 {
-	private function index($slug)
-	{
-    	// initialize variables
-    	$data 	= array();
-    	
+	private function index($slug,$data=array())
+	{    	
     	// set page object
 		$this->_set_page_object(new CustomPage(array(
 			'slug'	=> $slug
@@ -19,16 +17,13 @@ class CustomController extends PageController
 		return $this->_load_page_view('custom.'.$slug, $data);
 	}
 
+    private function redirect($url,$code=301)
+    {
+        echo redirect()->to($url,301);
+    }
+
     public function atoz()
     {
-    	// initialize variables
-    	$data 	= array();
-    	
-    	// set page object
-		$this->_set_page_object(new CustomPage(array(
-			'slug'	=> 'a-to-z'
-		)));
-
 		// initialize needed services
 		$taxonomy 			= new Contentmanager('taxonomy');
 
@@ -38,7 +33,7 @@ class CustomController extends PageController
 		// set data variables
 		$data['taxonomies']	= $taxonomies;
 		
-        return $this->_load_page_view('custom.a-to-z', $data);
+        return $this->index('a-to-z', $data);
     }
 
     public function contact()
@@ -54,6 +49,24 @@ class CustomController extends PageController
     public function velocity()
     {
     	return $this->index('stack-velocity');	
+    }
+
+    public function originals()
+    {
+        // initialize config
+        app()->configure('stack-originals');
+
+        // grab stack-originals config values
+        $data   = config('stack-originals');
+
+        // show page
+        return $this->index('stack-originals',$data);  
+    }
+
+    public function vsptrial()
+    {
+        // redirect 
+        $this->redirect('http://www.velocitysp.com/free_trial');
     }
 
 }

@@ -1,6 +1,7 @@
 @extends('theme::layouts.two_column')
 
 {!! Assets::queue('stylesheet', 'layout', 'contact', '/assets/css/custom/contact.css') !!}
+{!! Assets::queue('javascript', 'global', 'api', 			'/assets/js/api.js') !!}
 {!! Assets::queue('javascript', 'layout', 'contact', '/assets/js/custom/contact.js') !!}
 
 @section('content')
@@ -21,6 +22,9 @@
 
 				<form name="contact" class="contact-form">
 
+					<input type="hidden" class="contact-subject" name="params[subject]" value="STACK Contact Form Submission" />
+					<input type="hidden" class="contact-body" name="params[body]" value="" />
+
 					<div class="row">
 
 						<div class="col-xs-0  col-sm-2">
@@ -30,7 +34,7 @@
 						</div>
 						<div class="col-xs-12 col-sm-10">
 
-							<input class="form-control" type="text" name="name" id="name" placeholder="Please enter your name" />
+							<input class="form-control" type="text" name="name" class="contact-name" placeholder="Please enter your name" />
 
 						</div>
 
@@ -45,7 +49,7 @@
 						</div>
 						<div class="col-xs-12 col-sm-10">
 
-							<input class="form-control" type="text" name="email" id="email" placeholder="Please enter your email" />
+							<input class="form-control contact-email" type="text" name="to" id="email" placeholder="Please enter your email" />
 
 						</div>
 						
@@ -57,18 +61,18 @@
 						<div class="col-xs-12 col-sm-10">
 
 							<div class="input-group">
-								<select name="department" id="department">
+								<select name="department" class="contact-department">
 
-									<option value="">Letters To The Editor</option>
-									<option value="">High School Registration</option>
-									<option value="">Paid Subscriptions</option>
-									<option value="">Business Development Opportunities</option>
-									<option value="">Advertising/Marketing Opportunities</option>
-									<option value="">Press</option>
-									<option value="">Jobs</option>
-									<option value="">Address Changes</option>
-									<option value="">Current and Back Issues</option>
-									<option value="">Other</option>
+									<option value="letters@stackmag.com">Letters To The Editor</option>
+									<option value="requests@stackmag.com">High School Registration</option>
+									<option value="subs@stackmag.com">Paid Subscriptions</option>
+									<option value="letters@stackmag.com">Business Development Opportunities</option>
+									<option value="sales@stackmag.com">Advertising/Marketing Opportunities</option>
+									<option value="letters@stackmag.com">Press</option>
+									<option value="letters@stackmag.com">Jobs</option>
+									<option value="subs@stackmag.com">Address Changes</option>
+									<option value="subs@stackmag.com">Current and Back Issues</option>
+									<option value="letters@stackmag.com">Other</option>
 
 								</select>
 							</div>
@@ -83,7 +87,7 @@
 						<div class="col-xs-12 col-sm-10">
 
 							<div class="input-group">
-								<textarea rows="8" cols="30" placeholder="Enter your comments here"></textarea>
+								<textarea rows="8" cols="30" name="comments" class="contact-comments" placeholder="Enter your comments here"></textarea>
 							</div>
 
 						</div>

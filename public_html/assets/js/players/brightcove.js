@@ -1,7 +1,8 @@
 // initialize variables
 var myPlayer = {};
 var player_key 	= $(".video-js").attr("id");
-var video_id 	= $(".video-js").data("video-id");
+var video_id 	= $(".video-js").data("vid-id");
+
 
 $(document).ready(function(){
 
@@ -40,12 +41,21 @@ $(document).ready(function(){
 
 // load specific video
 function play(id)
-{
+{	
+	// if refresh adds method exists, then use it here
+	if (typeof refreshAds != 'undefined')
+	{
+		refreshAds();
+	}
+
 	// first we must pause current video 
 	myPlayer.pause();
 	
 	// get video from brightcove catalog
 	myPlayer.bcCatalog.getVideo(id,function(error,video){
+
+		// update title & descriptions
+		update_titles(video);
 
 		// play video
 		myPlayer.src(video.sources);
@@ -72,6 +82,7 @@ function nowplaying(id)
 	$(".play-video[data-id='" + id + "']").addClass('nowplaying');
 }
 
+// play next video in playlist upon media complete
 function onMediaComplete()
 {
 	// initialize variables
@@ -103,5 +114,34 @@ function onMediaComplete()
 
 }
 
+function update_titles(video)
+{
+	// video description
+	if (exists('.video-title'))
+	{
+		$('.video-title').each(function(){
+			$(this).html(video.name);
+		});
+	}
 
+	if (exists('.video-description'))
+	{
+		$('.video-description').each(function(){
+			$(this).html(video.description);
+		});
+	}
 
+	if (exists('.video-plays'))
+	{
+		$('.video-plays').each(function(){
+			$(this).html(video.description);
+		});
+	}
+
+	return true;
+}
+
+function exists(elem)
+{
+	return ($(elem).length);
+}

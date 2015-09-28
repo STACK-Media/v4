@@ -2,63 +2,9 @@
 @stop
 
 @section('right-sidebar-widgets')
+@stop
 
-
-	@include('theme::partials.bannerad', array('position' => 'sidebar-top', 'args' => array()))
-
-	<?php
-	$num_widgets = 0;
-	 // iterate sidebar widgets ?>
-	@if(isset($widgets['sidebar']))
-
-		<div class="row">
-
-			@foreach ($widgets['sidebar'] AS $widget => $wdata)
-
-				<?php 
-				$num_widgets++; 
-
-				$headroom_class = '';
-				?>
-
-				<div class="event widget" data-name="sidebar-{{$widget}}" data-template="{{$template or "default"}}">
-
-					<div class="col-xs-12 col-sm-6 col-md-12">
-
-						<div class="dashed-bottom legroom {{$headroom_class}}">
-
-							@include('theme::partials.widgets.'.$widget, $wdata)		
-
-						</div>
-
-					</div>
-
-				</div>
-
-				@if($num_widgets==2)
-					
-					</div>
-
-					<div class="row">
-						
-						@include('theme::partials.bannerad', array('position' => 'sidebar-mid', 'args' => array()))
-					
-					</div>
-
-					<div class="row">
-
-				@endif
-
-			@endforeach
-
-		</div>
-
-	@endif
-
-
-	@include('theme::partials.bannerad', array('position' => 'sidebar-mid', 'args' => array()))
-
-
+@section('left-sidebar-widgets')
 @stop
 
 @section('post-content-widgets')
@@ -72,7 +18,7 @@
 @section('navbar')
 	
 
-	@include('theme::partials.navbar-marketing')
+	@include('theme::partials.navbar-fortheathlete')
 	
 	<div class="container" id="oas_Top_container">
 		@include('theme::partials.bannerad', array('position' => 'leader', 'args' => array()))
@@ -89,11 +35,18 @@
 
 </header>
 
-<div class="container">
+<div class="">
 
 	<div class="panel headroom">
+
+		<!-- Left Sidebar -->
+		<aside class="col-xs-12 col-md-3" id="sidebar">
+
+			@yield('left-sidebar-widgets')
+
+		</aside>
 		
-		<main role="main" class="col-xs-12 col-md-8 col-lg-8" id="content">
+		<main role="main" class="col-xs-12 col-md-6" id="content">
 
 			@yield('content')
 
@@ -105,8 +58,8 @@
 
 		</main>
 
-		<!-- Sidebar -->
-		<aside class="col-xs-12 col-md-4 col-lg-4" id="sidebar">
+		<!-- Right Sidebar -->
+		<aside class="col-xs-12 col-md-3" id="sidebar">
 
 			@yield('right-sidebar-widgets')
 
@@ -117,7 +70,7 @@
 
 			@yield('post-content-widgets')
 
-		</div>	
+		</div>
 
 		<div class="clearfix"></div>	
 

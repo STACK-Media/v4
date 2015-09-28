@@ -5,6 +5,15 @@ body {
 hr { 
 	border-bottom: 		1px dashed #148bcc;
 }
+.dashed { 
+	border-bottom: 		1px dashed #148bcc;
+}
+section h1 {
+	margin: 0 0 18px 0 !important;
+	font-size: 2.4em !important;
+	line-height: 1 !important;
+	font-family: "Roboto Slab", serif !important;
+}
 .green {
 	color: 	green;
 }
@@ -25,6 +34,12 @@ hr {
 
 .logo-nolinks {
 	padding: 		20px;	
+}
+.for-the-athlete {
+    height: 35px;
+    float: left;
+    padding: 17px 10px;
+    line-height: 60px;
 }
 .white {
 	color: 	#FFF 	!important;
@@ -97,6 +112,9 @@ a {cursor:pointer;}
 /* Helpers */
 .headroom {
 	padding-top: 		20px;
+}
+.footroom {
+	padding-bottom: 	20px;
 }
 .legroom {
 	padding-bottom: 	20px;
