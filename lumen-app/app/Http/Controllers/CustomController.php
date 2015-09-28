@@ -36,6 +36,11 @@ class CustomController extends PageController
         return $this->index('a-to-z', $data);
     }
 
+    public function beast()
+    {
+        return $this->index('stack-beast');
+    }
+
     public function contact()
     {
         return $this->index('contact');  
@@ -66,7 +71,12 @@ class CustomController extends PageController
     public function vsptrial()
     {
         // redirect 
-        $this->redirect('http://www.velocitysp.com/free_trial');
+        $this->redirect('http://www.velocitysp.com/free_trial',302);
+    }
+
+    public function resources()
+    {
+        return $this->index('resources');
     }
 
 }
