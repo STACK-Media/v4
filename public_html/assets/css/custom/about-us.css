@@ -528,10 +528,10 @@ table {
   height: 100%;
   background-color: #000;
   border: 0;
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.8) 70%, rgba(0, 0, 0, 0.6) 100%), -webkit-linear-gradient(left, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.9) 100%), url(../img/parallax/ck_top.jpg);
-  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.8) 70%, rgba(0, 0, 0, 0.6) 100%), -moz-linear-gradient(left, rgba(0, 0, 0, 0.4) 10%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.9) 100%), url(../img/parallax/ck_top.jpg);
-  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.8) 70%, rgba(0, 0, 0, 0.6) 100%), -o-linear-gradient(left, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.9) 100%), url(../img/parallax/ck_top.jpg);
-  background-image: linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.8) 70%, rgba(0, 0, 0, 0.6) 100%), linear-gradient(left, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.9) 100%), url(../img/parallax/ck_top.jpg);
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.8) 70%, rgba(0, 0, 0, 0.6) 100%), -webkit-linear-gradient(left, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.9) 100%), url(/assets/third-party/parallax/img/ck_top.jpg);
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.8) 70%, rgba(0, 0, 0, 0.6) 100%), -moz-linear-gradient(left, rgba(0, 0, 0, 0.4) 10%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.9) 100%), url(/assets/third-party/parallax/img/ck_top.jpg);
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.8) 70%, rgba(0, 0, 0, 0.6) 100%), -o-linear-gradient(left, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.9) 100%), url(/assets/third-party/parallax/img/ck_top.jpg);
+  background-image: linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.8) 70%, rgba(0, 0, 0, 0.6) 100%), linear-gradient(left, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.9) 100%), url(/assets/third-party/parallax/img/ck_top.jpg);
   background-size: cover;
   background-position: center center;
   position: relative;
@@ -545,7 +545,7 @@ table {
 }
 /* line 27, ../scss/about.scss */
 #skrollr-body #home .home_arrow {
-  background: url(../img/parallax/down_arrow.png) no-repeat;
+  background: url(/assets/third-party/parallax/img/down_arrow.png) no-repeat;
   width: 46px;
   height: 50px;
   display: inline-block;
@@ -814,7 +814,7 @@ table {
 #skrollr-body .content#slide7 .magazine .section.one {
   min-height: 715px;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
-  /*url(../img/parallax/lebron_cover.jpg) no-repeat 0 0; background-size: 100%; */
+  /*url(/assets/third-party/parallax/img/lebron_cover.jpg) no-repeat 0 0; background-size: 100%; */
 }
 /* line 95, ../scss/about.scss */
 #skrollr-body .content#slide7 .magazine .section.one .first_issue {
@@ -1062,7 +1062,7 @@ table {
 /* line 157, ../scss/about.scss */
 #skrollr-body .content#slide11 {
   padding: 0;
-  /*background: url(../img/parallax/velocity_1.jpg) no-repeat 0 0; background-size: cover; */
+  /*background: url(/assets/third-party/parallax/img/velocity_1.jpg) no-repeat 0 0; background-size: cover; */
   background-color: black;
 }
 /* line 158, ../scss/about.scss */
@@ -1211,11 +1211,11 @@ table {
   padding-bottom: 56.25%;
   padding-top: 1px;
   position: relative;
-  background: url("/img/play_btn.png") no-repeat scroll 94% 94%/25% auto rgba(0, 0, 0, 0);
+  background: url("/assets/img/play_btn.png") no-repeat scroll 94% 94%/25% auto rgba(0, 0, 0, 0);
 }
 /* line 189, ../scss/about.scss */
 #skrollr-body .content#slide13 .overlay_wrapper a:hover .overlay {
-  background: url("/img/play_btn_hover.png") no-repeat scroll 94% 94%/25% auto rgba(0, 0, 0, 0);
+  background: url("/assets/img/play_btn_hover.png") no-repeat scroll 94% 94%/25% auto rgba(0, 0, 0, 0);
 }
 /* line 194, ../scss/about.scss */
 #skrollr-body .content#slide13 ul.slides.left.channel_recent {
