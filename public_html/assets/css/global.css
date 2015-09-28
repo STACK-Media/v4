@@ -5,6 +5,9 @@ body {
 hr { 
 	border-bottom: 		1px dashed #148bcc;
 }
+.dashed { 
+	border-bottom: 		1px dashed #148bcc;
+}
 section h1 {
 	margin: 0 0 18px 0 !important;
 	font-size: 2.4em !important;
@@ -109,6 +112,9 @@ a {cursor:pointer;}
 /* Helpers */
 .headroom {
 	padding-top: 		20px;
+}
+.footroom {
+	padding-bottom: 	20px;
 }
 .legroom {
 	padding-bottom: 	20px;
