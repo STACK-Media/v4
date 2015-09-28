@@ -22,7 +22,7 @@ class PromosController extends APIController {
 		shuffle($views);
 
 		$view = reset($views);
-		$view = view($view)->render();
+		$view = view($view, array('group' => $group, 'promo' => $promo))->render();
 
 		$result['view'] = array(trim($view));
 

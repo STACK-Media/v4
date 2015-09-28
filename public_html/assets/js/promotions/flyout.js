@@ -26,9 +26,15 @@ $(window).scroll(function() {
 
 });
 
-$('#flyout').on('click', '.flyswat', function(e){
+$('.flyswat').click(function(e){
 
 	e.preventDefault();
+
+	var 
+		group = $('#flyout').data('promoGroup'),
+		promo = $('#flyout').data('promoName');
+
+	$.cookie('pr_nocre_'+group+'_'+promo, '1',  { path: '/', expires: 1 });
 
 	flyout_hidden = true;
 

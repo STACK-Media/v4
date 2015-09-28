@@ -1,6 +1,6 @@
 {!! Assets::queue_raw('javascript', 'global', 'popup', '/assets/js/promotions/popup.js') !!}
 
-<div class="modal fade {!! (isset($modal_class) ? $modal_class : '') !!}" id="intropop">
+<div class="modal fade {!! (isset($modal_class) ? $modal_class : '') !!}" id="intropop" data-promo-name="{!! $promo !!}" data-promo-group="{!! $group !!}">
 	<div class="modal-dialog">
 		<div class="modal-content">
 

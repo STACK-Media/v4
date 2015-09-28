@@ -288,6 +288,14 @@ $app->group(['prefix' => 'api/v1/vms','namespace' => 'App\Http\Controllers\API\v
 
 });
 
+// Email Manager
+$app->group(['prefix' => 'api/v1/email','namespace' => 'App\Http\Controllers\API\v1\Email', 'middleware' => 'api-auth'], function($app) {
+
+	// playlist
+	$app->get('message/send',	'MessageController@send');
+
+});
+
 // Promos Ajax
 $app->get('api/v1/promos/{group}/{promo}', 'App\Http\Controllers\API\v1\PromosController@show');
 
@@ -295,12 +303,23 @@ $app->get('api/v1/promos/{group}/{promo}', 'App\Http\Controllers\API\v1\PromosCo
 // Custom pages
 // a to z
 $app->get('a-to-z',			['as' => 'a-to-z', 			'uses' => 'App\Http\Controllers\CustomController@atoz']);
+$app->get('contact-us',		['as' => 'contact-us', 		'uses' => 'App\Http\Controllers\CustomController@contact']);
 $app->get('terms-of-use',	['as' => 'terms-of-use', 	'uses' => 'App\Http\Controllers\CustomController@terms']);
 $app->get('stack-velocity',	['as' => 'stack-velocity', 	'uses' => 'App\Http\Controllers\CustomController@velocity']);
 
 
 // Vanity URLs
-$app->get('vanity',			['uses' => 'App\Http\Controllers\VanityController@index']);
+$app->get('billy-winn',				['uses' => 'App\Http\Controllers\VanityController@index']);
+$app->get('new-balance-giveaway',	['uses' => 'App\Http\Controllers\VanityController@index']);
+$app->get('beast-squad-signup',		['uses' => 'App\Http\Controllers\VanityController@index']);
+$app->get('marcus-mariota',			['uses' => 'App\Http\Controllers\VanityController@index']);
+$app->get('summerfootball2015',		['uses' => 'App\Http\Controllers\VanityController@index']);
+$app->get('summersoccer2015',		['uses' => 'App\Http\Controllers\VanityController@index']);
+$app->get('summerbasketball2015',	['uses' => 'App\Http\Controllers\VanityController@index']);
+$app->get('summertrack2015',		['uses' => 'App\Http\Controllers\VanityController@index']);
+$app->get('summerwrestling2015',	['uses' => 'App\Http\Controllers\VanityController@index']);
+$app->get('summerbaseball2015',		['uses' => 'App\Http\Controllers\VanityController@index']);
+$app->get('summerlacrosse2015',		['uses' => 'App\Http\Controllers\VanityController@index']);
 
 
 /*
