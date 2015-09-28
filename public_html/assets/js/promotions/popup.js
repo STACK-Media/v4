@@ -60,18 +60,22 @@ $(document).mousemove(function(e){
 
 
 
-$('.popup-modal').on('hidden.bs.modal', function (e) {
+$('#intropop, #exitpop').each(function(){
 
-	if (typeof myPlayer !== "undefined" && typeof myPlayer.play === "function") {
+	$(this).on('hidden.bs.modal', function (e) {
 
-		myPlayer.play();
+		if (typeof myPlayer !== "undefined" && typeof myPlayer.play === "function") {
 
-	}
+			myPlayer.play();
 
-	var 
-		group = $(this).data('promoGroup'),
-		promo = $(this).data('promoName');
+		}
 
-	$.cookie('pr_nocre_'+group+'_'+promo, '1',  { path: '/', expires: 1 });
+		var 
+			group = $(this).data('promoGroup'),
+			promo = $(this).data('promoName');
+
+		$.cookie('pr_nocre_'+group+'_'+promo, '1',  { path: '/', expires: 1 });
+
+	});
 
 });

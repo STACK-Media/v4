@@ -1,4 +1,4 @@
-@extends('global.partials.promotions.popup_layout', array('modal_class' => 'testpop', 'poptype' => 'exit'))
+@extends('global.partials.promotions.popup_layout', array('modal_class' => 'testpop', 'poptype' => 'exit', 'popbgclose' => FALSE))
 
 @section('modal-header')
 
@@ -6,11 +6,11 @@
 
 @section('modal-body')
 
-	TESTING
+	TESTING <button type="button" data-toggle="modal" data-target="#exitpop">close me</button>
 
 @stop
 
 
 @section('modal-footer')
 
-@sto
+@stop
