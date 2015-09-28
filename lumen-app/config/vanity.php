@@ -19,10 +19,41 @@ return array(
 			'slug'	=> 'beast-squad-signup'
 		)
 	),
+	'in-season-strength'	=> array(
+		'page'		=> 'article',
+		'params'	=> array(
+			'slug'	=> 'in-season-strength-training'
+		)
+	),
+	'kaepernick'		=> array(
+		'page'		=> 'tag',
+		'params'	=> array(
+			'slug'	=> 'colin-kaepernick'
+		)
+	),
+	'lebron-video'		=> array(
+		'page'		=> 'video',
+		'params'	=> array(
+			'id'	=> '3731026595001',
+			'slug'	=> 'akron-ohio-welcomes-lebron-james-home'
+		)
+	),
+	'lolo-plan'			=> array(
+		'page'		=> 'article',
+		'params'	=> array(
+			'slug'	=> 'lolo-jones-workout'
+		)
+	),
 	'marcus-mariota'	=> array(
 		'page'		=> 'article',
 		'params'	=> array(
 			'slug'	=> 'marcus-mariota-workout'
+		)
+	),
+	'muscle-up'			=> array(
+		'page'		=> 'page',
+		'params'	=> array(
+			'slug'	=> 'stack-basic-training-registration'
 		)
 	),
 	'summerfootball2015'	=> array(
