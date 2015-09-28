@@ -253,12 +253,14 @@ $app->get('api/v1/promos/{group}/{promo}', 'App\Http\Controllers\API\v1\PromosCo
 ##################################################################################
 // Custom pages
 // a to z
-$app->get('a-to-z',			['as' => 'a-to-z', 			'uses' => 'App\Http\Controllers\CustomController@atoz']);
-$app->get('contact-us',		['as' => 'contact-us', 		'uses' => 'App\Http\Controllers\CustomController@contact']);
-$app->get('terms-of-use',	['as' => 'terms-of-use', 	'uses' => 'App\Http\Controllers\CustomController@terms']);
-$app->get('stack-velocity',	['as' => 'stack-velocity', 	'uses' => 'App\Http\Controllers\CustomController@velocity']);
-$app->get('stack-originals',['as' => 'stack-originals', 'uses' => 'App\Http\Controllers\CustomController@originals']);
-$app->get('vsptrial',		['as' => 'vsptrial', 		'uses' => 'App\Http\Controllers\CustomController@vsptrial']);
+$app->get('a-to-z',				['as' => 'a-to-z', 				'uses' => 'App\Http\Controllers\CustomController@atoz']);
+$app->get('beast-squad-signup',	['as' => 'beast-squad-signup', 	'uses' => 'App\Http\Controllers\CustomController@beast']);
+$app->get('beast-squad-us',		['as' => 'beast-squad-us', 			'uses' => 'App\Http\Controllers\CustomController@beast-squad']);
+$app->get('resources',			['as' => 'resources', 			'uses' => 'App\Http\Controllers\CustomController@resources']);
+$app->get('terms-of-use',		['as' => 'terms-of-use', 		'uses' => 'App\Http\Controllers\CustomController@terms']);
+$app->get('stack-velocity',		['as' => 'stack-velocity', 		'uses' => 'App\Http\Controllers\CustomController@velocity']);
+$app->get('stack-originals',	['as' => 'stack-originals', 	'uses' => 'App\Http\Controllers\CustomController@originals']);
+$app->get('vsptrial',			['as' => 'vsptrial', 			'uses' => 'App\Http\Controllers\CustomController@vsptrial']);
 
 
 ##################################################################################
@@ -266,7 +268,6 @@ $app->get('vsptrial',		['as' => 'vsptrial', 		'uses' => 'App\Http\Controllers\Cu
 $vanity 	= array(
 	'billy-winn',
 	'new-balance-giveaway',
-	'beast-squad-signup',
 	'in-season-strength',
 	'kaepernick',
 	'lebron-video',

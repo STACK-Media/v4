@@ -1,0 +1,47 @@
+.beast-squad {
+	font-size: 	115%;
+}
+.beast-squad h1 {
+	margin: 0 0 18px 0;
+    font-size: 2.4em;
+    line-height: 1;
+    font-family: "Roboto Slab", serif;
+}
+.beast-squad h2 {
+	margin: 6px 0;
+	line-height: 1.2;
+	color: #000;
+	font-size: 1em;
+	font-family: "Roboto Slab", serif;
+	font-weight: bold;
+}
+.beast-squad p {
+	float: 		left;
+	clear: 		left;
+	font-family: "Source Sans Pro", Arial, sans-serif, Arial;
+	font-size: 12pt;
+}
+.beast-squad .address {
+	min-height: 	200px;
+}
+.beast-squad .label {
+	color: #000;
+	white-space: 	pre-wrap	!important;
+	text-align: 	left;
+	padding: 		0px;
+}
+.beast-squad .submit-button {
+	margin: 0 auto;
+}
+
+
+
+.beast-squad form {
+  padding: 24px;
+  border: 1px solid #000;
+  float: left;
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
