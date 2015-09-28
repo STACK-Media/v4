@@ -1,7 +1,9 @@
 
+var flyout_hidden = false;
+
 function show_flyout()
 {
-	if ($('#flyout').is(':visible')){
+	if ($('#flyout').is(':visible') || flyout_hidden){
 		return;
 	}
 
@@ -21,5 +23,21 @@ $(window).scroll(function() {
 		show_flyout();
 
 	}, 300));
+
+});
+
+$('.flyswat').click(function(e){
+
+	e.preventDefault();
+
+	var 
+		group = $('#flyout').data('promoGroup'),
+		promo = $('#flyout').data('promoName');
+
+	$.cookie('pr_nocre_'+group+'_'+promo, '1',  { path: '/', expires: 1 });
+
+	flyout_hidden = true;
+
+	$('#flyout').hide();
 
 });
