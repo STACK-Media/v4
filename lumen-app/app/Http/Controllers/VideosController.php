@@ -8,9 +8,19 @@ use App\Services\Videomanager;
 class VideosController extends PageController
 {
 	// default playlist id to play on this page
-	var $playlist 	= '3439059561001';	// TODO: this will need to be updated to pull proper playlist per vertical
+    ## TODO: Move to config
+	var $playlist 	= array(
+       'default'                => '3439059561001',
+       '4w'                     => '3439059561001',
+       'gamer'                  => '3439059561001',
+       'basic-training'         => '3439059561001',
+       'coaches-and-trainers'   => '3439059561001',
+       'fitness'                => '3439059561001',
+       'gear'                   => '3439059561001'
+    );	// TODO: move to config
 	
 	// featured videos playlist id's
+    ## TODO: Move to config
 	var $featured 	= array(
 		'3468569377001',
 		'2816772539001',
@@ -28,26 +38,17 @@ class VideosController extends PageController
 
     function index()
     {
-    	// initialize classes
-    	$manager 	= new Videomanager('playlist');
+        // initialize variables
+        $data  = array();
 
-    	// grab videos from playlist
-    	$playlist 	= $manager->get($this->playlist);
-    	$featured 	= $manager->multiple($this->featured);
-
-    	// set $id as the first video in series (to set in our page object)
-    	$id 		= $playlist['videoIds'][0];
+        // grab playlist id we need to use (based on vertical)
+        $id    = (isset($this->playlist[$this->_subtheme]))? $this->playlist[$this->_subtheme]: $this->playlist['default'];     
 
     	// set page object
         $this->_set_page_object(new VideosPage(array(
-        	'id'	=> $id
+        	'id'	    => $id,
+            'featured'  => $this->featured
         )));
-
-        // initialize data
-        $data 		= array(
-        	'playlist'	=> $playlist['videos'],
-        	'featured'	=> $featured['videos']
-        );
 
         // load page
     	return $this->_load_page_view('videos', $data);

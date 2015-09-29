@@ -38,7 +38,21 @@ abstract class Page extends Service
 			'taxonomy'  => array(),
 			'page_type' => NULL,
 			'name'      => '',
-			'meta'      => array()
+			'meta'      => array(),
+			'metatags'	=> array(
+				'title'			=> 'Get Bigger, Stronger, Better, Faster | STACK',
+				'description'	=> 'Get better at the sports you play and the life you lead at STACK. Improve your training, nutrition and lifestyle with daily',
+				'image'			=> 'http://v4.stack.com/assets/img/branding/logos/stack-black.png',
+				'url'			=> 'http://www.stack.com',
+				'keywords'		=> array(
+					'stack',
+					'athlete',
+					'sports',
+					'training',
+					'workout',
+					'drills'
+				)
+			),
 		);
 
 		$this->_object = (object) array_merge($required, (array) $this->_object);

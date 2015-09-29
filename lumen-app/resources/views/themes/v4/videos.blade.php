@@ -5,7 +5,11 @@
 
 	@include('theme::partials.videoplayers.'.$page->player['player_name'], $page->player['player_data'])
 
-		@foreach ($playlist AS $key => $value)
+	<?php
+	if (is_array($page->playlist['videos'])):
+	?>
+
+		@foreach ($page->playlist['videos'] AS $key => $value)
 
 			<?php
 			print "<pre>";
@@ -14,6 +18,10 @@
 			?>
 
 		@endforeach
+
+	<?php
+	endif;
+	?>
 
 	<div class="row">
 

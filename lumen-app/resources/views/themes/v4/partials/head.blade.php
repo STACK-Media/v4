@@ -21,27 +21,26 @@
 <meta http-equiv="X-UA-Compatible"	content="IE=edge,chrome=1">
 <meta name="viewport" 				content="width=device-width, initial-scale=1">
 
-<!-- Default -->
-<meta name="description" 	content="">
-<meta name="keywords" 		content="">
+<!-- Default Meta -->
+<meta name="description" 	content="{!! $page->metatags['description'] !!}">
+<meta name="keywords" 		content="<?php echo implode(',',$page->metatags['keywords']); ?>">
 
-<!-- Open Graph -->
+<!-- Open Graph Meta -->
 <meta property="og:site_name" 	name="og:site_name" 	content="STACK" />
 <meta property="og:type" 		name="og:type" 			content="website" />
-<meta property="og:title" 		name="og:title" 		content="" />
-<meta property="og:url" 		name="og:url" 			content="" />
-<meta property="og:description" name="og:description" 	content="" />
-<meta property="og:image" 		name="og:image" 		content="" />
+<meta property="og:title" 		name="og:title" 		content="{!! $page->metatags['title'] !!}" />
+<meta property="og:url" 		name="og:url" 			content="{!! $page->metatags['url'] !!}" />
+<meta property="og:description" name="og:description" 	content="{!! $page->metatags['description'] !!}" />
+<meta property="og:image" 		name="og:image" 		content="{!! $page->metatags['image'] !!}" />
 
 <!-- Twitter Card Meta -->
 <meta name="twitter:card" 			content="summary_large_image">
 <meta name="twitter:site" 			content="@STACKMedia">
-<meta name="twitter:title"			content="">
-<meta name="twitter:description" 	content="">
-<meta name="twitter:image" 			content="">
+<meta name="twitter:title"			content="{!! $page->metatags['title'] !!}">
+<meta name="twitter:description" 	content="{!! $page->metatags['description'] !!}">
+<meta name="twitter:image" 			content="{!! $page->metatags['image'] !!}">
 
-
-<title>{!! (is_object($page) && $page->name) ? $page->name . ' |' : ''; !!} STACK</title>
+<title>{!! $page->metatags['title'] !!}</title>
 
 @if(Request::input('whatami'))
 
