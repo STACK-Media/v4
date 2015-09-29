@@ -7,49 +7,6 @@
 
 	@include('theme::partials.head')
 
-	
-	@if(is_object($page))
-
-		<?php
-
-		$jstax = array();
-
-		if ( is_array($page->taxonomy)):
-
-			foreach($page->taxonomy as $type => $taxes):
-			
-				foreach($taxes as $tax):
-
-					$jstax[$type][] = $tax->slug;
-
-					if (property_exists($tax, 'parent') && isset($tax->parent['slug'])):
-
-						$jstax[$type][] = $tax->parent['slug'];
-
-					endif;
-
-				endforeach;
-
-			endforeach;
-
-		endif;
-
-		?>
-
-		<script type="text/javascript">
-
-			var pageinfo = {
-				url: "{!! preg_replace('#^https?://#', '', str_replace('v4.','www.',str_replace('.v4','.com',Request::url()))) !!}",
-				type: "{!! $page->page_type !!}",
-				taxonomy: {!! json_encode($jstax) !!},
-				promos: {!! json_encode($promos) !!},
-				slug: "{!! $slug !!}"
-			};
-
-		</script>
-		
-	@endif
-
 	<!-- header javascript files -->
 
 	{!! Assets::get_queued('headscript') !!} 
