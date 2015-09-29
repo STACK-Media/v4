@@ -17,14 +17,6 @@
 	@include('theme::partials.assets')
 @endif
 
-<<<<<<< HEAD
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta property="og:site_name" content="STACK" name="og:site_name" />
-
-<title>{!! (is_object($page) && $page->name) ? $page->name . ' |' : ''; !!} STACK</title>
-=======
 <?php /*<meta charset="utf-8">*/ ?>
 <meta http-equiv="X-UA-Compatible"	content="IE=edge,chrome=1">
 <meta name="viewport" 				content="width=device-width, initial-scale=1">
@@ -56,7 +48,6 @@
 <link rel="canonical" href="{!! Request::url() !!}" />
 
 <title>{!! $page->metatags['title'] !!} | STACK</title>
->>>>>>> 8a90abe6413265faa3bcdc9c41c8a866909c1a69
 
 @if(Request::input('whatami'))
 
