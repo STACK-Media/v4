@@ -29,7 +29,7 @@
 <meta property="og:site_name" 	name="og:site_name" 	content="STACK" />
 <meta property="og:type" 		name="og:type" 			content="website" />
 <meta property="og:title" 		name="og:title" 		content="{!! $page->metatags['title'] !!}" />
-<meta property="og:url" 		name="og:url" 			content="{!! $page->metatags['url'] !!}" />
+<meta property="og:url" 		name="og:url" 			content="{!! Request::url() !!}" />
 <meta property="og:description" name="og:description" 	content="{!! $page->metatags['description'] !!}" />
 <meta property="og:image" 		name="og:image" 		content="{!! $page->metatags['image'] !!}" />
 
@@ -39,6 +39,13 @@
 <meta name="twitter:title"			content="{!! $page->metatags['title'] !!}">
 <meta name="twitter:description" 	content="{!! $page->metatags['description'] !!}">
 <meta name="twitter:image" 			content="{!! $page->metatags['image'] !!}">
+
+<!-- Facebook Meta Tags -->
+<meta property="fb:admins" content="1541552431" />
+<meta property="fb:admins" content="1320053702" />
+
+<!-- Canonical Tag -->
+<link rel="canonical" href="{!! Request::url() !!}" />
 
 <title>{!! $page->metatags['title'] !!} | STACK</title>
 
