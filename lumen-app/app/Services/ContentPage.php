@@ -64,8 +64,54 @@ class ContentPage extends Page
 
 		endif;
 
+		// set custom meta tags
+		$this->_object->metatags 	= $this->_get_metatags();
+
 
 		return parent::__construct();
+	}
+
+	protected function _get_metatags()
+	{
+		// initialize variables
+		$metatags 	= array();
+
+		// set applicable metatags
+		// NOTE: do not set to blank - it will override the defaults
+		if (isset($this->_object->name))
+			$metatags['title'] 			= $this->_object->name;
+		
+		if (isset($this->_object->meta['description']))
+			$metatags['description'] 	= $this->_object->meta['description'];
+
+		if (isset($this->_object->image))
+			$metatags['image'] 			= $this->_object->image;
+			
+		// add categories
+		if (isset($this->_object->taxonomy['category'])):
+
+			foreach ($this->_object->taxonomy['category'] AS $key => $value):
+
+				$metatags['keywords'][]	= $value->name;
+
+			endforeach;
+
+		endif;
+
+		// add tags
+		if (isset($this->_object->taxonomy['post_tag'])):
+		
+			foreach ($this->_object->taxonomy['post_tag'] AS $key => $value):
+
+				$metatags['keywords'][]	= $value->name;
+
+			endforeach;
+
+		endif;
+
+		// grab SEO Plugin Meta & override any variables
+
+		return $metatags;
 	}
 
 

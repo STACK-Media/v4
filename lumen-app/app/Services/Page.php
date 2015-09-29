@@ -55,6 +55,14 @@ abstract class Page extends Service
 			),
 		);
 
+		// merge metatags before merging with page object
+		if (property_exists($this->_object, 'metatags')):
+
+			// set metatags (after merging with defaults)
+			$this->_object->metatags	= array_merge($required['metatags'], (array) $this->_object->metatags);
+
+		endif;
+
 		$this->_object = (object) array_merge($required, (array) $this->_object);
 
 		return TRUE;
