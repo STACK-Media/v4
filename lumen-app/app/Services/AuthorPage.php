@@ -26,8 +26,24 @@ class AuthorPage extends Page
 
 		endif;
 
-		return parent::__construct();
+		$this->_object->metatags 	= $this->_get_metatags();
 
+		return parent::__construct();
+	}
+
+	private function _get_metatags()
+	{
+		print "<pre>";
+		print_r($this->_object);
+		exit;
+		// initialize variables
+		$metatags 	= array();
+
+		// set meta tags
+		$metatags['title']			= $this->_object;
+		$metatags['description']	= $this->_object;
+
+		return $metatags;
 	}
 	
 } 

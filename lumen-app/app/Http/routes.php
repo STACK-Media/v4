@@ -97,14 +97,6 @@ $route_pages     = array(
 			'video'
 		)
 	),
-	'resources' => array(
-		'slug'       => 'resources',
-		'controller' => 'ResourcesController',
-		'function'   => 'index',
-		'params'     => array(
-
-		)
-	),
 	'search' => array(
 		'slug'       => 'search',
 		'controller' => 'SearchController',
