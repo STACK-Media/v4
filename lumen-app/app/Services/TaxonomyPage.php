@@ -57,8 +57,55 @@ class TaxonomyPage extends Page
 		);
 		// End making category page object consistent w/ other pages
 
+		// set custom meta tags
+		$this->_object->metatags 	= $this->_get_metatags();
+
 		return parent::__construct();
 
+	}
+
+	private function _get_metatags()
+	{
+		// initialize variables
+		$metatags 	= array();
+		if (isset($this->_object->name))
+			$metatags['title'] 			= $this->_object->name;
+		
+		if (isset($this->_object->description))
+			$metatags['description'] 	= $this->_object->description;
+
+		if (isset($this->_object->image))
+			$metatags['image'] 			= $this->_object->image;
+
+		// add categories
+		if (isset($this->_object->taxonomy['category'])):
+
+			foreach ($this->_object->taxonomy['category'] AS $key => $value):
+
+				// set metatags
+				$metatags['keywords'][]		= $value->name;
+
+			endforeach;
+
+		endif;
+
+		// add tags
+		if (isset($this->_object->taxonomy['post_tag'])):
+		
+			foreach ($this->_object->taxonomy['post_tag'] AS $key => $value):
+
+				// add tag name as keyword
+				$metatags['keywords'][]	= $value->name;
+
+			endforeach;
+
+		endif;
+
+		// add parent cat/tag if existss
+		if (isset($this->_object->parent_name) AND $this->_object->parent_name != '')
+			$metatags['keywords'][]	= $this->_object->parent_name;
+
+		return $metatags;
 	}
 
 	private function _latest_videos_object()

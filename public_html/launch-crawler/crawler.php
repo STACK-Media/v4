@@ -2,10 +2,20 @@
 
 exit();
 
-$data  = array_map('str_getcsv', file('urls.csv'));
+$data  = array_map('str_getcsv', file('urls-lite.csv'));
 $array = array();
 
+$counter = 0;
+
 foreach ($data as $row):
+
+	$counter++;
+
+	if ($counter > 100):
+
+		break;
+
+	endif;
 
 	$live           = 'http://www.stack.com'.$row[0];
 	$stage          = 'http://stack:Rx45hnj23kl54!@stage.stack.com'.$row[0];
@@ -16,6 +26,8 @@ foreach ($data as $row):
 	
 	$live_headers   = get_headers($live, 1);
 	$live_status    = $live_headers[0];
+
+	usleep(250000);
 	
 	$stage_headers  = get_headers($stage, 1);
 	$stage_status   = $stage_headers[0];
@@ -29,7 +41,7 @@ foreach ($data as $row):
 		'stage_redirect' => $stage_redirect
 	);
 
-	sleep(2);
+	usleep(250000);
 
 endforeach;
 

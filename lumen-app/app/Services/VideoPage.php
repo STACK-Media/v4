@@ -33,9 +33,25 @@ class VideoPage extends Page
 
 		endif;
 
+		// set custom meta tags
+		$this->_object->metatags 	= $this->_get_metatags();
+
 		return parent::__construct();
 	}
 
+	private function _get_metatags()
+	{
+		// initialize variables
+		$metatags 	= array();
+
+		// set title
+		$metatags['title']			= $this->_object->name;
+		$metatags['description']	= $this->_object->shortDescription;
+		$metatags['image']			= $this->_object->videoStillURL;
+		$metatags['keywords']		= $this->_object->tags;
+
+		return $metatags;
+	}
 
 	/*
 	function initiate($args = array())

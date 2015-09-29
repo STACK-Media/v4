@@ -64,8 +64,106 @@ class ContentPage extends Page
 
 		endif;
 
+		// set custom meta tags
+		$this->_object->metatags 	= $this->_get_metatags();
+
 
 		return parent::__construct();
+	}
+
+	protected function _get_metatags()
+	{
+		// initialize variables
+		$metatags 	= array();
+
+		// set applicable metatags
+		// NOTE: do not set to blank - it will override the defaults
+		if (isset($this->_object->name))
+			$metatags['title'] 			= $this->_object->name;
+		
+		if (isset($this->_object->meta['description']))
+			$metatags['description'] 	= $this->_object->meta['description'];
+
+		if (isset($this->_object->image))
+			$metatags['image'] 			= $this->_object->image;
+			
+		// add categories
+		if (isset($this->_object->taxonomy['category'])):
+
+			foreach ($this->_object->taxonomy['category'] AS $key => $value):
+
+				$metatags['keywords'][]	= $value->name;
+
+				// grab parent category (if exists)
+				if (isset($value->parent['name']))
+					$metatags['keywords'][]	= $value->parent['name'];
+
+				// grab category meta (if exists)
+				if (isset($value->meta['related_link_text'])):
+
+					// iterate related link text
+					foreach ($value->meta['related_link_text'] AS $keys => $values):
+
+						// add as keyword
+						$metatags['keywords'][]	= $values;
+
+					endforeach;
+
+				endif;
+
+				// more meta as keywords
+				if (isset($value->meta['menudisplaytext']))
+					$metatags['keywords'][]	= $value->meta['menudisplaytext'];
+
+			endforeach;
+
+		endif;
+
+		// add tags
+		if (isset($this->_object->taxonomy['post_tag'])):
+		
+			foreach ($this->_object->taxonomy['post_tag'] AS $key => $value):
+
+				// add tag name as keyword
+				$metatags['keywords'][]	= $value->name;
+
+				// grab tag meta (if exists)
+				if (isset($value->meta['related_link_text'])):
+
+					// iterate related link text
+					foreach ($value->meta['related_link_text'] AS $keys => $values):
+
+						// add as keyword
+						$metatags['keywords'][]	= $values;
+
+					endforeach;
+
+				endif;
+
+			endforeach;
+
+		endif;
+
+		// add site type as keyword
+		if (isset($this->_object->site_type)):
+
+			// iterate all site types (even though there's probably only one)
+			foreach ($this->_object->site_type AS $key => $value):
+
+				// add site type as keyword
+				$metatags['keywords'][]	= $value->name;
+
+				// grab any parent's
+				if (isset($value->parent['name']) AND $value->parent['name'] != '')
+					$metatags['keywords'][]	= $value->parent['name'];
+
+			endforeach;
+
+		endif;
+
+		// grab SEO Plugin Meta & override any variables
+
+		return $metatags;
 	}
 
 

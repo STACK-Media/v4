@@ -36,6 +36,11 @@ class CustomController extends PageController
         return $this->index('a-to-z', $data);
     }
 
+    public function about()
+    {
+        return $this->index('about-us');
+    }
+
     public function beast()
     {
         return $this->index('stack-beast');

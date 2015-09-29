@@ -148,7 +148,7 @@ return array(
 				'featured-videos',
 				'velocity-sidebar',
 				'popular-videos',
-				'trending-block',
+				//'trending-block',
 			),
 			'post_content' => array(
 

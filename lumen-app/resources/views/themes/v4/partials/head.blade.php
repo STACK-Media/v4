@@ -17,12 +17,46 @@
 	@include('theme::partials.assets')
 @endif
 
+<<<<<<< HEAD
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta property="og:site_name" content="STACK" name="og:site_name" />
 
 <title>{!! (is_object($page) && $page->name) ? $page->name . ' |' : ''; !!} STACK</title>
+=======
+<?php /*<meta charset="utf-8">*/ ?>
+<meta http-equiv="X-UA-Compatible"	content="IE=edge,chrome=1">
+<meta name="viewport" 				content="width=device-width, initial-scale=1">
+
+<!-- Default Meta -->
+<meta name="description" 	content="{!! $page->metatags['description'] !!}">
+<meta name="keywords" 		content="<?php echo strtolower(implode(',',$page->metatags['keywords'])); ?>">
+
+<!-- Open Graph Meta -->
+<meta property="og:site_name" 	name="og:site_name" 	content="STACK" />
+<meta property="og:type" 		name="og:type" 			content="website" />
+<meta property="og:title" 		name="og:title" 		content="{!! $page->metatags['title'] !!}" />
+<meta property="og:url" 		name="og:url" 			content="{!! Request::url() !!}" />
+<meta property="og:description" name="og:description" 	content="{!! $page->metatags['description'] !!}" />
+<meta property="og:image" 		name="og:image" 		content="{!! $page->metatags['image'] !!}" />
+
+<!-- Twitter Card Meta -->
+<meta name="twitter:card" 			content="summary_large_image">
+<meta name="twitter:site" 			content="@STACKMedia">
+<meta name="twitter:title"			content="{!! $page->metatags['title'] !!}">
+<meta name="twitter:description" 	content="{!! $page->metatags['description'] !!}">
+<meta name="twitter:image" 			content="{!! $page->metatags['image'] !!}">
+
+<!-- Facebook Meta Tags -->
+<meta property="fb:admins" content="1541552431" />
+<meta property="fb:admins" content="1320053702" />
+
+<!-- Canonical Tag -->
+<link rel="canonical" href="{!! Request::url() !!}" />
+
+<title>{!! $page->metatags['title'] !!} | STACK</title>
+>>>>>>> 8a90abe6413265faa3bcdc9c41c8a866909c1a69
 
 @if(Request::input('whatami'))
 

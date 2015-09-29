@@ -13,7 +13,7 @@
 
 			<div class="event trending-block {{$class}} event" data-name="{{$key}}" data-template="trending-block">
 
-				<a href="{{$value['link']}}">
+				<a href="{{@$value['link']}}">
 					@include('theme::partials.img',
 						array(
 							'src' 	=> $value['image'], 
