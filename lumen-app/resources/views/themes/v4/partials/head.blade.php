@@ -34,7 +34,7 @@
 <meta property="og:image" 		name="og:image" 		content="{!! $page->metatags['image'] !!}" />
 
 <!-- Twitter Card Meta -->
-<meta name="twitter:card" 			content="summary">
+<meta name="twitter:card" 			content="summary_large_image">
 <meta name="twitter:site" 			content="@STACKMedia">
 <meta name="twitter:title"			content="{!! $page->metatags['title'] !!}">
 <meta name="twitter:description" 	content="{!! $page->metatags['description'] !!}">
