@@ -94,6 +94,27 @@ class ContentPage extends Page
 
 				$metatags['keywords'][]	= $value->name;
 
+				// grab parent category (if exists)
+				if (isset($value->parent['name']))
+					$metatags['keywords'][]	= $value->parent['name'];
+
+				// grab category meta (if exists)
+				if (isset($value->meta['related_link_text'])):
+
+					// iterate related link text
+					foreach ($value->meta['related_link_text'] AS $keys => $values):
+
+						// add as keyword
+						$metatags['keywords'][]	= $values;
+
+					endforeach;
+
+				endif;
+
+				// more meta as keywords
+				if (isset($value->meta['menudisplaytext']))
+					$metatags['keywords'][]	= $value->meta['menudisplaytext'];
+
 			endforeach;
 
 		endif;
@@ -103,7 +124,38 @@ class ContentPage extends Page
 		
 			foreach ($this->_object->taxonomy['post_tag'] AS $key => $value):
 
+				// add tag name as keyword
 				$metatags['keywords'][]	= $value->name;
+
+				// grab tag meta (if exists)
+				if (isset($value->meta['related_link_text'])):
+
+					// iterate related link text
+					foreach ($value->meta['related_link_text'] AS $keys => $values):
+
+						// add as keyword
+						$metatags['keywords'][]	= $values;
+
+					endforeach;
+
+				endif;
+
+			endforeach;
+
+		endif;
+
+		// add site type as keyword
+		if (isset($this->_object->site_type)):
+
+			// iterate all site types (even though there's probably only one)
+			foreach ($this->_object->site_type AS $key => $value):
+
+				// add site type as keyword
+				$metatags['keywords'][]	= $value->name;
+
+				// grab any parent's
+				if (isset($value->parent['name']) AND $value->parent['name'] != '')
+					$metatags['keywords'][]	= $value->parent['name'];
 
 			endforeach;
 
