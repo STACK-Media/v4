@@ -17,7 +17,7 @@
 		
 		<p>{!! $page->meta['description'] !!}</p>
 
-		@if($page->meta['social'])
+		@if(@$page->meta['social'])
 
 			<p class="expert_social">
 				<span>Follow at:</span> 
