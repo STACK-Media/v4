@@ -18,16 +18,27 @@
 @endif
 
 <?php /*<meta charset="utf-8">*/ ?>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta property="og:site_name" content="STACK" name="og:site_name" />
+<meta http-equiv="X-UA-Compatible"	content="IE=edge,chrome=1">
+<meta name="viewport" 				content="width=device-width, initial-scale=1">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@STACKMedia">
-<meta name="twitter:title" content="Parade of Fans for Houston’s Funeral">
-<meta name="twitter:description" content="NEWARK - The guest list and parade of limousines with celebrities emerging from them seemed more suited to a red carpet event in Hollywood or New York than than a gritty stretch of Sussex Avenue near the former site of the James M. Baxter Terrace public housing project here.">
-<meta name="twitter:image" content="http://graphics8.nytimes.com/images/2012/02/19/us/19whitney-span/19whitney-span-articleLarge.jpg">
+<!-- Default -->
+<meta name="description" 	content="">
+<meta name="keywords" 		content="">
+
+<!-- Open Graph -->
+<meta property="og:site_name" 	name="og:site_name" 	content="STACK" />
+<meta property="og:type" 		name="og:type" 			content="website" />
+<meta property="og:title" 		name="og:title" 		content="" />
+<meta property="og:url" 		name="og:url" 			content="" />
+<meta property="og:description" name="og:description" 	content="" />
+<meta property="og:image" 		name="og:image" 		content="" />
+
+<!-- Twitter Card Meta -->
+<meta name="twitter:card" 			content="summary_large_image">
+<meta name="twitter:site" 			content="@STACKMedia">
+<meta name="twitter:title"			content="">
+<meta name="twitter:description" 	content="">
+<meta name="twitter:image" 			content="">
 
 
 <title>{!! (is_object($page) && $page->name) ? $page->name . ' |' : ''; !!} STACK</title>

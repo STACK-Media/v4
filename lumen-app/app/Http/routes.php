@@ -44,6 +44,14 @@ $route_pages     = array(
 			'id', 'slug'
 		)
 	),
+	'videos' => array(
+		'slug'       => 'videos',
+		'controller' => 'VideosController',
+		'function'   => 'index',
+		'params'     => array(
+			
+		)
+	),
 	'article' => array(
 		'slug'       => 'a',
 		'controller' => 'ContentController',
@@ -241,7 +249,7 @@ $app->get('resources',			['as' => 'resources', 			'uses' => 'App\Http\Controller
 $app->get('terms-of-use',		['as' => 'terms-of-use', 		'uses' => 'App\Http\Controllers\CustomController@terms']);
 $app->get('stack-velocity',		['as' => 'stack-velocity', 		'uses' => 'App\Http\Controllers\CustomController@velocity']);
 $app->get('stack-originals',	['as' => 'stack-originals', 	'uses' => 'App\Http\Controllers\CustomController@originals']);
-$app->get('videos',				['as' => 'videos', 				'uses' => 'App\Http\Controllers\VideosController@index']);
+//$app->get('videos',				['as' => 'videos', 				'uses' => 'App\Http\Controllers\VideosController@index']);
 $app->get('vsptrial',			['as' => 'vsptrial', 			'uses' => 'App\Http\Controllers\CustomController@vsptrial']);
 
 
