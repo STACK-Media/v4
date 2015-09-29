@@ -23,7 +23,7 @@
 
 <!-- Default Meta -->
 <meta name="description" 	content="{!! $page->metatags['description'] !!}">
-<meta name="keywords" 		content="<?php echo implode(',',$page->metatags['keywords']); ?>">
+<meta name="keywords" 		content="<?php echo strtolower(implode(',',$page->metatags['keywords'])); ?>">
 
 <!-- Open Graph Meta -->
 <meta property="og:site_name" 	name="og:site_name" 	content="STACK" />
