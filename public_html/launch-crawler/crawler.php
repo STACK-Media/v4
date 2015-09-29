@@ -1,44 +1,46 @@
 <?php
 
-exit();
+//exit();
 
 $data  = array_map('str_getcsv', file('urls-lite.csv'));
 $array = array();
 
 $counter = 0;
 
+$userpass = 'stack:Rx45hnj23kl54!';
+
 foreach ($data as $row):
 
 	$counter++;
 
-	if ($counter > 100):
+	if ($counter > 20):
 
 		break;
 
 	endif;
 
-	$live           = 'http://www.stack.com'.$row[0];
-	$stage          = 'http://stack:Rx45hnj23kl54!@stage.stack.com'.$row[0];
-	$live_status    = '';
-	$stage_status   = '';
-	$live_redirect  = '';
-	$stage_redirect = '';
-	
-	$live_headers   = get_headers($live, 1);
-	$live_status    = $live_headers[0];
+	$live             = 'http://www.stack.com'.$row[0];
+	$rewrite          = 'http://'.$userpass.'@v4.stack.com'.$row[0];
+	$live_status      = '';
+	$rewrite_status   = '';
+	$live_redirect    = '';
+	$rewrite_redirect = '';
+
+	$live_headers     = get_headers($live, 1);
+	$live_status      = $live_headers[0];
 
 	usleep(250000);
 	
-	$stage_headers  = get_headers($stage, 1);
-	$stage_status   = $stage_headers[0];
+	$rewrite_headers  = get_headers($rewrite, 1);
+	$rewrite_status   = $rewrite_headers[0];
 
 	$array[] = array(
-		'live'           => $live, 
-		'status'         => $live_status, 
-		'redirect'       => $live_redirect,
-		'stage'          => str_replace('stack:Rx45hnj23kl54!@','',$stage), 
-		'stage_status'   => $stage_status,
-		'stage_redirect' => $stage_redirect
+		'live'             => $live, 
+		'status'           => $live_status, 
+		'redirect'         => $live_redirect,
+		'rewrite'          => str_replace($userpass.'@','',$rewrite), 
+		'rewrite_status'   => $rewrite_status,
+		'rewrite_redirect' => $rewrite_redirect
 	);
 
 	usleep(250000);
