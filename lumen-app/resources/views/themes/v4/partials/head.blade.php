@@ -40,7 +40,7 @@
 <meta name="twitter:description" 	content="{!! $page->metatags['description'] !!}">
 <meta name="twitter:image" 			content="{!! $page->metatags['image'] !!}">
 
-<title>{!! $page->metatags['title'] !!}</title>
+<title>{!! $page->metatags['title'] !!} | STACK</title>
 
 @if(Request::input('whatami'))
 

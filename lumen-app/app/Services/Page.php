@@ -40,7 +40,7 @@ abstract class Page extends Service
 			'name'      => '',
 			'meta'      => array(),
 			'metatags'	=> array(
-				'title'			=> 'Get Bigger, Stronger, Better, Faster | STACK',
+				'title'			=> 'Get Bigger, Stronger, Better, Faster',
 				'description'	=> 'Get better at the sports you play and the life you lead at STACK. Improve your training, nutrition and lifestyle with daily',
 				'image'			=> 'http://v4.stack.com/assets/img/branding/logos/stack-black.png',
 				'url'			=> 'http://www.stack.com',
