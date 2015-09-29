@@ -33,15 +33,19 @@ class AuthorPage extends Page
 
 	private function _get_metatags()
 	{
-		print "<pre>";
-		print_r($this->_object);
-		exit;
 		// initialize variables
 		$metatags 	= array();
 
-		// set meta tags
-		$metatags['title']			= $this->_object;
-		$metatags['description']	= $this->_object;
+		// set meta title
+		$metatags['title']				= $this->_object->name;
+
+		// set meta description
+		if (isset($this->_object->meta['description']))
+			$metatags['description']	= $this->_object->meta['description'];
+
+		// set meta image
+		if (isset($this->_object->meta['userphoto_image_file']))
+			$metatags['image']			= 'http://blog.stack.com/wp-content/uploads/userphoto/'.$this->_object->meta['userphoto_image_file'];
 
 		return $metatags;
 	}
