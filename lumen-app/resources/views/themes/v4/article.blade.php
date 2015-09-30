@@ -69,12 +69,13 @@
 		
 				@include('theme::partials.videoplayers.'.$page->player['player_name'], $page->player['player_data'])
 
+				<div class="divider"></div>
+
 			@endif
 			
-
 			{!! $page->post_content !!}
 
-
+			<div class="divider"></div>
 
 			<div id="author">
 
@@ -116,7 +117,7 @@
 
 			</div>
 
-
+			<div class="divider"></div>
 
 			{{-- Need "Topics:" block --}}
 

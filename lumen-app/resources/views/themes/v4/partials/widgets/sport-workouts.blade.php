@@ -24,7 +24,7 @@
 						echo '<div class="item '.$slider_active_class.'">';
 					?>
 
-						<div class="col-xs-12 col-md-4">
+						<div class="col-xs-12 col-sm-4">
 
 							<a href="{!! routelink('article', array('slug' => $value['slug'])) !!}">
 								<img src="{{$value['img']}}" alt="{{$value['name']}}" class="img-responsive" />

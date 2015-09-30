@@ -8,7 +8,7 @@
 		<h1>{!! $page->name !!}</h1>
 		<p><i>{!! $page->description !!}</i></p>
 
-		<hr>
+		<div class="divider"></div>
 
 		@if(@$page->player)
 
@@ -16,7 +16,7 @@
 
 		@endif
 
-		<hr>
+		<div class="divider"></div>
 
 	</article>
 
