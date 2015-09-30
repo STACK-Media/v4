@@ -16,6 +16,7 @@ class SportPage extends Page
 		// initialize content manager
 		$taxonomy 	= new Contentmanager('taxonomy');
 		$player 	= new Videomanager('player');
+		$playlist 		= new Videomanager('playlist');
 
 		// TODO: need to verify slug is a sport
 
@@ -24,9 +25,20 @@ class SportPage extends Page
 		$this->_object->page_type 	= 'sport';
 		$this->_object->sport 		= $sport;
 		$this->_object->meta 	 	= $taxonomy->get_metadata($this->_object->id);
-		$this->_object->player    	= $player->get($this->_object->meta['stackvideoid']);
-		$this->_object->video 		= $this->_object->meta['stackvideoid'];
 
+		// if there is a playlist set, lets us it to set player object(s)
+		if (isset($this->_object->meta['stackvideoid']) AND is_numeric($this->_object->meta['stackvideoid'])):
+
+			// grab playlist information
+			$this->_object->playlist 	= $playlist->get($this->_object->meta['stackvideoid'], 8);
+
+			// set player object (if we have a valid video from the playlist)
+			if (isset($this->_object->playlist['videoIds']) AND ! empty($this->_object->playlist['videoIds']))
+				$this->_object->player    	= $player->get($this->_object->playlist['videoIds'][0],$this->_object->meta['stackvideoid']);
+
+		endif;
+
+		// set custom metatags
 		$this->_object->metatags 	= $this->_get_metatags();
 
 		return parent::__construct();

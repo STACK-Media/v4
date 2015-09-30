@@ -8,11 +8,13 @@
 		<h1>{!! $page->name !!}</h1>
 		<p><i>{!! $page->description !!}</i></p>
 
-		@if(@$page->video)
+		@if(@$page->player)
 
 			@include('theme::partials.videoplayers.'.$page->player['player_name'], $page->player['player_data'])
 
 		@endif
+
+		<hr>
 
 	</article>
 
