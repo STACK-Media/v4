@@ -2,17 +2,20 @@
 
 require_once('ParallelCurl-master/parallelcurl.php');
 
-//exit();
+if ( ! isset($_GET['key']) || $_GET['key'] != 'a8Hhgdzpo'):
 
-$data  = array_map('str_getcsv', file('urls-lite.csv'));
-$array = array();
+	exit();
 
-$counter = 0;
+endif;
 
-$userpass = 'stack:Rx45hnj23kl54!';
+$data         = array_map('str_getcsv', file('urls-lite.csv'));
+$array        = array();
+$counter      = 0;
 
-$max_requests = 10;
- 
+$userpass     = 'stack:Rx45hnj23kl54!';
+
+$max_requests = 50;
+
 $curl_options = array(
     CURLOPT_SSL_VERIFYPEER => FALSE,
     CURLOPT_SSL_VERIFYHOST => FALSE,
@@ -26,63 +29,54 @@ $parallel_curl = new ParallelCurl($max_requests, $curl_options);
 
 function on_request_done($content, $url, $ch, $args){
 
-	global $array;
+	global $array, $userpass;
 
 	$httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE); 
 	$redir    = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
 
-	$array[$args['type']][$args['counter']]['status']   = $httpcode;
-	$array[$args['type']][$args['counter']]['redirect'] = $redir;
+	if ($httpcode == 200 && $redir != $url):
+
+		$httpcode = 301;
+
+	endif;
+
+	$array[$args['counter']][$args['type'].'_status']   = $httpcode;
+	$array[$args['counter']][$args['type'].'_redirect'] = str_replace($userpass.'@', '', $redir);
 
 }
 
 
 foreach ($data as $row):
 
-	$counter++;
-
-	if ($counter > 20):
+	if ($counter > 1000):
 
 		break;
 
 	endif;
 
-	$live             = 'http://www.stack.com'.$row[0];
-	$rewrite          = 'http://'.$userpass.'@v4.stack.com'.$row[0];
-	$live_status      = '';
-	$rewrite_status   = '';
-	$live_redirect    = '';
-	$rewrite_redirect = '';
+	$live    = 'http://www.stack.com'.$row[0].'/';
+	$rewrite = 'http://'.$userpass.'@v4.stack.com'.$row[0];
 
-	$parallel_curl->startRequest($live, 'on_request_done', array('type' => 'live', 'counter' => $counter));
-	$parallel_curl->startRequest($rewrite, 'on_request_done',  array('type' => 'stage', 'counter' => $counter));
-
-	/*
-	$live_headers     = get_headers($live, 1);
-	$live_status      = $live_headers[0];
-
-	usleep(250000);
-	
-	$rewrite_headers  = get_headers($rewrite, 1);
-	$rewrite_status   = $rewrite_headers[0];
-
-	$array[] = array(
-		'live'             => $live, 
-		'status'           => $live_status, 
-		'redirect'         => $live_redirect,
-		'rewrite'          => str_replace($userpass.'@','',$rewrite), 
-		'rewrite_status'   => $rewrite_status,
-		'rewrite_redirect' => $rewrite_redirect
+	$parallel_curl->startRequest($live, 'on_request_done', 
+		array(
+			'type'    => 'live', 
+			'counter' => $counter
+		)
 	);
 
-	usleep(250000);
-	*/
+	$parallel_curl->startRequest($rewrite, 'on_request_done',  
+		array(
+			'type'    => 'stage', 
+			'counter' => $counter
+		)
+	);
+
+	$counter++;
 
 endforeach;
 
-$parallel_curl->finishAllRequests();
 
-var_dump($array); exit();
+$parallel_curl->finishAllRequests();
 
 $array = array_merge(array(array_keys($array[0])), $array);
 
