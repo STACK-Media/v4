@@ -45,7 +45,7 @@
 <meta property="fb:admins" content="1320053702" />
 
 <!-- Canonical Tag -->
-<link rel="canonical" href="<?php echo (isset($page->meta['canonical']))? $page->meta['canonical']: Request::url(); ?>" />
+<link rel="canonical" href="<?php echo (isset($page->meta['canonical']))? strtolower($page->meta['canonical']): strtolower(Request::url()); ?>" />
 
 <title>{!! $page->metatags['title'] !!} | STACK</title>
 
