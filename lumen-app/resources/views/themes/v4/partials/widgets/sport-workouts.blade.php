@@ -5,7 +5,7 @@
 	<div class="row sport-workouts">
 
 		<div class="col-xs-12">
-			<h2>{{$sport['title']}} Workouts</h2>
+			<h1>{{$sport['title']}} Workouts</h1>
 		</div>
 
 		<div id="sportCarousel" class="carousel slide" data-ride="" data-interval="false">
@@ -24,7 +24,7 @@
 						echo '<div class="item '.$slider_active_class.'">';
 					?>
 
-						<div class="col-xs-12 col-md-4">
+						<div class="col-xs-12 col-sm-4">
 
 							<a href="{!! routelink('article', array('slug' => $value['slug'])) !!}">
 								<img src="{{$value['img']}}" alt="{{$value['name']}}" class="img-responsive" />

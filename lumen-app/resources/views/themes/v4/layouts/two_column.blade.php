@@ -11,6 +11,8 @@
 					
 					@include('theme::partials.widgets.'.$widget, $wdata)						
 
+					<div class="divider"></div>
+
 				</div>
 
 			</div>		
@@ -23,6 +25,8 @@
 @section('sidebar-widgets')
 
 	@include('theme::partials.bannerad', array('position' => 'sidebar-top', 'args' => array()))
+
+	<div class="divider"></div>
 
 	<?php
 	$num_widgets = 0;
@@ -43,11 +47,13 @@
 
 					<div class="col-xs-12 col-sm-6 col-md-12">
 
-						<div class="dashed-bottom legroom {{$headroom_class}}">
+						<div class="{{$headroom_class}}">
 
 							@include('theme::partials.widgets.'.$widget, $wdata)		
 
 						</div>
+
+						<div class="divider"></div>
 
 					</div>
 
@@ -62,6 +68,8 @@
 						@include('theme::partials.bannerad', array('position' => 'sidebar-mid', 'args' => array()))
 					
 					</div>
+
+					<div class="divider"></div>
 
 					<div class="row">
 

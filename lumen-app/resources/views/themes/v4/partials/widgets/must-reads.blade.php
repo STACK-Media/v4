@@ -1,4 +1,7 @@
-{!! Assets::queue('stylesheet',  'widgets', 'must-reads', '/assets/css/widgets/must-reads.css') !!}
+{!! Assets::queue('stylesheet', 	'global',  'jquery-ui', 	'//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css') !!}
+{!! Assets::queue('javascript', 	'global',  'jquery-ui',		'/assets/third-party/jquery-ui/jquery-ui-1.11.4.min.js') !!}
+{!! Assets::queue('javascript',  	'global', 	'accordion', 	'/assets/js/accordion.js') !!}
+{!! Assets::queue('stylesheet',  	'widgets', 'must-reads', 	'/assets/css/widgets/must-reads.css') !!}
 
 <section>
 
@@ -6,15 +9,15 @@
 
 		<div class="col-xs-12">
 
-			<h2>Must-Reads</h2>
+			<h1>Must-Reads</h1>
 
-			<div id="accordion" class="ui-accordion ui-widget ui-helper-reset">
+			<div class="accordion">
 				
 				@foreach ($articles AS $title => $links)
 
-					<h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-top ui-accordion-icons">{{$title}}</h3>
+					<h3>{{$title}}</h3>
 					
-					<div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">
+					<div class="accordion-body">
 
 						<ul>
 

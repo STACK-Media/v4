@@ -1,6 +1,27 @@
-.must-reads h2 {
+.must-reads h3 {
+	background: 	none !important;
+	border: 		1px solid #000;
 	margin: 0 0 18px 0;
-    font-size: 2.4em;
+    font-size: 20pt !important;
+    font-weight: 	800;
     line-height: 1;
     font-family: "Roboto Slab", serif;
+    color: 	#000;
+    padding: 	5px;
+    min-height: 	50px;
+}
+.must-reads h3:hover {
+	background-color: 	#148bcc;
+	color: 				#000;
+}
+.must-reads .accordion .ui-state-active {
+    color: #FFF	!important;
+    background-color: #148bcc !important;
+}
+.must-reads .accordion .ui-state-hover {
+    color: #FFF	!important;
+    background-color: #148bcc !important;
+}
+.accordion ul {
+	padding-left: 	 -15px;
 }

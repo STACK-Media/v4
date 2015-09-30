@@ -5,7 +5,7 @@
 	<div class="row footroom related-links">
 
 		<?php
-		if (isset($links['category']) AND is_array($links['category']) AND ! empty($links['category'])):
+		if (isset($links['category']['articles']) AND is_array($links['category']['articles']) AND ! empty($links['category']['articles'])):
 		?>
 
 		<div class="col-xs-12 col-sm-4">
@@ -32,7 +32,7 @@
 		endif;
 
 
-		if (isset($links['tag']) AND is_array($links['tag']) AND ! empty($links['tag'])):
+		if (isset($links['tag']['articles']) AND is_array($links['tag']['articles']) AND ! empty($links['tag']['articles'])):
 		?>
 		
 		<div class="col-xs-12 col-sm-4">
