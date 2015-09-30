@@ -123,6 +123,12 @@ class PageController extends BaseController
 	protected function _set_page_object($class)
 	{
 
+		if ( ! $class || ! is_object($class) || ! @$class->id):
+
+			abort('404');
+
+		endif;
+
 		// removed cache stuff from here
 		$this->_page_object = $class;
 

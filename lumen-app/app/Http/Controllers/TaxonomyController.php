@@ -10,11 +10,7 @@ class TaxonomyController extends PageController
 
         $page_data = array();
 
-        $this->_set_page_object(new TaxonomyPage(array(
-            'type'            => $type,
-            'identifier'      => $slug,
-            'identifier_type' => 'slug'
-        )));
+        $this->_set_page_object($this->_initiate_service($type, $slug));
 
         //$page_data['widgets'] = $this->_get_widgets($type);
         
@@ -31,5 +27,39 @@ class TaxonomyController extends PageController
 
     	return $this->index('post_tag', $slug);
 
+    }
+
+    function _initiate_service($type, $slug)
+    {
+        return new TaxonomyPage(array(
+            'type'            => $type,
+            'identifier'      => $slug,
+            'identifier_type' => 'slug'
+        ));
+    }
+
+    function is_valid_page_path($params)
+    {
+
+        if ( ! is_array($params) || ! $params || ! isset($params[0])):
+
+            return FALSE;
+
+        endif;
+
+        $page = $this->_initiate_service('post_tag', $params[0]);       
+
+        if ( ! $page || ! is_object($page) || ! @$page->id):
+
+            return FALSE;
+
+        endif;
+
+        return array(
+            'routename' => 'tag',
+            'params' => array(
+                'slug' => $params[0]
+            )  
+        );
     }
 }

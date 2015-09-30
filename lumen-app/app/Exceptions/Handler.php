@@ -36,7 +36,35 @@ class Handler extends ExceptionHandler {
      */
     public function render($request, Exception $e)
     {
+
+        if($e instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException):
+        
+            return $this->check_for_301($request, $e);
+        
+        endif;
+
         return parent::render($request, $e);
+    }
+
+    public function check_for_301($request, $e){
+
+        
+        $checker = new \App\Services\Check301;
+
+        $route = $checker->check($request, $e);
+
+
+        if (is_array($route) && isset($route['routename'])):
+
+            $params = isset($route['params']) ? $route['params'] : array();
+
+            return redirect()->route($route['routename'], $params);
+
+        endif;
+
+
+        return parent::render($request, $e);
+
     }
 
 }

@@ -15,50 +15,57 @@ class TaxonomyPage extends Page
 		$args      = array_merge($paramlist, $args);
 		extract($args);
 
+		$identifier = strtolower($identifier);
+
 		$cms = new Contentmanager('taxonomy');
 
 		$this->_object = $cms->get_by_column($type, $identifier_type, $identifier);
 
-		// Making category page object match other pages
-		$tax_template = array(
-			'term_id',
-			'term_taxonomy_id',
-			'description',
-			'name',
-			'slug',
-			'parent'
-		);
+		if (is_object($this->_object) && property_exists($this->_object, 'id')):
 
-		$tax_template = array_combine($tax_template, array_fill(0, count($tax_template), NULL));
-		
-		$category                     = (array) $this->_object;
-		$category['term_id']          = $category['id'];
-		$category['term_taxonomy_id'] = $category['id'];
-		$category['parent']           = array(
-			'id'   => $category['parent_id'],
-			'name' => $category['parent_id'],
-			'slug' => $category['parent_id'],
-		);
+			// Making category page object match other pages
+			$tax_template = array(
+				'term_id',
+				'term_taxonomy_id',
+				'description',
+				'name',
+				'slug',
+				'parent'
+			);
 
-		$category     = array_intersect_key($category, $tax_template);
-		$category     = array_merge($tax_template, $category);
+			$tax_template = array_combine($tax_template, array_fill(0, count($tax_template), NULL));
+			
+			$category                     = (array) $this->_object;
+			$category['term_id']          = $category['id'];
+			$category['term_taxonomy_id'] = $category['id'];
+			$category['parent']           = array(
+				'id'   => $category['parent_id'],
+				'name' => $category['parent_id'],
+				'slug' => $category['parent_id'],
+			);
 
-		$category['meta'] = $cms->get_metadata($category['term_id']);
+			$category     = array_intersect_key($category, $tax_template);
+			$category     = array_merge($tax_template, $category);
 
-		// set latest videos & player objects
-		$this->_object->latest 	= $this->_latest_videos_object();
-		$this->_object->player 	= $this->_player_object();
+			$category['meta'] = $cms->get_metadata($category['term_id']);
+
+			// set latest videos & player objects
+			$this->_object->latest 	= $this->_latest_videos_object();
+			$this->_object->player 	= $this->_player_object();
 
 
-		$this->_object->taxonomy = array(
-			$this->_object->taxonomy => array(
-				(object) $category
-			)
-		);
-		// End making category page object consistent w/ other pages
+			$this->_object->taxonomy = array(
+				$this->_object->taxonomy => array(
+					(object) $category
+				)
+			);
+			// End making category page object consistent w/ other pages
 
-		// set custom meta tags
-		$this->_object->metatags 	= $this->_get_metatags();
+			// set custom meta tags
+			$this->_object->metatags 	= $this->_get_metatags();
+
+
+		endif;
 
 		return parent::__construct();
 
