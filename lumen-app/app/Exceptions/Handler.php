@@ -49,10 +49,9 @@ class Handler extends ExceptionHandler {
     public function check_for_301($request, $e){
 
         
-        $checker = new \App\Services\Check301;
+        $checker = new \App\Services\Cacheturbator(new \App\Services\Check301);
 
-        $route = $checker->check($request, $e);
-
+        $route   = $checker->check(\Request::path());
 
         if (is_array($route) && isset($route['routename'])):
 

@@ -17,9 +17,8 @@ class Check301 extends Service
 
 	}
 
-	function check($request, $e){
+	function check($path = NULL){
 
-		$path   = \Request::path();
 		$params = explode('/', $path);
 
 		foreach ($this->page_services as $service_name):
