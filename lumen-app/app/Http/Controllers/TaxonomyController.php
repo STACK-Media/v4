@@ -47,7 +47,9 @@ class TaxonomyController extends PageController
 
         endif;
 
-        $page = $this->_initiate_service('post_tag', $params[0]);       
+        $slug = strtolower($params[0]);
+
+        $page = $this->_initiate_service('post_tag', $slug);       
 
         if ( ! $page || ! is_object($page) || ! @$page->id):
 
@@ -58,7 +60,7 @@ class TaxonomyController extends PageController
         return array(
             'routename' => 'tag',
             'params' => array(
-                'slug' => $params[0]
+                'slug' => $slug
             )  
         );
     }
