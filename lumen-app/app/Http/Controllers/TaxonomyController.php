@@ -59,7 +59,7 @@ class TaxonomyController extends PageController
 
         return array(
             'routename' => 'tag',
-            'params' => array(
+            'params'    => array(
                 'slug' => $slug
             )  
         );
