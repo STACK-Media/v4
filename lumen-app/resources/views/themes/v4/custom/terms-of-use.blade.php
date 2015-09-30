@@ -3,7 +3,7 @@
 {!! Assets::queue('stylesheet', 'global', 'jquery-ui', 	'//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css') !!}
 {!! Assets::queue('javascript', 'global', 'jquery-ui',	'/assets/third-party/jquery-ui/jquery-ui-1.11.4.min.js') !!}
 {!! Assets::queue('stylesheet', 'layout', 'terms', 		'/assets/css/custom/terms.css') !!}
-{!! Assets::queue('javascript', 'layout', 'terms', 		'/assets/js/custom/terms.js') !!}
+{!! Assets::queue('javascript', 'global', 	'accordion', 	'/assets/js/accordion.js') !!}
 
 @section('content')
 

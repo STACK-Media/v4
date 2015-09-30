@@ -5,7 +5,7 @@
 	<div class="row sport-workouts">
 
 		<div class="col-xs-12">
-			<h2>{{$sport['title']}} Workouts</h2>
+			<h1>{{$sport['title']}} Workouts</h1>
 		</div>
 
 		<div id="sportCarousel" class="carousel slide" data-ride="" data-interval="false">
