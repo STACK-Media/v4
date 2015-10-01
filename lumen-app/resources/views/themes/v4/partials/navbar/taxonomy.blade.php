@@ -1,5 +1,5 @@
 
-@if(isset($menu_data['data']['articles']))
+@if(isset($menu_data['data']['articles']) AND count($menu_data['data']['articles']))
 
 	<div class="row">
 
@@ -10,7 +10,7 @@
 			$cols 	= (count($menu_data['data']['articles']) > 3)? 'col-sm-3': 'col-sm-4';
 			?>
 
-			@if (property_exists($article,'slug'))
+			@if (is_object($article) AND property_exists($article,'slug'))
 
 				<div class="{{$cols}}">
 					<a class="nav-post" href="{!! routelink('article', array('slug' => $article->slug)) !!}">
