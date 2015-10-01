@@ -78,8 +78,8 @@ class TaxonomyPage extends Page
 		if (isset($this->_object->name))
 			$metatags['title'] 			= $this->_object->name;
 		
-		//if (isset($this->_object->description))
-		//	$metatags['description'] 	= strip_tags(preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $this->_object->description));
+		if (isset($this->_object->description))
+			$metatags['description'] 	= strip_tags(preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $this->_object->description));
 
 		if (isset($this->_object->image))
 			$metatags['image'] 			= $this->_object->image;
