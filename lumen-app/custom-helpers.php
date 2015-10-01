@@ -5,10 +5,10 @@ if( ! function_exists('routelink')):
 	function routelink($route, $params = array())
 	{
 
-		$subtheme = config('theming.subtheme');
-		$routekey = $subtheme.$route;
+		//$subtheme = config('theming.subtheme');
+		//$routekey = $subtheme.$route;
 
-		return route($routekey, $params);
+		return route($route, $params);
 
 	}
 

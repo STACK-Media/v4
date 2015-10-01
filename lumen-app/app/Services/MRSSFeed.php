@@ -15,6 +15,22 @@ class MRSSFeed extends Service
     	return $this->$feed();
 	}
 
+    private function stack()
+    {
+        // initialize response
+        $response   = array();
+        $xmlns      = array();
+
+        // grab xmlns
+        $xmlns      = $this->_xmlns();
+
+        // return formatted response
+        return array(
+            'items'     => $response,
+            'xmlns'     => $xmlns
+        );
+    }
+
 	private function cbs()
 	{
     	// load Video Manager
