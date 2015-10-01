@@ -23,10 +23,6 @@ class SportPage extends Page
 		// set page object
 		$this->_object 				= $taxonomy->get_by_column('post_tag', 'slug', $sport);
 
-		print "<pre>";
-		print_r($this->_object);
-		exit;
-
 		$this->_object->page_type 	= 'sport';
 		$this->_object->sport 		= $sport;
 		$this->_object->meta 	 	= $taxonomy->get_metadata($this->_object->id);
