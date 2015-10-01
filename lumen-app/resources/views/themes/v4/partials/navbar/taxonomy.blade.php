@@ -10,12 +10,16 @@
 			$cols 	= (count($menu_data['data']['articles']) > 3)? 'col-sm-3': 'col-sm-4';
 			?>
 
-			<div class="{{$cols}}">
-				<a class="nav-post" href="{!! routelink('article', array('slug' => $article->slug)) !!}">
-					<img src="{!! $article->image !!}" class="img-responsive"/>
-					<span>{!! $article->name !!}</span>
-				</a>
-			</div>
+			@if (property_exists($article,'slug'))
+
+				<div class="{{$cols}}">
+					<a class="nav-post" href="{!! routelink('article', array('slug' => $article->slug)) !!}">
+						<img src="{!! $article->image !!}" class="img-responsive"/>
+						<span>{!! $article->name !!}</span>
+					</a>
+				</div>
+
+			@endif
 
 		@endforeach
 
