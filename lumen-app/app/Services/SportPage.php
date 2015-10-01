@@ -4,10 +4,6 @@ namespace App\Services;
 class SportPage extends Page
 {
 
-	var $valid_sports = array(
-		'football'
-	);
-
 	function __construct($args = array())
 	{
 		$paramlist 	= array(
@@ -16,10 +12,6 @@ class SportPage extends Page
 		
 		$args      	= array_merge($paramlist, $args);
 		extract($args);
-
-		// if this isn't a valid sport, then lets 
-		if ( ! in_array($sport, $this->valid_sports))
-			return parent::__construct();
 
 		// initialize content manager
 		$taxonomy = new Contentmanager('taxonomy');

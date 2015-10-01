@@ -4,11 +4,18 @@ use App\Services\SportPage;
 
 class SportController extends PageController
 {
+    var $valid_sports = array(
+        'football'
+    );
 
     function index($slug = NULL)
     {
     	$page_data = array();
-    	
+    
+        // if this isn't a valid sport, then lets 
+        if ( ! in_array($slug, $this->valid_sports))
+          return redirect()->route('tag',array('slug' => $slug));
+
 		$this->_set_page_object($this->_initiate_service($slug));
 
     	//$page_data['widgets'] = $this->_get_widgets('sport');
