@@ -1,41 +1,45 @@
 {!! Assets::queue('javascript',  'widgets', 'loadmore', '/assets/js/loadmore.js') !!}
 
-<div class="row">
+@if(isset($playlist['videos']))
 
-	<div class="col-xs-12">
+	<div class="row">
 
-		<h3>Featured Videos</h3>
+		<div class="col-xs-12">
 
-		@foreach($playlist['videos'] as $key => $value)
+			<h3>Featured Videos</h3>
 
-			<?php $class = ($key < 3) ? '': 'hidden'; ?>
+			@foreach($playlist['videos'] as $key => $value)
 
-			<div class="event featured-videos {{$class}} event" data-name="{{$key}}" data-template="featured-videos">
+				<?php $class = ($key < 3) ? '': 'hidden'; ?>
 
-				<a href="{!! routelink('video', array('id' => $value['id'], 'slug' => $value['slug'])) !!}">
-					<div class="img-block">
-						@include('theme::partials.img',
-							array(
-								'src' 	=> $value['videoStillURL'], 
-								'alt' 	=> $value['name'],
-								'class'	=> 'img-responsive'
+				<div class="event featured-videos {{$class}} event" data-name="{{$key}}" data-template="featured-videos">
+
+					<a href="{!! routelink('video', array('id' => $value['id'], 'slug' => $value['slug'])) !!}">
+						<div class="img-block">
+							@include('theme::partials.img',
+								array(
+									'src' 	=> $value['videoStillURL'], 
+									'alt' 	=> $value['name'],
+									'class'	=> 'img-responsive'
+								)
 							)
-						)
-					</div>
-					{{$value['name']}}
-				</a>
-				<p>Views: {{$value['playsTotal']}}</p>
+						</div>
+						{{$value['name']}}
+					</a>
+					<p>Views: {{$value['playsTotal']}}</p>
 
-			</div>
+				</div>
 
-		@endforeach
+			@endforeach
+
+		</div>
+
+		<div class="clearfix"></div>
+
+		<div class="col-sm-6 col-sm-offset-3">
+			<p><a class="loadmore" data-loadmore="featured-videos">Load More</a></p>
+		</div>
 
 	</div>
 
-	<div class="clearfix"></div>
-
-	<div class="col-sm-6 col-sm-offset-3">
-		<p><a class="loadmore" data-loadmore="featured-videos">Load More</a></p>
-	</div>
-
-</div>
+@endif

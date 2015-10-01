@@ -28,7 +28,7 @@ class Latestarticles extends WidgetService
 			$category[] 		= $value->name;
 
 			// grab articles for this category
-			$articles 			= $content->get_by_category_id($value->term_id,$limit,$offset);
+			$articles 			= $content->get_latest($value->term_id,$limit,$offset);
 
 			break;	// break to only show 1 categories' articles
 

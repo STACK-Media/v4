@@ -1,8 +1,7 @@
 {!! Assets::queue('stylesheet',  'widgets', 'latest-articles', '/assets/css/widgets/latest-articles.css') !!}
 
-<?php
-if (is_array($articles) AND count($articles) > 1):
-?>
+
+@if (is_array($articles) AND count($articles) > 1):
 
 	<div class="row">
 
@@ -30,6 +29,4 @@ if (is_array($articles) AND count($articles) > 1):
 
 	</div>
 
-<?php
-endif;
-?>
+@endif

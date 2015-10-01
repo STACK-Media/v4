@@ -4,10 +4,6 @@ namespace App\Services;
 class SportPage extends Page
 {
 
-	var $valid_sports = array(
-		'football'
-	);
-
 	function __construct($args = array())
 	{
 		$paramlist 	= array(
@@ -17,37 +13,39 @@ class SportPage extends Page
 		$args      	= array_merge($paramlist, $args);
 		extract($args);
 
-		if (in_array($sport, $this->valid_sports)):
+		// initialize content manager
+		$taxonomy = new Contentmanager('taxonomy');
+		$player   = new Videomanager('player');
+		$playlist = new Videomanager('playlist');
 
-			// initialize content manager
-			$taxonomy = new Contentmanager('taxonomy');
-			$player   = new Videomanager('player');
-			$playlist = new Videomanager('playlist');
+		// TODO: need to verify slug is a sport
 
-			// TODO: need to verify slug is a sport
+		// set page object
+		$this->_object 				= $taxonomy->get_by_column('post_tag', 'slug', $sport);
 
-			// set page object
-			$this->_object 				= $taxonomy->get_by_column('post_tag', 'slug', $sport);
-			$this->_object->page_type 	= 'sport';
-			$this->_object->sport 		= $sport;
-			$this->_object->meta 	 	= $taxonomy->get_metadata($this->_object->id);
+		print "<pre>";
+		print_r($this->_object);
+		exit;
 
-			// if there is a playlist set, lets us it to set player object(s)
-			if (isset($this->_object->meta['stackvideoid']) AND is_numeric($this->_object->meta['stackvideoid'])):
+		$this->_object->page_type 	= 'sport';
+		$this->_object->sport 		= $sport;
+		$this->_object->meta 	 	= $taxonomy->get_metadata($this->_object->id);
 
-				// grab playlist information
-				$this->_object->playlist 	= $playlist->get($this->_object->meta['stackvideoid'], 8);
+		// if there is a playlist set, lets us it to set player object(s)
+		if (isset($this->_object->meta['stackvideoid']) AND is_numeric($this->_object->meta['stackvideoid'])):
 
-				// set player object (if we have a valid video from the playlist)
-				if (isset($this->_object->playlist['videoIds']) AND ! empty($this->_object->playlist['videoIds']))
-					$this->_object->player    	= $player->get($this->_object->playlist['videoIds'][0],$this->_object->meta['stackvideoid']);
+			// grab playlist information
+			$this->_object->playlist 	= $playlist->get($this->_object->meta['stackvideoid'], 8);
 
-			endif;
-
-			// set custom metatags
-			$this->_object->metatags 	= $this->_get_metatags();
+			// set player object (if we have a valid video from the playlist)
+			if (isset($this->_object->playlist['videoIds']) AND ! empty($this->_object->playlist['videoIds']))
+				$this->_object->player    	= $player->get($this->_object->playlist['videoIds'][0],$this->_object->meta['stackvideoid']);
 
 		endif;
+
+		// set custom metatags
+		$this->_object->metatags 	= $this->_get_metatags();
+
 
 		return parent::__construct();
 	}

@@ -1,52 +1,56 @@
 {!! Assets::queue('javascript',  'widgets', 'loadmore', '/assets/js/loadmore.js') !!}
 
-<div class="row">
+@if (isset($playlist['videos']))
 
-	<div class="col-xs-12">
+	<div class="row">
 
-		<h3>Most Popular Videos</h3>
+		<div class="col-xs-12">
 
-		@foreach($playlist['videos'] as $key => $value)
+			<h3>Most Popular Videos</h3>
 
-			<?php $class 	= ($key < 3)? '': 'hidden'; ?>
+			@foreach($playlist['videos'] as $key => $value)
 
-			<div class="row event popular-videos {{$class}} event" data-name="{{$key}}" data-template="popular-videos">
-				
-				<div class="pad-right">
+				<?php $class 	= ($key < 3)? '': 'hidden'; ?>
 
-					<div class="col-xs-6 pull-left">
+				<div class="row event popular-videos {{$class}} event" data-name="{{$key}}" data-template="popular-videos">
+					
+					<div class="pad-right">
 
-						<a href="{!! routelink('video', array('id' => $value['id'], 'slug' => $value['slug'])) !!}">
-							<div class="thumbnail">
-								@include('theme::partials.img',
-									array(
-										'src' 	=> $value['videoStillURL'], 
-										'alt' 	=> $value['name'],
-										'class'	=> 'img-responsive'
+						<div class="col-xs-6 pull-left">
+
+							<a href="{!! routelink('video', array('id' => $value['id'], 'slug' => $value['slug'])) !!}">
+								<div class="thumbnail">
+									@include('theme::partials.img',
+										array(
+											'src' 	=> $value['videoStillURL'], 
+											'alt' 	=> $value['name'],
+											'class'	=> 'img-responsive'
+										)
 									)
-								)
-							</div>
-						</a>
-						
+								</div>
+							</a>
+							
+						</div>
+
+						<a href="{!! routelink('video', array('id' => $value['id'], 'slug' => $value['slug'])) !!}">{{$value['name']}}</a>
+						<p>Views: {{$value['playsTotal']}}</p>
+
+						<div class="clearfix"></div>
+
 					</div>
-
-					<a href="{!! routelink('video', array('id' => $value['id'], 'slug' => $value['slug'])) !!}">{{$value['name']}}</a>
-					<p>Views: {{$value['playsTotal']}}</p>
-
-					<div class="clearfix"></div>
 
 				</div>
 
-			</div>
+			@endforeach
 
-		@endforeach
+		</div>
+
+		<div class="clearfix"></div>
+
+		<div class="col-sm-6 col-sm-offset-3">
+			<p><a class="loadmore" data-loadmore="popular-videos">Load More</a></p>
+		</div>
 
 	</div>
 
-	<div class="clearfix"></div>
-
-	<div class="col-sm-6 col-sm-offset-3">
-		<p><a class="loadmore" data-loadmore="popular-videos">Load More</a></p>
-	</div>
-
-</div>
+@endif

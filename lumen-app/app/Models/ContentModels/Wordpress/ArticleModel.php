@@ -190,6 +190,56 @@ class ArticleModel extends AbstractArticle
             ->get();
     }
 
+    public function get_latest($id,$limit=5,$offset=0,$date=FALSE)
+    {
+        return $this->get_by_category_id($id,$limit,$offset,$date);
+
+        // set default date
+        if ( ! $date)
+            $date   = date('Y-m-d H:i:s');
+
+        return DB::table('wp_posts')
+            ->select(
+                DB::raw('"article" AS page_type'),
+                'wp_posts.id', 
+                'wp_posts.post_title AS name',
+                'wp_posts.post_title',
+                'wp_posts.post_name AS slug',
+                'wp_posts.post_name',
+                'wp_posts.post_status', 
+                'wp_posts.post_date', 
+                'wp_posts.post_content', 
+                'wp_posts.post_excerpt',
+                'wp_users.user_nicename AS author_user',
+                'wp_users.display_name AS author_name',
+                'wp_users.user_url AS author_url',
+                'wp_users.user_email AS author_email',
+                'wp_users.ID AS author_id'
+            )
+            ->where('wp_posts.post_status','=','publish')
+            ->where('wp_posts.post_type','=','post')
+            ->where('wp_posts.post_date','<',$date)
+            ->join(
+                'wp_term_relationships',
+                'wp_posts.ID','=','wp_term_relationships.object_id'
+            )
+            ->join('wp_term_taxonomy', function($join) use ($id)
+            {
+                $join->on('wp_term_relationships.term_taxonomy_id', '=', 'wp_term_taxonomy.term_taxonomy_id')
+                    ->where('wp_term_taxonomy.term_id','=',$id)
+                    ->orWhere('wp_term_taxonomy.parent','=',$id);
+            })
+            ->join(
+                'wp_users', 
+                'wp_posts.post_author', '=', 'wp_users.ID'
+            )
+            ->orderBy('wp_posts.id','desc')
+            ->groupBy('wp_posts.id')
+            ->skip($offset)
+            ->take($limit)
+            ->get();
+    }
+
     public function get_by_vertical($vertical,$limit=FALSE,$offset=0,$date=FALSE)
     {
         // set default date
