@@ -226,6 +226,35 @@ class Article extends Wordpress
 		return $content;
 	}
 
+	public function get_latest($id,$limit=5,$offset=0,$date=FALSE)
+	{
+		// validation
+		$id       	= preg_replace("/[^0-9]/", '', $id);
+		$content 	= array();
+
+		// get articles
+		$articles 	= $this->_model->get_latest($id,$limit,$offset,$date);
+
+		if (is_array($articles)):
+
+			// format articles
+			foreach ($articles AS $article):
+
+				$article->image 		= $this->get_featured_image_by_post_id($article->id);
+
+				// fix post excerpt (if does not exist)
+				$article->post_excerpt 	= (isset($article->post_excerpt) AND $article->post_excerpt)? $article->post_excerpt: substr(strip_tags($article->post_content),0,150).'...';
+
+				// add article to content to be displayed
+				$content[] 				= $article;//$this->_add_metacontent($article);
+
+			endforeach;
+
+		endif;
+
+		return $content;
+	}	
+
 	public function get_by_vertical($id,$limit=5,$offset=0,$date=FALSE)
 	{
 		// validation
