@@ -1,12 +1,12 @@
 <?php
 
-require_once('ParallelCurl-master/parallelcurl.php');
-
 if ( ! isset($_GET['key']) || $_GET['key'] != 'a8Hhgdzpo'):
 
 	exit();
 
 endif;
+
+require_once('ParallelCurl-master/parallelcurl.php');
 
 $data         = array_map('str_getcsv', file('urls-lite.csv'));
 $array        = array();
