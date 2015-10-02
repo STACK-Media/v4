@@ -87,7 +87,7 @@ class PageController extends BaseController
 	{
 
 		$page_data['page']    	= $this->_page_object;
-		$page_data['nav']    	= $this->_get_nav(); 
+		//$page_data['nav']    	= $this->_get_nav(); 
 		$page_data['promos']  	= $this->_get_promos();
 		$page_data['widgets'] 	= $this->_get_widgets();
 		$page_data['slug']		= $page_view;
