@@ -145,9 +145,10 @@ return array(
 				//'latest-videos',
 			),
 			'sidebar' => array(
-				'featured-videos',
-				'velocity-sidebar',
-				'popular-videos',
+				//'featured-videos',
+				//'velocity-sidebar',
+				//'popular-videos',
+				
 				//'trending-block',
 			),
 			'post_content' => array(
