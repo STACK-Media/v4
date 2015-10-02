@@ -7,11 +7,12 @@ use Request;
 
 class CustomController extends PageController
 {
-	private function index($slug,$data=array())
+	private function index($slug,$data=array(),$metatags=array())
 	{    	
     	// set page object
 		$this->_set_page_object(new CustomPage(array(
-			'slug'	=> $slug
+			'slug'       => $slug,
+            'metatags'   => $metatags
 		)));
 
 		return $this->_load_page_view('custom.'.$slug, $data);
@@ -76,12 +77,25 @@ class CustomController extends PageController
     public function vsptrial()
     {
         // redirect 
-        $this->redirect('http://www.velocitysp.com/free_trial',302);
+        $this->redirect('http://www.velocitysp.com/free_trial');
     }
 
     public function resources()
     {
-        return $this->index('resources');
+        // grab the resources from config
+        app()->configure('resources');
+
+        // set data
+        $data  = array(
+            'resources' => config('resources')
+        );
+
+        // set custom meta
+        $metatags   = array(
+            'title'         => 'Resources',
+        );
+
+        return $this->index('resources',$data,$metatags);
     }
 
 }
