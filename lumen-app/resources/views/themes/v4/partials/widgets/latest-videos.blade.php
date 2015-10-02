@@ -12,18 +12,22 @@ if (is_array($videos) AND count($videos) > 1):
 
 			@foreach($videos as $key => $video)
 
-				@include('theme::partials.block',
-					array(
-						'key'			=> $key,
-						'widget'		=> 'latest-videos',				
-						'title' 		=> $video['name'], 
-						'image' 		=> $video['videoStillURL'],
-						'description'	=> $video['shortDescription'],
-						'url'			=> $video['link'],
-						'class'			=> 'block-video',
-						'author'		=> ''
+				@if(is_array($video))
+
+					@include('theme::partials.block',
+						array(
+							'key'			=> $key,
+							'widget'		=> 'latest-videos',				
+							'title' 		=> $video['name'], 
+							'image' 		=> $video['videoStillURL'],
+							'description'	=> $video['shortDescription'],
+							'url'			=> $video['link'],
+							'class'			=> 'block-video',
+							'author'		=> ''
+						)
 					)
-				)
+
+				@endif
 
 			@endforeach
 
