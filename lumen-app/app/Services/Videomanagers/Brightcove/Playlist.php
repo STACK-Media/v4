@@ -20,7 +20,7 @@ class Playlist extends Brightcove
 
 		// format (if necessary)
 
-		if (is_array($playlist)):
+		if (is_array($playlist) && array_key_exists('videos', $playlist) && is_array($playlist['videos'])):
 
 			if ($limit):
 
