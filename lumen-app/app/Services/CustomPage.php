@@ -6,7 +6,8 @@ class CustomPage extends Page
 	function __construct($args = array())
 	{
 		$paramlist = array(
-			'slug' => NULL
+			'slug' 		=> NULL,
+			'metatags'	=> array()
 		);
 		
 		$args      = array_merge($paramlist, $args);
@@ -20,8 +21,11 @@ class CustomPage extends Page
 		$this->_object->page_type 	= 'custom';
 		$this->_object->slug 		= $slug;
 
-		return parent::__construct();
+		// if we have custom metatags, then lets update them
+		if ( ! empty($metatags))
+			$this->_object->metatags 	= $metatags;
 
+		return parent::__construct();
 	}
 	
 } 
