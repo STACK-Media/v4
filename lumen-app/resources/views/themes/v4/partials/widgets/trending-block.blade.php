@@ -21,7 +21,7 @@
 							'class'	=> 'img-responsive'
 						)
 					)
-					<h3>{{$value['title']}}</h3>
+					<h3>{{@$value['title']}}</h3>
 				</a>
 
 			</div>
