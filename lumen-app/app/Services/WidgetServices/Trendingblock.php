@@ -13,8 +13,6 @@ class Trendingblock extends WidgetService
 		// grab trending
 		$trending 	= $article->trending();
 
-		var_dump($trending); exit();
-
 		// return
 		return array(
 			'trending'	=> json_decode(json_encode($trending),TRUE)

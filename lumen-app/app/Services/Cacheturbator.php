@@ -105,6 +105,12 @@ class Cacheturbator extends Service
 
 		endif;
 
+		if ($method_name == 'trending'):
+
+			var_dump($cache_key);
+
+		endif;
+
 		$result = call_user_func_array(array($this->service, $method_name), $args);
 
 		if ($this->cache_on):
