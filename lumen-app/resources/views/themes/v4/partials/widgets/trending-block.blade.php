@@ -16,8 +16,8 @@
 				<a href="{{@$value['link']}}">
 					@include('theme::partials.img',
 						array(
-							'src' 	=> $value['image'], 
-							'alt' 	=> $value['title'],
+							'src' 	=> @$value['image'], 
+							'alt' 	=> @$value['title'],
 							'class'	=> 'img-responsive'
 						)
 					)
