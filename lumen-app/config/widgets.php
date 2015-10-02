@@ -141,8 +141,8 @@ return array(
 		),
 		'taxonomy' => array(
 			'content' => array(
-				'latest-articles',
-				'latest-videos',
+				//'latest-articles',
+				//'latest-videos',
 			),
 			'sidebar' => array(
 				'featured-videos',
