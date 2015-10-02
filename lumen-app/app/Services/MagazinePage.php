@@ -39,6 +39,8 @@ class MagazinePage extends Page
 
 		endif;
 
+		var_dump($this->_object);exit();
+
 		return parent::__construct();
 	}
 
