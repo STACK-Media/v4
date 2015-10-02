@@ -24,13 +24,20 @@ class MagazinePage extends Page
 			$issue 	= config('magazine.current');
 
 		// set page object
-		$this->_object            	= $magazine->get($issue);
-		$this->_object->page_type 	= 'magazine';
-		$this->_object->issues 		= $magazine->all();
-		$this->_object->articles 	= $magazine->articles($this->_object->id);
 
-		// grab custom metatags
-		$this->_object->metatags 	= $this->_get_metatags();
+		$mag = $magazine->get($issue);
+		
+		if (is_object($mag)):
+
+			$this->_object            	= $mag;
+			$this->_object->page_type 	= 'magazine';
+			$this->_object->issues 		= $magazine->all();
+			$this->_object->articles 	= $magazine->articles($this->_object->id);
+
+			// grab custom metatags
+			$this->_object->metatags 	= $this->_get_metatags();
+
+		endif;
 
 		return parent::__construct();
 	}

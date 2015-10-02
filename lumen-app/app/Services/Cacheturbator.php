@@ -26,7 +26,7 @@ class Cacheturbator extends Service
 
 		endif;
 
-		if (Request::input('flushcache')):
+		if (Request::input('refreshcache')):
 
 			$this->flush = TRUE;
 
@@ -130,7 +130,7 @@ class Cacheturbator extends Service
 		
 		endif;
 
-		$cache_key = preg_replace("/[^A-Za-z0-9 ]/", '-', $cache_key);
+		//$cache_key = preg_replace("/[^A-Za-z0-9 ]/", '-', $cache_key);
 
 		return $cache_key;
     }
