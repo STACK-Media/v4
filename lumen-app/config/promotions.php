@@ -83,6 +83,7 @@ return array(
 				)
 			)
 		),
+		/*
 		'exitpops' => array(
 			'type'      => 'sequential',
 			'frequency' => FALSE,
@@ -95,5 +96,6 @@ return array(
 				)
 			)
 		)
+		*/
 	)
 );
