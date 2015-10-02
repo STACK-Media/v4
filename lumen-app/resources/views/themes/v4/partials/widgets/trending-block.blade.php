@@ -7,8 +7,6 @@
 
 		<h3>Trending</h3>
 
-		<?php var_dump($trending); exit(); ?>
-
 		@foreach($trending as $key => $value)
 
 			<?php $class = ($key < 3) ? '': 'hidden'; ?>

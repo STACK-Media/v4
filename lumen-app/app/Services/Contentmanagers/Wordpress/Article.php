@@ -178,6 +178,9 @@ class Article extends Wordpress
 
 	public function trending()
 	{
+
+		var_dump($this->_model->trending()); exit();
+
 		return $this->_model->trending();
 	}
 
