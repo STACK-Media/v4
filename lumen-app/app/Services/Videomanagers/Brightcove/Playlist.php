@@ -20,19 +20,23 @@ class Playlist extends Brightcove
 
 		// format (if necessary)
 
-		if ($limit):
+		if (is_array($playlist)):
 
-			//$vidservice = new Video;
-			$playlist['videoIds'] = array_slice($playlist['videoIds'], 0, $limit, TRUE);
-			$playlist['videos']   = array_slice($playlist['videos'], 0, $limit, TRUE);
+			if ($limit):
+
+				//$vidservice = new Video;
+				$playlist['videoIds'] = array_slice($playlist['videoIds'], 0, $limit, TRUE);
+				$playlist['videos']   = array_slice($playlist['videos'], 0, $limit, TRUE);
+
+			endif;
+
+			foreach($playlist['videos'] as $key => $video):
+
+				$playlist['videos'][$key] = $this->format_video($video);
+
+			endforeach;
 
 		endif;
-
-		foreach($playlist['videos'] as $key => $video):
-
-			$playlist['videos'][$key] = $this->format_video($video);
-
-		endforeach;
 
 		return $playlist;
 	}
