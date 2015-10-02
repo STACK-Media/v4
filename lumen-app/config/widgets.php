@@ -56,10 +56,10 @@ return array(
 		'home'	=> array(
 			'content'		=> array(
 				//'latest',
-				'latest-articles',
+				//'latest-articles',
 				'velocity',
 				//'trending',
-				'latest-videos',
+				//'latest-videos',
 				'hero',
 				'featured-expert',
 			),
