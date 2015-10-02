@@ -21,7 +21,7 @@ class TaxonomyPage extends Page
 
 		$this->_object = $cms->get_by_column($type, $identifier_type, $identifier);
 
-		var_dump($this->_object); exit();
+		//var_dump($this->_object); exit();
 
 		if (is_object($this->_object) && property_exists($this->_object, 'id')):
 
