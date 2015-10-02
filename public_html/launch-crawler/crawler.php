@@ -6,6 +6,8 @@ if ( ! isset($_GET['key']) || $_GET['key'] != 'a8Hhgdzpo'):
 
 endif;
 
+set_time_limit(900);
+
 require_once('ParallelCurl-master/parallelcurl.php');
 
 $data         = array_map('str_getcsv', file('urls-lite.csv'));
