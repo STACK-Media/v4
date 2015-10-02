@@ -24,10 +24,12 @@ class MagazinePage extends Page
 			$issue 	= config('magazine.current');
 
 		// set page object
-		
-		if (is_object($this->_object)):
 
-			$this->_object            	= $magazine->get($issue);
+		$mag = $magazine->get($issue);
+		
+		if (is_object($mag)):
+
+			$this->_object            	= $mag;
 			$this->_object->page_type 	= 'magazine';
 			$this->_object->issues 		= $magazine->all();
 			$this->_object->articles 	= $magazine->articles($this->_object->id);
