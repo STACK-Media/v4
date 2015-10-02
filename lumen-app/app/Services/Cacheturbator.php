@@ -103,11 +103,11 @@ class Cacheturbator extends Service
 
 			endif;
 
-		endif;
+			if ($method_name == 'trending'):
 
-		if ($method_name == 'trending'):
+				var_dump($cache_key);
 
-			var_dump($cache_key);
+			endif;
 
 		endif;
 
