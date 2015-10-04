@@ -51,7 +51,7 @@
 			<li><a href="{!! routelink('contact-us', array()) !!}">Contact Us</a></li>
 			<li><a href="{!! routelink('terms-of-use', array()) !!}">Terms of Use</a></li>
 			<li><a href="{!! routelink('terms-of-use', array()) !!}">Privacy Policy</a></li>
-			<li><a href="{!! routelink('experts-list', array()) !!}">STACK Experts</a></li>
+			<li><a href="{!! routelink('expert-list', array()) !!}">STACK Experts</a></li>
 			<li><a href="{!! routelink('contact-us', array()) !!}">Advertising</a></li>
 		</ul>
 
