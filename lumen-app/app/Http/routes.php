@@ -244,7 +244,7 @@ $app->get('stack-velocity',		['as' => 'stack-velocity', 		'uses' => 'App\Http\Co
 $app->get('stack-originals',	['as' => 'stack-originals', 	'uses' => 'App\Http\Controllers\CustomController@originals']);
 //$app->get('videos',				['as' => 'videos', 				'uses' => 'App\Http\Controllers\VideosController@index']);
 $app->get('vsptrial',			['as' => 'vsptrial', 			'uses' => 'App\Http\Controllers\CustomController@vsptrial']);
-
+//$app->get('slideshow/{slug}',	['as' => 'slideshow/{slug}', 	'uses' => '']);
 
 ##################################################################################
 // Vanity URLs
