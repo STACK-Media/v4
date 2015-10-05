@@ -80,7 +80,7 @@ foreach ($data as $row):
 
 	$live = 'http://www.stack.com'.$row[0];
 
-	if (strpos($live, '.') === FALSE):
+	if (strpos($live, '.', 20) === FALSE):
 
 		$live = $live . '/';
 

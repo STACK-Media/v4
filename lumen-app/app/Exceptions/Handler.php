@@ -59,7 +59,7 @@ class Handler extends ExceptionHandler {
 
             $params = isset($route['params']) ? $route['params'] : array();
 
-            return redirect()->route($route['routename'], $params);
+            return redirect()->route($route['routename'], $params, '301');
 
         endif;
 
