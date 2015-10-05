@@ -15,7 +15,11 @@ class Article extends Wordpress
 	{
 		parent::__construct();
 
-		$this->add_shortcode('caption', array($this,'img_caption_shortcode'));
+		$this->add_shortcode('caption', 	array($this,'img_caption_shortcode'));
+		$this->add_shortcode('youtube', 	array($this,'youtube_vid_shortcode'));
+		$this->add_shortcode('pullquote', 	array($this,'pullquote_shortcode'));
+		$this->add_shortcode('brightcove', 	array($this,'brightcove_shortcode'));
+		$this->add_shortcode('vimeo', 		array($this,'vimeo_vid_shortcode'));
 
 		$this->_model = new Cacher(new ArticleModel);
 	}

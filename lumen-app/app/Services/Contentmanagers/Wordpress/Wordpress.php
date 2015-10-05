@@ -3,6 +3,7 @@
 namespace App\Services\Contentmanagers\Wordpress;
 
 use App\Services\Contentmanagers\Content;
+use App\Services\Videomanager;
 
 class Wordpress extends Content
 {
@@ -739,6 +740,88 @@ class Wordpress extends Content
 
 		return '<div ' . $id . 'class="wp-caption ' . $this->esc_attr($align) . '">'
 		. $this->do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . '</p></div>';
+	}
+
+	public function youtube_vid_shortcode($attr, $content=null)
+	{
+		// grab shortcode values
+		extract($this->shortcode_atts(array(
+			'video'   	=> FALSE,
+			'h'   		=> '365',
+			'w' 		=> '100%'
+		), $attr));
+
+		// make sure we got a valid video
+		if ( ! $video)
+			return FALSE;
+
+		// create the youtube container
+		$content 	= '
+		<div class="video-container">
+			<iframe width="'.$w.'" style="min-height: '.$h.'px;" src="//www.youtube.com/embed/'.$video.'?html5=1&rel=0" frameborder="0" allowfullscreen></iframe>
+		</div>
+		';
+
+		return $content;
+	}
+
+	public function vimeo_vid_shortcode($attr, $content=null)
+	{
+		// grab shortcode values
+		extract($this->shortcode_atts(array(
+			'video'   	=> FALSE,
+			'h'   		=> '365',
+		), $attr));
+
+		// make sure we got a valid video
+		if ( ! $video)
+			return FALSE;
+
+		$w 			= '100%';
+
+		// create the youtube container
+		$content 	= '
+		<object style="width: '.$w.';height:'.$h.'px;">
+			<param name="allowfullscreen" value="true" />
+			<param name="allowscriptaccess" value="always" />
+			<param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id='.$video.'&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" />
+			<embed src="http://vimeo.com/moogaloop.swf?clip_id='.$video.'&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" style="width: '.$w.';height: '.$h.';"></embed>
+		</object>
+		';
+
+		return $content;
+	}
+
+	public function brightcove_shortcode($attr, $content=null)
+	{
+		// initialize classes
+		$manager 	= new Videomanager('player');
+
+		// grab shortcode values
+		extract($this->shortcode_atts(array(
+			'video'   	=> FALSE,
+			'w'			=> '100%',
+			'h'   		=> '365',
+		), $attr));
+
+		// if no video has been passed, ignore shortcode
+		if ( ! $video)
+			return FALSE;
+
+		$player 	= $manager->get($video);
+
+		// grab player markup
+		$content 	= view('theme::partials.videoplayers.brightcove',$player['player_data'])->render();
+
+		return $content;
+	}
+
+	public function pullquote_shortcode($attr, $content=null)
+	{
+		if ($content)
+			return '<aside>'.$content.'</aside>';
+
+		return $content;
 	}
 
 }
