@@ -1,0 +1,9 @@
+.experts p {
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    line-height: 1.2;
+    margin-bottom: 12px;
+}
+
+.expert-list img {
+	border: 	1px solid #000;
+}

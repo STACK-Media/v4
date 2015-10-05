@@ -52,6 +52,35 @@ class CustomController extends PageController
         return $this->index('contact');  
     }
 
+    public function experts()
+    {
+        // initialize service
+        $author             = new Contentmanager('user');
+
+        // initialize variables 
+        $authors             = array();
+
+        // grab all experts
+        $experts            = $author->all();
+
+        // iterate experts and grab meta
+        foreach ($experts AS $expert):
+
+            // add meta to this expert
+            $expert->meta    = $author->get_meta($expert->ID);
+
+            // grab expert
+            $authors[]       = $expert;
+
+        endforeach;
+
+        // set data
+        $data['experts']    = $authors;
+
+        // show page
+        return $this->index('experts',$data);
+    }
+
     public function terms()
     {
     	return $this->index('terms-of-use');	

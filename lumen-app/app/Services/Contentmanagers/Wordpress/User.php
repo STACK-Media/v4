@@ -17,6 +17,11 @@ class User extends Wordpress
 		$this->_model = new Cacher(new UserModel);
 	}
 
+	public function all($limit=10,$offset=0,$orderBy='user_nicename',$order='ASC')
+	{
+		return $this->_model->all($limit,$offset,$orderBy,$order);
+	}
+
 	public function get($id)
 	{
 		return $this->_model->get_by_id($id);

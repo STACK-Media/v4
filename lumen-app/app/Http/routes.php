@@ -237,7 +237,7 @@ $app->get('a-to-z',				['as' => 'a-to-z', 				'uses' => 'App\Http\Controllers\Cu
 $app->get('about-us',			['as' => 'about-us', 			'uses' => 'App\Http\Controllers\CustomController@about']);
 $app->get('beast-squad-signup',	['as' => 'beast-squad-signup', 	'uses' => 'App\Http\Controllers\CustomController@beast']);
 $app->get('contact-us',			['as' => 'contact-us', 			'uses' => 'App\Http\Controllers\CustomController@contact']);
-$app->get('experts-list',		['as' => 'experts-list', 		'uses' => 'App\Http\Controllers\CustomController@experts']);
+$app->get('expert-list',		['as' => 'expert-list', 		'uses' => 'App\Http\Controllers\CustomController@experts']);
 $app->get('resources',			['as' => 'resources', 			'uses' => 'App\Http\Controllers\CustomController@resources']);
 $app->get('terms-of-use',		['as' => 'terms-of-use', 		'uses' => 'App\Http\Controllers\CustomController@terms']);
 $app->get('stack-velocity',		['as' => 'stack-velocity', 		'uses' => 'App\Http\Controllers\CustomController@velocity']);

@@ -8,6 +8,15 @@ use App\Models\ContentModels\AbstractUser;
 
 class UserModel extends AbstractUser
 {
+	public function all($limit=10,$offset=0,$orderBy='user_nicename',$order='ASC')
+	{
+		return DB::table('wp_users')
+			->orderBy($orderBy,$order)
+			->skip($offset)
+			->take($limit)
+			->get();
+	}
+
 	public function get_by_id($user_id)
 	{
 		return DB::table('wp_users')
