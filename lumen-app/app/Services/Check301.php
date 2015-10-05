@@ -10,7 +10,8 @@ class Check301 extends Service
 	var $page_services = array(
 		'SportController',
 		'TaxonomyController',
-		'MarketingController'
+		'MarketingController',
+		'ContentController'
 	);
 
 	function __construct()

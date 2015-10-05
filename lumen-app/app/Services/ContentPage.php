@@ -14,8 +14,14 @@ class ContentPage extends Page
 		$args      = array_merge($paramlist, $args);
 		extract($args);
 
+		if ( ! in_array($page, array('article', 'page'))):
+
+			return parent::__construct();
+
+		endif;
+
 		// grab content manager based on page type
-		$contentcms    = new Contentmanager('Article');
+		$contentcms    = new Contentmanager(ucwords($page));
 
 		// grab content
 		$this->_object = $contentcms->get_by_slug($slug, $type);
