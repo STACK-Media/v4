@@ -21,7 +21,7 @@ class TaxonomyModel extends AbstractTaxonomy
                 'wp_terms.name',
                 'wp_terms.slug', 
                 'wp_term_taxonomy.taxonomy', 
-                'wp_terms.term_id as description', //'wp_term_taxonomy.description',
+                'wp_term_taxonomy.description',
                 'parent_terms.term_id AS parent_id', 
                 'parent_terms.name AS parent_name', 
                 'parent_terms.slug AS parent_slug'
@@ -48,7 +48,7 @@ class TaxonomyModel extends AbstractTaxonomy
                 'wp_terms.name',
                 'wp_terms.slug', 
                 'wp_term_taxonomy.taxonomy', 
-                'wp_terms.term_id as description', //'wp_term_taxonomy.description',
+                'wp_term_taxonomy.description',
                 'parent_terms.term_id AS parent_id', 
                 'parent_terms.name AS parent_name', 
                 'parent_terms.slug AS parent_slug'
@@ -76,7 +76,7 @@ class TaxonomyModel extends AbstractTaxonomy
     			'wp_terms.slug', 
     			'wp_term_taxonomy.taxonomy', 
                 //'wp_terms.term_id AS description',
-                'wp_terms.term_id as description', //'wp_term_taxonomy.description',
+                'wp_term_taxonomy.description',
     			'parent_terms.term_id AS parent_id', 
     			'parent_terms.name AS parent_name', 
     			'parent_terms.slug AS parent_slug'
@@ -102,7 +102,7 @@ class TaxonomyModel extends AbstractTaxonomy
                 'wp_term_taxonomy.term_id',
                 'wp_term_taxonomy.taxonomy',
                 'wp_term_taxonomy.term_taxonomy_id',
-                'wp_terms.term_id as description', //'wp_term_taxonomy.description',
+                'wp_term_taxonomy.description',
                 'parent_terms.term_id AS parent_id',
                 'parent_terms.name AS parent_name',
                 'parent_terms.slug AS parent_slug',
