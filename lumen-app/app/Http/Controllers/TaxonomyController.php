@@ -49,19 +49,42 @@ class TaxonomyController extends PageController
 
         $slug = strtolower($params[0]);
 
-        $page = $this->_initiate_service('post_tag', $slug);       
-
-        if ( ! $page || ! is_object($page) || ! @$page->id):
-
-            return FALSE;
-
-        endif;
-
-        return array(
-            'routename' => 'tag',
-            'params'    => array(
-                'slug' => $slug
-            )  
+        $redirect = FALSE;
+        $checkers = array(
+        //    'post_tag' => 'tag',
+            'category' => 'category'
         );
+
+        foreach ($checkers as $taxtype => $routeslug):
+
+            $checkslug = $slug;
+
+            if ($checkslug == $routeslug):
+
+                $checkslug = strtolower($params[1]);
+
+            endif;
+
+            $page = $this->_initiate_service($taxtype, $checkslug);
+
+            if ( ! $page || ! is_object($page) || ! @$page->id):
+
+                continue;
+
+            endif;
+
+            $redirect = array(
+                'routename' => $routeslug,
+                'params'    => array(
+                    'slug' => $checkslug
+                )  
+            );
+
+            break;
+
+        endforeach;
+
+        return $redirect;
+        
     }
 }

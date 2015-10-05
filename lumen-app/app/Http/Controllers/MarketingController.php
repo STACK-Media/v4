@@ -40,15 +40,12 @@ class MarketingController extends PageController
 
         endif;
 
-        $slug     = $params[1];
-        $player   = $params[2];
-        $playlist = $params[3];
-        $video    = $params[4];
-
-
+        $slug      = $params[1];
+        $player    = $params[2];
+        $playlist  = $params[3];
+        $video     = $params[4];
+        
         $marketing = $this->_initiate_service($slug, $player, $playlist, $video);
-
-        //var_dump($marketing); exit();
   
         if ( ! $marketing || ! is_object($marketing) || ! @$marketing->id):
 
