@@ -63,7 +63,7 @@ $rewrite_urls = array();
 
 foreach ($data as $row):
 
-	if ($counter > 500):
+	if ($counter > 300):
 
 		break;
 
