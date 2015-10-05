@@ -51,7 +51,7 @@ class TaxonomyController extends PageController
 
         $redirect = FALSE;
         $checkers = array(
-        //    'post_tag' => 'tag',
+            'post_tag' => 'tag',
             'category' => 'category'
         );
 
