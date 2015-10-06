@@ -23,9 +23,29 @@ class Exercise extends Wordpress
 		return $this->_model->get($id);
 	}
 
-	public function get_by_article($id = FALSE)
+	public function get_by_article($id = FALSE, $thumbs_only = FALSE)
 	{
-		return $this->_model->get_by_article($id);
+		$exercises = $this->_model->get_by_article($id);
+
+		if ($thumbs_only):
+
+			if (is_array($exercises) && count($exercises)):
+
+				foreach ($exercises as $key => $exercise):
+
+					preg_match('/<img.+src=[\'"](?P<src>.+?)[\'"].*>/i', $exercise->content, $image);
+
+					$exercises[$key]->content = '<img src="'.$image['src'].'" alt=""/>';
+
+					//var_dump($image['src']); exit();
+
+				endforeach;
+
+			endif;
+
+		endif;
+
+		return $exercises;
 	}
 
 
