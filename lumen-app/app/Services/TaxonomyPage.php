@@ -127,7 +127,7 @@ class TaxonomyPage extends Page
 		$pg_num 		= (isset($this->_object->page_number))? $this->_object->page_number: 0;
 
 		// set latest videos object
-		return $manager->latest_by_category($this->_object->name,5,$pg_num);
+		return $manager->latest_by_taxonomy($this->_object->name,5,$pg_num);
 	}
 
 	private function _player_object()

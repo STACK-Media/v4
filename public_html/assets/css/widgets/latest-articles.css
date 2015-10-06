@@ -4,3 +4,6 @@
     line-height: 1;
     font-family: "Roboto Slab", serif;
 }
+.latest-articles img {
+	max-height: 	175px;
+}

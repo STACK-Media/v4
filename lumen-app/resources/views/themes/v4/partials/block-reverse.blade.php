@@ -9,7 +9,7 @@
 				array(
 					'src' 	=> $image, 
 					'alt' 	=> $title,
-					'class'	=> 'img-responsive {{$class}}'
+					'class'	=> 'img-responsive '.$class
 				)
 			)
 		</a>
