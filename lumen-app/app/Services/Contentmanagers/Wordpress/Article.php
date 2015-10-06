@@ -244,13 +244,17 @@ class Article extends Wordpress
 			// format articles
 			foreach ($articles AS $article):
 
-				$article->image 		= $this->get_featured_image_by_post_id($article->id);
+				if (is_object($article)):
 
-				// fix post excerpt (if does not exist)
-				$article->post_excerpt 	= (isset($article->post_excerpt) AND $article->post_excerpt)? $article->post_excerpt: substr(strip_tags($article->post_content),0,150).'...';
+					$article->image 		= $this->get_featured_image_by_post_id($article->id);
 
-				// add article to content to be displayed
-				$content[] 				= $article;//$this->_add_metacontent($article);
+					// fix post excerpt (if does not exist)
+					$article->post_excerpt 	= (isset($article->post_excerpt) AND $article->post_excerpt)? $article->post_excerpt: substr(strip_tags($article->post_content),0,150).'...';
+
+					// add article to content to be displayed
+					$content[] 				= $article;//$this->_add_metacontent($article);
+
+				endif;
 
 			endforeach;
 
