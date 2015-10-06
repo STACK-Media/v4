@@ -11,17 +11,22 @@
 
 			@foreach($articles as $key => $article)
 
-				@include('theme::partials.block-reverse',
-					array(
-						'key'			=> $key,
-						'widget'		=> 'latest-articles',				
-						'title' 		=> $article->name, 
-						'image' 		=> $article->image,
-						'description'	=> $article->post_excerpt,
-						'url'			=> routelink('article', array( 'slug' => $article->slug)),
-						'class'			=> 'block-article'
+				@if(is_object($article))
+
+					@include('theme::partials.block-reverse',
+						array(
+							'key'			=> $key,
+							'widget'		=> 'latest-articles',				
+							'title' 		=> $article->name, 
+							'image' 		=> $article->image,
+							'description'	=> $article->post_excerpt,
+							'url'			=> routelink('article', array( 'slug' => $article->slug)),
+							'class'			=> 'block-article'				
+						)
+
 					)
-				)
+
+				@endif
 
 			@endforeach
 

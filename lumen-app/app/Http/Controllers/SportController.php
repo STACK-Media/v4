@@ -41,6 +41,12 @@ class SportController extends PageController
 
         $sport = strtolower($params[0]);
 
+        if ( ! in_array($sport, $this->valid_sports)):
+
+            return FALSE;
+
+        endif;
+
         $page  = $this->_initiate_service($sport);       
 
         if ( ! $page || ! is_object($page) || ! @$page->id):
