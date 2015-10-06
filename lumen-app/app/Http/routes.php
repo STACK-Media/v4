@@ -228,6 +228,8 @@ $app->post('api/v1/smtp/send', 'App\Http\Controllers\API\v1\SMTPController@send'
 // Promos Ajax
 $app->get('api/v1/promos/{group}/{promo}', 'App\Http\Controllers\API\v1\PromosController@show');
 
+// SMTP API
+$app->get('api/v1/sitemap', 'App\Http\Controllers\API\v1\SitemapController@index');
 
 
 ##################################################################################
