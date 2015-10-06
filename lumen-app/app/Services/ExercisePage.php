@@ -23,7 +23,7 @@ class ExercisePage extends Page
 
 			$this->_object            	= $expage;
 			$this->_object->page_type 	= 'exercise';
-			$this->_object->related 	= $exercise->get_by_article($expage->article_id, $thumbs_only = TRUE);
+			$this->_object->related 	= $exercise->get_by_article($expage->article_id, $get_thumbs = TRUE);
 
 		endif;
 

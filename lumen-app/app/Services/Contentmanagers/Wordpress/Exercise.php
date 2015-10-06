@@ -23,11 +23,11 @@ class Exercise extends Wordpress
 		return $this->_model->get($id);
 	}
 
-	public function get_by_article($id = FALSE, $thumbs_only = FALSE)
+	public function get_by_article($id = FALSE, $get_thumbs = FALSE)
 	{
 		$exercises = $this->_model->get_by_article($id);
 
-		if ($thumbs_only):
+		if ($get_thumbs):
 
 			if (is_array($exercises) && count($exercises)):
 
@@ -35,7 +35,7 @@ class Exercise extends Wordpress
 
 					preg_match('/<img.+src=[\'"](?P<src>.+?)[\'"].*>/i', $exercise->content, $image);
 
-					$exercises[$key]->content = '<img src="'.$image['src'].'" alt=""/>';
+					$exercises[$key]->thumb = $image['src'];
 
 					//var_dump($image['src']); exit();
 

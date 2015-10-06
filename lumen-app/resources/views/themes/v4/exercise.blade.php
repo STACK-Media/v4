@@ -29,7 +29,7 @@
 				</strong>
 
 				<div>
-					{!! $related->content !!}
+					<a href="{!! routelink('exerciseslug', array('id' => $related->id, 'slug' => preg_replace("/[^[:alnum:]]/u", '-', strtolower($related->title)))) !!}"><img src="{!! $related->thumb !!}" alt="{!! $related->title !!}"/></a>
 				</div>
 
 			@endif
