@@ -28,7 +28,6 @@ class UserModel extends AbstractUser
 	{
 		return DB::table('wp_users')
 			->select(
-    			DB::raw('"author" AS page_type'),
                 'ID AS id',
                 'user_nicename AS slug',
                 'user_email AS email',

@@ -15,7 +15,6 @@ class MagazineModel extends AbstractMagazine
             return $this->current();
 
         return DB::table('magazine.magazines')
-            ->select('*')
             ->where('magazines.slug',$slug)
             ->take(1)->first();
 	}
@@ -23,7 +22,6 @@ class MagazineModel extends AbstractMagazine
     public function all()
     {
         return DB::table('magazine.magazines')
-            ->select('*')
             ->where('magazines.active',1)
             ->get();
     }
@@ -31,7 +29,6 @@ class MagazineModel extends AbstractMagazine
     public function current()
     {
         return DB::table('magazine.magazines')
-            ->select('*')
             ->where('magazines.active',1)
             ->orderBy('magazines.created_at','DESC')
             ->take(1)->first();
@@ -40,7 +37,6 @@ class MagazineModel extends AbstractMagazine
     public function articles($id)
     {
         return DB::table('magazine.magazines_articles')
-            ->select('*')
             ->where('magazines_articles.magazine_id',$id)
             ->get();
     }

@@ -78,14 +78,6 @@ $route_pages     = array(
 			'slug'
 		)
 	),
-	'magazine' => array(
-		'slug'       => 'magazine',
-		'controller' => 'MagazineController',
-		'function'   => 'index',
-		'params'     => array(
-			'issue'
-		)
-	),
 	'marketing' => array(
 		'slug'       => 'marketing',
 		'controller' => 'MarketingController',
@@ -228,6 +220,23 @@ $app->post('api/v1/smtp/send', 'App\Http\Controllers\API\v1\SMTPController@send'
 // Promos Ajax
 $app->get('api/v1/promos/{group}/{promo}', 'App\Http\Controllers\API\v1\PromosController@show');
 
+
+
+$app->get('magazine/{issue}', ['as' => 'magazine', 'uses' => 'App\Http\Controllers\MagazineController@index']);
+
+$app->get('exercise/{id}',	['as' => 'exercise', 'uses' => 'App\Http\Controllers\ExerciseController@index']);
+$app->get('exercise/{id}/{slug:[A-Za-z-]*}',	['as' => 'exerciseslug', 'uses' => 'App\Http\Controllers\ExerciseController@index']);
+
+/*
+'magazine' => array(
+		'slug'       => 'magazine',
+		'controller' => 'MagazineController',
+		'function'   => 'index',
+		'params'     => array(
+			'issue'
+		)
+	),
+ */
 
 
 ##################################################################################
