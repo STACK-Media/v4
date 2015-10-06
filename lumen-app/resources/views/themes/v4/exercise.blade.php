@@ -24,16 +24,12 @@
 
 			@if($related->id != $page->id)
 
-				<h1>
-					{!! $page->title !!}
-				</h1>
+				<strong>
+					<a href="{!! routelink('exerciseslug', array('id' => $related->id, 'slug' => preg_replace("/[^[:alnum:]]/u", '-', strtolower($related->title)))) !!}"> {!! $related->title !!} </a>
+				</strong>
 
 				<div>
-					{!! $page->content !!}
-				</div>
-
-				<div>
-					<a href="{!! routelink('article', array('slug' => $page->article_slug)) !!}">Back to Main Article</a>
+					{!! $related->content !!}
 				</div>
 
 			@endif
@@ -41,10 +37,6 @@
 		@endforeach
 
 	@endif
-
-	
-
-	{!! var_export($page->related, TRUE) !!}
 
 </div>
 
