@@ -53,14 +53,17 @@ class Video extends Brightcove
 		);
 	}
 
-	public function latest_by_category($category,$limit=5,$page=0)
+	public function latest_by_taxonomy($taxonomy,$limit=5,$page=0)
 	{
 		// initialzie variables
 		$params 				= array();
 
 		// add category to params
-		$params['any'][]		= 'maincategory:'.urlencode($category);
-		$params['any'][]		= 'subcategory:'.urlencode($category);
+		$params['any'][]		= 'maincategory:'.urlencode($taxonomy);
+		$params['any'][]		= 'subcategory:'.urlencode($taxonomy);
+
+		// add tag params
+		$params['any'][] 		= urlencode($taxonomy);
 
 		// set additional params
 		$params['page_size']	= $limit;
