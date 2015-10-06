@@ -12,16 +12,16 @@ class Latestvideos extends WidgetService
 		$manager 	= new VideoManager('video');
 
 		// initialzie variables
-		$category 	= $page->name;
+		$taxonomy 	= $page->name;
 		$pgnum		= (isset($page->page_number))? $page->page_number: 0;
 
 		// get the videos
-		$videos 	= $manager->latest_by_category($category,5,$pgnum);
+		$videos 	= $manager->latest_by_taxonomy($taxonomy,5,$pgnum);
 
 		// return variables needed
 		return array(
 			'videos'		=> $videos,
-			'category'		=> array($category)
+			'category'		=> array($taxonomy)
 		);
 	}
 }

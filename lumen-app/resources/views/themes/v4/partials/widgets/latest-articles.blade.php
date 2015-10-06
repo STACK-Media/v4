@@ -1,7 +1,7 @@
 {!! Assets::queue('stylesheet',  'widgets', 'latest-articles', '/assets/css/widgets/latest-articles.css') !!}
 
 
-@if (is_array($articles) AND count($articles) > 1):
+@if (is_array($articles) AND count($articles) > 1)
 
 	<div class="row">
 
@@ -23,6 +23,7 @@
 							'url'			=> routelink('article', array( 'slug' => $article->slug)),
 							'class'			=> 'block-article'				
 						)
+
 					)
 
 				@endif

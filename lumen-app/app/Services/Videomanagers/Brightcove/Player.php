@@ -10,7 +10,7 @@ class Player extends Brightcove
 			'player_name' => 'brightcove',
 			'player_data'  => array(
 				'account_id'	=> '1079349493',
-				'player_id'   	=> 'abc26517-b7c5-4dd2-8819-f86b3ed9eca2', //'f43df71d-66fb-42d8-9215-a2c2ee828065',
+				'player_id'   	=> 'f43df71d-66fb-42d8-9215-a2c2ee828065', //'abc26517-b7c5-4dd2-8819-f86b3ed9eca2'
 				'player_key'  	=> uniqid(),
 				'video_id'    	=> $video_id,
 				'playlist_id'	=> $playlist_id

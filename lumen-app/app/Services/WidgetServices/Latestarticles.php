@@ -13,6 +13,7 @@ class Latestarticles extends WidgetService
 
 		// initialzie variables
 		$categories	= (isset($page->taxonomy['category']) AND is_array($page->taxonomy['category']))? $page->taxonomy['category']: array();
+		$tags 		= (isset($page->taxonomy['post_tag']) AND is_array($page->taxonomy['post_tag']))? $page->taxonomy['post_tag']: array();
 		$pg_num 	= (isset($page->page_number))? $page->page_number: 0;
 		$category 	= array();
 		$articles 	= array();
@@ -33,6 +34,19 @@ class Latestarticles extends WidgetService
 			break;	// break to only show 1 categories' articles
 
 		endforeach;
+
+		// iterate categories to add to video search parameters
+		foreach ($tags AS $key => $value):
+
+			// set the category(ies) name
+			$category[] 		= $value->name;
+
+			// grab articles for this category
+			$articles 			= $content->get_latest($value->term_id,$limit,$offset);
+
+			break;	// break to only show 1 categories' articles
+
+		endforeach;		
 
 		return array(
 			'articles'		=> $articles,

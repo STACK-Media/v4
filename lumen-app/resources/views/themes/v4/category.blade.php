@@ -15,6 +15,8 @@
 
 			@include('theme::partials.videoplayers.'.$page->player['player_name'], $page->player['player_data'])
 
+			<div class="divider"></div>
+
 		@endif
 
 	</section>
