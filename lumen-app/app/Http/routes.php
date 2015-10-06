@@ -78,14 +78,6 @@ $route_pages     = array(
 			'slug'
 		)
 	),
-	'magazine' => array(
-		'slug'       => 'magazine',
-		'controller' => 'MagazineController',
-		'function'   => 'index',
-		'params'     => array(
-			'issue'
-		)
-	),
 	'marketing' => array(
 		'slug'       => 'marketing',
 		'controller' => 'MarketingController',
@@ -230,6 +222,23 @@ $app->get('api/v1/promos/{group}/{promo}', 'App\Http\Controllers\API\v1\PromosCo
 
 // SMTP API
 $app->get('api/v1/sitemap', 'App\Http\Controllers\API\v1\SitemapController@index');
+
+
+$app->get('magazine/{issue}', ['as' => 'magazine', 'uses' => 'App\Http\Controllers\MagazineController@index']);
+
+$app->get('exercise/{id}',	['as' => 'exercise', 'uses' => 'App\Http\Controllers\ExerciseController@index']);
+$app->get('exercise/{id}/{slug:[A-Za-z-]*}',	['as' => 'exerciseslug', 'uses' => 'App\Http\Controllers\ExerciseController@index']);
+
+/*
+'magazine' => array(
+		'slug'       => 'magazine',
+		'controller' => 'MagazineController',
+		'function'   => 'index',
+		'params'     => array(
+			'issue'
+		)
+	),
+ */
 
 
 ##################################################################################

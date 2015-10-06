@@ -12,7 +12,6 @@ class PageModel extends AbstractPage
     {
         return DB::table('wp_posts')
             ->select(
-                DB::raw('"article" AS page_type'),
                 'wp_posts.id', 
                 'wp_posts.post_title AS name',
                 'wp_posts.post_name AS slug',

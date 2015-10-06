@@ -70,7 +70,6 @@ class TaxonomyModel extends AbstractTaxonomy
 	{
 		return DB::table('wp_terms')
     		->select(
-                DB::raw('"taxonomy" AS page_type'),
     			'wp_terms.term_id AS id', 
     			'wp_terms.name',
     			'wp_terms.slug', 
