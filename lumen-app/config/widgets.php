@@ -139,7 +139,22 @@ return array(
 
 			)
 		),
-		'taxonomy' => array(
+		'category' => array(
+			'content' => array(
+				'latest-articles',
+				'latest-videos',
+			),
+			'sidebar' => array(
+				'featured-videos',
+				'velocity-sidebar',
+				'popular-videos',
+				//'trending-block',
+			),
+			'post_content' => array(
+
+			)
+		),
+		'post_tag' => array(
 			'content' => array(
 				'latest-articles',
 				'latest-videos',

@@ -21,6 +21,9 @@ class TaxonomyPage extends Page
 
 		$this->_object = $cms->get_by_column($type, $identifier_type, $identifier);
 
+		// first, set page_type
+		$this->_object->page_type 	= $type;
+
 		//var_dump($this->_object); exit();
 
 		if (is_object($this->_object) && property_exists($this->_object, 'id')):
@@ -32,24 +35,25 @@ class TaxonomyPage extends Page
 				'description',
 				'name',
 				'slug',
-				'parent'
+				'parent',
+				'page_type'
 			);
 
 			$tax_template = array_combine($tax_template, array_fill(0, count($tax_template), NULL));
-			
-			$category                     = (array) $this->_object;
-			$category['term_id']          = $category['id'];
-			$category['term_taxonomy_id'] = $category['id'];
-			$category['parent']           = array(
-				'id'   => $category['parent_id'],
-				'name' => $category['parent_id'],
-				'slug' => $category['parent_id'],
+
+			$taxonomy                     = (array) $this->_object;
+			$taxonomy['term_id']          = $taxonomy['id'];
+			$taxonomy['term_taxonomy_id'] = $taxonomy['id'];
+			$taxonomy['parent']           = array(
+				'id'   => $taxonomy['parent_id'],
+				'name' => $taxonomy['parent_id'],
+				'slug' => $taxonomy['parent_id'],
 			);
 
-			$category     = array_intersect_key($category, $tax_template);
-			$category     = array_merge($tax_template, $category);
+			$taxonomy     = array_intersect_key($taxonomy, $tax_template);
+			$taxonomy     = array_merge($tax_template, $taxonomy);
 
-			$category['meta'] = $cms->get_metadata($category['term_id']);
+			$taxonomy['meta'] = $cms->get_metadata($taxonomy['term_id']);
 
 			// set latest videos & player objects
 			$this->_object->latest 	= $this->_latest_videos_object();
@@ -58,7 +62,7 @@ class TaxonomyPage extends Page
 
 			$this->_object->taxonomy = array(
 				$this->_object->taxonomy => array(
-					(object) $category
+					(object) $taxonomy
 				)
 			);
 			// End making category page object consistent w/ other pages
